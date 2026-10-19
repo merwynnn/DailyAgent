@@ -65,8 +65,10 @@ sources:                                      # optional, shown as a list
 ---
 ```
 
-Keep tag vocabulary small and stable. Reusing `research`, `reading`, `inbox`,
-`health`, `project`, `note` is better than inventing a new tag every day.
+Keep tag vocabulary small and stable. `INSTRUCTIONS.md` names the tags for its
+standing jobs (`events`, `jams`, `ai`, `geopolitics`) — use those rather than
+inventing a new tag every day. Generic tags such as `project`, `note`,
+`reading` and `inbox` are for one-off days.
 
 ### Body
 
@@ -89,6 +91,9 @@ Prose, lists, tables, code — whatever fits.
 
 - Something to pick up tomorrow.
 ```
+
+If `INSTRUCTIONS.md` names its own sections, those win — the shape above is only
+a default for days with nothing specific to report.
 
 Rules of thumb:
 

@@ -1,0 +1,37 @@
+---
+/**
+ * Tiny inline icon set. Inline SVG keeps the site dependency-free and lets the
+ * icons inherit `currentColor`, which matters for the light/dark toggle.
+ */
+interface Props {
+  name: 'grid' | 'close' | 'sun' | 'moon' | 'search' | 'arrow-right' | 'arrow-left' | 'external' | 'spark';
+  size?: number | string;
+}
+
+const { name, size = '1rem' } = Astro.props;
+---
+
+<svg
+  class="icon"
+  width={size}
+  height={size}
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.6"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  aria-hidden="true"
+  focusable="false"
+  style="width:100%;height:100%"
+>
+  {name === 'grid' && <><rect x="3" y="3" width="7.5" height="7.5" rx="1.6" /><rect x="13.5" y="3" width="7.5" height="7.5" rx="1.6" /><rect x="3" y="13.5" width="7.5" height="7.5" rx="1.6" /><rect x="13.5" y="13.5" width="7.5" height="7.5" rx="1.6" /></>}
+  {name === 'close' && <><path d="M6 6l12 12" /><path d="M18 6L6 18" /></>}
+  {name === 'sun' && <><circle cx="12" cy="12" r="4" /><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" /></>}
+  {name === 'moon' && <path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a6.8 6.8 0 0 0 10.5 10.5Z" />}
+  {name === 'search' && <><circle cx="11" cy="11" r="6.5" /><path d="M20 20l-4.2-4.2" /></>}
+  {name === 'arrow-right' && <><path d="M5 12h14" /><path d="M13 6l6 6-6 6" /></>}
+  {name === 'arrow-left' && <><path d="M19 12H5" /><path d="M11 18l-6-6 6-6" /></>}
+  {name === 'external' && <><path d="M14 4h6v6" /><path d="M20 4l-8.5 8.5" /><path d="M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5" /></>}
+  {name === 'spark' && <><path d="M12 3l1.9 5.6L19.5 10l-5.6 1.9L12 17.5l-1.9-5.6L4.5 10l5.6-1.4L12 3Z" /><path d="M18.5 16.5l.7 2 2 .7-2 .7-.7 2-.7-2-2-.7 2-.7.7-2Z" /></>}
+</svg>

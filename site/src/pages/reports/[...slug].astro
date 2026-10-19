@@ -1,0 +1,147 @@
+---
+import { getCollection, render } from 'astro:content';
+
+import Chart from '../../components/Chart.astro';
+import Icon from '../../components/Icon.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import {
+  assetUrl,
+  formatDateLong,
+  publishedReports,
+  readingTime,
+  reportUrl,
+  tagUrl,
+  withBase,
+  type Report,
+} from '../../lib/site';
+
+export async function getStaticPaths() {
+  const published = publishedReports(await getCollection('reports'));
+
+  return published.map((report, index) => ({
+    params: { slug: report.id },
+    props: {
+      report,
+      newer: (published[index - 1] ?? null) as Report | null,
+      older: (published[index + 1] ?? null) as Report | null,
+    },
+  }));
+}
+
+const { report, newer, older } = Astro.props;
+const { Content } = await render(report);
+const { title, date, summary, tags, hero, heroAlt, charts, sources } = report.data;
+
+const minutes = readingTime(report.body);
+---
+
+<BaseLayout title={title} description={summary} progress>
+  <article class="article wrap">
+    <header class="article__head">
+      <p class="article__back">
+        <a href={withBase('archive/')}>
+          <span class="article__back-icon"><Icon name="arrow-left" /></span> All reports
+        </a>
+      </p>
+
+      <div class="article__meta">
+        <span class="badge badge--solid">{formatDateLong(date)}</span>
+        {tags.map((tag) => <a class="badge" href={tagUrl(tag)}>{tag}</a>)}
+        <span class="article__reading">{minutes} min read</span>
+      </div>
+
+      <h1 class="article__title">{title}</h1>
+      <p class="article__lede">{summary}</p>
+    </header>
+
+    {
+      hero && (
+        <div class="article__hero">
+          <img src={assetUrl(hero)} alt={heroAlt ?? ''} loading="eager" decoding="async" />
+        </div>
+      )
+    }
+
+    <div class="article__body prose">
+      <Content />
+    </div>
+
+    {
+      charts.length > 0 && (
+        <div class="charts">
+          {charts.map((chart) => (
+            <Chart title={chart.title} type={chart.type} unit={chart.unit} data={chart.data} />
+          ))}
+        </div>
+      )
+    }
+
+    {
+      sources.length > 0 && (
+        <section class="sources">
+          <h2>Sources</h2>
+          <ol>
+            {sources.map((source, index) => (
+              <li>
+                <span class="sources__index">{String(index + 1).padStart(2, '0')}</span>
+                <a href={source.url} rel="noopener noreferrer" target="_blank">
+                  {source.label}
+                </a>
+              </li>
+            ))}
+          </ol>
+        </section>
+      )
+    }
+
+    {
+      (newer || older) && (
+        <nav class="pager" aria-label="Other reports">
+          {older && (
+            <a class="pager__link" href={reportUrl(older)}>
+              <span class="pager__label">← Older</span>
+              <span class="pager__title">{older.data.title}</span>
+            </a>
+          )}
+          {newer && (
+            <a class="pager__link pager__link--next" href={reportUrl(newer)}>
+              <span class="pager__label">Newer →</span>
+              <span class="pager__title">{newer.data.title}</span>
+            </a>
+          )}
+        </nav>
+      )
+    }
+  </article>
+</BaseLayout>
+
+<style>
+  .article__back {
+    font-size: 0.82rem;
+    margin-bottom: 1.1rem;
+  }
+
+  .article__back a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    text-decoration: none;
+    color: var(--muted);
+  }
+
+  .article__back a:hover {
+    color: var(--ink);
+  }
+
+  .article__back-icon {
+    width: 0.9rem;
+    height: 0.9rem;
+    display: inline-flex;
+  }
+
+  .article__reading {
+    font-size: 0.75rem;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+  }
+</style>

@@ -1,0 +1,42 @@
+---
+/**
+ * Decorative fallback art for reports that have no hero image.
+ *
+ * The shape of the landscape is derived from the report's date, so every entry
+ * gets its own card that is stable across builds without shipping an image for
+ * it. Same day, same picture, forever.
+ */
+interface Props {
+  seed: string;
+  /** Usually the day number, shown as a large serif mark. */
+  label?: string;
+}
+
+const { seed, label } = Astro.props;
+
+let hash = 0;
+for (const character of seed) {
+  hash = (hash * 31 + character.charCodeAt(0)) % 100_000;
+}
+
+const sunX = 96 + (hash % 90);
+const sunY = 66 + (hash % 40);
+const sunR = 26 + (hash % 22);
+const lift = (hash % 7) * 4;
+---
+
+<div class="artwork" aria-hidden="true">
+  <svg class="artwork__layers" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice">
+    <circle class="artwork__sun" cx={sunX} cy={sunY} r={sunR} />
+    <path
+      class="artwork__hill artwork__hill--back"
+      d={`M0,${182 + lift} C80,${142 + lift} 150,${198 + lift} 220,${172 + lift} C290,${148 + lift} 340,${182 + lift} 400,${162 + lift} L400,300 L0,300 Z`}
+    />
+    <path
+      class="artwork__hill artwork__hill--mid"
+      d={`M0,${226 + lift} C70,${200 + lift} 140,${252 + lift} 210,${226 + lift} C280,${200 + lift} 340,${236 + lift} 400,${216 + lift} L400,300 L0,300 Z`}
+    />
+  </svg>
+
+  {label && <span class="artwork__mark">{label}</span>}
+</div>

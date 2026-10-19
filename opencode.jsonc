@@ -1,0 +1,85 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+
+  // The daily run is unattended, so the default model is one of the free
+  // OpenCode models. Swap this for anything you have access to.
+  // The `daily` agent below may pick a variant (e.g. `#high`) on top of it.
+  "model": "opencode/minimax-m3.1-flash-free",
+
+  // Read alongside the auto-loaded AGENTS.md. INSTRUCTIONS.md is the file you
+  // edit to change what the agent actually works on each day.
+  "instructions": ["INSTRUCTIONS.md"],
+
+  // ---------------------------------------------------------------------------
+  // Permissions
+  //
+  // The nightly run uses `opencode run --auto`, which auto-approves everything
+  // that is not explicitly denied below. So this list is the real safety net:
+  // anything not listed here is permitted without prompting.
+  // ---------------------------------------------------------------------------
+  "permissions": [
+    // Credentials and secrets are off limits, read or write.
+    { "action": "read", "resource": "*.env", "effect": "deny" },
+    { "action": "read", "resource": "*.env.*", "effect": "deny" },
+    { "action": "read", "resource": "**/id_rsa*", "effect": "deny" },
+    { "action": "read", "resource": "**/id_ed25519*", "effect": "deny" },
+    { "action": "read", "resource": "**/.ssh/*", "effect": "deny" },
+    { "action": "read", "resource": "**/*credential*", "effect": "deny" },
+    { "action": "read", "resource": "**/*token*", "effect": "deny" },
+
+    // Privilege escalation and destructive shell commands.
+    { "action": "shell", "resource": "sudo *", "effect": "deny" },
+    { "action": "shell", "resource": "su *", "effect": "deny" },
+    { "action": "shell", "resource": "doas *", "effect": "deny" },
+    { "action": "shell", "resource": "rm -rf /*", "effect": "deny" },
+    { "action": "shell", "resource": "rm -rf ~*", "effect": "deny" },
+    { "action": "shell", "resource": "rm -rf $HOME*", "effect": "deny" },
+    { "action": "shell", "resource": "mkfs*", "effect": "deny" },
+    { "action": "shell", "resource": "dd if=*", "effect": "deny" },
+    { "action": "shell", "resource": "shutdown *", "effect": "deny" },
+    { "action": "shell", "resource": "reboot*", "effect": "deny" },
+    { "action": "shell", "resource": "chmod 777 *", "effect": "deny" },
+    { "action": "shell", "resource": "curl * | sh", "effect": "deny" },
+    { "action": "shell", "resource": "curl * | bash", "effect": "deny" },
+    { "action": "shell", "resource": "wget * | sh", "effect": "deny" },
+
+    // Git history is rewritten only by a human.
+    { "action": "shell", "resource": "git push*--force*", "effect": "deny" },
+    { "action": "shell", "resource": "git push*-f*", "effect": "deny" },
+    { "action": "shell", "resource": "git reset --hard*", "effect": "deny" },
+    { "action": "shell", "resource": "git clean -f*", "effect": "deny" },
+    { "action": "shell", "resource": "git filter-branch*", "effect": "deny" },
+    { "action": "shell", "resource": "git filter-repo*", "effect": "deny" },
+
+    // Keep the run inside the project. Publishing is done by scripts/publish.sh,
+    // not by the agent, so it never needs credentials or remote access.
+    { "action": "external_directory", "resource": "$HOME/.ssh/*", "effect": "deny" },
+    { "action": "external_directory", "resource": "$HOME/.config/*", "effect": "deny" },
+    { "action": "external_directory", "resource": "$HOME/.local/share/opencode/*", "effect": "deny" },
+    { "action": "external_directory", "resource": "$HOME/.aws/*", "effect": "deny" },
+    { "action": "external_directory", "resource": "$HOME/.gnupg/*", "effect": "deny" }
+  ],
+
+  "agents": {
+    // The agent the nightly run uses (`opencode run --agent daily`).
+    //
+    // Note: no `system` prompt is set on purpose. Setting one replaces
+    // OpenCode's entire base prompt for this agent, which degrades tool use.
+    // All behavioural rules live in AGENTS.md instead, which is appended to
+    // the base prompt rather than replacing it.
+    "daily": {
+      "description": "Unattended daily agent: researches, updates things, and writes the daily site report",
+      "mode": "primary",
+      "model": "opencode/minimax-m3.1-flash-free#high",
+      "steps": 200,
+      "color": "#ebdc8f",
+      "permissions": [
+        // Editing the published output by hand is always wrong: it is rebuilt
+        // from site/ on every run. The agent writes content, not HTML.
+        { "action": "edit", "resource": "docs/*", "effect": "deny" },
+        { "action": "edit", "resource": "docs/**", "effect": "deny" },
+        { "action": "read", "resource": "docs/*", "effect": "allow" }
+      ]
+    }
+  }
+}

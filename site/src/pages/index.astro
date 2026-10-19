@@ -1,0 +1,42 @@
+---
+import FilterToolbar from '../components/FilterToolbar.astro';
+import ReportCard from '../components/ReportCard.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { formatDateLong, publishedReports, SITE_TAGLINE } from '../lib/site';
+import { getCollection } from 'astro:content';
+
+const reports = publishedReports(await getCollection('reports'));
+const [latest, ...rest] = reports;
+
+const today = new Date().toISOString().slice(0, 10);
+---
+
+<BaseLayout>
+  <div class="wrap">
+    <section class="page-head">
+      <p class="eyebrow">{formatDateLong(today)}</p>
+      <h1>Daily notes</h1>
+      <p class="page-head__lede">
+        {SITE_TAGLINE} Every entry is written unattended, one per day, and published here.
+      </p>
+    </section>
+
+    {
+      reports.length === 0 ? (
+        <p class="empty">
+          No reports yet. The first run will appear here the morning after it happens.
+        </p>
+      ) : (
+        <>
+          <FilterToolbar reports={reports} />
+          <div class="grid">
+            <ReportCard report={latest!} feature delay={0} />
+            {rest.map((report, index) => (
+              <ReportCard report={report} delay={60 + index * 45} />
+            ))}
+          </div>
+        </>
+      )
+    }
+  </div>
+</BaseLayout>

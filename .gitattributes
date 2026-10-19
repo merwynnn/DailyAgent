@@ -1,0 +1,24 @@
+# Keep shell scripts LF and Windows entry points CRLF, whatever the checkout
+# settings on the machine doing the cloning.
+* text=auto
+
+*.sh    text eol=lf
+*.md    text eol=lf
+*.json  text eol=lf
+*.jsonc text eol=lf
+*.ts    text eol=lf
+*.astro text eol=lf
+*.css   text eol=lf
+*.mjs   text eol=lf
+
+*.cmd   text eol=crlf
+*.bat   text eol=crlf
+*.vbs   text eol=crlf
+*.ps1   text eol=crlf
+
+*.woff2 binary
+*.png   binary
+*.jpg   binary
+*.jpeg  binary
+*.gif   binary
+*.webp  binary

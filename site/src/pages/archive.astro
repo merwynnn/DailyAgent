@@ -1,0 +1,83 @@
+---
+import FilterToolbar from '../components/FilterToolbar.astro';
+import ReportCard from '../components/ReportCard.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { formatDate, publishedReports, type Report } from '../lib/site';
+import { getCollection } from 'astro:content';
+
+const reports = publishedReports(await getCollection('reports'));
+
+// Group newest-first reports into months, preserving that order.
+const groups: { key: string; label: string; reports: Report[] }[] = [];
+
+for (const report of reports) {
+  const key = report.data.date.slice(0, 7);
+  const last = groups.at(-1);
+
+  if (last && last.key === key) {
+    last.reports.push(report);
+  } else {
+    groups.push({
+      key,
+      label: new Intl.DateTimeFormat('en-GB', { month: 'long', year: 'numeric', timeZone: 'UTC' }).format(
+        new Date(`${key}-01T00:00:00Z`),
+      ),
+      reports: [report],
+    });
+  }
+}
+---
+
+<BaseLayout
+  title="Archive"
+  description="Every daily report, newest first, grouped by month."
+>
+  <div class="wrap">
+    <section class="page-head">
+      <p class="eyebrow">{reports.length} reports</p>
+      <h1>Archive</h1>
+      <p class="page-head__lede">
+        Everything the DailyAgent has published, newest first. Filter by tag or search across titles
+        and summaries.
+      </p>
+    </section>
+
+    {
+      reports.length === 0 ? (
+        <p class="empty">Nothing published yet.</p>
+      ) : (
+        <>
+          <FilterToolbar reports={reports} />
+
+          {groups.map((group) => (
+            <section class="archive-group" data-group>
+              <div class="section-head">
+                <h2>{group.label}</h2>
+                <span class="archive-group__count">
+                  {group.reports.length} {group.reports.length === 1 ? 'entry' : 'entries'}
+                </span>
+              </div>
+              <div class="grid">
+                {group.reports.map((report, index) => (
+                  <ReportCard report={report} delay={index * 45} />
+                ))}
+              </div>
+            </section>
+          ))}
+        </>
+      )
+    }
+  </div>
+</BaseLayout>
+
+<style>
+  .archive-group + .archive-group {
+    margin-top: clamp(2.5rem, 6vw, 4rem);
+  }
+
+  .archive-group__count {
+    font-size: 0.78rem;
+    color: var(--muted);
+    font-variant-numeric: tabular-nums;
+  }
+</style>

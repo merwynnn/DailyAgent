@@ -1,0 +1,17 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { withBase } from '../lib/site';
+---
+
+<BaseLayout title="Not found" description="That page does not exist.">
+  <div class="wrap page-head">
+    <p class="eyebrow">404</p>
+    <h1>Nothing here</h1>
+    <p class="page-head__lede">
+      That page has either not been written yet or never existed. The archive is the place to look.
+    </p>
+    <p style="margin-top:1.75rem">
+      <a class="button button--inline" href={withBase()}>Back to the latest report</a>
+    </p>
+  </div>
+</BaseLayout>

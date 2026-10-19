@@ -1,0 +1,23 @@
+# ---------------------------------------------------------------------------
+# Local-only files. Everything not listed here is committed, including the
+# built website in docs/ (that is what GitHub Pages serves).
+# ---------------------------------------------------------------------------
+
+# Astro dependencies and build scratch space
+site/node_modules/
+site/.astro/
+site/dist/
+
+# Runtime state and logs: machine-local, never published
+state/
+logs/
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+*~
+
+# Local scratch output
+*.tmp

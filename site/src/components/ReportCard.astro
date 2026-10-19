@@ -1,0 +1,80 @@
+---
+import Icon from '../components/Icon.astro';
+import ReportArtwork from '../components/ReportArtwork.astro';
+import {
+  assetUrl,
+  formatDateLong,
+  formatDateShort,
+  parseDate,
+  type Report,
+  tagUrl,
+  reportUrl,
+} from '../lib/site';
+
+interface Props {
+  report: Report;
+  feature?: boolean;
+  /** Stagger for the reveal animation. */
+  delay?: number;
+}
+
+const { report, feature = false, delay = 0 } = Astro.props;
+const { title, date, summary, tags, hero, heroAlt } = report.data;
+
+const day = String(parseDate(date).getUTCDate()).padStart(2, '0');
+const searchText = [title, summary, date, ...tags].join(' ').toLowerCase();
+---
+
+<article
+  class:list={['card', feature && 'card--feature']}
+  data-reveal
+  data-report-card
+  data-tags={tags.join(' ')}
+  data-search={searchText}
+  style={`--reveal-delay:${delay}ms`}
+>
+  <div class="card__frame">
+    <div class="card__media">
+      {
+        hero ? (
+          <img
+            src={assetUrl(hero)}
+            alt={heroAlt ?? ''}
+            loading={feature ? 'eager' : 'lazy'}
+            decoding="async"
+          />
+        ) : (
+          <ReportArtwork seed={report.id} label={day} />
+        )
+      }
+
+      <div class="card__badges">
+        <span class="badge badge--solid">{formatDateShort(date)}</span>
+        {
+          tags.slice(0, 2).map((tag) => (
+            <a class="badge" href={tagUrl(tag)}>
+              {tag}
+            </a>
+          ))
+        }
+      </div>
+
+      <div class="card__cta">
+        <a class="button" href={reportUrl(report)}>
+          Read the report
+          <span style="width:0.95rem;height:0.95rem;display:inline-flex">
+            <Icon name="arrow-right" />
+          </span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="card__body">
+    <p class="card__date">{formatDateLong(date)}</p>
+    <h3 class="card__title">
+      <a href={reportUrl(report)}>{title}</a>
+    </h3>
+    <p class="card__summary">{summary}</p>
+  </div>
+</article>

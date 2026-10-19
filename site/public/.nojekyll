@@ -1,0 +1,3 @@
+# GitHub Pages runs Jekyll by default, which strips directories that start with
+# an underscore — including Astro's `_astro/` asset folder. This file turns that
+# off. It lives in `public/` so every build copies it into `docs/`.

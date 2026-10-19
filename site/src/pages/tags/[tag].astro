@@ -1,0 +1,68 @@
+---
+import { getCollection } from 'astro:content';
+
+import ReportCard from '../../components/ReportCard.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { publishedReports, tagSlug, withBase } from '../../lib/site';
+
+export async function getStaticPaths() {
+  const reports = publishedReports(await getCollection('reports'));
+
+  const bySlug = new Map<string, { tag: string; reports: typeof reports }>();
+
+  for (const report of reports) {
+    for (const tag of report.data.tags) {
+      const slug = tagSlug(tag);
+      const existing = bySlug.get(slug);
+
+      if (existing) {
+        existing.reports.push(report);
+      } else {
+        bySlug.set(slug, { tag, reports: [report] });
+      }
+    }
+  }
+
+  return [...bySlug.entries()].map(([slug, group]) => ({
+    params: { tag: slug },
+    props: { tag: group.tag, reports: group.reports },
+  }));
+}
+
+const { tag, reports } = Astro.props;
+---
+
+<BaseLayout
+  title={`Tagged “${tag}”`}
+  description={`Every daily report tagged ${tag}.`}
+>
+  <div class="wrap">
+    <section class="page-head">
+      <p class="eyebrow">
+        <a href={withBase('archive/')}>Archive</a> · tag
+      </p>
+      <h1>{tag}</h1>
+      <p class="page-head__lede">
+        {reports.length} {reports.length === 1 ? 'report' : 'reports'} tagged <strong>{tag}</strong>.
+      </p>
+    </section>
+
+    <div class="grid">
+      {
+        reports.map((report, index) => (
+          <ReportCard report={report} delay={index * 45} />
+        ))
+      }
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .page-head .eyebrow a {
+    text-decoration: none;
+  }
+
+  .page-head .eyebrow a:hover {
+    text-decoration: underline;
+  }
+</style>

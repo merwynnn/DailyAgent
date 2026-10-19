@@ -1,0 +1,16 @@
+---
+import { SITE_TITLE } from '../lib/site';
+
+const repository = 'https://github.com/merwynnn/DailyAgent';
+const year = new Date().getUTCFullYear();
+---
+
+<footer class="footer">
+  <div class="wrap footer__inner">
+    <p>
+      {SITE_TITLE} · built from <a href={`${repository}/tree/main/site`}>Astro</a> and published to
+      GitHub Pages.
+    </p>
+    <p>© {year}</p>
+  </div>
+</footer>

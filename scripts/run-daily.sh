@@ -87,7 +87,7 @@ log() {
 acquire_lock() {
   exec 9>"$LOCK_FILE"
   if ! flock -n 9; then
-    echo "run-daily: another run is in progress, exiting." >&2
+    log "Another run is already in progress; exiting."
     exit 2
   fi
 }
@@ -97,7 +97,7 @@ already_ran_today() {
 }
 
 if [[ "$FORCE" -eq 0 ]] && already_ran_today; then
-  echo "run-daily: already ran today ($RUN_DATE). Use --force to run again."
+  log "Already ran today ($RUN_DATE); nothing to do. Use --force to run again."
   exit 0
 fi
 
@@ -118,9 +118,8 @@ wait_until_allowed() {
       return 0
     fi
 
-    if (( waited % 600 == 0 )); then
-      printf 'run-daily: waiting until %02d:00 before starting (now %02d:%02d).\n' \
-        "$START_HOUR" "$hour" "$minute"
+    if (( waited == 0 )); then
+      log "Waiting until $(printf '%02d:00' "$START_HOUR") before starting (now $(printf '%02d:%02d' "$hour" "$minute"))."
     fi
 
     sleep 60
@@ -137,7 +136,7 @@ if [[ "$FORCE" -eq 0 ]]; then
       exit 0
     fi
   elif (( 10#$(date +%H) < START_HOUR )); then
-    echo "run-daily: it is before $(printf '%02d:00' "$START_HOUR"); use --force to run anyway."
+    log "It is before $(printf '%02d:00' "$START_HOUR"); not starting. Use --force to run anyway."
     exit 0
   fi
 fi

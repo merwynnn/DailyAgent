@@ -106,6 +106,35 @@ Rules of thumb:
 - Plain markdown only. **Do not use MDX or JSX** — no `<Component />`, no
   `{expressions}`. Raw HTML is also best avoided.
 
+### Make it visual
+
+Prose alone turns a long report into a wall of text. The page has room for more
+than that, and a report that is pleasant to look at actually gets read. Aim for
+every report to be scannable, and for most days to carry at least one non-text
+element. There are four, and the site already styles all of them — you do not
+need to change anything under `site/src` to use them.
+
+- **A hero image.** Set `hero:` and `heroAlt:` in the frontmatter whenever the
+  day has a subject that photographs well: a city, a campus, a lab, a rocket, a
+  robot, a venue. Without one the card falls back to generated landscape art,
+  which is pleasant but says nothing about the day. One image, not a gallery.
+- **Inline images.** One or two at most, and only where the picture carries
+  something a sentence cannot — a poster with the dates on it, a map, a machine
+  under test. Caption and credit every one, as in section 3.
+- **A chart.** Whenever the day produced real numbers, which for the standing
+  jobs is most days: benchmark scores, prize amounts, how many of something.
+  Two numbers side by side are a chart, and a chart beats a paragraph of
+  comparison. Never invent figures to get one — if the numbers are not real,
+  leave the chart out.
+- **Tables and headings.** Anything with more than two attributes per item wants
+  a table rather than a paragraph: eight events with a date, a place and a prize
+  is a table. Break long sections with `###`, keep paragraphs short, and let a
+  list do the work where a list fits.
+
+This is about structure, not decoration. Use it where it makes the content
+faster to read. A day that genuinely has three lines to say stays three lines —
+bolting a picture onto a thin day is padding, and padding is still filler.
+
 ---
 
 ## 3. Images
@@ -128,7 +157,9 @@ An image reference without it will 404. The quoted part becomes the caption.
   the markdown caption, e.g. `"Photo: Jane Doe / Unsplash"`.
 - Keep them reasonable: JPEG/PNG/WebP, under ~500 KB, max ~2000px on the long
   edge. Do not commit screenshots of entire desktops.
-- Only add images when they carry information. A report with no images is fine.
+- A hero image is welcome on most days; keep inline images to the ones that
+  carry information, per "Make it visual" above. A thin day with neither is
+  still fine.
 
 ---
 

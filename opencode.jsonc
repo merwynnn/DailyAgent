@@ -8,7 +8,7 @@
   // Free models get retired with little warning. If a nightly run starts failing
   // on the model, check that the ID below still resolves (`opencode models`)
   // before debugging anything else. Override per run with DAILY_MODEL.
-  "model": "opencode/glm-5.3-flash-free",
+  "model": "opencode/nemotron-3.5-super-vl-free",
 
   // Read alongside the auto-loaded AGENTS.md. INSTRUCTIONS.md is the file you
   // edit to change what the agent actually works on each day.
@@ -74,7 +74,7 @@
     "daily": {
       "description": "Unattended daily agent: researches, updates things, and writes the daily site report",
       "mode": "primary",
-      "model": "opencode/glm-5.3-flash-free#high",
+      "model": "opencode/nemotron-3.5-super-vl-free#high",
       "steps": 200,
       "color": "#ebdc8f",
       "permissions": [

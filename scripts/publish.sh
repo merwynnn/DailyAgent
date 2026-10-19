@@ -72,16 +72,26 @@ if git diff --cached --quiet; then
   exit 0
 fi
 
-REPORT="$PROJECT_DIR/site/src/content/reports/$DATE.md"
+# Today's report gives the nicest commit message, but only when the report is
+# actually part of this commit. A change to the brief or to the scripts must not
+# be labelled with a report title it had nothing to do with.
+REPORT_REL="site/src/content/reports/$DATE.md"
+REPORT="$PROJECT_DIR/$REPORT_REL"
+CHANGED="$(git diff --cached --name-only | awk 'NR<=3 { printf "%s%s", sep, $0; sep=", " }')"
+
 TITLE=""
-if [[ -f "$REPORT" ]]; then
-  TITLE="$(sed -n 's/^title:[[:space:]]*//p' "$REPORT" | head -1 | sed -e 's/^"//' -e 's/"$//' -e "s/^'//" -e "s/'$//")"
+if [[ -f "$REPORT" ]] && ! git diff --cached --quiet -- "$REPORT_REL"; then
+  TITLE_RAW="$(awk '/^title:/ { print; exit }' "$REPORT")"
+  TITLE="${TITLE_RAW#title:}"
+  TITLE="${TITLE#"${TITLE%%[![:space:]]*}"}"
+  TITLE="${TITLE#\"}"; TITLE="${TITLE%\"}"
+  TITLE="${TITLE#\'}"; TITLE="${TITLE%\'}"
 fi
 
 if [[ -n "$TITLE" ]]; then
   MESSAGE="daily: $DATE — $TITLE"
 else
-  MESSAGE="daily: $DATE"
+  MESSAGE="update: $DATE — ${CHANGED:-working tree}"
 fi
 
 step "Committing: $MESSAGE"

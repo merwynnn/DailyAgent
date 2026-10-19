@@ -4,7 +4,11 @@
   // The daily run is unattended, so the default model is one of the free
   // OpenCode models. Swap this for anything you have access to.
   // The `daily` agent below may pick a variant (e.g. `#high`) on top of it.
-  "model": "opencode/minimax-m3.1-flash-free",
+  //
+  // Free models get retired with little warning. If a nightly run starts failing
+  // on the model, check that the ID below still resolves (`opencode models`)
+  // before debugging anything else. Override per run with DAILY_MODEL.
+  "model": "opencode/glm-5.3-flash-free",
 
   // Read alongside the auto-loaded AGENTS.md. INSTRUCTIONS.md is the file you
   // edit to change what the agent actually works on each day.
@@ -70,7 +74,7 @@
     "daily": {
       "description": "Unattended daily agent: researches, updates things, and writes the daily site report",
       "mode": "primary",
-      "model": "opencode/minimax-m3.1-flash-free#high",
+      "model": "opencode/glm-5.3-flash-free#high",
       "steps": 200,
       "color": "#ebdc8f",
       "permissions": [

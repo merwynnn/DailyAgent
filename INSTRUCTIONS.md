@@ -107,6 +107,50 @@ consequences — with a line of analysis rather than a headline.
 Anything else I ask for on a given day goes here as a one-off, and you can
 delete it from this file afterwards.
 
+### 6. The Still open tracker
+
+Everything I can still enter lives on a dashboard list backed by
+`site/src/data/still-open.json`. GitHub Pages can't write or save server-side
+data, so the list is simply a file in this repo: refresh it every run, carry
+items forward, and drop them the day their deadline passes — no zombies. To
+remove something yourself, write it here, e.g. "tracker: remove Micro Jam
+068": that counts as done or declined, and the item must not come back.
+
+### 7. One small site improvement per run
+
+Every run, try to add one small new feature to the website — a new
+integration, a small widget, a new page or tab, some navigation or dashboard
+polish. Conditions: it must stay small enough not to crowd the site, it must
+not damage or change anything already published, all existing reports keep
+working as before, and `npm --prefix site run build` must still pass. Name
+the improvement explicitly in the report under a `## Site changes` heading.
+Skipping a day is fine — say so honestly — but padding the section with a
+fake or overreaching change is not.
+
+### 8. The weekly Outlook (Outlooks tab)
+
+Once per calendar week — the first run that finds no entry for the current
+week yet — add a piece to the Outlooks space in `site/src/content/outlooks/`:
+a reflection on where AI is taking the world in the short, mid and long term,
+what it means for a software engineer, and the genuinely different futures
+humanity could get. This is the one place where I want you to think on the
+page, so make it your own thinking, not a news recap. Each entry opens by
+revisiting the previous one: what stands, what you revise or drop, and why.
+Speculation is welcome but must be labelled as scenario, not fact. The
+detailed rules live in AGENTS.md section 6; mention the new entry in that
+day's report under `## Site changes`.
+
+### 9. A project idea in the daily brief
+
+Each day, close the brief with a short `## Project ideas` section: one to
+three original project ideas — technical, games, tools, anything one student
+can actually build — each in two or three lines: what it is, why now (tied to
+something that surfaced in the log or the news), and the smallest first
+step. Only include ideas that would genuinely be worth starting; an idea
+from a previous day returns only if something new sharpened it. Skip the
+section outright when nothing good surfaced — filler ideas are worse than
+none.
+
 ---
 
 ## How long this should be
@@ -119,15 +163,18 @@ report that I actually read is worth more than a thorough one I skim.
 ## How to write it up
 
 One report, four sections, in the order above. Use the section headings
-`Events`, `Game jams`, `AI`, `Geopolitics`, and leave out a section entirely on
-a day when it has nothing worth saying. A short honest section beats a padded
-one.
+`Events`, `Game jams`, `AI`, `Geopolitics`, then `## Project ideas` (job 9),
+then `## Site changes` (job 7), and leave out a section entirely on a day
+when it has nothing worth saying. A short honest section beats a padded one.
+When the day built a site feature or wrote the weekly Outlook (job 8), name
+it under `## Site changes`, placed before `## Open threads`.
 
-**Do not repeat yourself day after day.** I read these in sequence. Anything you
-already covered that is still open gets one line under a "Still open" note —
-name, deadline, link — not a fresh description. Only describe something in full
-the first time you find it, or when something about it changed. This is the main
-way the report stays short.
+**Do not repeat yourself day after day.** I read these in sequence. Anything I
+can still enter goes into the Still open tracker (job 6), not into the report —
+the report only needs a short line when something on the list is new, changed
+or has just expired. Only describe something in full the first time you find
+it, or when something about it changed. This is the main way the report stays
+short, and the tracker is now where the carried-forward list lives.
 
 **If a deadline is close** — within about two weeks — say so at the top of the
 report, in one line, before anything else.

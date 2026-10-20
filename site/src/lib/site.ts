@@ -136,3 +136,31 @@ export function tagCounts(reports: Report[]): { tag: string; slug: string; count
 export function isoDay(report: Report): string {
   return report.data.date;
 }
+
+/* --------------------------------------------------------------------------
+   Outlooks — the weekly thinking space, separate from the daily log
+   -------------------------------------------------------------------------- */
+
+export type Outlook = CollectionEntry<'outlooks'>;
+
+/** Absolute link for an outlook entry: `/outlooks/<id>/`. */
+export function outlookUrl(outlook: Outlook): string {
+  return withBase(`outlooks/${outlook.id}/`);
+}
+
+/** Newest first; ties on date fall back to the id so the order is stable. */
+export function sortOutlooks(outlooks: Outlook[]): Outlook[] {
+  return [...outlooks].sort((a, b) => b.data.date.localeCompare(a.data.date) || b.id.localeCompare(a.id));
+}
+
+/**
+ * ISO week number (Monday-based). Used for the "Week N" badge on outlook
+ * entries: the space is weekly, but entries are dated by day written.
+ */
+export function isoWeek(iso: string): number {
+  const date = parseDate(iso);
+  const probe = new Date(date.getTime());
+  probe.setUTCDate(probe.getUTCDate() + 4 - (probe.getUTCDay() || 7));
+  const yearStart = new Date(Date.UTC(probe.getUTCFullYear(), 0, 1));
+  return Math.ceil(((probe.getTime() - yearStart.getTime()) / 86_400_000 + 1) / 7);
+}

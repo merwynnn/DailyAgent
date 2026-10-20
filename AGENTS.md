@@ -11,10 +11,15 @@ human's brief and tells you what to work on today.
 
 ## 1. What a run looks like
 
-1. Read `INSTRUCTIONS.md` and work out what today's jobs are.
+1. Read `INSTRUCTIONS.md` and work out what today's jobs are (including any
+   "tracker: remove …" lines — see section 5).
 2. Do the work — research, check things, update files, whatever is asked.
-3. Write today's report to `site/src/content/reports/YYYY-MM-DD.md`.
-4. Stop. A script builds the site, commits, and publishes. **You do not run
+3. If the week does not have an Outlooks entry yet (section 6), write this
+   week's piece.
+4. Refresh the Still open tracker (section 5): carry open items forward, add
+   what today found, drop anything past its deadline.
+5. Write today's report to `site/src/content/reports/YYYY-MM-DD.md`.
+6. Stop. A script builds the site, commits, and publishes. **You do not run
    git, and you do not build or publish.**
 
 `YYYY-MM-DD` is today's local date. Get it from `date +%F`.
@@ -93,7 +98,10 @@ Prose, lists, tables, code — whatever fits.
 ```
 
 If `INSTRUCTIONS.md` names its own sections, those win — the shape above is only
-a default for days with nothing specific to report.
+a default for days with nothing specific to report. Standing brief sections the
+human adds (this week's Project ideas slot, and any later ones) live in
+`INSTRUCTIONS.md`; keep them working without breaking the shape older reports
+already satisfy.
 
 Rules of thumb:
 
@@ -177,12 +185,74 @@ day produced no quantitative data, omit `charts` entirely.
 
 ---
 
-## 5. Improving the site itself
+## 5. The Still open tracker
+
+The dashboard carries a living to-do list of things still worth entering,
+rendered by `StillOpen.astro`. The list's only source of truth is
+`site/src/data/still-open.json`; refresh it every run.
+
+### Rules
+
+- One line per item: **name, deadline, link.** The optional `note` carries the
+  prize, entry fee or AI-rule detail and shows as the row's tooltip.
+- Items are carried forward day to day until their deadline passes or today's
+  work acts on them. When the deadline passes, **delete the item from the
+  file** — no zombie entries. The build also filters expired rows defensively,
+  but pruning the file is your job, not the build's.
+- Only items with a real calendar date go in. Never invent a deadline: if the
+  true date is unknown (registration "opens in December"), put a clearly
+  marked check-back marker in `deadline` and say so in `note`.
+- When a new event or jam first appears in a report, add it to the tracker the
+  same day, with `added` set to today.
+- Keep an item's `id` for life; update `url`, `deadline` and `note` as facts
+  change. Order is decided at render time, soonest deadline first.
+- The human may remove items by naming them in `INSTRUCTIONS.md`
+  ("tracker: remove X") or by editing the JSON directly. Treat an explicit
+  removal as final — done or declined — and never re-add it.
+
+GitHub Pages cannot write or save anything server-side. The tracker works
+because it is a plain file in this repository, updated by you and published by
+the daily build, exactly like the reports are.
+
+## 6. The Outlooks space (weekly)
+
+Outlooks are the second, slower space, reachable as "Outlooks" in the
+masthead next to the daily log: one thinking piece per calendar week in
+`site/src/content/outlooks/`. The daily log is its evidence; its question is
+what the evidence implies — AI and the future of work, engineering, and
+humanity's plausible paths, from next year out to 2050.
+
+### Rules
+
+- The file is `YYYY-MM-DD.md`, the day it was written; **at most one entry
+  per ISO week** (Monday-based). The first run of the week that finds no
+  entry for the current week writes it; on skipped weeks, one honest line in
+  that day's report.
+- Each entry **opens by revisiting the previous one** — name it in the
+  `revises` frontmatter list, then say which of your earlier points stand,
+  which are revised or dropped, and why. That iteration thread is the whole
+  reason the space exists, so it comes before anything new.
+- Speculation is the point, but never disguised as news: write scenarios,
+  weightings and open questions, and label the guesses. Quantitative claims
+  belong to the daily log, where they carry sources; outlook entries refer
+  to the log by date instead of restating vendor numbers as fact.
+- Old outlook entries are history, like reports: never rewrite, re-date or
+  delete them; the iteration happens in the new entry, not in the old one.
+- Same formatting law as reports: plain markdown, no `<h1>`, no MDX or JSX,
+  no raw HTML.
+- Do not hard-code internal links in the body — `/DailyAgent/…` breaks when
+  the site is later self-hosted. Refer to reports and entries by date.
+
+## 7. Improving the site itself
 
 The site is an Astro project in `site/`. You may and should extend it when it
 earns its keep:
 
-- **Content** (`site/src/content/reports/`) — everyday work.
+- **Content** (`site/src/content/reports/`, `site/src/content/outlooks/`) —
+  everyday work and the weekly outlooks (sections 5–6).
+- **Data** (`site/src/data/`) — machine-maintained lists the site renders, e.g.
+  `still-open.json` (section 5). You own it: update the file, don't rework the
+  component to special-case a row.
 - **Components / pages / styles** (`site/src/components`, `site/src/pages`,
   `site/src/styles`) — only when a report genuinely needs a new kind of block.
   Keep changes small, matching the existing style, and never break an existing
@@ -202,10 +272,16 @@ finish — a broken build means the day's work never gets published. Never
 
 ---
 
-## 6. Constraints
+## 8. Constraints
 
 - Work only inside this repository. Do not touch anything in `$HOME`, `.env`
   files, credentials, or other projects.
+- **Never break the past.** Every change you make — including any new feature
+  requested from now on — must leave all previously published reports, their
+  pages, tags and images working exactly as before. The gate is
+  `npm --prefix site run build` passing after any change under `site/`, with
+  every old report intact; if a change would break an old report, reshape it
+  or leave it out.
 - Do not run `git` commands and do not push. `scripts/publish.sh` owns that.
 - Do not run `npm install` — dependencies are already installed. If you truly
   need a new package, write a report note instead and leave the decision to a
@@ -215,7 +291,7 @@ finish — a broken build means the day's work never gets published. Never
   or images.
 - Long runs are fine. Prefer finishing the job over finishing quickly.
 
-## 7. This is one long session
+## 9. This is one long session
 
 Every daily run continues the **same** OpenCode session, so you can see what
 previous days did. Use that: do not repeat work that is already done, follow up
@@ -223,5 +299,7 @@ on "open threads" from earlier reports, and keep continuity of tone.
 
 Context is compacted as it fills, so do not rely on remembering something from
 weeks ago — if it matters, re-read it. The on-disk truth is:
-`site/src/content/reports/` (what has been published) and `INSTRUCTIONS.md`
-(what is wanted).
+`site/src/content/reports/` (what has been published),
+`site/src/data/still-open.json` (what can still be entered),
+`site/src/content/outlooks/` (the weekly thread of thought) and
+`INSTRUCTIONS.md` (what is wanted).

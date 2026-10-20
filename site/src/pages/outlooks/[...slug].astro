@@ -1,0 +1,139 @@
+---
+import { getCollection, render } from 'astro:content';
+
+import Icon from '../../components/Icon.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { formatDateLong, isoWeek, outlookUrl, sortOutlooks, withBase, type Outlook } from '../../lib/site';
+
+export async function getStaticPaths() {
+  const outlooks = sortOutlooks(await getCollection('outlooks'));
+
+  return outlooks.map((outlook, index) => ({
+    params: { slug: outlook.id },
+    props: {
+      outlook,
+      newer: (outlooks[index - 1] ?? null) as Outlook | null,
+      older: (outlooks[index + 1] ?? null) as Outlook | null,
+      /** The entries this one explicitly revisits, resolved to links. */
+      revisited: outlook.data.revises
+        .map((id) => outlooks.find((entry) => entry.id === id))
+        .filter((entry): entry is Outlook => Boolean(entry))
+        .map((entry) => ({ date: entry.data.date, url: outlookUrl(entry) })),
+    },
+  }));
+}
+
+const { outlook, newer, older, revisited } = Astro.props;
+const { Content } = await render(outlook);
+const { title, date, summary } = outlook.data;
+const week = isoWeek(date);
+---
+
+<BaseLayout title={title} description={summary}>
+  <article class="article wrap">
+    <header class="article__head">
+      <p class="article__back">
+        <a href={withBase('outlooks/')}>
+          <span class="article__back-icon"><Icon name="arrow-left" /></span> All outlooks
+        </a>
+      </p>
+
+      <div class="article__meta">
+        <span class="badge badge--solid">{formatDateLong(date)}</span>
+        <span class="badge">Week {week}</span>
+      </div>
+
+      <h1 class="article__title">{title}</h1>
+      <p class="article__lede">{summary}</p>
+    </header>
+
+    <div class="article__body prose">
+      <Content />
+    </div>
+
+    {
+      revisited.length > 0 && (
+        <aside class="outlook-revises">
+          <p class="outlook-revises__label">Revisits</p>
+          <ul class="outlook-revises__list">
+            {revisited.map((entry) => (
+              <li>
+                <a href={entry.url}>Entry of {formatDateLong(entry.date)}</a>
+              </li>
+            ))}
+          </ul>
+        </aside>
+      )
+    }
+
+    {
+      (newer || older) && (
+        <nav class="pager" aria-label="Other outlooks">
+          {older && (
+            <a class="pager__link" href={outlookUrl(older)}>
+              <span class="pager__label">← Older</span>
+              <span class="pager__title">{older.data.title}</span>
+            </a>
+          )}
+          {newer && (
+            <a class="pager__link pager__link--next" href={outlookUrl(newer)}>
+              <span class="pager__label">Newer →</span>
+              <span class="pager__title">{newer.data.title}</span>
+            </a>
+          )}
+        </nav>
+      )
+    }
+  </article>
+</BaseLayout>
+
+<style>
+  .article__back {
+    font-size: 0.82rem;
+    margin-bottom: 1.1rem;
+  }
+
+  .article__back a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    text-decoration: none;
+    color: var(--muted);
+  }
+
+  .article__back a:hover {
+    color: var(--ink);
+  }
+
+  .article__back-icon {
+    width: 0.9rem;
+    height: 0.9rem;
+    display: inline-flex;
+  }
+
+  .outlook-revises {
+    margin-top: 2.5rem;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: var(--surface-2);
+    padding: 0.9rem 1.1rem;
+  }
+
+  .outlook-revises__label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .outlook-revises__list {
+    list-style: none;
+    margin: 0.4rem 0 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem 1.2rem;
+    font-size: 0.85rem;
+  }
+</style>

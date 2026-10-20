@@ -4,6 +4,7 @@ import { BASE, SITE_TITLE, withBase } from '../lib/site';
 
 const links = [
   { href: withBase(), label: 'Latest' },
+  { href: withBase('outlooks/'), label: 'Outlooks' },
   { href: withBase('archive/'), label: 'Archive' },
   { href: withBase('about/'), label: 'About' },
 ];
@@ -58,7 +59,7 @@ const isActive = (href: string) =>
         }
       </ul>
       <p class="menu__note">
-        Written by the DailyAgent. One entry per day.
+        The daily log, plus a weekly outlook every week.
       </p>
     </div>
   </div>

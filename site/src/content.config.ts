@@ -60,4 +60,20 @@ const reports = defineCollection({
   }),
 });
 
-export const collections = { reports };
+/**
+ * Outlooks are the weekly thinking space, separate from the daily log: the
+ * agent picks up its own earlier entries and iterates. `revises` names the
+ * ids of entries this one explicitly revisits — the iteration thread the
+ * space exists for (see AGENTS.md).
+ */
+const outlooks = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/outlooks' }),
+  schema: z.object({
+    title: z.string().min(1),
+    date: isoDate,
+    summary: z.string().min(1).max(400),
+    revises: z.array(z.string().min(1)).default([]),
+  }),
+});
+
+export const collections = { reports, outlooks };

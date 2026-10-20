@@ -1,9 +1,11 @@
 ---
 import FilterToolbar from '../components/FilterToolbar.astro';
 import ReportCard from '../components/ReportCard.astro';
+import StillOpen from '../components/StillOpen.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { formatDateLong, publishedReports, SITE_TAGLINE } from '../lib/site';
 import { getCollection } from 'astro:content';
+import stillOpenData from '../data/still-open.json';
 
 const reports = publishedReports(await getCollection('reports'));
 const [latest, ...rest] = reports;
@@ -28,6 +30,7 @@ const today = new Date().toISOString().slice(0, 10);
         </p>
       ) : (
         <>
+          <StillOpen items={stillOpenData.items} today={today} />
           <FilterToolbar reports={reports} />
           <div class="grid">
             <ReportCard report={latest!} feature delay={0} />

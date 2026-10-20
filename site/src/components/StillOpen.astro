@@ -1,0 +1,214 @@
+---
+import { parseDate } from '../lib/site';
+
+/**
+ * One row of the "Still open" tracker. The list lives in
+ * `src/data/still-open.json`; the agent carries it forward and prunes
+ * past-deadline items each daily run.
+ */
+export interface TrackedItem {
+  id: string;
+  name: string;
+  /** What the row is, shown as a tiny tag (`event` or `jam`). */
+  kind: string;
+  url: string;
+  /** Last day the item is still enterable, `YYYY-MM-DD`. */
+  deadline: string;
+  /** Optional one-liner shown as the row's tooltip. */
+  note?: string;
+  /** Day the item entered the tracker, `YYYY-MM-DD`. */
+  added?: string;
+}
+
+interface Props {
+  items: TrackedItem[];
+  /** Today's ISO date at build time, `YYYY-MM-DD`. */
+  today: string;
+}
+
+const { items, today } = Astro.props;
+
+// All dates are plain calendar labels, parsed in UTC like everywhere else.
+const now = parseDate(today).getTime();
+const daysTo = (iso: string) => Math.round((parseDate(iso).getTime() - now) / 86_400_000);
+
+const MONTHS_SHORT = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+/** `2026-10-31` -> `31 Oct`, with the year shown once it differs from today's. */
+const shortDate = (iso: string) => {
+  const date = parseDate(iso);
+  const month = `${date.getUTCDate()} ${MONTHS_SHORT[date.getUTCMonth()]}`;
+  return date.getUTCFullYear() === parseDate(today).getUTCFullYear() ? month : `${month} ${date.getUTCFullYear()}`;
+};
+
+const whenLabel = (days: number) => {
+  if (days === 0) return 'today';
+  if (days === 1) return 'tomorrow';
+  return `in ${days}d`;
+};
+
+/** Anything past its deadline is gone already — pruning the file is the agent's
+ * job, this is the defensive half so a stale file can never show zombies.
+ */
+const open = items
+  .filter((item) => /^\d{4}-\d{2}-\d{2}$/.test(item.deadline) && daysTo(item.deadline) >= 0)
+  .sort((a, b) => a.deadline.localeCompare(b.deadline) || a.name.localeCompare(b.name));
+---
+
+{
+  open.length > 0 && (
+    <section class="still-open" aria-labelledby="still-open-title">
+      <header class="still-open__head">
+        <p class="eyebrow" id="still-open-title">
+          Still open
+        </p>
+        <p class="still-open__hint">
+          {open.length} {open.length === 1 ? 'thing' : 'things'} you can still enter, soonest deadline first. Items drop
+          off automatically once their deadline passes.
+        </p>
+      </header>
+      <ul class="still-open__list">
+        {open.map((item) => {
+          const days = daysTo(item.deadline);
+          const when = whenLabel(days);
+          return (
+            <li class="still-open__item" data-added={item.added}>
+              <a
+                class="still-open__row"
+                href={item.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                title={item.note}
+                aria-label={`${item.name} — ${item.kind}, deadline ${shortDate(item.deadline)}, ${when}${item.note ? `: ${item.note}` : ''}`}
+              >
+                <span class="still-open__kind">{item.kind}</span>
+                <span class="still-open__name">{item.name}</span>
+                <span class="still-open__meta">
+                  <span class="still-open__date">{shortDate(item.deadline)}</span>
+                  <span class:list={['still-open__when', days <= 3 && 'still-open__when--soon']}>{when}</span>
+                </span>
+              </a>
+            </li>
+          );
+        })}
+      </ul>
+    </section>
+  )
+}
+
+<style>
+  .still-open {
+    background: var(--surface);
+    border: 1px solid var(--line-strong);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-xs);
+    padding: clamp(1.1rem, 2.5vw, 1.6rem) clamp(1.1rem, 2.5vw, 1.6rem);
+  }
+
+  .still-open__head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 0.95rem;
+  }
+
+  .still-open__hint {
+    font-size: 0.82rem;
+    color: var(--muted);
+    max-width: 52ch;
+    text-align: right;
+  }
+
+  .still-open__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 0.45rem;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 23rem), 1fr));
+  }
+
+  .still-open__row {
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+    padding: 0.5rem 0.7rem;
+    background: var(--surface-2);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-sm);
+    text-decoration: none;
+    min-width: 0;
+    transition: border-color 0.14s ease, transform 0.14s ease, box-shadow 0.14s ease;
+  }
+
+  .still-open__row:hover {
+    border-color: var(--line-strong);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-xs);
+  }
+
+  .still-open__kind {
+    flex: none;
+    font-size: 0.62rem;
+    font-weight: 600;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: var(--muted);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-pill);
+    padding: 0.22rem 0.5rem;
+    line-height: 1;
+  }
+
+  .still-open__name {
+    flex: 1 1 auto;
+    min-width: 0;
+    font-size: 0.88rem;
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .still-open__meta {
+    flex: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .still-open__date {
+    font-size: 0.76rem;
+    color: var(--ink-soft);
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
+
+  .still-open__when {
+    font-size: 0.71rem;
+    font-weight: 600;
+    line-height: 1;
+    font-variant-numeric: tabular-nums;
+    color: var(--ink-soft);
+    background: var(--bg-2);
+    border: 1px solid var(--line-strong);
+    border-radius: var(--radius-pill);
+    padding: 0.26rem 0.55rem;
+    white-space: nowrap;
+  }
+
+  /* The pale gold accent is reserved for the few deadlines that need acting on. */
+  .still-open__when--soon {
+    background: var(--gold);
+    border-color: color-mix(in srgb, var(--gold-deep) 60%, transparent);
+    color: var(--on-gold);
+  }
+
+  @media (max-width: 640px) {
+    .still-open__hint {
+      text-align: left;
+    }
+  }
+</style>

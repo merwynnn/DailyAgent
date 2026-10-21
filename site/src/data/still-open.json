@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-20",
+  "updated": "2026-10-21",
   "items": [
     {
       "id": "accel-ai-innovate-paris",
@@ -7,7 +7,7 @@
       "kind": "event",
       "url": "https://hackathonhub.eu/events/accel-ai-innovate-paris-paris-2026",
       "deadline": "2026-10-22",
-      "note": "One-day hackathon, Paris, 22 Oct · €1,000 plus mentorship · leans founder-side rather than student",
+      "note": "One-day hackathon, Paris, 22 Oct · €1,500 plus mentorship · leans founder-side rather than student",
       "added": "2026-10-20"
     },
     {
@@ -70,7 +70,7 @@
       "kind": "event",
       "url": "https://www.hackaudit.fr/",
       "deadline": "2026-11-02",
-      "note": "Phase 1 due 2 Nov · French AI security challenge",
+      "note": "Phase 1 due 2 Nov, midday Paris time · free, teams 1–5 · prizes confirmed €4,000/€2,500/€1,500 + 2× €1,000 · finale 11 Mar 2027, Paris",
       "added": "2026-10-20"
     },
     {
@@ -151,7 +151,7 @@
       "kind": "jam",
       "url": "https://itch.io/jam/pixel-forge-mega-jam",
       "deadline": "2026-12-08",
-      "note": "28 Nov–8 Dec · only top three paid ($300/$200/$100), rest is software · AI banned",
+      "note": "28 Nov start, teams up to 4 · top three paid ($300/$200/$100), rest software · AI banned · jam metadata shows both 8 Dec and 15 Dec close — confirm before entering",
       "added": "2026-10-20"
     },
     {
@@ -171,6 +171,24 @@
       "deadline": "2026-12-31",
       "note": "€15,000 total · registration opens December 2026, dossier due early January — deadline here is a check-back marker, chase the real dates when it opens · final pitches 4 Feb 2027",
       "added": "2026-10-20"
+    },
+    {
+      "id": "thatgamejam-02",
+      "name": "thatgamejam #02 (thatgamecompany)",
+      "kind": "jam",
+      "url": "https://itch.io/jam/thatgamejam02",
+      "deadline": "2026-11-07",
+      "note": "$10,000 cash pool ($3,000/$2,000/$2,000/$2,000 community/$1,000 TapTap) · online, submissions 24 Oct–7 Nov · theme is a piece of music · AI rules unstated — check the page",
+      "added": "2026-10-21"
+    },
+    {
+      "id": "zoud-gamelab",
+      "name": "Zoud GameLab × Global Game Jam",
+      "kind": "jam",
+      "url": "https://itch.io/jam/zoud-gamelab",
+      "deadline": "2026-11-15",
+      "note": "Up to $140K in prizes and development funding, split unstated · virtual, 18+ · financial-literacy theme, judged partly on it · runs 15 Oct–15 Nov",
+      "added": "2026-10-21"
     }
   ]
 }

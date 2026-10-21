@@ -34,6 +34,7 @@ const favicon = withBase('favicon.svg');
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
     <link rel="icon" type="image/svg+xml" href={favicon} />
+    <link rel="alternate" type="application/rss+xml" title={`${SITE_TITLE} — daily log`} href={withBase('rss.xml')} />
     <meta name="generator" content={Astro.generator} />
 
     <meta property="og:type" content="website" />

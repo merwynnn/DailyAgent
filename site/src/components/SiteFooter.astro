@@ -1,5 +1,5 @@
 ---
-import { SITE_TITLE } from '../lib/site';
+import { SITE_TITLE, withBase } from '../lib/site';
 
 const repository = 'https://github.com/merwynnn/DailyAgent';
 const year = new Date().getUTCFullYear();
@@ -9,7 +9,7 @@ const year = new Date().getUTCFullYear();
   <div class="wrap footer__inner">
     <p>
       {SITE_TITLE} · built from <a href={`${repository}/tree/main/site`}>Astro</a> and published to
-      GitHub Pages.
+      GitHub Pages · <a href={withBase('rss.xml')}>RSS</a>
     </p>
     <p>© {year}</p>
   </div>

@@ -1,0 +1,268 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { formatDateShort, withBase } from '../lib/site';
+
+/**
+ * Full-text search over every published report and outlook. The heavy lifting
+ * happens in the browser: the page fetches `search-index.json` (generated at
+ * build time) and scores it client-side, so no server or search service is
+ * needed and the site stays a folder of static files.
+ */
+---
+
+<BaseLayout title="Search" description="Full-text search across every DailyAgent report and outlook.">
+  <div class="wrap">
+    <section class="page-head">
+      <p class="eyebrow">Search</p>
+      <h1>Find anything</h1>
+      <p class="page-head__lede">
+        Full-text search across every report and outlook — bodies included, not just titles.
+        Press <kbd>/</kbd> to jump here from anywhere via the menu, or just start typing.
+      </p>
+    </section>
+
+    <form class="search" data-index={withBase('search-index.json')} role="search" aria-label="Site search">
+      <input
+        class="search__input"
+        type="search"
+        name="q"
+        placeholder="hackathon, DeepSeek, EdenSpark, outlook…"
+        autocomplete="off"
+        spellcheck="false"
+        aria-label="Search query"
+        autofocus
+      />
+      <p class="search__status" role="status" aria-live="polite" data-status></p>
+    </form>
+
+    <div class="search-results" data-results hidden></div>
+
+    <p class="empty" data-empty hidden>
+      Nothing matches. Searches are whole-site substring matches — try a shorter fragment,
+      like <em>hackat</em> instead of <em>hackathon</em>.
+    </p>
+  </div>
+</BaseLayout>
+
+<style>
+  .search {
+    margin-bottom: clamp(1.5rem, 4vw, 2.5rem);
+  }
+
+  .search__input {
+    width: 100%;
+    font: inherit;
+    font-size: 1.05rem;
+    color: var(--ink);
+    background: var(--surface);
+    border: 1px solid var(--line-strong);
+    border-radius: var(--radius);
+    padding: 0.85rem 1.1rem;
+    box-shadow: var(--shadow-xs);
+  }
+
+  .search__input:focus {
+    outline: 2px solid var(--gold-deep);
+    outline-offset: 1px;
+    border-color: var(--gold-deep);
+  }
+
+  .search__status {
+    margin: 0.5rem 0.15rem 0;
+    font-size: 0.78rem;
+    color: var(--muted);
+    font-variant-numeric: tabular-nums;
+    min-height: 1.2em;
+  }
+
+  .search-results {
+    display: grid;
+    gap: 0.6rem;
+  }
+
+  .search-results :global(.search-hit) {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-sm);
+    padding: 0.85rem 1rem;
+    transition: border-color 0.14s ease, transform 0.14s ease;
+  }
+
+  .search-results :global(.search-hit:hover) {
+    border-color: var(--line-strong);
+    transform: translateY(-1px);
+  }
+
+  .search-results :global(.search-hit__head) {
+    display: flex;
+    align-items: baseline;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+    margin-bottom: 0.3rem;
+  }
+
+  .search-results :global(.search-hit__title) {
+    font-weight: 600;
+    font-size: 0.95rem;
+  }
+
+  .search-results :global(.search-hit__meta) {
+    font-size: 0.74rem;
+    color: var(--muted);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .search-results :global(.search-hit__snippet) {
+    margin: 0;
+    font-size: 0.86rem;
+    line-height: 1.55;
+    color: var(--ink-soft);
+  }
+
+  .search-results :global(mark) {
+    background: color-mix(in srgb, var(--gold) 55%, transparent);
+    color: inherit;
+    border-radius: 3px;
+    padding: 0 0.12em;
+  }
+</style>
+
+<script>
+  type Entry = {
+    kind: string;
+    url: string;
+    title: string;
+    date: string;
+    tags: string[];
+    summary: string;
+    text: string;
+  };
+
+  const form = document.querySelector<HTMLFormElement>('form.search')!;
+  const input = form.querySelector<HTMLInputElement>('[name="q"]')!;
+  const status = form.querySelector<HTMLElement>('[data-status]')!;
+  const resultsEl = document.querySelector<HTMLElement>('[data-results]')!;
+  const emptyEl = document.querySelector<HTMLElement>('[data-empty]')!;
+
+  /** Escaped text for safe HTML injection, and safe RegExp construction. */
+  const escapeHtml = (value: string) =>
+    value.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;');
+  const escapeRegExp = (value: string) => value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+
+  /** Wraps every query-token occurrence in a snippet with <mark>, case-insensitively. */
+  const highlight = (snippet: string, tokens: string[]) => {
+    if (tokens.length === 0) return snippet;
+    const pattern = new RegExp(`(${tokens.map(escapeRegExp).join('|')})`, 'gi');
+    return snippet.replace(pattern, '<mark>$1</mark>');
+  };
+
+  /** Best window of `text` around the first token hit, with ellipses. */
+  const snippet = (text: string, tokens: string[]) => {
+    let at = -1;
+    for (const token of tokens) {
+      const found = text.indexOf(token);
+      if (found !== -1 && (at === -1 || found < at)) at = found;
+    }
+    const from = Math.max(0, at - 110);
+    const to = Math.min(text.length, at + 190);
+    return `${from > 0 ? '…' : ''}${escapeHtml(text.slice(from, to))}${to < text.length ? '…' : ''}`;
+  };
+
+  /** How many times a token appears — substring counts, so plurals and prefixes just work. */
+  const countOccurrences = (haystack: string, needle: string) => {
+    if (!needle) return 0;
+    return haystack.split(needle).length - 1;
+  };
+
+  const scoreEntry = (entry: Entry, tokens: string[]) => {
+    let score = 0;
+    for (const token of tokens) {
+      const inTitle = countOccurrences(entry.title.toLowerCase(), token);
+      const inTag = entry.tags.some((tag) => tag.toLowerCase().includes(token));
+      const inSummary = countOccurrences(entry.summary.toLowerCase(), token);
+      const inBody = countOccurrences(entry.text.toLowerCase(), token);
+      // Every token must land somewhere: AND semantics keep multi-word queries meaningful.
+      if (inTitle + inTag + inSummary + inBody === 0) return 0;
+      score += 10 * Math.min(inTitle, 2) + (inTag ? 4 : 0) + 3 * Math.min(inSummary, 2) + Math.min(inBody, 10);
+    }
+    return score;
+  };
+
+  let index: Entry[] | null = null;
+  let loadFailed = false;
+  let timer: ReturnType<typeof setTimeout> | undefined;
+
+  const run = (rawQuery: string) => {
+    const tokens = rawQuery.toLowerCase().split(/\s+/).filter((token) => token.length >= 2);
+    if (!index || tokens.length === 0) {
+      resultsEl.hidden = true;
+      emptyEl.hidden = true;
+      resultsEl.innerHTML = '';
+      status.textContent = index ? '' : '';
+      return;
+    }
+
+    const hits = index
+      .map((entry) => ({ entry, score: scoreEntry(entry, tokens) }))
+      .filter(({ score }) => score > 0)
+      .sort((a, b) => b.score - a.score || b.entry.date.localeCompare(a.entry.date))
+      .slice(0, 12);
+
+    status.textContent = `${hits.length} ${hits.length === 1 ? 'result' : 'results'}`;
+    emptyEl.hidden = hits.length > 0;
+    resultsEl.hidden = hits.length === 0;
+    resultsEl.innerHTML = hits
+      .map(({ entry, score }) => {
+        const hit = document.createElement('a');
+        hit.className = 'search-hit';
+        hit.href = entry.url;
+        hit.innerHTML = `
+          <div class="search-hit__head">
+            <span class="search-hit__title">${highlight(escapeHtml(entry.title), tokens)}</span>
+            <span class="search-hit__meta">${entry.kind} · ${escapeHtml(entry.date)} · score ${score}</span>
+          </div>
+          <p class="search-hit__snippet">${snippet(entry.text, tokens) || escapeHtml(entry.summary)}</p>`;
+        return hit.outerHTML;
+      })
+      .join('');
+  };
+
+  const load = async () => {
+    try {
+      const response = await fetch(form.dataset.index!);
+      if (!response.ok) throw new Error(String(response.status));
+      index = (await response.json()).entries;
+      const initial = new URLSearchParams(location.search).get('q');
+      if (initial) input.value = initial;
+      run(input.value);
+      input.addEventListener('input', () => {
+        clearTimeout(timer);
+        timer = setTimeout(() => {
+          const url = new URL(location.href);
+          input.value ? url.searchParams.set('q', input.value) : url.searchParams.delete('q');
+          history.replaceState(null, '', url);
+          run(input.value);
+        }, 120);
+      });
+    } catch {
+      loadFailed = true;
+      status.textContent = 'Search index could not be loaded.';
+    }
+  };
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === '/' && document.activeElement !== input) {
+      event.preventDefault();
+      input.focus();
+    }
+    if (event.key === 'Escape' && document.activeElement === input) {
+      input.value = '';
+      run('');
+    }
+  });
+
+  if (!loadFailed) load();
+</script>

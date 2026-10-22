@@ -6,6 +6,7 @@ const links = [
   { href: withBase(), label: 'Latest' },
   { href: withBase('outlooks/'), label: 'Outlooks' },
   { href: withBase('archive/'), label: 'Archive' },
+  { href: withBase('search/'), label: 'Search' },
   { href: withBase('about/'), label: 'About' },
 ];
 
@@ -59,7 +60,8 @@ const isActive = (href: string) =>
         }
       </ul>
       <p class="menu__note">
-        The daily log, plus a weekly outlook every week.
+        The daily log, weekly outlooks, and full-text search — press <kbd>/</kbd> on the search page to
+        jump to the box.
       </p>
     </div>
   </div>

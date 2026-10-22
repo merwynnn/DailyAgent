@@ -1,0 +1,284 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//DailyAgent//Still Open tracker//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:DailyAgent — still open
+X-WR-CALDESC:Entry deadlines tracked in the DailyAgent "still open" list.
+BEGIN:VEVENT
+UID:accel-ai-innovate-paris@dailyagent
+DTSTAMP:20261022T124047Z
+DTSTART;VALUE=DATE:20261022
+DTEND;VALUE=DATE:20261023
+SUMMARY:Accel AI Innovate Paris (event\, deadline)
+DESCRIPTION:One-day hackathon\, Paris\, 22 Oct · €1\,500 plus mentorship
+  · leans founder-side rather than student
+URL:https://hackathonhub.eu/events/accel-ai-innovate-paris-paris-2026
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:terror-jam-2026@dailyagent
+DTSTAMP:20261022T124047Z
+DTSTART;VALUE=DATE:20261023
+DTEND;VALUE=DATE:20261024
+SUMMARY:Terror Jam 2026 (jam\, deadline)
+DESCRIPTION:$1\,100 cash pool · online\, Halloween jam · AI banned from t
+ he prize pool
+URL:https://itch.io/jam/terror-jam-2026-a-halloween-game-jam
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rcr-workshop-2026@dailyagent
+DTSTAMP:20261022T124047Z
+DTSTART;VALUE=DATE:20261029
+DTEND;VALUE=DATE:20261030
+SUMMARY:Rock Climbing Robots Workshop 2026 (event\, deadline)
+DESCRIPTION:University of Bordeaux\, 29 Oct–1 Nov · humanoid climbing-ro
+ bot hackathon (perception/planning/control) · students all levels\, robot
+ s provided\, on-site accommodation · trophies\, no cash · register by em
+ ail — no published deadline\, event start used as cutoff
+URL:https://rock-climbing-robots.github.io
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:defi-aerospatial-etudiant@dailyagent
+DTSTAMP:20261022T124047Z
+DTSTART;VALUE=DATE:20261031
+DTEND;VALUE=DATE:20261101
+SUMMARY:Défi Aérospatial Étudiant (21st) (event\, deadline)
+DESCRIPTION:Applications close 31 Oct · year-long team project · ESA/Aria
+ neGroup/CNES/Dassault awards · final 3 Jun 2027
+URL:https://www.studentaerospacechallenge.eu/
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:edenspark-game-jam-4@dailyagent
+DTSTAMP:20261022T124047Z
+DTSTART;VALUE=DATE:20261031
+DTEND;VALUE=DATE:20261101
+SUMMARY:EdenSpark Game Jam #4 (jam\, deadline)
+DESCRIPTION:$5\,000 monthly pool\, $250K annual programme · must build in 
+ EdenSpark · AI rules unstated — read legal.gaijin.net/edenspark-jam fir
+ st
+URL:https://itch.io/jam/edenspark-game-jam-4
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rgdc-jam-2026@dailyagent
+DTSTAMP:20261022T124047Z
+DTSTART;VALUE=DATE:20261031
+DTEND;VALUE=DATE:20261101
+SUMMARY:RGDC Jam 2026 (jam\, deadline)
+DESCRIPTION:$750 cash for top three · online\, month-long · student game-
+ dev club
+URL:https://www.reddit.com/r/gamejams/comments/1wte2ud/rgdc_jam_2026_septem
+ ber_30october_30_theme_locked/
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:slapjam-ai-2@dailyagent
+DTSTAMP:20261022T124047Z
+DTSTART;VALUE=DATE:20261031
+DTEND;VALUE=DATE:20261101
+SUMMARY:Slapjam #2 (jam\, deadline)
+DESCRIPTION:$1\,000 cash pool · 29–31 Oct · 48 h mobile HTML5 · AI req
+ uired\, not banned
+URL:https://itch.io/jam/slapjam-ai-2
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:micro-jam-068@dailyagent
+DTSTAMP:20261022T124047Z
+DTSTART;VALUE=DATE:20261102
+DTEND;VALUE=DATE:20261103
+SUMMARY:Micro Jam 068: Evolution (jam\, deadline)
+DESCRIPTION:$300 cash pool · 30 Oct–2 Nov · 48 h · solo or teams of 4 
+ · AI allowed
+URL:https://itch.io/jam/micro-jam-068
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:hackaudit-2026@dailyagent
+DTSTAMP:20261022T124047Z
+DTSTART;VALUE=DATE:20261102
+DTEND;VALUE=DATE:20261103
+SUMMARY:HackAudit 2026 (event\, deadline)
+DESCRIPTION:Phase 1 due 2 Nov\, midday Paris time · free\, teams 1–5 · 
+ prizes confirmed €4\,000/€2\,500/€1\,500 + 2× €1\,000 · finale 1
+ 1 Mar 2027\, Paris
+URL:https://www.hackaudit.fr/
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:habs-neuro-ai@dailyagent
+DTSTAMP:20261022T124047Z
+DTSTART;VALUE=DATE:20261102
+DTEND;VALUE=DATE:20261103
+SUMMARY:HABS Neuro-AI Hackathon (event\, deadline)
+DESCRIPTION:Orsay/Paris-Saclay\, 2–30 Nov · real EEG datasets · form op
+ en\, rules still being finalised
+URL:https://hackathon.habs.ai/
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:make-ai-happen-kpmg@dailyagent
+DTSTAMP:20261022T124047Z
+DTSTART;VALUE=DATE:20261106
+DTEND;VALUE=DATE:20261107
+SUMMARY:Make AI Happen (KPMG) (event\, deadline)
+DESCRIPTION:Applications close 6 Nov · gift cards\, not cash · teams 2–
+ 4 · finale 7 Dec at KPMG Paris La Défense
+URL:https://www.agorize.com/en/challenges/make-ai-happen
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:h-company-42ai-computer-use@dailyagent
+DTSTAMP:20261022T124047Z
+DTSTART;VALUE=DATE:20261107
+DTEND;VALUE=DATE:20261108
+SUMMARY:H Company × 42AI Computer-Use Hackathon (event\, deadline)
+DESCRIPTION:Paris 7–8 Nov · €10\,000 cash · free\, teams 1–4 · no 
+ application deadline published — event start treated as the cutoff
+URL:https://lu.ma/hz9db5u9
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:thatgamejam-02@dailyagent
+DTSTAMP:20261022T124047Z
+DTSTART;VALUE=DATE:20261107
+DTEND;VALUE=DATE:20261108
+SUMMARY:thatgamejam #02 (thatgamecompany) (jam\, deadline)
+DESCRIPTION:$10\,000 cash pool ($3\,000/$2\,000/$2\,000/$2\,000 community/$
+ 1\,000 TapTap) · online\, submissions 24 Oct–7 Nov · theme is a piece 
+ of music · AI rules unstated — check the page
+URL:https://itch.io/jam/thatgamejam02
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:game-gauntlet-sim-jam@dailyagent
+DTSTAMP:20261022T124047Z
+DTSTART;VALUE=DATE:20261110
+DTEND;VALUE=DATE:20261111
+SUMMARY:Game Gauntlet — SIM Jam (jam\, deadline)
+DESCRIPTION:$1\,500 cash ($1\,000/$500) · online\, worldwide · joining th
+ e Discord is mandatory · itch metadata now lists close 10 Nov (4 Nov was 
+ the 20 Oct reading) — re-checked 22 Oct
+URL:https://itch.io/jam/game-gauntlet-sim-jam
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:adopt-ai-for-health@dailyagent
+DTSTAMP:20261022T124047Z
+DTSTART;VALUE=DATE:20261113
+DTEND;VALUE=DATE:20261114
+SUMMARY:Hackathon AI for Health (event\, deadline)
+DESCRIPTION:Paris 13–15 Nov · three mandatory in-person days · winner p
+ itches at the Grand Palais on 4 Dec · cash amounts unstated
+URL:https://hackathons-artefactadoptai.agorize.com/en/challenges/hackathon-
+ adopt-ai-for-health
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:gdevelop-big-game-jam-10@dailyagent
+DTSTAMP:20261022T124047Z
+DTSTART;VALUE=DATE:20261115
+DTEND;VALUE=DATE:20261116
+SUMMARY:GDevelop BIG Game Jam #10 (jam\, deadline)
+DESCRIPTION:6–15 Nov · must use GDevelop · prizes up to $6\,500\, cash 
+ split unconfirmed · 1\,000 engine credits per submission
+URL:https://itch.io/jam/gdevelop-big-game-jam-10
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:zoud-gamelab@dailyagent
+DTSTAMP:20261022T124047Z
+DTSTART;VALUE=DATE:20261115
+DTEND;VALUE=DATE:20261116
+SUMMARY:Zoud GameLab × Global Game Jam (jam\, deadline)
+DESCRIPTION:Up to $140K in prizes and development funding\, split unstated 
+ · virtual\, 18+ · financial-literacy theme\, judged partly on it · runs
+  15 Oct–15 Nov
+URL:https://itch.io/jam/zoud-gamelab
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:hack1robo-5@dailyagent
+DTSTAMP:20261022T124047Z
+DTSTART;VALUE=DATE:20261120
+DTEND;VALUE=DATE:20261121
+SUMMARY:Hack1Robo 5 (Bordeaux) (event\, deadline)
+DESCRIPTION:Bordeaux 20–22 Nov · free\, teams 4–6 · Thymio robots and
+  mocap provided · no cash prize\, still worth it for robotics
+URL:https://www.hack1robo.fr/
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:drone-defense-hackathon@dailyagent
+DTSTAMP:20261022T124047Z
+DTSTART;VALUE=DATE:20261123
+DTEND;VALUE=DATE:20261124
+SUMMARY:Drone Defense Hackathon (event\, deadline)
+DESCRIPTION:Online phase to 23 Nov · Grand Palais drone cage 24–26 Nov 
+ · teams 6–8 · no cash prize published
+URL:https://hackathons-artefactadoptai.agorize.com/en/challenges/drone-defe
+ nse-hackathon
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:pixel-forge-mega-jam@dailyagent
+DTSTAMP:20261022T124047Z
+DTSTART;VALUE=DATE:20261208
+DTEND;VALUE=DATE:20261209
+SUMMARY:Pixel Forge MEGA JAM (jam\, deadline)
+DESCRIPTION:28 Nov start\, teams up to 4 · top three paid ($300/$200/$100)
+ \, rest software · AI banned · jam metadata shows both 8 Dec and 15 Dec 
+ close — confirm before entering
+URL:https://itch.io/jam/pixel-forge-mega-jam
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:uplifting-game-jam-10@dailyagent
+DTSTAMP:20261022T124047Z
+DTSTART;VALUE=DATE:20261214
+DTEND;VALUE=DATE:20261215
+SUMMARY:Uplifting Game Jam (jam\, deadline)
+DESCRIPTION:1–14 Dec · last edition paid $408 cash · small but real and
+  solo-friendly
+URL:https://itch.io/jam/uplifting-game-jam-cash-prizes-10
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:physical-ai-amje@dailyagent
+DTSTAMP:20261022T124047Z
+DTSTART;VALUE=DATE:20261231
+DTEND;VALUE=DATE:20270101
+SUMMARY:Hackathon Physical AI (AMJE / Arts et Métiers) (event\, deadline)
+DESCRIPTION:€15\,000 total · registration opens December 2026\, dossier 
+ due early January — deadline here is a check-back marker\, chase the rea
+ l dates when it opens · final pitches 4 Feb 2027
+URL:https://amje.fr/pip
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR

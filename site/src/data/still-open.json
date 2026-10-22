@@ -1,6 +1,15 @@
 {
-  "updated": "2026-10-21",
+  "updated": "2026-10-22",
   "items": [
+    {
+      "id": "rcr-workshop-2026",
+      "name": "Rock Climbing Robots Workshop 2026",
+      "kind": "event",
+      "url": "https://rock-climbing-robots.github.io",
+      "deadline": "2026-10-29",
+      "note": "University of Bordeaux, 29 Oct–1 Nov · humanoid climbing-robot hackathon (perception/planning/control) · students all levels, robots provided, on-site accommodation · trophies, no cash · register by email — no published deadline, event start used as cutoff",
+      "added": "2026-10-22"
+    },
     {
       "id": "accel-ai-innovate-paris",
       "name": "Accel AI Innovate Paris",
@@ -87,8 +96,8 @@
       "name": "Game Gauntlet — SIM Jam",
       "kind": "jam",
       "url": "https://itch.io/jam/game-gauntlet-sim-jam",
-      "deadline": "2026-11-04",
-      "note": "$1,500 cash ($1,000/$500) · online · joining the Discord is mandatory · runs to 4 Nov",
+      "deadline": "2026-11-10",
+      "note": "$1,500 cash ($1,000/$500) · online, worldwide · joining the Discord is mandatory · itch metadata now lists close 10 Nov (4 Nov was the 20 Oct reading) — re-checked 22 Oct",
       "added": "2026-10-20"
     },
     {

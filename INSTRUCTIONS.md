@@ -116,16 +116,19 @@ items forward, and drop them the day their deadline passes — no zombies. To
 remove something yourself, write it here, e.g. "tracker: remove Micro Jam
 068": that counts as done or declined, and the item must not come back.
 
-### 7. One small site improvement per run
+### 7. A site improvement every run
 
-Every run, try to add one small new feature to the website — a new
-integration, a small widget, a new page or tab, some navigation or dashboard
-polish. Conditions: it must stay small enough not to crowd the site, it must
-not damage or change anything already published, all existing reports keep
-working as before, and `npm --prefix site run build` must still pass. Name
-the improvement explicitly in the report under a `## Site changes` heading.
-Skipping a day is fine — say so honestly — but padding the section with a
-fake or overreaching change is not.
+Every run, improve the website. Size is not the constraint — judgement is: a
+small widget or navigation polish is fine, but when there is a medium or big
+idea that would genuinely make the site better, build it (a new page or
+section, search, a data-driven feature, a real integration). Work in
+increments that keep the site shippable: every run ends with
+`npm --prefix site run build` passing and nothing already published damaged —
+existing reports, pages, images and feeds keep working as before. If a big
+idea spans several runs, build it so the site works at each step, and say in
+the report where it stands and what is next. Name the improvement explicitly
+under a `## Site changes` heading. Skipping a day is fine — say so honestly —
+but padding the section with a fake or overreaching change is not.
 
 ### 8. The weekly Outlook (Outlooks tab)
 
@@ -144,12 +147,14 @@ day's report under `## Site changes`.
 
 Each day, close the brief with a short `## Project ideas` section: one to
 three original project ideas — technical, games, tools, anything one student
-can actually build — each in two or three lines: what it is, why now (tied to
-something that surfaced in the log or the news), and the smallest first
-step. Only include ideas that would genuinely be worth starting; an idea
-from a previous day returns only if something new sharpened it. Skip the
-section outright when nothing good surfaced — filler ideas are worse than
-none.
+can actually build — each in two or three lines: what it is, why now, and the
+smallest first step. Ideas do not have to be tied to that day's news or the
+daily log; a news hook is optional, not required. Free-standing ideas — a tool
+worth having, a game concept, a coursework spin-off, a recurring annoyance
+worth automating — are just as welcome. Only include ideas that would genuinely
+be worth starting; an idea from a previous day returns only if something new
+sharpened it. Skip the section outright when nothing good surfaced — filler
+ideas are worse than none.
 
 ---
 

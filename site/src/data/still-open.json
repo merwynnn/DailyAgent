@@ -1,6 +1,15 @@
 {
-  "updated": "2026-10-22",
+  "updated": "2026-10-23",
   "items": [
+    {
+      "id": "hackathon-quantique-defense",
+      "name": "Hackathon Quantique Défense (AID × Artefact)",
+      "kind": "event",
+      "url": "https://hackathons-artefactadoptai.agorize.com/fr/challenges/hackathon-quantique-defense",
+      "deadline": "2026-10-31",
+      "note": "Grand Palais, Paris 2–4 Dec · teams 4–8 · €12,000 (4× €3,000 service challenges) · June announcement said registration closed 4 Oct, yet the Agorize sign-up is still live — deadline here is a check-back marker; email the AID contact to confirm before relying on it",
+      "added": "2026-10-23"
+    },
     {
       "id": "rcr-workshop-2026",
       "name": "Rock Climbing Robots Workshop 2026",
@@ -9,15 +18,6 @@
       "deadline": "2026-10-29",
       "note": "University of Bordeaux, 29 Oct–1 Nov · humanoid climbing-robot hackathon (perception/planning/control) · students all levels, robots provided, on-site accommodation · trophies, no cash · register by email — no published deadline, event start used as cutoff",
       "added": "2026-10-22"
-    },
-    {
-      "id": "accel-ai-innovate-paris",
-      "name": "Accel AI Innovate Paris",
-      "kind": "event",
-      "url": "https://hackathonhub.eu/events/accel-ai-innovate-paris-paris-2026",
-      "deadline": "2026-10-22",
-      "note": "One-day hackathon, Paris, 22 Oct · €1,500 plus mentorship · leans founder-side rather than student",
-      "added": "2026-10-20"
     },
     {
       "id": "terror-jam-2026",
@@ -198,6 +198,15 @@
       "deadline": "2026-11-15",
       "note": "Up to $140K in prizes and development funding, split unstated · virtual, 18+ · financial-literacy theme, judged partly on it · runs 15 Oct–15 Nov",
       "added": "2026-10-21"
+    },
+    {
+      "id": "amiga-tools-jam-2026",
+      "name": "Amiga Tools Jam 2026",
+      "kind": "jam",
+      "url": "https://itch.io/jam/amiga-tools-jam-2026",
+      "deadline": "2026-11-26",
+      "note": "Cash for the top three by community vote, amounts unstated · closes 26 Nov, voting to 24 Dec · niche and retro, but programming-heavy",
+      "added": "2026-10-23"
     }
   ]
 }

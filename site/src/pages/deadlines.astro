@@ -1,0 +1,261 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { parseDate, withBase } from '../lib/site';
+import stillOpenData from '../data/still-open.json';
+
+/**
+ * A Monday-first month grid of everything the Still open tracker carries,
+ * rendered entirely at build time. Same source of truth as the dashboard list
+ * and the `/still-open.ics` feed — expired items drop out automatically
+ * because the agent prunes the JSON daily and this page filters defensively.
+ */
+
+const today = new Date().toISOString().slice(0, 10);
+const now = parseDate(today).getTime();
+
+const open = stillOpenData.items
+  .filter((item) => /^\d{4}-\d{2}-\d{2}$/.test(item.deadline))
+  .filter((item) => parseDate(item.deadline).getTime() >= now);
+
+/** `YYYY-MM-DD` -> items landing on that day. */
+const byDay = new Map<string, typeof open>();
+for (const item of open) {
+  const list = byDay.get(item.deadline) ?? [];
+  list.push(item);
+  byDay.set(item.deadline, list);
+}
+
+const MONTHS = [
+  'January', 'February', 'March', 'April', 'May', 'June',
+  'July', 'August', 'September', 'October', 'November', 'December',
+];
+const WEEKDAYS = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+
+interface MonthGrid {
+  label: string;
+  weeks: (null | { day: number; iso: string; isToday: boolean; items: typeof open })[][];
+}
+
+const monthGrid = (year: number, month: number): MonthGrid => {
+  const first = new Date(Date.UTC(year, month, 1));
+  const daysInMonth = new Date(Date.UTC(year, month + 1, 0)).getUTCDate();
+  // Monday-first offset: Sunday becomes 6.
+  const offset = (first.getUTCDay() + 6) % 7;
+
+  const cells: MonthGrid['weeks'][number] = [];
+  for (let i = 0; i < offset; i += 1) cells.push(null);
+  for (let day = 1; day <= daysInMonth; day += 1) {
+    const iso = `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+    cells.push({ day, iso, isToday: iso === today, items: byDay.get(iso) ?? [] });
+  }
+  while (cells.length % 7 !== 0) cells.push(null);
+
+  const weeks: MonthGrid['weeks'] = [];
+  for (let i = 0; i < cells.length; i += 7) weeks.push(cells.slice(i, i + 7));
+
+  return { label: `${MONTHS[month]} ${year}`, weeks };
+};
+
+const start = new Date();
+const months: MonthGrid[] = [];
+for (let i = 0; i < 3; i += 1) {
+  months.push(monthGrid(start.getUTCFullYear(), start.getUTCMonth() + i));
+}
+---
+
+<BaseLayout
+  title="Deadlines"
+  description="Every entry deadline the DailyAgent tracker carries, on a month grid."
+>
+  <div class="wrap">
+    <section class="page-head">
+      <p class="eyebrow">Deadlines</p>
+      <h1>What's ahead</h1>
+      <p class="page-head__lede">
+        Every still-open deadline on a Monday-first grid — the same data as the dashboard
+        list and the <a href={withBase('still-open.ics')}>calendar feed</a>. Days carry the
+        last date to enter; expired items never appear here.
+      </p>
+    </section>
+
+    <p class="deadlines-legend">
+      <span class="deadlines-legend__chip deadlines-legend__chip--event">event</span>
+      <span class="deadlines-legend__chip deadlines-legend__chip--jam">jam</span>
+      <span class="deadlines-legend__more">
+        Hover a chip for the full note; the chip links straight to the entry page.
+      </span>
+    </p>
+
+    {
+      months.map((month) => (
+        <section class="deadlines-month" aria-label={month.label}>
+          <h2>{month.label}</h2>
+          <div class="deadlines-grid" role="grid">
+            {WEEKDAYS.map((weekday) => (
+              <div class="deadlines-grid__head" role="columnheader">
+                {weekday}
+              </div>
+            ))}
+            {month.weeks.flat().map((cell) =>
+              cell === null ? (
+                <div class="deadlines-cell deadlines-cell--empty" />
+              ) : (
+                <div
+                  class:list={['deadlines-cell', cell.isToday && 'deadlines-cell--today']}
+                  title={cell.isToday ? 'Today' : undefined}
+                >
+                  <span class="deadlines-cell__num">{cell.day}</span>
+                  {cell.items.map((item) => (
+                    <a
+                      class:list={['deadlines-chip', `deadlines-chip--${item.kind}`]}
+                      href={item.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      title={item.note
+                        ? `${item.name} (${item.kind}): ${item.note}`
+                        : `${item.name} (${item.kind})`}
+                    >
+                      {item.name}
+                    </a>
+                  ))}
+                </div>
+              ),
+            )}
+          </div>
+        </section>
+      ))
+    }
+
+    <p class="deadlines-empty-note">
+      The underlying list lives on the dashboard ("Still open"), and a subscribeable copy is at
+      <code>/still-open.ics</code>.
+    </p>
+  </div>
+</BaseLayout>
+
+<style>
+  .deadlines-legend {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin: 0 0 1.4rem;
+    font-size: 0.76rem;
+    color: var(--muted);
+  }
+
+  .deadlines-legend__chip {
+    font-size: 0.62rem;
+    font-weight: 600;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    border-radius: var(--radius-pill);
+    padding: 0.22rem 0.55rem;
+    line-height: 1;
+    color: var(--ink-soft);
+    background: var(--surface);
+    border: 1px solid var(--line);
+  }
+
+  .deadlines-legend__chip--event {
+    border-left: 3px solid var(--gold-deep);
+  }
+
+  .deadlines-legend__chip--jam {
+    border-left: 3px solid var(--muted);
+  }
+
+  .deadlines-legend__more {
+    color: var(--muted);
+  }
+
+  .deadlines-month {
+    margin-bottom: 2.2rem;
+  }
+
+  .deadlines-month h2 {
+    font-size: 1.05rem;
+    margin: 0 0 0.6rem;
+  }
+
+  .deadlines-grid {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    gap: 4px;
+  }
+
+  .deadlines-grid__head {
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    padding: 0 0.25rem 0.25rem;
+  }
+
+  .deadlines-cell {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-sm);
+    padding: 0.35rem 0.4rem;
+    min-height: 3.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .deadlines-cell--empty {
+    background: transparent;
+    border-style: dashed;
+    border-color: transparent;
+  }
+
+  .deadlines-cell--today {
+    border-color: var(--gold-deep);
+    box-shadow: var(--shadow-xs);
+  }
+
+  .deadlines-cell__num {
+    font-size: 0.72rem;
+    font-variant-numeric: tabular-nums;
+    color: var(--muted);
+  }
+
+  .deadlines-chip {
+    display: block;
+    font-size: 0.68rem;
+    line-height: 1.25;
+    color: var(--ink);
+    text-decoration: none;
+    background: var(--surface-2);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-sm);
+    padding: 0.2rem 0.35rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .deadlines-chip--event {
+    border-left: 3px solid var(--gold-deep);
+  }
+
+  .deadlines-chip--jam {
+    border-left: 3px solid var(--muted);
+  }
+
+  .deadlines-chip:hover {
+    border-color: var(--line-strong);
+  }
+
+  .deadlines-empty-note {
+    font-size: 0.78rem;
+    color: var(--muted);
+  }
+
+  @media (max-width: 640px) {
+    .deadlines-chip {
+      font-size: 0.6rem;
+    }
+  }
+</style>

@@ -11,6 +11,12 @@ interface Props {
   progress?: boolean;
   /** Hide the header/footer chrome (used by the 404 page). */
   bare?: boolean;
+  /** Path (already base-resolved) of an image for link-preview cards; hero images pass it through. */
+  ogImage?: string;
+  /** OpenGraph type; report and outlook pages are `article`. */
+  ogType?: 'website' | 'article';
+  /** `article:published_time` for article pages, plain `YYYY-MM-DD`. */
+  publishedTime?: string;
 }
 
 const {
@@ -18,6 +24,9 @@ const {
   description = SITE_DESCRIPTION,
   progress = false,
   bare = false,
+  ogImage,
+  ogType = 'website',
+  publishedTime,
 } = Astro.props;
 
 const pageTitle = title ? `${title} · ${SITE_TITLE}` : `${SITE_TITLE} — a daily report`;
@@ -37,12 +46,15 @@ const favicon = withBase('favicon.svg');
     <link rel="alternate" type="application/rss+xml" title={`${SITE_TITLE} — daily log`} href={withBase('rss.xml')} />
     <meta name="generator" content={Astro.generator} />
 
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content={ogType} />
     <meta property="og:site_name" content={SITE_TITLE} />
     <meta property="og:title" content={pageTitle} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
+    {ogImage && <meta property="og:image" content={new URL(ogImage, Astro.site ?? 'https://example.com').href} />}
+    {publishedTime && <meta property="article:published_time" content={publishedTime} />}
     <meta name="twitter:card" content="summary_large_image" />
+    {ogImage && <meta name="twitter:image" content={new URL(ogImage, Astro.site ?? 'https://example.com').href} />}
 
     <meta name="theme-color" content="#f1eed8" media="(prefers-color-scheme: light)" />
     <meta name="theme-color" content="#191a14" media="(prefers-color-scheme: dark)" />

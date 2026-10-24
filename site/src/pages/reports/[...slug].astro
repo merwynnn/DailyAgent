@@ -35,7 +35,14 @@ const { title, date, summary, tags, hero, heroAlt, charts, sources } = report.da
 const minutes = readingTime(report.body);
 ---
 
-<BaseLayout title={title} description={summary} progress>
+<BaseLayout
+  title={title}
+  description={summary}
+  progress
+  ogImage={hero ? assetUrl(hero) : undefined}
+  ogType="article"
+  publishedTime={date}
+>
   <article class="article wrap">
     <header class="article__head">
       <p class="article__back">

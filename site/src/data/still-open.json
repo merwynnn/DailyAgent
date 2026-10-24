@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-23",
+  "updated": "2026-10-24",
   "items": [
     {
       "id": "hackathon-quantique-defense",
@@ -11,6 +11,15 @@
       "added": "2026-10-23"
     },
     {
+      "id": "urmrc-2026",
+      "name": "Upper Rhine Mobile Robotic Challenge (3rd)",
+      "kind": "event",
+      "url": "https://www.ensisa.uha.fr",
+      "deadline": "2026-11-17",
+      "note": "Parc Expo Mulhouse, 17–18 Nov, inside the Euro Industries salon (free entry) · student robotics competition, 3rd edition, 2024 edition had 8 student teams · no registration route published yet — deadline here is event start as a check-back marker",
+      "added": "2026-10-24"
+    },
+    {
       "id": "rcr-workshop-2026",
       "name": "Rock Climbing Robots Workshop 2026",
       "kind": "event",
@@ -18,15 +27,6 @@
       "deadline": "2026-10-29",
       "note": "University of Bordeaux, 29 Oct–1 Nov · humanoid climbing-robot hackathon (perception/planning/control) · students all levels, robots provided, on-site accommodation · trophies, no cash · register by email — no published deadline, event start used as cutoff",
       "added": "2026-10-22"
-    },
-    {
-      "id": "terror-jam-2026",
-      "name": "Terror Jam 2026",
-      "kind": "jam",
-      "url": "https://itch.io/jam/terror-jam-2026-a-halloween-game-jam",
-      "deadline": "2026-10-23",
-      "note": "$1,100 cash pool · online, Halloween jam · AI banned from the prize pool",
-      "added": "2026-10-20"
     },
     {
       "id": "defi-aerospatial-etudiant",

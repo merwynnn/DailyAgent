@@ -29,7 +29,7 @@ const { title, date, summary } = outlook.data;
 const week = isoWeek(date);
 ---
 
-<BaseLayout title={title} description={summary}>
+<BaseLayout title={title} description={summary} ogType="article" publishedTime={date}>
   <article class="article wrap">
     <header class="article__head">
       <p class="article__back">

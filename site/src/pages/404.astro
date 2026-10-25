@@ -8,10 +8,67 @@ import { withBase } from '../lib/site';
     <p class="eyebrow">404</p>
     <h1>Nothing here</h1>
     <p class="page-head__lede">
-      That page has either not been written yet or never existed. The archive is the place to look.
+      That page has either not been written yet or never existed — but the site is small and
+      fully searchable, so whatever you were after is probably a sentence away.
     </p>
+
+    <form class="not-found__search" method="get" action={withBase('search/')} role="search">
+      <input
+        type="search"
+        name="q"
+        placeholder="Search every report and outlook…"
+        aria-label="Search the site"
+        autocomplete="off"
+        spellcheck="false"
+      />
+      <button type="submit">Search</button>
+    </form>
+
     <p style="margin-top:1.75rem">
       <a class="button button--inline" href={withBase()}>Back to the latest report</a>
+      <a class="button button--inline" href={withBase('archive/')}>Archive</a>
+      <a class="button button--inline" href={withBase('deadlines/')}>Deadlines</a>
+      <a class="button button--inline" href={withBase('outlooks/')}>Outlooks</a>
     </p>
   </div>
 </BaseLayout>
+
+<style>
+  .not-found__search {
+    margin-top: 1.5rem;
+    display: flex;
+    gap: 0.5rem;
+    max-width: 30rem;
+  }
+
+  .not-found__search input {
+    flex: 1 1 auto;
+    min-width: 0;
+    font: inherit;
+    color: var(--ink);
+    background: var(--surface);
+    border: 1px solid var(--line-strong);
+    border-radius: var(--radius-sm);
+    padding: 0.6rem 0.85rem;
+  }
+
+  .not-found__search input:focus {
+    outline: 2px solid var(--gold-deep);
+    outline-offset: 1px;
+  }
+
+  .not-found__search button {
+    font: inherit;
+    font-weight: 600;
+    color: var(--on-gold);
+    background: var(--gold);
+    border: 1px solid color-mix(in srgb, var(--gold-deep) 60%, transparent);
+    border-radius: var(--radius-sm);
+    padding: 0.6rem 1.1rem;
+    cursor: pointer;
+  }
+
+  .not-found__search button:hover {
+    background: color-mix(in srgb, var(--gold) 85%, var(--gold-deep));
+  }
+</style>

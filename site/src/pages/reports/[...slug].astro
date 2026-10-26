@@ -24,11 +24,22 @@ export async function getStaticPaths() {
       report,
       newer: (published[index - 1] ?? null) as Report | null,
       older: (published[index + 1] ?? null) as Report | null,
+      /** Newest-first, ranked by how many tags they share, then recency. */
+      related: published
+        .filter((other) => other.id !== report.id)
+        .map((other) => ({
+          report: other,
+          shared: other.data.tags.filter((tag) => report.data.tags.includes(tag)).length,
+        }))
+        .filter((entry) => entry.shared > 0)
+        .sort((a, b) => b.shared - a.shared || b.report.id.localeCompare(a.report.id))
+        .slice(0, 3)
+        .map((entry) => entry.report),
     },
   }));
 }
 
-const { report, newer, older } = Astro.props;
+const { report, newer, older, related } = Astro.props;
 const { Content } = await render(report);
 const { title, date, summary, tags, hero, heroAlt, charts, sources } = report.data;
 
@@ -102,6 +113,22 @@ const minutes = readingTime(report.body);
     }
 
     {
+      related.length > 0 && (
+        <section class="related">
+          <h2>Related</h2>
+          <ul class="related__list">
+            {related.map((entry) => (
+              <li class="related__item">
+                <span class="related__date">{entry.data.date}</span>
+                <a class="related__link" href={reportUrl(entry)}>{entry.data.title}</a>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )
+    }
+
+    {
       (newer || older) && (
         <nav class="pager" aria-label="Other reports">
           {older && (
@@ -150,5 +177,51 @@ const minutes = readingTime(report.body);
     font-size: 0.75rem;
     color: var(--muted);
     letter-spacing: 0.04em;
+  }
+
+  .related {
+    margin-top: 2.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--line);
+  }
+
+  .related h2 {
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--muted);
+    margin: 0 0 0.9rem;
+  }
+
+  .related__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 0.55rem;
+  }
+
+  .related__item {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+    font-size: 0.92rem;
+  }
+
+  .related__date {
+    font-variant-numeric: tabular-nums;
+    color: var(--muted);
+    font-size: 0.8rem;
+    flex-shrink: 0;
+  }
+
+  .related__link {
+    color: var(--ink);
+    text-decoration: none;
+  }
+
+  .related__link:hover {
+    text-decoration: underline;
+    text-decoration-color: var(--gold, currentColor);
   }
 </style>

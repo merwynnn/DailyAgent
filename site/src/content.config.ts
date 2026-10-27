@@ -51,6 +51,16 @@ const reports = defineCollection({
     date: isoDate,
     summary: z.string().min(1).max(400),
     tags: z.array(z.string().min(1)).default([]),
+    /**
+     * A page shape for this report. `layout: wide` adds `article--wide` to the
+     * article element; the CSS decides what that means. The name is free-form
+     * on purpose — an unknown one simply does nothing, so the agent can invent
+     * a layout in `global.css` without touching this schema.
+     */
+    layout: z
+      .string()
+      .regex(/^[a-z0-9-]+$/, 'layout must be lower-case, digits and dashes only')
+      .optional(),
     hero: z.string().optional(),
     heroAlt: z.string().optional(),
     pinned: z.boolean().default(false),

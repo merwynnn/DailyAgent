@@ -797,6 +797,39 @@ main {
 }
 
 /* --------------------------------------------------------------------------
+   Report layouts
+   --------------------------------------------------------------------------
+   `layout: <name>` in a report's frontmatter adds `article--<name>` to the
+   article element. Two extra shapes ship below; the default is what every
+   report has always looked like. The name is not an enum — an unknown value
+   simply matches no rule — so a new layout is a rule in this file, not a schema
+   change. Only the measure and the type change; the chrome never does.
+   -------------------------------------------------------------------------- */
+
+.article--wide .article__body,
+.article--wide .article__head {
+  max-width: 54rem;
+}
+
+.article--wide .article__hero img {
+  border-radius: var(--radius-lg);
+}
+
+.article--narrow .article__body,
+.article--narrow .article__head {
+  max-width: 34rem;
+}
+
+.article--narrow .article__title {
+  font-size: clamp(2rem, 6vw, 3.1rem);
+}
+
+.article--narrow .prose {
+  font-size: 1.08rem;
+  line-height: 1.85;
+}
+
+/* --------------------------------------------------------------------------
    Prose
    -------------------------------------------------------------------------- */
 

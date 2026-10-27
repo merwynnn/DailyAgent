@@ -41,7 +41,7 @@ export async function getStaticPaths() {
 
 const { report, newer, older, related } = Astro.props;
 const { Content } = await render(report);
-const { title, date, summary, tags, hero, heroAlt, charts, sources } = report.data;
+const { title, date, summary, tags, hero, heroAlt, charts, sources, layout } = report.data;
 
 const minutes = readingTime(report.body);
 ---
@@ -54,7 +54,7 @@ const minutes = readingTime(report.body);
   ogType="article"
   publishedTime={date}
 >
-  <article class="article wrap">
+  <article class:list={['article', 'wrap', layout && `article--${layout}`]}>
     <header class="article__head">
       <p class="article__back">
         <a href={withBase('archive/')}>

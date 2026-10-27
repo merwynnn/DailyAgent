@@ -68,25 +68,24 @@ Constraints that keep it shippable:
 - Work in increments that leave the site whole. If an idea spans several runs,
   ship a working slice each day and say where it stands.
 
-Name what you did under `## Site changes`, in enough detail that I can see the
-change without opening the code. Taking a day off is allowed — say so honestly.
-A fake or overreaching change is worse than none.
+Say what you changed, in enough detail that I can see it without opening the
+code — `## Site changes` is the usual heading, and it can sit wherever it fits.
+Taking a day off from building is allowed if you say so honestly. A fake or
+overreaching change is worse than none.
 
-### 2. Quick sweep: events and game jams
+### 2. The daily sweep
 
-A fast daily check, not a deep dive. The tracker carries the list; the report
-only needs to say what is new or changed.
+Every day, quietly check for new **engineering events in France** I could enter
+in person as a student — hackathons, challenges, workshops, summer schools,
+competitions, run by a company, a school or a lab, in programming, AI, embedded,
+robotics or autonomy — and new **game jams with cash prizes** (itch.io is the
+start, not the end).
 
-Look for new **events in France** I could enter in person as a student —
-hackathons, challenges, workshops, summer schools, competitions, run by a
-company, a school or a lab, in programming, AI, embedded, robotics or autonomy
-— and new **game jams with cash prizes** (itch.io is the start, not the end).
+Anything that qualifies goes into the tracker (job 3). That is the list, and the
+report does not need to restate it: tell me what is new, what changed, what just
+expired, and what you could not verify. Skip the rest.
 
-Anything that qualifies goes into the tracker (job 3). The report gets one line
-each: what it is, when, what you can win, a link. Things already on the tracker
-that have not changed do not need repeating.
-
-This is worth ten or fifteen minutes, not the morning.
+Ten or fifteen minutes, not the morning.
 
 ### 3. Refresh the Still open tracker
 
@@ -98,31 +97,28 @@ are in `AGENTS.md` section 5 — read them, the file's shape matters.
 To remove something yourself, write it here, e.g. "tracker: remove Micro Jam
 068". That counts as done or declined, and the item must not come back.
 
-### 4. AI, briefly
+### 4. What changed in AI
 
-**One paragraph, or three or four bullets, under about 100 words.** What
-actually changed this week that a working engineer would care about: a model
-worth trying, a capability that got cheap, a tool that now exists.
+A little of what actually happened this week that a working engineer would care
+about: a model worth trying, a capability that got cheap, a tool that now
+exists.
 
-**No benchmarks.** I do not want a scoreboard — the numbers are unverifiable
-from here and they age badly. Say what something can now do, or what it costs,
-and move on.
+No benchmarks. I do not want a scoreboard — the numbers are unverifiable from
+here and they age badly. Say what something can now do, or what it costs.
+
+This is the smallest thing in the report. Do not let it grow.
 
 ### 5. Project ideas
 
-Close with **one to three original project ideas** — things one student could
-actually build, technical or playful.
+One to three original project ideas — things one student could actually build,
+technical or playful.
 
-- **Free-standing.** Do not derive them from today's news, from the events you
-  found, or from anything else in the report. They are not commentary on the
-  day; they are ideas.
-- **New each day.** An idea may return from a previous day only if something
-  genuinely sharpened it.
-- **Worth starting.** A tool worth having, a game concept with a hook, a
-  coursework spin-off, a recurring annoyance worth automating.
+Free-standing: not derived from the day's news, from the events you found, or
+from anything else in the report. They are not commentary on the day; they are
+ideas. New each day, unless something genuinely sharpened an older one.
 
-Two or three lines each: what it is, why now, and the smallest first step.
-Skip the section when nothing good surfaced — filler ideas are worse than none.
+What it is, why now, the smallest first step. Skip it when nothing good
+surfaced — filler ideas are worse than none.
 
 ### 6. The weekly Outlook
 
@@ -143,35 +139,43 @@ delete it from this file afterwards.
 
 ---
 
-## How long this should be
+## How the report should look
 
-The report is now a short log, not the product: **roughly 400 to 700 words of
-body text.** The tracker holds the lists, the site holds the work. If you are
-writing more than that, you are writing report instead of building.
+**This is yours.** The jobs above say what to find out, not what to write. There
+is no required set of sections, no required order, no required length and no
+required tone: choose the shape the day actually has. A day that is one story
+deserves one story. A day with eight small things is a list. A day with nothing
+is three honest lines.
 
-## How to write it up
+The archive has journal entries, dossiers, notes and essays in it — keep that
+true. Do not reach for last week's outline out of habit.
 
-Sections, in this order, and leave one out entirely when it has nothing worth
-saying: `Events`, `Game jams`, `AI`, `Project ideas`, `Site changes`.
+What the report still owes me, every time:
 
-`Events` and `Game jams` are now one line per new find, because the tracker is
-the list. `Site changes` is where the substance goes — it is the record of the
-actual work of the day.
+- **The truth**, including the parts you could not check. Say what you could not
+  verify rather than smoothing it over.
+- **Sources** for what you assert, in the frontmatter list and inline where it
+  matters.
+- **A reason to read it.** Five minutes is about right. Longer than that has to
+  be earned by the day.
+- **Something to look at or play with.** Not every day needs a picture, but the
+  page should rarely be grey text from top to bottom.
+- **The near deadlines first**, in whatever way fits the writing. If something
+  expires within a week, I should not have to hunt for it.
 
-**Don't repeat yourself.** Anywhere I can still enter lives in the tracker, not
-in the report. Mention something on the tracker only when it is new, has
-changed, or has just expired.
+You own the report's interface too, within the site's design: images, charts,
+tables, collapsible detail, the interactive panels in `AGENTS.md`, and the page
+shape itself (`layout:` in the frontmatter). If the page you want does not exist
+yet — a different column, a different opening, a new kind of block — build it
+and note it under the site work.
 
-**If a deadline is inside a week**, say so in one line at the top, before
-anything else.
+## Tags
 
-**Tags**: `events`, `jams`, `ai`, `project` — only the ones with content. Do not
-invent new ones.
-
-**Sources**: every link you relied on goes in the report's `sources` list. If a
-claim came from a vendor's own blog, say so.
+The tag pages are navigation, so keep the vocabulary small: `events`, `jams`,
+`ai` and `project` already exist and cover most days. Add a new one only if it
+will recur, not as a one-off label.
 
 **Be honest about coverage.** French student events are often announced on
-school intranets, Instagram and Discord, which you cannot read. If a sweep
-turns up little, say it was thin rather than padding the list. Never invent an
-event, a date, a prize, or a number.
+school intranets, Instagram and Discord, which you cannot read. If a sweep turns
+up little, say it was thin rather than padding the list. Never invent an event,
+a date, a prize, or a number.

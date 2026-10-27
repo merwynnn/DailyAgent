@@ -1183,6 +1183,49 @@ main {
 }
 
 /* --------------------------------------------------------------------------
+   Print
+   Reports are meant to be read — including on paper or saved as PDF. Screen
+   chrome is dropped, and anything the reveal-on-scroll animation might have
+   hidden below the fold is forced visible.
+   -------------------------------------------------------------------------- */
+@media print {
+  .skip-link,
+  .progress,
+  .masthead,
+  .footer,
+  .pager,
+  .not-found__search {
+    display: none !important;
+  }
+
+  [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .site {
+    min-height: 0;
+  }
+
+  section,
+  article {
+    break-inside: auto;
+  }
+
+  h2,
+  h3 {
+    break-after: avoid;
+  }
+
+  table,
+  figure,
+  svg {
+    break-inside: avoid;
+  }
+}
+
+/* --------------------------------------------------------------------------
    Small screens
    -------------------------------------------------------------------------- */
 

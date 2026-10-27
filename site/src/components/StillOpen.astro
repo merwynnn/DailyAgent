@@ -1,24 +1,18 @@
 ---
 import { parseDate, withBase } from '../lib/site';
+import { dayMonth, durationLabel, spanDays, spanLabel, typeMeta, type TrackedItem } from '../lib/tracker';
 
 /**
- * One row of the "Still open" tracker. The list lives in
- * `src/data/still-open.json`; the agent carries it forward and prunes
- * past-deadline items each daily run.
+ * The "Still open" tracker. The list lives in `src/data/still-open.json`; the
+ * agent carries it forward and prunes past-deadline items each daily run.
+ *
+ * A row answers three questions at a glance, in this order: what kind of thing
+ * is this (emoji + label), how long does it run (the event's own dates plus a
+ * coarse duration), and how long do I have to get in (the registration close,
+ * which is a different date from the event whenever the organiser publishes
+ * one). Inferred deadlines are marked `~ … (est.)` so they are never mistaken
+ * for a published date.
  */
-export interface TrackedItem {
-  id: string;
-  name: string;
-  /** What the row is, shown as a tiny tag (`event` or `jam`). */
-  kind: string;
-  url: string;
-  /** Last day the item is still enterable, `YYYY-MM-DD`. */
-  deadline: string;
-  /** Optional one-liner shown as the row's tooltip. */
-  note?: string;
-  /** Day the item entered the tracker, `YYYY-MM-DD`. */
-  added?: string;
-}
 
 interface Props {
   items: TrackedItem[];
@@ -30,16 +24,8 @@ const { items, today } = Astro.props;
 
 // All dates are plain calendar labels, parsed in UTC like everywhere else.
 const now = parseDate(today).getTime();
+const currentYear = parseDate(today).getUTCFullYear();
 const daysTo = (iso: string) => Math.round((parseDate(iso).getTime() - now) / 86_400_000);
-
-const MONTHS_SHORT = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-
-/** `2026-10-31` -> `31 Oct`, with the year shown once it differs from today's. */
-const shortDate = (iso: string) => {
-  const date = parseDate(iso);
-  const month = `${date.getUTCDate()} ${MONTHS_SHORT[date.getUTCMonth()]}`;
-  return date.getUTCFullYear() === parseDate(today).getUTCFullYear() ? month : `${month} ${date.getUTCFullYear()}`;
-};
 
 const whenLabel = (days: number) => {
   if (days === 0) return 'today';
@@ -50,41 +36,75 @@ const whenLabel = (days: number) => {
 /** Anything past its deadline is gone already — pruning the file is the agent's
  * job, this is the defensive half so a stale file can never show zombies.
  */
-const open = items
+const open: TrackedItem[] = items
   .filter((item) => /^\d{4}-\d{2}-\d{2}$/.test(item.deadline) && daysTo(item.deadline) >= 0)
   .sort((a, b) => a.deadline.localeCompare(b.deadline) || a.name.localeCompare(b.name));
+
+/** Only the types actually on the list are worth explaining. */
+const presentTypes = [...new Set(open.map((item) => item.type))];
 ---
 
 {
   open.length > 0 && (
     <section class="still-open" aria-labelledby="still-open-title">
       <header class="still-open__head">
-        <p class="eyebrow" id="still-open-title">
-          Still open
-        </p>
-        <p class="still-open__hint">
-          {open.length} {open.length === 1 ? 'thing' : 'things'} you can still enter, soonest deadline first. Items drop
-          off automatically once their deadline passes.
-        </p>
-        <a
-          class="still-open__sub"
-          href={withBase('deadlines/')}
-          title="The same deadlines on a month-grid calendar page"
-        >
-          Month view
-        </a>
-        <a
-          class="still-open__sub"
-          href={withBase('still-open.ics')}
-          title="Deadlines as calendar events — subscribe from Google Calendar, Apple Calendar or any iCal client"
-        >
-          Calendar feed ↗
-        </a>
+        <div class="still-open__title">
+          <p class="eyebrow" id="still-open-title">
+            Still open
+          </p>
+          <p class="still-open__hint">
+            {open.length} {open.length === 1 ? 'thing' : 'things'} you can still enter, soonest deadline first. Rows drop
+            off once their entry deadline passes.
+          </p>
+        </div>
+        <div class="still-open__links">
+          <a
+            class="still-open__sub"
+            href={withBase('deadlines/')}
+            title="The same deadlines on a month-grid calendar page, with the event's running days shaded"
+          >
+            Month view
+          </a>
+          <a
+            class="still-open__sub"
+            href={withBase('still-open.ics')}
+            title="Entry deadlines and running dates as calendar events — subscribe from Google Calendar, Apple Calendar or any iCal client"
+          >
+            Calendar feed ↗
+          </a>
+        </div>
       </header>
+
+      <p class="still-open__legend">
+        {presentTypes.map((type, index) => (
+          <>
+            {index > 0 && <span class="still-open__legend-sep" aria-hidden="true">·</span>}
+            <span class="still-open__legend-item">
+              <span class="still-open__legend-emoji" aria-hidden="true">{typeMeta(type).emoji}</span>
+              {typeMeta(type).label}
+            </span>
+          </>
+        ))}
+        <span class="still-open__legend-sep" aria-hidden="true">·</span>
+        <span class="still-open__legend-item">
+          <span class="still-open__legend-emoji" aria-hidden="true">~</span>
+          no published deadline, event start used
+        </span>
+      </p>
+
       <ul class="still-open__list">
         {open.map((item) => {
+          const meta = typeMeta(item.type);
           const days = daysTo(item.deadline);
           const when = whenLabel(days);
+          const span = spanLabel(item.start, item.end, currentYear);
+          const length = spanDays(item.start, item.end);
+          const duration = length !== null ? durationLabel(length) : null;
+          const closes = `closes ${item.deadlineEstimated ? '~' : ''}${dayMonth(item.deadline, currentYear)}${
+            item.deadlineEstimated ? ' (est.)' : ''
+          }`;
+          const summary = [meta.label, span, duration, closes].filter(Boolean).join(' · ');
+
           return (
             <li class="still-open__item" data-added={item.added}>
               <a
@@ -93,14 +113,47 @@ const open = items
                 target="_blank"
                 rel="noopener noreferrer"
                 title={item.note}
-                aria-label={`${item.name} — ${item.kind}, deadline ${shortDate(item.deadline)}, ${when}${item.note ? `: ${item.note}` : ''}`}
+                aria-label={`${item.name} — ${summary}, ${when}`}
               >
-                <span class="still-open__kind">{item.kind}</span>
-                <span class="still-open__name">{item.name}</span>
-                <span class="still-open__meta">
-                  <span class="still-open__date">{shortDate(item.deadline)}</span>
-                  <span class:list={['still-open__when', days <= 3 && 'still-open__when--soon']}>{when}</span>
+                <span class="still-open__icon" aria-hidden="true">
+                  {meta.emoji}
                 </span>
+                <span class="still-open__body">
+                  <span class="still-open__name">{item.name}</span>
+                  <span class="still-open__facts">
+                    <span class="still-open__type">{meta.label}</span>
+                    <span class="still-open__dot" aria-hidden="true">
+                      ·
+                    </span>
+                    {span && (
+                      <>
+                        <span class="still-open__span">{span}</span>
+                        <span class="still-open__dot" aria-hidden="true">
+                          ·
+                        </span>
+                      </>
+                    )}
+                    {duration && (
+                      <>
+                        <span class="still-open__length">{duration}</span>
+                        <span class="still-open__dot" aria-hidden="true">
+                          ·
+                        </span>
+                      </>
+                    )}
+                    <span
+                      class:list={['still-open__closes', item.deadlineEstimated && 'still-open__closes--est']}
+                      title={
+                        item.deadlineEstimated
+                          ? 'No published registration date — the event start is used as a conservative cutoff'
+                          : undefined
+                      }
+                    >
+                      {closes}
+                    </span>
+                  </span>
+                </span>
+                <span class:list={['still-open__when', days <= 3 && 'still-open__when--soon']}>{when}</span>
               </a>
             </li>
           );
@@ -121,18 +174,28 @@ const open = items
 
   .still-open__head {
     display: flex;
-    align-items: baseline;
+    align-items: flex-start;
     justify-content: space-between;
     gap: 1rem;
     flex-wrap: wrap;
-    margin-bottom: 0.95rem;
+    margin-bottom: 0.7rem;
+  }
+
+  .still-open__title {
+    min-width: 0;
   }
 
   .still-open__hint {
     font-size: 0.82rem;
     color: var(--muted);
     max-width: 52ch;
-    text-align: right;
+    margin: 0.3rem 0 0;
+  }
+
+  .still-open__links {
+    display: flex;
+    gap: 0.4rem;
+    flex: none;
   }
 
   .still-open__sub {
@@ -154,25 +217,60 @@ const open = items
     color: var(--ink);
   }
 
+  /* The key to the emoji — the whole point of the column, so it is never hidden. */
+  .still-open__legend {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.3rem 0.6rem;
+    margin: 0 0 0.9rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--line);
+    font-size: 0.71rem;
+    color: var(--muted);
+  }
+
+  .still-open__legend-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.28rem;
+  }
+
+  .still-open__legend-emoji {
+    font-size: 0.85rem;
+    line-height: 1;
+  }
+
+  .still-open__legend-sep {
+    color: var(--line-strong);
+  }
+
   .still-open__list {
     list-style: none;
     margin: 0;
     padding: 0;
     display: grid;
-    gap: 0.45rem;
-    grid-template-columns: repeat(auto-fill, minmax(min(100%, 23rem), 1fr));
+    gap: 0.4rem;
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  /* Two columns only when a row still has room for name plus facts. */
+  @media (min-width: 68rem) {
+    .still-open__list {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
   }
 
   .still-open__row {
-    display: flex;
-    align-items: center;
-    gap: 0.55rem;
-    padding: 0.5rem 0.7rem;
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    align-items: start;
+    gap: 0.6rem;
+    padding: 0.55rem 0.7rem;
     background: var(--surface-2);
     border: 1px solid var(--line);
     border-radius: var(--radius-sm);
     text-decoration: none;
-    min-width: 0;
     transition: border-color 0.14s ease, transform 0.14s ease, box-shadow 0.14s ease;
   }
 
@@ -182,22 +280,19 @@ const open = items
     box-shadow: var(--shadow-xs);
   }
 
-  .still-open__kind {
-    flex: none;
-    font-size: 0.62rem;
-    font-weight: 600;
-    letter-spacing: 0.09em;
-    text-transform: uppercase;
-    color: var(--muted);
-    border: 1px solid var(--line);
-    border-radius: var(--radius-pill);
-    padding: 0.22rem 0.5rem;
-    line-height: 1;
+  .still-open__icon {
+    font-size: 0.98rem;
+    line-height: 1.45;
+  }
+
+  .still-open__body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    min-width: 0;
   }
 
   .still-open__name {
-    flex: 1 1 auto;
-    min-width: 0;
     font-size: 0.88rem;
     font-weight: 600;
     white-space: nowrap;
@@ -205,21 +300,46 @@ const open = items
     text-overflow: ellipsis;
   }
 
-  .still-open__meta {
-    flex: none;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
+  .still-open__facts {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.25rem 0.32rem;
+    font-size: 0.71rem;
+    color: var(--muted);
   }
 
-  .still-open__date {
-    font-size: 0.76rem;
+  .still-open__type {
+    font-size: 0.6rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
     color: var(--ink-soft);
+  }
+
+  .still-open__dot {
+    color: var(--line-strong);
+  }
+
+  .still-open__span,
+  .still-open__length,
+  .still-open__closes {
     font-variant-numeric: tabular-nums;
     white-space: nowrap;
   }
 
+  .still-open__closes {
+    color: var(--ink-soft);
+  }
+
+  /* A dotted rule is the one cue that says "we inferred this date". */
+  .still-open__closes--est {
+    border-bottom: 1px dotted var(--muted);
+    cursor: help;
+  }
+
   .still-open__when {
+    align-self: start;
     font-size: 0.71rem;
     font-weight: 600;
     line-height: 1;
@@ -237,11 +357,5 @@ const open = items
     background: var(--gold);
     border-color: color-mix(in srgb, var(--gold-deep) 60%, transparent);
     color: var(--on-gold);
-  }
-
-  @media (max-width: 640px) {
-    .still-open__hint {
-      text-align: left;
-    }
   }
 </style>

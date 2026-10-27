@@ -13,14 +13,18 @@ human's brief and tells you what to work on today.
 
 1. Read `INSTRUCTIONS.md` and work out what today's jobs are (including any
    "tracker: remove …" lines — see section 5).
-2. Do the work — research, check things, update files, whatever is asked.
-3. If the week does not have an Outlooks entry yet (section 6), write this
+2. Build the website. `INSTRUCTIONS.md` puts the site first, and it should take
+   most of the run: hours can go here, and several changes in one run is
+   normal. Section 7 is the map.
+3. Do the quick jobs — the events and jam sweep, the AI line, the project
+   ideas. These are minutes each, not the morning.
+4. If the week does not have an Outlooks entry yet (section 6), write this
    week's piece.
-4. Refresh the Still open tracker (section 5): carry open items forward, add
+5. Refresh the Still open tracker (section 5): carry open items forward, add
    what today found, drop anything past its deadline.
-5. Write today's report to `site/src/content/reports/YYYY-MM-DD.md`.
-6. Stop. A script builds the site, commits, and publishes. **You do not run
-   git, and you do not build or publish.**
+6. Write today's report to `site/src/content/reports/YYYY-MM-DD.md`.
+7. Stop. A script commits and publishes. **You never run `git`.** The build
+   gate in section 7 is still yours to run; the publication build is not.
 
 `YYYY-MM-DD` is today's local date. Get it from `date +%F`.
 
@@ -71,9 +75,10 @@ sources:                                      # optional, shown as a list
 ```
 
 Keep tag vocabulary small and stable. `INSTRUCTIONS.md` names the tags for its
-standing jobs (`events`, `jams`, `ai`, `geopolitics`) — use those rather than
-inventing a new tag every day. Generic tags such as `project`, `note`,
-`reading` and `inbox` are for one-off days.
+standing jobs (`events`, `jams`, `ai`, `project`) — use those rather than
+inventing a new tag every day. `geopolitics` is retired: the older reports keep
+it, and those tag pages still work, but new runs do not add it. Tags such as
+`note`, `reading` and `inbox` are for one-off days.
 
 ### Body
 
@@ -193,22 +198,42 @@ rendered by `StillOpen.astro`. The list's only source of truth is
 
 ### Rules
 
-- One line per item: **name, deadline, link.** The optional `note` carries the
-  prize, entry fee or AI-rule detail and shows as the row's tooltip.
+- One row per item. Fields: `id`, `name`, `type`, `url`, `deadline`, and
+  optionally `deadlineEstimated`, `start`, `end`, `note`, `added`.
+- `type` is exactly one of `hackathon`, `jam`, `competition`, `workshop`,
+  `school`, `conference`. It drives the emoji and the label, so pick the
+  closest one rather than inventing a value — anything unrecognised falls back
+  to `❓ other`.
+- `deadline` is the **last day to enter**, not the day the event happens.
+  `start` and `end` are the event's own running dates, `YYYY-MM-DD`, inclusive,
+  and they are what the duration is computed from. **Only fill them in when the
+  organiser published them.** A missing date is honest; a guessed one is not.
+  A row with neither simply shows no duration, which is fine.
+- When no registration date is published, use the event start as a conservative
+  cutoff and set `"deadlineEstimated": true`. The row then renders as
+  `closes ~29 Oct (est.)` with a dotted rule, so an inferred date can never be
+  read as a published one.
+- `note` carries the prize, the entry fee, the AI rule and where it is; it
+  shows as the row's tooltip. Keep it to one sentence-ish, facts separated by
+  `·`, and never move the dates there — they belong in `start`/`end`.
 - Items are carried forward day to day until their deadline passes or today's
   work acts on them. When the deadline passes, **delete the item from the
   file** — no zombie entries. The build also filters expired rows defensively,
   but pruning the file is your job, not the build's.
-- Only items with a real calendar date go in. Never invent a deadline: if the
-  true date is unknown (registration "opens in December"), put a clearly
-  marked check-back marker in `deadline` and say so in `note`.
 - When a new event or jam first appears in a report, add it to the tracker the
   same day, with `added` set to today.
-- Keep an item's `id` for life; update `url`, `deadline` and `note` as facts
-  change. Order is decided at render time, soonest deadline first.
+- Keep an item's `id` for life; update `url`, `deadline`, `start`, `end`,
+  `type` and `note` as facts change. Order is decided at render time, soonest
+  deadline first.
 - The human may remove items by naming them in `INSTRUCTIONS.md`
   ("tracker: remove X") or by editing the JSON directly. Treat an explicit
   removal as final — done or declined — and never re-add it.
+
+Three things render this file, so keep it valid JSON: `StillOpen.astro` (the
+dashboard list), `deadlines.astro` (the month grid, which also shades the days a
+short event is running) and `still-open.ics` (the calendar feed, which emits one
+event for the entry deadline and a second spanning `start`–`end`). A malformed
+date, or a `type` that is not in the list above, is visible on all three.
 
 GitHub Pages cannot write or save anything server-side. The tracker works
 because it is a plain file in this repository, updated by you and published by
@@ -243,22 +268,30 @@ humanity's plausible paths, from next year out to 2050.
 - Do not hard-code internal links in the body — `/DailyAgent/…` breaks when
   the site is later self-hosted. Refer to reports and entries by date.
 
-## 7. Improving the site itself
+## 7. The website (the main job)
 
-The site is an Astro project in `site/`. You may and should extend it when it
-earns its keep:
+The site is an Astro project in `site/`. **Improving it is the primary work of
+a run**, not a side effect of writing a report. Aim to leave it measurably
+better every day: new pages, new interactions, new views over data it already
+holds, polish, performance, accessibility. Several changes in one run is normal
+and welcome.
 
 - **Content** (`site/src/content/reports/`, `site/src/content/outlooks/`) —
   everyday work and the weekly outlooks (sections 5–6).
 - **Data** (`site/src/data/`) — machine-maintained lists the site renders, e.g.
   `still-open.json` (section 5). You own it: update the file, don't rework the
   component to special-case a row.
-- **Components / pages / styles** (`site/src/components`, `site/src/pages`,
-  `site/src/styles`) — only when a report genuinely needs a new kind of block.
-  Keep changes small, matching the existing style, and never break an existing
-  report.
+- **Components / pages / styles / lib** (`site/src/components`,
+  `site/src/pages`, `site/src/styles`, `site/src/lib`) — yours to extend. Match
+  the existing design language rather than inventing a second one, and never
+  break an existing report, page or feed.
 - **`docs/`** — forbidden. It is generated output, rebuilt from `site/` on
   every run and published by GitHub Pages. Any edit there is thrown away.
+
+Before adding something, read what is already there — `styles/global.css` for
+the tokens and the type scale, `lib/site.ts` for the base-path helpers, and the
+existing pages for the shape of a page. Reuse them rather than growing a
+parallel set of conventions.
 
 After changing anything under `site/src`, prove it still builds:
 

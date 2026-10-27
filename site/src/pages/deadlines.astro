@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { parseDate, withBase } from '../lib/site';
+import { typeMeta } from '../lib/tracker';
 import stillOpenData from '../data/still-open.json';
 
 /**
@@ -24,6 +25,37 @@ for (const item of open) {
   list.push(item);
   byDay.set(item.deadline, list);
 }
+
+/**
+ * `YYYY-MM-DD` -> the events physically running on that day. The grid only puts
+ * a chip on the deadline, so without this the calendar would show when entries
+ * close but never how long the thing itself lasts.
+ *
+ * Capped at a fortnight: a month-long online jam would shade every single day
+ * and the block stops meaning anything, whereas a weekend hackathon is exactly
+ * the shape the grid is good at showing.
+ */
+const runningByDay = new Map<string, typeof open>();
+for (const item of open) {
+  if (!item.start || !item.end) continue;
+  const from = parseDate(item.start).getTime();
+  const to = parseDate(item.end).getTime();
+  if (Number.isNaN(from) || Number.isNaN(to) || to < from) continue;
+  if (to - from > 13 * 86_400_000) continue;
+  for (let stamp = from; stamp <= to; stamp += 86_400_000) {
+    const iso = new Date(stamp).toISOString().slice(0, 10);
+    const list = runningByDay.get(iso) ?? [];
+    list.push(item);
+    runningByDay.set(iso, list);
+  }
+}
+
+/** `🛠️ Two events running` — the cell's hover text. */
+const runningLabel = (iso: string) =>
+  (runningByDay.get(iso) ?? []).map((item) => `${typeMeta(item.type).emoji} ${item.name}`).join(' · ');
+
+/** Only explain the types actually on the grid. */
+const presentTypes = [...new Set(open.map((item) => item.type))];
 
 const MONTHS = [
   'January', 'February', 'March', 'April', 'May', 'June',
@@ -79,10 +111,18 @@ for (let i = 0; i < 3; i += 1) {
     </section>
 
     <p class="deadlines-legend">
-      <span class="deadlines-legend__chip deadlines-legend__chip--event">event</span>
-      <span class="deadlines-legend__chip deadlines-legend__chip--jam">jam</span>
+      {presentTypes.map((type) => (
+        <span class="deadlines-legend__chip">
+          <span aria-hidden="true">{typeMeta(type).emoji}</span>
+          {typeMeta(type).label}
+        </span>
+      ))}
+      <span class="deadlines-legend__chip">
+        <span class="deadlines-legend__swatch" aria-hidden="true" />
+        running that day
+      </span>
       <span class="deadlines-legend__more">
-        Hover a chip for the full note; the chip links straight to the entry page.
+        A chip is the last day to enter; a shaded day is an event still running. Hover either for the note.
       </span>
     </p>
 
@@ -101,21 +141,27 @@ for (let i = 0; i < 3; i += 1) {
                 <div class="deadlines-cell deadlines-cell--empty" />
               ) : (
                 <div
-                  class:list={['deadlines-cell', cell.isToday && 'deadlines-cell--today']}
-                  title={cell.isToday ? 'Today' : undefined}
+                  class:list={[
+                    'deadlines-cell',
+                    cell.isToday && 'deadlines-cell--today',
+                    runningByDay.has(cell.iso) && 'deadlines-cell--running',
+                  ]}
+                  title={
+                    runningByDay.has(cell.iso) ? runningLabel(cell.iso) : cell.isToday ? 'Today' : undefined
+                  }
                 >
                   <span class="deadlines-cell__num">{cell.day}</span>
                   {cell.items.map((item) => (
                     <a
-                      class:list={['deadlines-chip', `deadlines-chip--${item.kind}`]}
+                      class:list={['deadlines-chip', item.type === 'jam' && 'deadlines-chip--jam']}
                       href={item.url}
                       target="_blank"
                       rel="noopener noreferrer"
                       title={item.note
-                        ? `${item.name} (${item.kind}): ${item.note}`
-                        : `${item.name} (${item.kind})`}
+                        ? `${item.name} (${typeMeta(item.type).label}): ${item.note}`
+                        : `${item.name} (${typeMeta(item.type).label})`}
                     >
-                      {item.name}
+                      <span aria-hidden="true">{typeMeta(item.type).emoji}</span> {item.name}
                     </a>
                   ))}
                 </div>
@@ -145,10 +191,11 @@ for (let i = 0; i < 3; i += 1) {
   }
 
   .deadlines-legend__chip {
-    font-size: 0.62rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.66rem;
     font-weight: 600;
-    letter-spacing: 0.09em;
-    text-transform: uppercase;
     border-radius: var(--radius-pill);
     padding: 0.22rem 0.55rem;
     line-height: 1;
@@ -157,12 +204,12 @@ for (let i = 0; i < 3; i += 1) {
     border: 1px solid var(--line);
   }
 
-  .deadlines-legend__chip--event {
-    border-left: 3px solid var(--gold-deep);
-  }
-
-  .deadlines-legend__chip--jam {
-    border-left: 3px solid var(--muted);
+  /* Mirrors the tint a running day gets in the grid below. */
+  .deadlines-legend__swatch {
+    width: 0.7rem;
+    height: 0.7rem;
+    border-radius: 2px;
+    background: color-mix(in srgb, var(--gold) 55%, transparent);
   }
 
   .deadlines-legend__more {
@@ -213,6 +260,12 @@ for (let i = 0; i < 3; i += 1) {
   .deadlines-cell--today {
     border-color: var(--gold-deep);
     box-shadow: var(--shadow-xs);
+  }
+
+  /* An event that is physically running that day — the month's answer to
+     "how long does it last", which the chips alone cannot show. */
+  .deadlines-cell--running {
+    background: color-mix(in srgb, var(--gold) 24%, var(--surface));
   }
 
   .deadlines-cell__num {

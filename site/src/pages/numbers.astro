@@ -1,0 +1,78 @@
+---
+import Chart from '../components/Chart.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { formatDate, publishedReports, reportUrl } from '../lib/site';
+import { getCollection } from 'astro:content';
+
+// Reports that carried at least one chart, newest first, with their charts.
+const charted = publishedReports(await getCollection('reports')).filter(
+  (report) => report.data.charts?.length > 0,
+);
+const total = charted.reduce((sum, report) => sum + report.data.charts.length, 0);
+---
+
+<BaseLayout
+  title="By the numbers"
+  description="Every chart the daily log has rendered, collected on one page and linked back to the day that sourced it."
+>
+  <div class="wrap">
+    <section class="page-head">
+      <p class="eyebrow">{total} charts · {charted.length} reports</p>
+      <h1>By the numbers</h1>
+      <p class="page-head__lede">
+        Every figure the daily log has rendered, curated onto one page as the log accumulates.
+        Each entry links back to the day that sourced the data — vendor-reported figures stay
+        labelled as such, exactly as they were in print.
+      </p>
+    </section>
+
+    {
+      charted.map((report) => (
+        <section class="numbers">
+          <p class="numbers__date">
+            <a href={reportUrl(report)}>{formatDate(report.data.date)}</a>
+          </p>
+          <div class="charts">
+            {report.data.charts.map((chart) => (
+              <Chart title={chart.title} type={chart.type} unit={chart.unit} data={chart.data} />
+            ))}
+          </div>
+        </section>
+      ))
+    }
+
+    {
+      charted.length === 0 && (
+        <p class="numbers__empty">No charts yet — numbers arrive with the days that earn them.</p>
+      )
+    }
+  </div>
+</BaseLayout>
+
+<style>
+  .numbers {
+    padding-top: 1.5rem;
+    margin-top: 1.5rem;
+    border-top: 1px solid var(--line);
+  }
+
+  .numbers__date {
+    margin: 0 0 1rem;
+    font-size: 0.9rem;
+  }
+
+  .numbers__date a {
+    color: var(--muted);
+    text-decoration: none;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .numbers__date a:hover {
+    color: var(--ink);
+  }
+
+  .numbers__empty {
+    color: var(--muted);
+    font-size: 0.92rem;
+  }
+</style>

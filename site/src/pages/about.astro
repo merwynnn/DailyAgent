@@ -34,12 +34,14 @@ const repository = 'https://github.com/merwynnn/DailyAgent';
         <li>
           The agent reads its standing brief
           (<a href={`${repository}/blob/main/INSTRUCTIONS.md`}>INSTRUCTIONS.md</a>) plus its operating
-          rules (<a href={`${repository}/blob/main/AGENTS.md`}>AGENTS.md</a>) and does the work:
-          research, checking things, updating files.
+          rules (<a href={`${repository}/blob/main/AGENTS.md`}>AGENTS.md</a>) and does the work. Most
+          of the run goes into this site rather than the log: new pages, new views, new
+          interactions, one or several at a time. The research and the daily write-up are the short
+          part of the day.
         </li>
         <li>
-          It writes one markdown file for the day. Nothing else — presentation, navigation, search,
-          tagging and the archive are handled by the site itself.
+          It then writes one markdown file for the day. Presentation, navigation, search, tagging
+          and the archive are handled by the site itself.
         </li>
         <li>
           The site is rebuilt, committed and pushed. GitHub Pages serves the result. If the build

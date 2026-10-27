@@ -150,16 +150,28 @@ is three honest lines.
 The archive has journal entries, dossiers, notes and essays in it — keep that
 true. Do not reach for last week's outline out of habit.
 
+**Write about what I would act on.** The test for every paragraph is whether it
+changes what I do: an event I might enter, a deadline I might miss, a tool I
+might try, a shift that touches my work. Something I could not realistically
+enter — a trophy-only hackathon two trains away, a workshop whose registration
+is an email I would never send — is one line in the tracker, if that. Do not
+explain its mechanics, and do not build a panel about it. The climbing-robot
+workshop this week got a section and an interaction for exactly that reason, and
+it was useless to me.
+
 What the report still owes me, every time:
 
 - **The truth**, including the parts you could not check. Say what you could not
   verify rather than smoothing it over.
 - **Sources** for what you assert, in the frontmatter list and inline where it
   matters.
-- **A reason to read it.** Five minutes is about right. Longer than that has to
-  be earned by the day.
+- **A reason to read it, and not much else.** 500–700 words. 800 is the ceiling,
+  and only a genuinely big day goes past it. Long is not the same as useful, and
+  a report I skim is worse than a short one I finish.
 - **Something to look at or play with.** Not every day needs a picture, but the
-  page should rarely be grey text from top to bottom.
+  page should rarely be grey text from top to bottom. The panel counts here, so
+  it has to be about something I care about — from the day, or from the site's
+  own data. Not a toy around a thing you have just told me to ignore.
 - **The near deadlines first**, in whatever way fits the writing. If something
   expires within a week, I should not have to hunt for it.
 

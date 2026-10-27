@@ -23,8 +23,10 @@ human's brief and tells you what to work on today.
 5. Refresh the Still open tracker (section 5): carry open items forward, add
    what today found, drop anything past its deadline.
 6. Write today's report to `site/src/content/reports/YYYY-MM-DD.md`.
-7. Stop. A script commits and publishes. **You never run `git`.** The build
-   gate in section 7 is still yours to run; the publication build is not.
+7. Test everything you built in a browser and look at it (section 7), run the
+   build gate, then stop. A script commits and publishes. **You never run
+   `git`.** The build gate in section 7 is still yours to run; the publication
+   build is not.
 
 `YYYY-MM-DD` is today's local date. Get it from `date +%F`.
 
@@ -168,7 +170,7 @@ How it works:
 2. Link it from the markdown **on a line of its own**:
 
 ```
-[Drag Google's estimate](widget:widgets/2026-10-27/compute.html?h=330 "SpaceX $120.5B and Amazon ~$110B are reported figures; Google's is an estimate.")
+[Plan the climb](widget:widgets/2026-10-27/climb.html?h=420 "A toy of the workshop's planning rule: two anchored hands, one swing, reach is the limit.")
 ```
 
 - Link text is the panel's accessible name; the quoted title becomes the
@@ -184,7 +186,8 @@ How it works:
   (requestAnimationFrame with dt, paused when hidden), `.pointer()`
   (mouse/touch/pen in one shape), `.tokens()` (the page's colours, so a canvas
   matches the CSS), `.fit()`, and the reader's light/dark theme, kept in sync
-  when they flip the switch.
+  when they flip the switch. A canvas is cleared whenever it resizes, so if you
+  draw once rather than from a loop, subscribe with `view.onResize(draw)`.
 - Keep it self-contained: no CDN, no network requests, no external fonts, no
   storage, and never touch `window.parent`.
 - It must work in light and dark, be usable with the keyboard, and say
@@ -350,9 +353,25 @@ After changing anything under `site/src`, prove it still builds:
 npm --prefix site run build
 ```
 
-That is the one command you are expected to run. If it fails, fix it before you
-finish — a broken build means the day's work never gets published. Never
-"fix" a build error by deleting a report or a page.
+That is the one command that must pass. If it fails, fix it before you finish —
+a broken build means the day's work never gets published. Never "fix" a build
+error by deleting a report or a page. But a green build is only half the gate:
+see below.
+
+### Test what you build
+
+A green build proves it compiles; it never proves it works. Everything you add
+or change — a panel, a page, a filter, a layout, a note in the tracker — gets
+used the way a reader would use it before you sign the day off: open the built
+page in a browser, click the controls, Tab through them, check light and dark,
+a wide window and a narrow one, and **look at the result**. Take a screenshot
+and read it. Anything that draws, animates or responds is not finished until you
+have seen it do so; a script that proves the logic can still ship a blank panel.
+
+Serve the built `docs/` over a local static server and drive a headless browser
+at it. A headless screenshot cannot click, so to test an interaction make a
+throwaway copy of the page with a script that clicks for you, look at the shot,
+then delete the copy. Test the rendered page, not the file you just wrote.
 
 ---
 

@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Anthropic's committed compute</title>
+    <link rel="stylesheet" href="../kit.css" />
+    <script src="../kit.js"></script>
+    <style>
+      .head {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: 1rem;
+        flex-wrap: wrap;
+      }
+
+      .total {
+        margin: 0;
+        font-family: var(--font-mono);
+        font-size: 1.9rem;
+        font-weight: 600;
+        letter-spacing: -0.03em;
+        line-height: 1;
+        font-variant-numeric: tabular-nums;
+      }
+
+      .total span {
+        font-family: var(--font-body);
+        font-size: 0.72rem;
+        font-weight: 600;
+        letter-spacing: 0.04em;
+        color: var(--muted);
+        text-transform: uppercase;
+        margin-left: 0.4rem;
+      }
+
+      .bars {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: grid;
+        gap: 0.5rem;
+      }
+
+      .bar {
+        display: grid;
+        grid-template-columns: 4.6rem minmax(0, 1fr) 3.4rem;
+        align-items: center;
+        gap: 0.6rem;
+        font-size: 0.76rem;
+      }
+
+      .bar__name {
+        color: var(--ink-soft);
+        font-weight: 600;
+      }
+
+      .bar__track {
+        position: relative;
+        height: 1.05rem;
+        border-radius: var(--radius-pill);
+        background: var(--surface-2);
+        border: 1px solid var(--line);
+        overflow: hidden;
+      }
+
+      .bar__fill {
+        position: absolute;
+        inset: 0 auto 0 0;
+        width: calc(var(--p, 0) * 1%);
+        background: var(--gold-deep);
+        border-radius: inherit;
+        transition: width 0.22s ease;
+      }
+
+      /* The slice of Google's figure that is still only a range. */
+      .bar__ghost {
+        position: absolute;
+        inset: 0 auto 0 0;
+        left: calc(var(--from, 0) * 1%);
+        width: calc((var(--to, 0) - var(--from, 0)) * 1%);
+        background: repeating-linear-gradient(
+          -45deg,
+          color-mix(in srgb, var(--gold-deep) 55%, transparent) 0 4px,
+          transparent 4px 8px
+        );
+        border-left: 1px dashed var(--line-strong);
+      }
+
+      .bar__value {
+        text-align: right;
+        font-family: var(--font-mono);
+        font-variant-numeric: tabular-nums;
+        color: var(--ink);
+      }
+
+      .control {
+        display: block;
+        margin-top: 0.1rem;
+      }
+
+      .control span {
+        display: block;
+        font-size: 0.76rem;
+        color: var(--muted);
+        margin-bottom: 0.2rem;
+      }
+
+      input[type='range'] {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 100%;
+        height: 1.5rem;
+        background: transparent;
+      }
+
+      input[type='range']::-webkit-slider-runnable-track {
+        height: 5px;
+        border-radius: var(--radius-pill);
+        background: linear-gradient(
+          to right,
+          var(--gold-deep) 0 calc(var(--fill, 0) * 1%),
+          var(--line-strong) calc(var(--fill, 0) * 1%) 100%
+        );
+      }
+
+      input[type='range']::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        width: 15px;
+        height: 15px;
+        margin-top: -5px;
+        border-radius: 50%;
+        background: var(--charcoal);
+        border: 2px solid var(--surface);
+        box-shadow: var(--shadow-xs);
+      }
+
+      input[type='range']::-moz-range-track {
+        height: 5px;
+        border-radius: var(--radius-pill);
+        background: var(--line-strong);
+      }
+
+      input[type='range']::-moz-range-thumb {
+        width: 13px;
+        height: 13px;
+        border-radius: 50%;
+        background: var(--charcoal);
+        border: 2px solid var(--surface);
+      }
+
+      .foot {
+        display: flex;
+        justify-content: space-between;
+        gap: 0.75rem;
+        font-size: 0.68rem;
+        color: var(--muted);
+      }
+
+      @media (max-width: 420px) {
+        .bar {
+          grid-template-columns: 4rem minmax(0, 1fr) 3rem;
+          font-size: 0.72rem;
+        }
+
+        .total {
+          font-size: 1.6rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="head">
+      <div>
+        <p class="eyebrow">Anthropic's committed compute</p>
+        <p class="hint">Three counterparty figures, as reported from the S-1.</p>
+      </div>
+      <p class="total"><b id="total">355.5</b><span>billion USD</span></p>
+    </div>
+
+    <ul class="bars">
+      <li class="bar">
+        <span class="bar__name">SpaceX</span>
+        <span class="bar__track"><span class="bar__fill" style="--p: 80.33"></span></span>
+        <span class="bar__value">120.5</span>
+      </li>
+      <li class="bar">
+        <span class="bar__name">Amazon</span>
+        <span class="bar__track"><span class="bar__fill" style="--p: 73.33"></span></span>
+        <span class="bar__value">~110</span>
+      </li>
+      <li class="bar">
+        <span class="bar__name">Google</span>
+        <span class="bar__track">
+          <span class="bar__ghost" style="--from: 83.33; --to: 100"></span>
+          <span class="bar__fill" id="google-fill" style="--p: 83.33"></span>
+        </span>
+        <span class="bar__value" id="google-value">125–150</span>
+      </li>
+    </ul>
+
+    <label class="control" for="google">
+      <span>Google's figure is an estimate. Drag it and watch the total move.</span>
+      <input id="google" type="range" min="125" max="150" step="0.5" value="125" />
+    </label>
+
+    <div class="foot">
+      <span>Range across the disclosed estimate</span>
+      <span>355.5 → 380.5 B</span>
+    </div>
+
+    <script>
+      const BASE = 120.5 + 110;
+      const MIN = 125;
+      const MAX = 150;
+      const SCALE = 150;
+
+      const slider = document.getElementById('google');
+      const totalEl = document.getElementById('total');
+      const valueEl = document.getElementById('google-value');
+      const fillEl = document.getElementById('google-fill');
+
+      let shown = BASE + MIN;
+      let target = shown;
+
+      function paint(value) {
+        valueEl.textContent = value.toFixed(1);
+        fillEl.style.setProperty('--p', (value / SCALE) * 100);
+        slider.style.setProperty('--fill', ((value - MIN) / (MAX - MIN)) * 100);
+        target = BASE + value;
+        if (DAKit.reduceMotion) {
+          shown = target;
+          totalEl.textContent = shown.toFixed(1);
+        }
+      }
+
+      slider.addEventListener('input', () => paint(Number(slider.value)));
+      paint(MIN);
+
+      DAKit.loop((dt) => {
+        if (Math.abs(target - shown) < 0.05) return;
+        shown += (target - shown) * Math.min(1, dt * 12);
+        totalEl.textContent = shown.toFixed(1);
+      });
+    </script>
+  </body>
+</html>

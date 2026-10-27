@@ -1,0 +1,214 @@
+/* ==========================================================================
+   DailyAgent — widget kit
+   --------------------------------------------------------------------------
+   The site's design tokens, handed to the iframes that hold interactive
+   report panels. A widget links this file with `../kit.css` (relative, so it
+   survives a change of base path) and loads `../kit.js` for the helpers.
+
+   The point is that a panel feels like part of the page rather than an
+   embedded alien: same paper, same serif, same gold. Everything below the
+   component classes is optional — override whatever you like.
+   ========================================================================== */
+
+@font-face {
+  font-family: 'Fraunces';
+  font-style: normal;
+  font-weight: 300 900;
+  font-display: swap;
+  src: url('fonts/fraunces-latin.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 300 700;
+  font-display: swap;
+  src: url('fonts/inter-latin.woff2') format('woff2');
+}
+
+:root {
+  --font-display: 'Fraunces', 'Iowan Old Style', 'Palatino Linotype', Georgia, serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  --font-mono: ui-monospace, 'SF Mono', 'JetBrains Mono', Menlo, Consolas, monospace;
+
+  --bg: #f1eed8;
+  --bg-2: #e9e6cd;
+  --surface: #fbf9ee;
+  --surface-2: #f6f3e2;
+  --ink: #1f2117;
+  --ink-soft: #4d5040;
+  --muted: #7d7f6a;
+  --line: #dcd7b8;
+  --line-strong: #c7c19c;
+
+  --charcoal: #44433c;
+  --on-charcoal: #f1eed8;
+  --gold: #ebdc8f;
+  --gold-deep: #e2ce6f;
+  --on-gold: #23210f;
+  --lime: #dfe08a;
+  --bark: #3b2f26;
+  --on-bark: #f1eed8;
+
+  --radius-xs: 8px;
+  --radius-sm: 10px;
+  --radius: 14px;
+  --radius-lg: 20px;
+  --radius-pill: 999px;
+
+  --shadow-xs: 0 1px 2px rgba(31, 33, 23, 0.06);
+  --shadow-sm: 0 4px 14px -8px rgba(31, 33, 23, 0.28);
+
+  color-scheme: light;
+}
+
+[data-theme='dark'] {
+  --bg: #191a14;
+  --bg-2: #20221a;
+  --surface: #23251c;
+  --surface-2: #1d1f17;
+  --ink: #f0eeda;
+  --ink-soft: #d2d0b6;
+  --muted: #9b9a83;
+  --line: #33362a;
+  --line-strong: #474a39;
+
+  --charcoal: #f0eeda;
+  --on-charcoal: #1b1c16;
+  --gold: #ebdc8f;
+  --gold-deep: #f0e39f;
+  --on-gold: #23210f;
+  --lime: #cdcf7c;
+  --bark: #0f100c;
+  --on-bark: #f0eeda;
+
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-sm: 0 4px 14px -8px rgba(0, 0, 0, 0.6);
+
+  color-scheme: dark;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+}
+
+/* Painted on the root so a short panel still fills its frame. */
+html {
+  background: var(--bg);
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 13.5px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  padding: 14px clamp(12px, 3vw, 20px) 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  overflow-x: hidden;
+}
+
+/* --------------------------------------------------------------------------
+   Components. Use these or ignore them; only the tokens above are load-bearing.
+   -------------------------------------------------------------------------- */
+
+.eyebrow {
+  margin: 0;
+  font-size: 0.63rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 1.02rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+}
+
+.hint {
+  margin: 0;
+  font-size: 0.76rem;
+  color: var(--muted);
+}
+
+.readout {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.panel {
+  background: var(--surface);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius);
+  padding: 12px 14px;
+}
+
+.btn {
+  appearance: none;
+  font: inherit;
+  font-size: 0.76rem;
+  font-weight: 600;
+  color: var(--on-charcoal);
+  background: var(--charcoal);
+  border: 1px solid transparent;
+  border-radius: var(--radius-pill);
+  padding: 0.4rem 0.85rem;
+  cursor: pointer;
+  transition: transform 0.12s ease, opacity 0.12s ease;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+.btn--ghost {
+  color: var(--ink-soft);
+  background: transparent;
+  border-color: var(--line-strong);
+}
+
+.btn:focus-visible,
+input:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--gold-deep);
+  outline-offset: 2px;
+}
+
+input[type='range'] {
+  width: 100%;
+  accent-color: var(--gold-deep);
+  cursor: pointer;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}

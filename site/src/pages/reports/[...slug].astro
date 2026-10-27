@@ -225,3 +225,37 @@ const minutes = readingTime(report.body);
     text-decoration-color: var(--gold, currentColor);
   }
 </style>
+
+<script>
+  // Widget bridge. Panels live in iframes with their own document, so the page
+  // has to tell them two things: the current theme, and how tall they are.
+  const frames = () => Array.from(document.querySelectorAll('iframe[data-widget-frame]'));
+
+  const pushTheme = () => {
+    const theme = document.documentElement.dataset.theme ?? 'light';
+    for (const frame of frames()) {
+      frame.contentWindow?.postMessage({ type: 'dailyagent:theme', theme }, '*');
+    }
+  };
+
+  // A panel calls DAKit.fit() when its content is taller than the frame it was
+  // given; growing here is what keeps it from scrolling inside itself.
+  window.addEventListener('message', (event) => {
+    const data = event.data;
+    if (!data || data.type !== 'dailyagent:height') return;
+
+    const frame = frames().find((candidate) => candidate.contentWindow === event.source);
+    const height = Math.round(Number(data.height));
+    if (!frame || !Number.isFinite(height) || height <= 0) return;
+
+    const box = frame.closest('.widget__frame');
+    if (box) box.style.setProperty('--widget-h', `${Math.min(Math.max(height, 160), 1400)}px`);
+  });
+
+  for (const frame of frames()) frame.addEventListener('load', pushTheme);
+
+  new MutationObserver(pushTheme).observe(document.documentElement, {
+    attributes: true,
+    attributeFilter: ['data-theme'],
+  });
+</script>

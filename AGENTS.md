@@ -124,7 +124,7 @@ Rules of thumb:
 Prose alone turns a long report into a wall of text. The page has room for more
 than that, and a report that is pleasant to look at actually gets read. Aim for
 every report to be scannable, and for most days to carry at least one non-text
-element. There are four, and the site already styles all of them — you do not
+element. There are five, and the site already styles all of them — you do not
 need to change anything under `site/src` to use them.
 
 - **A hero image.** Set `hero:` and `heroAlt:` in the frontmatter whenever the
@@ -143,10 +143,60 @@ need to change anything under `site/src` to use them.
   a table rather than a paragraph: eight events with a date, a place and a prize
   is a table. Break long sections with `###`, keep paragraphs short, and let a
   list do the work where a list fits.
+- **An interactive panel.** Something the reader can operate rather than only
+  read: drag it, rotate it, type into it, play it, solve it. Every report ships
+  a new one — see below.
 
 This is about structure, not decoration. Use it where it makes the content
 faster to read. A day that genuinely has three lines to say stays three lines —
 bolting a picture onto a thin day is padding, and padding is still filler.
+
+### Make it interactive
+
+A report is not only read. **Every report ships one interactive panel**: a
+small, self-contained thing the reader can operate — a canvas, a 3D scene, a
+toy, a small game, a simulation, a control that reveals something.
+
+**It has to be a new one.** Not the same slider on a different number: a
+different thing to do. Vary the medium (canvas, DOM, SVG, WebGL) and the verb
+(drag, rotate, type, play, solve, sweep, listen). It belongs to that day's
+report, and it is honest: every value in it traces back to a source you already
+have, and nothing is invented to make the panel look good. If a day genuinely
+has nothing a panel would improve, a report without one beats a bad one.
+
+How it works:
+
+1. Write a complete HTML document at `site/public/widgets/<date>/<name>.html`.
+   Copy `site/public/widgets/_template.html` to start with, and read
+   `site/public/widgets/kit.css` and `kit.js` first — they are short.
+2. Link it from the markdown **on a line of its own**:
+
+```
+[Drag Google's estimate](widget:widgets/2026-10-27/compute.html?h=330 "SpaceX $120.5B and Amazon ~$110B are reported figures; Google's is an estimate.")
+```
+
+- Link text is the panel's accessible name; the quoted title becomes the
+  caption under it. Write both, and make the caption say what the panel shows.
+- `?h=330` sets the starting height. You rarely need to get it right: the panel
+  measures itself and the page resizes the frame to fit. `?w=wide` lets it break
+  out of the text column, which is worth it for a canvas or a 3D scene.
+- Load the kit with relative paths — `<link rel="stylesheet" href="../kit.css">`
+  and `<script src="../kit.js"></script>` — so it survives a change of base
+  path. **Load `kit.js` before your own script, not with `defer`**: the widget
+  script is expected to use `DAKit` straight away.
+- `kit.js` gives you `DAKit.canvas()` (hi-dpi, self-resizing), `.loop()`
+  (requestAnimationFrame with dt, paused when hidden), `.pointer()`
+  (mouse/touch/pen in one shape), `.tokens()` (the page's colours, so a canvas
+  matches the CSS), `.fit()`, and the reader's light/dark theme, kept in sync
+  when they flip the switch.
+- Keep it self-contained: no CDN, no network requests, no external fonts, no
+  storage, and never touch `window.parent`.
+- It must work in light and dark, be usable with the keyboard, and say
+  something sensible when JavaScript is off.
+
+A missing file fails the build with a message naming the path, so a typo cannot
+ship a dead frame. The panel runs in its own document: its CSS cannot leak into
+the page, and a mistake inside it cannot break the report around it.
 
 ---
 

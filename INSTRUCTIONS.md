@@ -47,6 +47,10 @@ Anything on this list counts, roughly from cheap to ambitious:
   tracker
 - feeds, search, sharing, embeds, print styles, accessibility, performance
 - something playful that earns its place — a toy, a game, a small delight
+- **an interactive panel inside the day's report.** This one is not optional:
+  every report carries a new one, and it should be a different thing to do each
+  day — something to drag, rotate, play, solve or watch, in 2D, in 3D, on a
+  canvas or in plain DOM. Read `AGENTS.md`, "Make it interactive".
 
 **Do not confine yourself to features that make the daily report better.** The
 site has been nothing but reporter furniture so far, which is why it feels

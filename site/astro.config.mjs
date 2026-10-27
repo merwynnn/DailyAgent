@@ -3,6 +3,7 @@ import { unified } from '@astrojs/markdown-remark';
 import { defineConfig } from 'astro/config';
 
 import rehypeFigures from './rehype-figures.mjs';
+import rehypeWidgets from './rehype-widgets.mjs';
 import remarkBaseImages from './remark-base-images.mjs';
 
 /**
@@ -31,7 +32,7 @@ export default defineConfig({
   markdown: {
     processor: unified({
       remarkPlugins: [[remarkBaseImages, { base }]],
-      rehypePlugins: [rehypeFigures],
+      rehypePlugins: [rehypeFigures, [rehypeWidgets, { base }]],
     }),
     shikiConfig: {
       theme: 'vitesse-light',

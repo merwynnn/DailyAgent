@@ -1,0 +1,84 @@
+<!doctype html>
+<!--
+  ============================================================================
+  DailyAgent widget template
+  ----------------------------------------------------------------------------
+  Copy this file to site/public/widgets/<date>/<name>.html and make it your own.
+  It is ordinary HTML: no build step, no framework, no dependencies.
+
+  Link it from the report on a line of its own:
+
+    [What the panel is called](widget:widgets/2026-10-27/my-panel.html?h=420 "The caption under it")
+
+  The link text is the accessible name, the quoted part is the caption. `?h=`
+  sets the starting height; `?w=wide` lets the panel escape the text column.
+
+  Load the kit with relative paths so it survives a change of base path:
+    <link rel="stylesheet" href="../kit.css" />
+    <script src="../kit.js"></script>
+
+  The kit bootstraps the theme, so <html data-theme="…"> and the CSS tokens are
+  already right. Call DAKit.fit() (or let the kit's auto-fit do it) and the
+  page will size the iframe to your content.
+
+  Before you finish, check: it works in light and dark, it works with the
+  keyboard, and it does nothing at all if JavaScript is off.
+  ============================================================================
+-->
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Widget</title>
+    <link rel="stylesheet" href="../kit.css" />
+    <script src="../kit.js"></script>
+    <style>
+      canvas {
+        display: block;
+        width: 100%;
+        height: 240px;
+        border-radius: var(--radius-sm);
+        background: var(--surface-2);
+      }
+
+      .row {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 0.75rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="row">
+      <p class="eyebrow">Something to try</p>
+      <span class="hint" id="readout">—</span>
+    </div>
+
+    <canvas id="stage" role="img" aria-label="Describe what the canvas shows"></canvas>
+
+    <p class="hint">One line telling the reader what to do.</p>
+
+    <script>
+      const stage = document.getElementById('stage');
+      const readout = document.getElementById('readout');
+
+      const view = DAKit.canvas(stage);
+      const pointer = DAKit.pointer(stage, {
+        move(pos) {
+          readout.textContent = `${Math.round(pos.x)}, ${Math.round(pos.y)}`;
+        },
+      });
+
+      DAKit.loop((dt) => {
+        const { ctx, width, height } = view;
+        const colors = DAKit.tokens();
+        ctx.clearRect(0, 0, width, height);
+        ctx.fillStyle = colors.goldDeep;
+        ctx.beginPath();
+        ctx.arc(width / 2, height / 2, Math.min(width, height) * 0.18, 0, DAKit.TAU);
+        ctx.fill();
+      });
+    </script>
+  </body>
+</html>

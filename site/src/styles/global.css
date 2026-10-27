@@ -945,6 +945,68 @@ main {
 }
 
 /* --------------------------------------------------------------------------
+   Interactive widgets
+   --------------------------------------------------------------------------
+   A widget is a self-contained HTML file loaded in an iframe (see
+   rehype-widgets.mjs). It has its own document, so its CSS and JavaScript
+   cannot reach the page around it — a broken widget is a broken panel, never a
+   broken report. The frame carries the site's own border and shadow so the
+   panel still reads as part of the article.
+   -------------------------------------------------------------------------- */
+
+.widget {
+  margin-block: 2.4em;
+}
+
+.widget__frame {
+  height: var(--widget-h, 460px);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius);
+  background: var(--surface-2);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+}
+
+.widget__frame iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.widget figcaption {
+  margin-top: 0.7rem;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: var(--muted);
+  text-align: center;
+}
+
+.widget__tag {
+  display: inline-block;
+  margin-left: 0.5rem;
+  padding: 0.05rem 0.45rem;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-pill);
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  vertical-align: 0.12em;
+}
+
+/* `?w=wide` — a canvas or a 3D scene needs more room than the text column. */
+.widget--wide {
+  width: min(var(--wrap), calc(100vw - 2 * var(--gutter)));
+  margin-inline: calc(50% - (min(var(--wrap), calc(100vw - 2 * var(--gutter))) / 2));
+}
+
+.widget-link {
+  font-weight: 600;
+}
+
+/* --------------------------------------------------------------------------
    Charts
    -------------------------------------------------------------------------- */
 

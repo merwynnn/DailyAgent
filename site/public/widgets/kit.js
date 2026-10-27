@@ -73,18 +73,37 @@
 
   function canvas(el) {
     var ctx = el.getContext('2d');
-    var state = { el: el, ctx: ctx, width: 1, height: 1, dpr: 1 };
+    var listeners = [];
+    var state = {
+      el: el,
+      ctx: ctx,
+      width: 1,
+      height: 1,
+      dpr: 1,
+      /** Repaint on resize. Setting a canvas's width clears its pixels, so any
+       *  panel that draws once must subscribe or it will be wiped by the
+       *  observer's first callback — which lands *after* the initial draw. */
+      onResize: function (fn) {
+        listeners.push(fn);
+        return fn;
+      },
+    };
 
     function resize() {
       var rect = el.getBoundingClientRect();
       var dpr = Math.min(window.devicePixelRatio || 1, 2);
+      var width = Math.max(1, Math.round(rect.width));
+      var height = Math.max(1, Math.round(rect.height));
+      // Nothing changed: don't touch the bitmap, and don't wipe the drawing.
+      if (width === state.width && height === state.height && dpr === state.dpr) return;
       state.dpr = dpr;
-      state.width = Math.max(1, Math.round(rect.width));
-      state.height = Math.max(1, Math.round(rect.height));
-      el.width = Math.round(state.width * dpr);
-      el.height = Math.round(state.height * dpr);
+      state.width = width;
+      state.height = height;
+      el.width = Math.round(width * dpr);
+      el.height = Math.round(height * dpr);
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
       el.dispatchEvent(new CustomEvent('dakit:resize', { detail: state }));
+      for (var i = 0; i < listeners.length; i++) listeners[i](state);
     }
 
     resize();

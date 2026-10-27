@@ -7,44 +7,44 @@ X-WR-CALNAME:DailyAgent — still open
 X-WR-CALDESC:Entry deadlines tracked in the DailyAgent "still open" list.
 BEGIN:VEVENT
 UID:rcr-workshop-2026@dailyagent
-DTSTAMP:20261027T132138Z
+DTSTAMP:20261027T140824Z
 DTSTART;VALUE=DATE:20261029
 DTEND;VALUE=DATE:20261030
 SUMMARY:Rock Climbing Robots Workshop 2026 — entries close
 DESCRIPTION:hackathon · no published date\, event start used as a cutoff\n
- University of Bordeaux\, 29 Oct–1 Nov · humanoid climbing-robot hackath
- on (perception/planning/control) · students all levels\, robots provided\
- , on-site accommodation · trophies\, no cash · register by email — no 
- published deadline\, event start used as cutoff
+ SMART Facility\, University of Bordeaux · humanoid climbing-robot hackath
+ on — perception\, planning or control challenges\, choose your track · 
+ students all levels\, robots provided\, on-site accommodation · trophies\
+ , no cash · register by email\, no published deadline
 URL:https://rock-climbing-robots.github.io
 TRANSP:TRANSPARENT
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:rcr-workshop-2026-run@dailyagent
-DTSTAMP:20261027T132138Z
+DTSTAMP:20261027T140824Z
 DTSTART;VALUE=DATE:20261029
 DTEND;VALUE=DATE:20261102
 SUMMARY:Rock Climbing Robots Workshop 2026 (hackathon)
-DESCRIPTION:University of Bordeaux\, 29 Oct–1 Nov · humanoid climbing-ro
- bot hackathon (perception/planning/control) · students all levels\, robot
- s provided\, on-site accommodation · trophies\, no cash · register by em
- ail — no published deadline\, event start used as cutoff
+DESCRIPTION:SMART Facility\, University of Bordeaux · humanoid climbing-ro
+ bot hackathon — perception\, planning or control challenges\, choose you
+ r track · students all levels\, robots provided\, on-site accommodation 
+ · trophies\, no cash · register by email\, no published deadline
 URL:https://rock-climbing-robots.github.io
 TRANSP:TRANSPARENT
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:hackathon-quantique-defense@dailyagent
-DTSTAMP:20261027T132138Z
+DTSTAMP:20261027T140824Z
 DTSTART;VALUE=DATE:20261031
 DTEND;VALUE=DATE:20261101
 SUMMARY:Hackathon Quantique Défense (AID × Artefact) — entries close
 DESCRIPTION:hackathon · no published date\, event start used as a cutoff\n
- Grand Palais\, Paris 2–4 Dec · teams 4–8 · €12\,000 (4× €3\,000
-  service challenges) · June announcement said registration closed 4 Oct\,
-  yet the Agorize sign-up is still live — deadline here is a check-back m
- arker\; email the AID contact to confirm before relying on it
+ Grand Palais\, Paris · teams 4–8 · €12\,000 (4× €3\,000 service c
+ hallenges) · an early June announcement said registration had already clo
+ sed\, yet the Agorize sign-up is still live — deadline here is a check-b
+ ack marker\; email the AID contact to confirm before relying on it
 URL:https://hackathons-artefactadoptai.agorize.com/fr/challenges/hackathon-
  quantique-defense
 TRANSP:TRANSPARENT
@@ -52,14 +52,15 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:hackathon-quantique-defense-run@dailyagent
-DTSTAMP:20261027T132138Z
+DTSTAMP:20261027T140824Z
 DTSTART;VALUE=DATE:20261202
 DTEND;VALUE=DATE:20261205
 SUMMARY:Hackathon Quantique Défense (AID × Artefact) (hackathon)
-DESCRIPTION:Grand Palais\, Paris 2–4 Dec · teams 4–8 · €12\,000 (4
- × €3\,000 service challenges) · June announcement said registration cl
- osed 4 Oct\, yet the Agorize sign-up is still live — deadline here is a 
- check-back marker\; email the AID contact to confirm before relying on it
+DESCRIPTION:Grand Palais\, Paris · teams 4–8 · €12\,000 (4× €3\,00
+ 0 service challenges) · an early June announcement said registration had 
+ already closed\, yet the Agorize sign-up is still live — deadline here i
+ s a check-back marker\; email the AID contact to confirm before relying on
+  it
 URL:https://hackathons-artefactadoptai.agorize.com/fr/challenges/hackathon-
  quantique-defense
 TRANSP:TRANSPARENT
@@ -67,19 +68,19 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:defi-aerospatial-etudiant@dailyagent
-DTSTAMP:20261027T132138Z
+DTSTAMP:20261027T140824Z
 DTSTART;VALUE=DATE:20261031
 DTEND;VALUE=DATE:20261101
 SUMMARY:Défi Aérospatial Étudiant (21st) — entries close
-DESCRIPTION:competition\nApplications close 31 Oct · year-long team projec
- t · ESA/ArianeGroup/CNES/Dassault awards · final 3 Jun 2027
+DESCRIPTION:competition\nYear-long team project · ESA/ArianeGroup/CNES/Das
+ sault awards
 URL:https://www.studentaerospacechallenge.eu/
 TRANSP:TRANSPARENT
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:edenspark-game-jam-4@dailyagent
-DTSTAMP:20261027T132138Z
+DTSTAMP:20261027T140824Z
 DTSTART;VALUE=DATE:20261031
 DTEND;VALUE=DATE:20261101
 SUMMARY:EdenSpark Game Jam #4 — entries close
@@ -92,7 +93,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:rgdc-jam-2026@dailyagent
-DTSTAMP:20261027T132138Z
+DTSTAMP:20261027T140824Z
 DTSTART;VALUE=DATE:20261031
 DTEND;VALUE=DATE:20261101
 SUMMARY:RGDC Jam 2026 — entries close
@@ -105,175 +106,173 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:slapjam-ai-2@dailyagent
-DTSTAMP:20261027T132138Z
+DTSTAMP:20261027T140824Z
 DTSTART;VALUE=DATE:20261031
 DTEND;VALUE=DATE:20261101
 SUMMARY:Slapjam #2 — entries close
-DESCRIPTION:game jam\n$1\,000 cash pool · 29–31 Oct · 48 h mobile HTML5
-  · AI required\, not banned
+DESCRIPTION:game jam\n$1\,000 cash pool · 48 h mobile HTML5 · AI required
+ \, not banned
 URL:https://itch.io/jam/slapjam-ai-2
 TRANSP:TRANSPARENT
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:slapjam-ai-2-run@dailyagent
-DTSTAMP:20261027T132138Z
+DTSTAMP:20261027T140824Z
 DTSTART;VALUE=DATE:20261029
 DTEND;VALUE=DATE:20261101
 SUMMARY:Slapjam #2 (game jam)
-DESCRIPTION:$1\,000 cash pool · 29–31 Oct · 48 h mobile HTML5 · AI req
- uired\, not banned
+DESCRIPTION:$1\,000 cash pool · 48 h mobile HTML5 · AI required\, not ban
+ ned
 URL:https://itch.io/jam/slapjam-ai-2
 TRANSP:TRANSPARENT
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:micro-jam-068@dailyagent
-DTSTAMP:20261027T132138Z
+DTSTAMP:20261027T140824Z
 DTSTART;VALUE=DATE:20261102
 DTEND;VALUE=DATE:20261103
 SUMMARY:Micro Jam 068: Evolution — entries close
-DESCRIPTION:game jam\n$300 cash pool · 30 Oct–2 Nov · 48 h · solo or t
- eams of 4 · AI allowed
+DESCRIPTION:game jam\n$300 cash pool · 48 h · solo or teams of 4 · AI al
+ lowed
 URL:https://itch.io/jam/micro-jam-068
 TRANSP:TRANSPARENT
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:micro-jam-068-run@dailyagent
-DTSTAMP:20261027T132138Z
+DTSTAMP:20261027T140824Z
 DTSTART;VALUE=DATE:20261030
 DTEND;VALUE=DATE:20261103
 SUMMARY:Micro Jam 068: Evolution (game jam)
-DESCRIPTION:$300 cash pool · 30 Oct–2 Nov · 48 h · solo or teams of 4 
- · AI allowed
+DESCRIPTION:$300 cash pool · 48 h · solo or teams of 4 · AI allowed
 URL:https://itch.io/jam/micro-jam-068
 TRANSP:TRANSPARENT
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:hackaudit-2026@dailyagent
-DTSTAMP:20261027T132138Z
+DTSTAMP:20261027T140824Z
 DTSTART;VALUE=DATE:20261102
 DTEND;VALUE=DATE:20261103
 SUMMARY:HackAudit 2026 — entries close
-DESCRIPTION:competition\nPhase 1 due 2 Nov\, midday Paris time · free\, te
- ams 1–5 · prizes confirmed €4\,000/€2\,500/€1\,500 + 2× €1\,00
- 0 · finale 11 Mar 2027\, Paris
+DESCRIPTION:competition\nPhase 1 due midday Paris time · free\, teams 1–
+ 5 · prizes confirmed €4\,000/€2\,500/€1\,500 + 2× €1\,000 · fin
+ ale in Paris
 URL:https://www.hackaudit.fr/
 TRANSP:TRANSPARENT
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:habs-neuro-ai@dailyagent
-DTSTAMP:20261027T132138Z
+DTSTAMP:20261027T140824Z
 DTSTART;VALUE=DATE:20261102
 DTEND;VALUE=DATE:20261103
 SUMMARY:HABS Neuro-AI Hackathon — entries close
 DESCRIPTION:hackathon · no published date\, event start used as a cutoff\n
- Orsay/Paris-Saclay\, 2–30 Nov · real EEG datasets · form open\, rules 
- still being finalised
+ Orsay / Paris-Saclay · real EEG datasets · form open\, rules still being
+  finalised — no entry deadline published
 URL:https://hackathon.habs.ai/
 TRANSP:TRANSPARENT
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:habs-neuro-ai-run@dailyagent
-DTSTAMP:20261027T132138Z
+DTSTAMP:20261027T140824Z
 DTSTART;VALUE=DATE:20261102
 DTEND;VALUE=DATE:20261201
 SUMMARY:HABS Neuro-AI Hackathon (hackathon)
-DESCRIPTION:Orsay/Paris-Saclay\, 2–30 Nov · real EEG datasets · form op
- en\, rules still being finalised
+DESCRIPTION:Orsay / Paris-Saclay · real EEG datasets · form open\, rules 
+ still being finalised — no entry deadline published
 URL:https://hackathon.habs.ai/
 TRANSP:TRANSPARENT
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:make-ai-happen-kpmg@dailyagent
-DTSTAMP:20261027T132138Z
+DTSTAMP:20261027T140824Z
 DTSTART;VALUE=DATE:20261106
 DTEND;VALUE=DATE:20261107
 SUMMARY:Make AI Happen (KPMG) — entries close
-DESCRIPTION:competition\nApplications close 6 Nov · gift cards\, not cash 
- · teams 2–4 · finale 7 Dec at KPMG Paris La Défense
+DESCRIPTION:competition\nGift cards\, not cash · teams 2–4 · finale at 
+ KPMG Paris La Défense
 URL:https://www.agorize.com/en/challenges/make-ai-happen
 TRANSP:TRANSPARENT
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:h-company-42ai-computer-use@dailyagent
-DTSTAMP:20261027T132138Z
+DTSTAMP:20261027T140824Z
 DTSTART;VALUE=DATE:20261107
 DTEND;VALUE=DATE:20261108
 SUMMARY:H Company × 42AI Computer-Use Hackathon — entries close
 DESCRIPTION:hackathon · no published date\, event start used as a cutoff\n
- Paris 7–8 Nov · €10\,000 cash · free\, teams 1–4 · no application
-  deadline published — event start treated as the cutoff
+ Paris · €10\,000 cash · free\, teams 1–4 · no application deadline 
+ published
 URL:https://lu.ma/hz9db5u9
 TRANSP:TRANSPARENT
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:h-company-42ai-computer-use-run@dailyagent
-DTSTAMP:20261027T132138Z
+DTSTAMP:20261027T140824Z
 DTSTART;VALUE=DATE:20261107
 DTEND;VALUE=DATE:20261109
 SUMMARY:H Company × 42AI Computer-Use Hackathon (hackathon)
-DESCRIPTION:Paris 7–8 Nov · €10\,000 cash · free\, teams 1–4 · no 
- application deadline published — event start treated as the cutoff
+DESCRIPTION:Paris · €10\,000 cash · free\, teams 1–4 · no applicatio
+ n deadline published
 URL:https://lu.ma/hz9db5u9
 TRANSP:TRANSPARENT
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:thatgamejam-02@dailyagent
-DTSTAMP:20261027T132138Z
+DTSTAMP:20261027T140824Z
 DTSTART;VALUE=DATE:20261107
 DTEND;VALUE=DATE:20261108
 SUMMARY:thatgamejam #02 (thatgamecompany) — entries close
 DESCRIPTION:game jam\n$10\,000 cash pool ($3\,000/$2\,000/$2\,000/$2\,000 c
- ommunity/$1\,000 TapTap) · online\, submissions 24 Oct–7 Nov · theme i
- s a piece of music · AI rules unstated — check the page
+ ommunity/$1\,000 TapTap) · online · theme is a piece of music · AI rule
+ s unstated — check the page
 URL:https://itch.io/jam/thatgamejam02
 TRANSP:TRANSPARENT
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:thatgamejam-02-run@dailyagent
-DTSTAMP:20261027T132138Z
+DTSTAMP:20261027T140824Z
 DTSTART;VALUE=DATE:20261024
 DTEND;VALUE=DATE:20261108
 SUMMARY:thatgamejam #02 (thatgamecompany) (game jam)
 DESCRIPTION:$10\,000 cash pool ($3\,000/$2\,000/$2\,000/$2\,000 community/$
- 1\,000 TapTap) · online\, submissions 24 Oct–7 Nov · theme is a piece 
- of music · AI rules unstated — check the page
+ 1\,000 TapTap) · online · theme is a piece of music · AI rules unstated
+  — check the page
 URL:https://itch.io/jam/thatgamejam02
 TRANSP:TRANSPARENT
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:game-gauntlet-sim-jam@dailyagent
-DTSTAMP:20261027T132138Z
+DTSTAMP:20261027T140824Z
 DTSTART;VALUE=DATE:20261110
 DTEND;VALUE=DATE:20261111
 SUMMARY:Game Gauntlet — SIM Jam — entries close
 DESCRIPTION:game jam\n$1\,500 cash ($1\,000/$500) · online\, worldwide · 
- joining the Discord is mandatory · itch metadata now lists close 10 Nov (
- 4 Nov was the 20 Oct reading) — re-checked 22 Oct
+ joining the Discord is mandatory
 URL:https://itch.io/jam/game-gauntlet-sim-jam
 TRANSP:TRANSPARENT
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:adopt-ai-for-health@dailyagent
-DTSTAMP:20261027T132138Z
+DTSTAMP:20261027T140824Z
 DTSTART;VALUE=DATE:20261113
 DTEND;VALUE=DATE:20261114
 SUMMARY:Hackathon AI for Health — entries close
 DESCRIPTION:hackathon · no published date\, event start used as a cutoff\n
- Paris 13–15 Nov · three mandatory in-person days · winner pitches at t
- he Grand Palais on 4 Dec · cash amounts unstated
+ Paris · three mandatory in-person days · winner pitches at the Adopt AI 
+ Grand Palais finale · cash amounts unstated
 URL:https://hackathons-artefactadoptai.agorize.com/en/challenges/hackathon-
  adopt-ai-for-health
 TRANSP:TRANSPARENT
@@ -281,12 +280,12 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:adopt-ai-for-health-run@dailyagent
-DTSTAMP:20261027T132138Z
+DTSTAMP:20261027T140824Z
 DTSTART;VALUE=DATE:20261113
 DTEND;VALUE=DATE:20261116
 SUMMARY:Hackathon AI for Health (hackathon)
-DESCRIPTION:Paris 13–15 Nov · three mandatory in-person days · winner p
- itches at the Grand Palais on 4 Dec · cash amounts unstated
+DESCRIPTION:Paris · three mandatory in-person days · winner pitches at th
+ e Adopt AI Grand Palais finale · cash amounts unstated
 URL:https://hackathons-artefactadoptai.agorize.com/en/challenges/hackathon-
  adopt-ai-for-health
 TRANSP:TRANSPARENT
@@ -294,116 +293,116 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:gdevelop-big-game-jam-10@dailyagent
-DTSTAMP:20261027T132138Z
+DTSTAMP:20261027T140824Z
 DTSTART;VALUE=DATE:20261115
 DTEND;VALUE=DATE:20261116
 SUMMARY:GDevelop BIG Game Jam #10 — entries close
-DESCRIPTION:game jam\n6–15 Nov · must use GDevelop · prizes up to $6\,5
- 00\, cash split unconfirmed · 1\,000 engine credits per submission
+DESCRIPTION:game jam\nMust use GDevelop · prizes up to $6\,500\, cash spli
+ t unconfirmed · 1\,000 engine credits per submission
 URL:https://itch.io/jam/gdevelop-big-game-jam-10
 TRANSP:TRANSPARENT
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:gdevelop-big-game-jam-10-run@dailyagent
-DTSTAMP:20261027T132138Z
+DTSTAMP:20261027T140824Z
 DTSTART;VALUE=DATE:20261106
 DTEND;VALUE=DATE:20261116
 SUMMARY:GDevelop BIG Game Jam #10 (game jam)
-DESCRIPTION:6–15 Nov · must use GDevelop · prizes up to $6\,500\, cash 
- split unconfirmed · 1\,000 engine credits per submission
+DESCRIPTION:Must use GDevelop · prizes up to $6\,500\, cash split unconfir
+ med · 1\,000 engine credits per submission
 URL:https://itch.io/jam/gdevelop-big-game-jam-10
 TRANSP:TRANSPARENT
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:zoud-gamelab@dailyagent
-DTSTAMP:20261027T132138Z
+DTSTAMP:20261027T140824Z
 DTSTART;VALUE=DATE:20261115
 DTEND;VALUE=DATE:20261116
 SUMMARY:Zoud GameLab × Global Game Jam — entries close
 DESCRIPTION:game jam\nUp to $140K in prizes and development funding\, split
   unstated · virtual\, 18+ · financial-literacy theme\, judged partly on 
- it · runs 15 Oct–15 Nov
+ it
 URL:https://itch.io/jam/zoud-gamelab
 TRANSP:TRANSPARENT
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:zoud-gamelab-run@dailyagent
-DTSTAMP:20261027T132138Z
+DTSTAMP:20261027T140824Z
 DTSTART;VALUE=DATE:20261015
 DTEND;VALUE=DATE:20261116
 SUMMARY:Zoud GameLab × Global Game Jam (game jam)
 DESCRIPTION:Up to $140K in prizes and development funding\, split unstated 
- · virtual\, 18+ · financial-literacy theme\, judged partly on it · runs
-  15 Oct–15 Nov
+ · virtual\, 18+ · financial-literacy theme\, judged partly on it
 URL:https://itch.io/jam/zoud-gamelab
 TRANSP:TRANSPARENT
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:urmrc-2026@dailyagent
-DTSTAMP:20261027T132138Z
+DTSTAMP:20261027T140824Z
 DTSTART;VALUE=DATE:20261117
 DTEND;VALUE=DATE:20261118
 SUMMARY:Upper Rhine Mobile Robotic Challenge (3rd) — entries close
 DESCRIPTION:competition · no published date\, event start used as a cutoff
- \nParc Expo Mulhouse\, 17–18 Nov\, inside the Euro Industries salon (fre
- e entry) · student robotics competition\, 3rd edition\, 2024 edition had 
- 8 student teams · no registration route published yet — deadline here i
- s event start as a check-back marker
+ \nParc Expo Mulhouse\, inside the free-entry Euro Industries salon · stud
+ ent robotics competition\, 3rd edition · 2024 edition drew 8 student team
+ s · no registration route published yet — deadline here is event start 
+ as a check-back marker
 URL:https://www.ensisa.uha.fr
 TRANSP:TRANSPARENT
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:urmrc-2026-run@dailyagent
-DTSTAMP:20261027T132138Z
+DTSTAMP:20261027T140824Z
 DTSTART;VALUE=DATE:20261117
 DTEND;VALUE=DATE:20261119
 SUMMARY:Upper Rhine Mobile Robotic Challenge (3rd) (competition)
-DESCRIPTION:Parc Expo Mulhouse\, 17–18 Nov\, inside the Euro Industries s
- alon (free entry) · student robotics competition\, 3rd edition\, 2024 edi
- tion had 8 student teams · no registration route published yet — deadli
- ne here is event start as a check-back marker
+DESCRIPTION:Parc Expo Mulhouse\, inside the free-entry Euro Industries salo
+ n · student robotics competition\, 3rd edition · 2024 edition drew 8 stu
+ dent teams · no registration route published yet — deadline here is eve
+ nt start as a check-back marker
 URL:https://www.ensisa.uha.fr
 TRANSP:TRANSPARENT
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:hack1robo-5@dailyagent
-DTSTAMP:20261027T132138Z
+DTSTAMP:20261027T140824Z
 DTSTART;VALUE=DATE:20261120
 DTEND;VALUE=DATE:20261121
 SUMMARY:Hack1Robo 5 (Bordeaux) — entries close
 DESCRIPTION:hackathon · no published date\, event start used as a cutoff\n
- Bordeaux 20–22 Nov · free\, teams 4–6 · Thymio robots and mocap prov
- ided · no cash prize\, still worth it for robotics
+ Bordeaux · free\, teams 4–6 · Thymio robots and mocap provided · no c
+ ash prize\, still worth it for robotics · no entry deadline published
 URL:https://www.hack1robo.fr/
 TRANSP:TRANSPARENT
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:hack1robo-5-run@dailyagent
-DTSTAMP:20261027T132138Z
+DTSTAMP:20261027T140824Z
 DTSTART;VALUE=DATE:20261120
 DTEND;VALUE=DATE:20261123
 SUMMARY:Hack1Robo 5 (Bordeaux) (hackathon)
-DESCRIPTION:Bordeaux 20–22 Nov · free\, teams 4–6 · Thymio robots and
-  mocap provided · no cash prize\, still worth it for robotics
+DESCRIPTION:Bordeaux · free\, teams 4–6 · Thymio robots and mocap provi
+ ded · no cash prize\, still worth it for robotics · no entry deadline pu
+ blished
 URL:https://www.hack1robo.fr/
 TRANSP:TRANSPARENT
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:drone-defense-hackathon@dailyagent
-DTSTAMP:20261027T132138Z
+DTSTAMP:20261027T140824Z
 DTSTART;VALUE=DATE:20261123
 DTEND;VALUE=DATE:20261124
 SUMMARY:Drone Defense Hackathon — entries close
-DESCRIPTION:hackathon\nOnline phase to 23 Nov · Grand Palais drone cage 24
- –26 Nov · teams 6–8 · no cash prize published
+DESCRIPTION:hackathon\nOnline qualifying phase\, then a drone cage at the G
+ rand Palais · teams 6–8 · no cash prize published
 URL:https://hackathons-artefactadoptai.agorize.com/en/challenges/drone-defe
  nse-hackathon
 TRANSP:TRANSPARENT
@@ -411,12 +410,12 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:drone-defense-hackathon-run@dailyagent
-DTSTAMP:20261027T132138Z
+DTSTAMP:20261027T140824Z
 DTSTART;VALUE=DATE:20261124
 DTEND;VALUE=DATE:20261127
 SUMMARY:Drone Defense Hackathon (hackathon)
-DESCRIPTION:Online phase to 23 Nov · Grand Palais drone cage 24–26 Nov 
- · teams 6–8 · no cash prize published
+DESCRIPTION:Online qualifying phase\, then a drone cage at the Grand Palais
+  · teams 6–8 · no cash prize published
 URL:https://hackathons-artefactadoptai.agorize.com/en/challenges/drone-defe
  nse-hackathon
 TRANSP:TRANSPARENT
@@ -424,64 +423,63 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:amiga-tools-jam-2026@dailyagent
-DTSTAMP:20261027T132138Z
+DTSTAMP:20261027T140824Z
 DTSTART;VALUE=DATE:20261126
 DTEND;VALUE=DATE:20261127
 SUMMARY:Amiga Tools Jam 2026 — entries close
 DESCRIPTION:game jam\nCash for the top three by community vote\, amounts un
- stated · closes 26 Nov\, voting to 24 Dec · niche and retro\, but progra
- mming-heavy
+ stated · voting continues after close · niche and retro\, but programmin
+ g-heavy
 URL:https://itch.io/jam/amiga-tools-jam-2026
 TRANSP:TRANSPARENT
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:pixel-forge-mega-jam@dailyagent
-DTSTAMP:20261027T132138Z
+DTSTAMP:20261027T140824Z
 DTSTART;VALUE=DATE:20261208
 DTEND;VALUE=DATE:20261209
 SUMMARY:Pixel Forge MEGA JAM — entries close
-DESCRIPTION:game jam\n28 Nov start\, teams up to 4 · top three paid ($300/
- $200/$100)\, rest software · AI banned · jam metadata shows both 8 Dec a
- nd 15 Dec close — confirm before entering
+DESCRIPTION:game jam\nTeams up to 4 · top three paid ($300/$200/$100)\, re
+ st software · AI banned · itch metadata reads conflict on the close date
+  — confirm before entering
 URL:https://itch.io/jam/pixel-forge-mega-jam
 TRANSP:TRANSPARENT
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:uplifting-game-jam-10@dailyagent
-DTSTAMP:20261027T132138Z
+DTSTAMP:20261027T140824Z
 DTSTART;VALUE=DATE:20261214
 DTEND;VALUE=DATE:20261215
 SUMMARY:Uplifting Game Jam — entries close
-DESCRIPTION:game jam\n1–14 Dec · last edition paid $408 cash · small bu
- t real and solo-friendly
+DESCRIPTION:game jam\nLast edition paid $408 cash · small but real and sol
+ o-friendly
 URL:https://itch.io/jam/uplifting-game-jam-cash-prizes-10
 TRANSP:TRANSPARENT
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:uplifting-game-jam-10-run@dailyagent
-DTSTAMP:20261027T132138Z
+DTSTAMP:20261027T140824Z
 DTSTART;VALUE=DATE:20261201
 DTEND;VALUE=DATE:20261215
 SUMMARY:Uplifting Game Jam (game jam)
-DESCRIPTION:1–14 Dec · last edition paid $408 cash · small but real and
-  solo-friendly
+DESCRIPTION:Last edition paid $408 cash · small but real and solo-friendly
 URL:https://itch.io/jam/uplifting-game-jam-cash-prizes-10
 TRANSP:TRANSPARENT
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:physical-ai-amje@dailyagent
-DTSTAMP:20261027T132138Z
+DTSTAMP:20261027T140824Z
 DTSTART;VALUE=DATE:20261231
 DTEND;VALUE=DATE:20270101
 SUMMARY:Hackathon Physical AI (AMJE / Arts et Métiers) — entries close
 DESCRIPTION:hackathon · no published date\, event start used as a cutoff\n
- €15\,000 total · registration opens December 2026\, dossier due early J
- anuary — deadline here is a check-back marker\, chase the real dates whe
- n it opens · final pitches 4 Feb 2027
+ €15\,000 total · registration opens in December\, dossier due early Jan
+ uary — deadline here is a check-back marker\, chase the real dates when 
+ it opens · final pitches at the closing event
 URL:https://amje.fr/pip
 TRANSP:TRANSPARENT
 STATUS:CONFIRMED

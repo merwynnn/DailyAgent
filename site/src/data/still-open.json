@@ -10,7 +10,7 @@
       "deadlineEstimated": true,
       "start": "2026-12-02",
       "end": "2026-12-04",
-      "note": "Grand Palais, Paris 2–4 Dec · teams 4–8 · €12,000 (4× €3,000 service challenges) · June announcement said registration closed 4 Oct, yet the Agorize sign-up is still live — deadline here is a check-back marker; email the AID contact to confirm before relying on it",
+      "note": "Grand Palais, Paris · teams 4–8 · €12,000 (4× €3,000 service challenges) · an early June announcement said registration had already closed, yet the Agorize sign-up is still live — deadline here is a check-back marker; email the AID contact to confirm before relying on it",
       "added": "2026-10-23"
     },
     {
@@ -22,7 +22,7 @@
       "deadlineEstimated": true,
       "start": "2026-11-17",
       "end": "2026-11-18",
-      "note": "Parc Expo Mulhouse, 17–18 Nov, inside the Euro Industries salon (free entry) · student robotics competition, 3rd edition, 2024 edition had 8 student teams · no registration route published yet — deadline here is event start as a check-back marker",
+      "note": "Parc Expo Mulhouse, inside the free-entry Euro Industries salon · student robotics competition, 3rd edition · 2024 edition drew 8 student teams · no registration route published yet — deadline here is event start as a check-back marker",
       "added": "2026-10-24"
     },
     {
@@ -34,7 +34,7 @@
       "deadlineEstimated": true,
       "start": "2026-10-29",
       "end": "2026-11-01",
-      "note": "University of Bordeaux, 29 Oct–1 Nov · humanoid climbing-robot hackathon (perception/planning/control) · students all levels, robots provided, on-site accommodation · trophies, no cash · register by email — no published deadline, event start used as cutoff",
+      "note": "SMART Facility, University of Bordeaux · humanoid climbing-robot hackathon — perception, planning or control challenges, choose your track · students all levels, robots provided, on-site accommodation · trophies, no cash · register by email, no published deadline",
       "added": "2026-10-22"
     },
     {
@@ -44,7 +44,7 @@
       "url": "https://www.studentaerospacechallenge.eu/",
       "deadline": "2026-10-31",
       "end": "2027-06-03",
-      "note": "Applications close 31 Oct · year-long team project · ESA/ArianeGroup/CNES/Dassault awards · final 3 Jun 2027",
+      "note": "Year-long team project · ESA/ArianeGroup/CNES/Dassault awards",
       "added": "2026-10-20"
     },
     {
@@ -73,7 +73,7 @@
       "deadline": "2026-10-31",
       "start": "2026-10-29",
       "end": "2026-10-31",
-      "note": "$1,000 cash pool · 29–31 Oct · 48 h mobile HTML5 · AI required, not banned",
+      "note": "$1,000 cash pool · 48 h mobile HTML5 · AI required, not banned",
       "added": "2026-10-20"
     },
     {
@@ -84,7 +84,7 @@
       "deadline": "2026-11-02",
       "start": "2026-10-30",
       "end": "2026-11-02",
-      "note": "$300 cash pool · 30 Oct–2 Nov · 48 h · solo or teams of 4 · AI allowed",
+      "note": "$300 cash pool · 48 h · solo or teams of 4 · AI allowed",
       "added": "2026-10-20"
     },
     {
@@ -94,7 +94,7 @@
       "url": "https://www.hackaudit.fr/",
       "deadline": "2026-11-02",
       "end": "2027-03-11",
-      "note": "Phase 1 due 2 Nov, midday Paris time · free, teams 1–5 · prizes confirmed €4,000/€2,500/€1,500 + 2× €1,000 · finale 11 Mar 2027, Paris",
+      "note": "Phase 1 due midday Paris time · free, teams 1–5 · prizes confirmed €4,000/€2,500/€1,500 + 2× €1,000 · finale in Paris",
       "added": "2026-10-20"
     },
     {
@@ -106,7 +106,7 @@
       "deadlineEstimated": true,
       "start": "2026-11-02",
       "end": "2026-11-30",
-      "note": "Orsay/Paris-Saclay, 2–30 Nov · real EEG datasets · form open, rules still being finalised",
+      "note": "Orsay / Paris-Saclay · real EEG datasets · form open, rules still being finalised — no entry deadline published",
       "added": "2026-10-20"
     },
     {
@@ -115,7 +115,7 @@
       "type": "jam",
       "url": "https://itch.io/jam/game-gauntlet-sim-jam",
       "deadline": "2026-11-10",
-      "note": "$1,500 cash ($1,000/$500) · online, worldwide · joining the Discord is mandatory · itch metadata now lists close 10 Nov (4 Nov was the 20 Oct reading) — re-checked 22 Oct",
+      "note": "$1,500 cash ($1,000/$500) · online, worldwide · joining the Discord is mandatory",
       "added": "2026-10-20"
     },
     {
@@ -125,7 +125,7 @@
       "url": "https://www.agorize.com/en/challenges/make-ai-happen",
       "deadline": "2026-11-06",
       "end": "2026-12-07",
-      "note": "Applications close 6 Nov · gift cards, not cash · teams 2–4 · finale 7 Dec at KPMG Paris La Défense",
+      "note": "Gift cards, not cash · teams 2–4 · finale at KPMG Paris La Défense",
       "added": "2026-10-20"
     },
     {
@@ -137,7 +137,7 @@
       "deadlineEstimated": true,
       "start": "2026-11-07",
       "end": "2026-11-08",
-      "note": "Paris 7–8 Nov · €10,000 cash · free, teams 1–4 · no application deadline published — event start treated as the cutoff",
+      "note": "Paris · €10,000 cash · free, teams 1–4 · no application deadline published",
       "added": "2026-10-20"
     },
     {
@@ -149,7 +149,7 @@
       "deadlineEstimated": true,
       "start": "2026-11-13",
       "end": "2026-11-15",
-      "note": "Paris 13–15 Nov · three mandatory in-person days · winner pitches at the Grand Palais on 4 Dec · cash amounts unstated",
+      "note": "Paris · three mandatory in-person days · winner pitches at the Adopt AI Grand Palais finale · cash amounts unstated",
       "added": "2026-10-20"
     },
     {
@@ -160,7 +160,7 @@
       "deadline": "2026-11-15",
       "start": "2026-11-06",
       "end": "2026-11-15",
-      "note": "6–15 Nov · must use GDevelop · prizes up to $6,500, cash split unconfirmed · 1,000 engine credits per submission",
+      "note": "Must use GDevelop · prizes up to $6,500, cash split unconfirmed · 1,000 engine credits per submission",
       "added": "2026-10-20"
     },
     {
@@ -172,7 +172,7 @@
       "deadlineEstimated": true,
       "start": "2026-11-20",
       "end": "2026-11-22",
-      "note": "Bordeaux 20–22 Nov · free, teams 4–6 · Thymio robots and mocap provided · no cash prize, still worth it for robotics",
+      "note": "Bordeaux · free, teams 4–6 · Thymio robots and mocap provided · no cash prize, still worth it for robotics · no entry deadline published",
       "added": "2026-10-20"
     },
     {
@@ -183,7 +183,7 @@
       "deadline": "2026-11-23",
       "start": "2026-11-24",
       "end": "2026-11-26",
-      "note": "Online phase to 23 Nov · Grand Palais drone cage 24–26 Nov · teams 6–8 · no cash prize published",
+      "note": "Online qualifying phase, then a drone cage at the Grand Palais · teams 6–8 · no cash prize published",
       "added": "2026-10-20"
     },
     {
@@ -193,7 +193,7 @@
       "url": "https://itch.io/jam/pixel-forge-mega-jam",
       "deadline": "2026-12-08",
       "start": "2026-11-28",
-      "note": "28 Nov start, teams up to 4 · top three paid ($300/$200/$100), rest software · AI banned · jam metadata shows both 8 Dec and 15 Dec close — confirm before entering",
+      "note": "Teams up to 4 · top three paid ($300/$200/$100), rest software · AI banned · itch metadata reads conflict on the close date — confirm before entering",
       "added": "2026-10-20"
     },
     {
@@ -204,7 +204,7 @@
       "deadline": "2026-12-14",
       "start": "2026-12-01",
       "end": "2026-12-14",
-      "note": "1–14 Dec · last edition paid $408 cash · small but real and solo-friendly",
+      "note": "Last edition paid $408 cash · small but real and solo-friendly",
       "added": "2026-10-20"
     },
     {
@@ -215,7 +215,7 @@
       "deadline": "2026-12-31",
       "deadlineEstimated": true,
       "end": "2027-02-04",
-      "note": "€15,000 total · registration opens December 2026, dossier due early January — deadline here is a check-back marker, chase the real dates when it opens · final pitches 4 Feb 2027",
+      "note": "€15,000 total · registration opens in December, dossier due early January — deadline here is a check-back marker, chase the real dates when it opens · final pitches at the closing event",
       "added": "2026-10-20"
     },
     {
@@ -226,7 +226,7 @@
       "deadline": "2026-11-07",
       "start": "2026-10-24",
       "end": "2026-11-07",
-      "note": "$10,000 cash pool ($3,000/$2,000/$2,000/$2,000 community/$1,000 TapTap) · online, submissions 24 Oct–7 Nov · theme is a piece of music · AI rules unstated — check the page",
+      "note": "$10,000 cash pool ($3,000/$2,000/$2,000/$2,000 community/$1,000 TapTap) · online · theme is a piece of music · AI rules unstated — check the page",
       "added": "2026-10-21"
     },
     {
@@ -237,7 +237,7 @@
       "deadline": "2026-11-15",
       "start": "2026-10-15",
       "end": "2026-11-15",
-      "note": "Up to $140K in prizes and development funding, split unstated · virtual, 18+ · financial-literacy theme, judged partly on it · runs 15 Oct–15 Nov",
+      "note": "Up to $140K in prizes and development funding, split unstated · virtual, 18+ · financial-literacy theme, judged partly on it",
       "added": "2026-10-21"
     },
     {
@@ -246,7 +246,7 @@
       "type": "jam",
       "url": "https://itch.io/jam/amiga-tools-jam-2026",
       "deadline": "2026-11-26",
-      "note": "Cash for the top three by community vote, amounts unstated · closes 26 Nov, voting to 24 Dec · niche and retro, but programming-heavy",
+      "note": "Cash for the top three by community vote, amounts unstated · voting continues after close · niche and retro, but programming-heavy",
       "added": "2026-10-23"
     }
   ]

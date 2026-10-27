@@ -1,0 +1,387 @@
+<!doctype html>
+<!-- DailyAgent widget — "Plan the climb" (2026-10-27). A toy of the RCR planning
+     challenge: two hands on holds, one rule — a swing must land within reach of
+     the hand that stays. Keyboard: buttons are real <button>s; Tab to a hold,
+     Enter to act. -->
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Plan the climb</title>
+    <link rel="stylesheet" href="../kit.css" />
+    <script src="../kit.js"></script>
+    <style>
+      .head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.75rem;
+      }
+
+      .reset {
+        flex: none;
+        font: inherit;
+        font-size: 0.72rem;
+        font-weight: 600;
+        letter-spacing: 0.04em;
+        color: var(--ink-soft);
+        background: var(--surface-2);
+        border: 1px solid var(--line-strong);
+        border-radius: var(--radius-pill);
+        padding: 0.35rem 0.8rem;
+        cursor: pointer;
+      }
+
+      .reset:hover {
+        color: var(--ink);
+      }
+
+      /* Fixed aspect: every distance scales uniformly, so the reach rule looks
+         exactly like it behaves on any screen. No max-height — a cap would
+         stretch the ratio and make the drawn reach ring disagree with the
+         metric used to decide legality. */
+      .wall {
+        position: relative;
+        margin-top: 0.75rem;
+        aspect-ratio: 16 / 10;
+        max-width: 36rem;
+        border-radius: var(--radius-sm);
+        border: 1px solid var(--line);
+        background: var(--surface-2);
+        overflow: hidden;
+      }
+
+      canvas {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+
+      .hold {
+        position: absolute;
+        width: 1.7rem;
+        height: 1.7rem;
+        padding: 0;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        background: transparent;
+        border: 2px solid transparent;
+        cursor: pointer;
+      }
+
+      @media (pointer: coarse) {
+        .hold {
+          width: 2.1rem;
+          height: 2.1rem;
+        }
+      }
+
+      .hold:focus-visible,
+      .hold:hover {
+        border-color: var(--gold);
+        outline: none;
+      }
+
+      .status {
+        margin: 0.7rem 0 0;
+        min-height: 1.4em;
+        font-size: 0.8rem;
+        color: var(--ink-soft);
+      }
+
+      .foot {
+        margin: 0.5rem 0 0;
+        font-size: 0.68rem;
+        color: var(--muted);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="head">
+      <div>
+        <p class="eyebrow">Plan the climb</p>
+        <p class="hint">Two hands on holds; a raised hand lands only within reach of the one that stays.</p>
+      </div>
+      <button class="reset" type="button" data-reset>Start over</button>
+    </div>
+
+    <div
+      class="wall"
+      id="wall"
+      role="img"
+      aria-label="A climbing wall with eleven holds; two holds near the top carry a flag"
+    >
+      <canvas id="stage"></canvas>
+      <!-- hold buttons injected here -->
+    </div>
+
+    <noscript>
+      <p class="status">This wall is a puzzle, not a picture — it needs JavaScript to climb.</p>
+    </noscript>
+
+    <p class="status" id="status" aria-live="polite"></p>
+    <p class="foot" id="meta"></p>
+
+    <script>
+      const HOLDS = [
+        { x: 0.15, y: 0.08 }, // A
+        { x: 0.30, y: 0.22 }, // B
+        { x: 0.52, y: 0.18 }, // C
+        { x: 0.20, y: 0.36 }, // D
+        { x: 0.44, y: 0.42 }, // E
+        { x: 0.66, y: 0.34 }, // F
+        { x: 0.34, y: 0.58 }, // G
+        { x: 0.60, y: 0.60 }, // H
+        { x: 0.80, y: 0.52 }, // I
+        { x: 0.46, y: 0.80, top: true }, // J
+        { x: 0.68, y: 0.78, top: true }, // K
+      ];
+      const NAMES = 'ABCDEFGHIJK';
+      const R = 0.30; // reach, in wall-widths
+      const TOP = [9, 10];
+      const ASPECT = 10 / 16; // a unit of y is 0.625 of a unit of x on screen
+
+      const wall = document.getElementById('wall');
+      const status = document.getElementById('status');
+      const meta = document.getElementById('meta');
+
+      const view = DAKit.canvas(stage);
+
+      let anchors = [0, 1]; // hold each hand grips
+      let raised = null; // hand index while its hand is off the wall
+      let moves = 0;
+      let won = false;
+      let flashUntil = 0;
+
+      // distance as the player sees it: projected onto the wall's fixed aspect
+      const dist = (a, b) =>
+        Math.hypot(HOLDS[a].x - HOLDS[b].x, (HOLDS[a].y - HOLDS[b].y) * ASPECT);
+      const other = (h) => (h === 0 ? 1 : 0);
+      const inReach = (hold) => dist(anchors[other(raised)], hold) <= R;
+      const toPx = (p) => ({ x: p.x * view.width, y: (1 - p.y) * view.height });
+
+      /* ---------- one real button per hold ---------- */
+      const buttons = HOLDS.map((hold, i) => {
+        const el = document.createElement('button');
+        el.type = 'button';
+        el.className = 'hold';
+        el.style.left = (hold.x * 100).toFixed(2) + '%';
+        el.style.top = ((1 - hold.y) * 100).toFixed(2) + '%';
+        wall.appendChild(el);
+        el.addEventListener('click', () => act(i));
+        return el;
+      });
+
+      function label(i) {
+        const hand = anchors.indexOf(i);
+        if (hand >= 0) {
+          const handName = hand === 0 ? 'left hand' : 'right hand';
+          return `Hold ${NAMES[i]} — your ${handName} is here${raised === hand ? ', held up' : ''}`;
+        }
+        if (raised !== null && inReach(i)) {
+          return `Hold ${NAMES[i]} — within reach of your hand on hold ${NAMES[anchors[other(raised)]]}`;
+        }
+        return `Hold ${NAMES[i]} — free hold`;
+      }
+
+      function paintButtons() {
+        buttons.forEach((el, i) => el.setAttribute('aria-label', label(i)));
+      }
+
+      function say(text) {
+        status.textContent = text;
+      }
+
+      function act(i) {
+        if (won) return;
+        const hand = anchors.indexOf(i);
+
+        if (raised === null) {
+          if (hand >= 0) {
+            raised = hand;
+            say(`Hand up from hold ${NAMES[i]}. Ringed holds are within reach — land there.`);
+            paintButtons();
+            draw();
+            return;
+          }
+          say('Raise a hand first: click a hold you are gripping.');
+          return;
+        }
+
+        if (i === anchors[raised]) {
+          raised = null;
+          say('Hand back on its hold. Move it when you are ready.');
+          paintButtons();
+          draw();
+          return;
+        }
+        if (i === anchors[other(raised)]) {
+          say('That hold is under your other hand.');
+          return;
+        }
+
+        const d = dist(anchors[other(raised)], i);
+        if (d <= R) {
+          const from = anchors[raised];
+          anchors[raised] = i;
+          raised = null;
+          moves++;
+          if (TOP.every((t) => anchors.includes(t))) {
+            won = true;
+            flashUntil = performance.now() + 1500;
+            say(`Sent — the wall is climbed in ${moves} moves. Feet get their turn at the workshop.`);
+          } else {
+            say(`Land on hold ${NAMES[i]} from ${NAMES[from]}. ${moves} move${moves === 1 ? '' : 's'}.`);
+          }
+          paintButtons();
+          draw();
+          meta.textContent = `${moves} move${moves === 1 ? '' : 's'} so far`;
+          return;
+        }
+
+        say(`Too far — that swing is ${Math.round((d / R) * 100)}% of one reach. Try a closer hold.`);
+      }
+
+      function reset() {
+        anchors = [0, 1];
+        raised = null;
+        moves = 0;
+        won = false;
+        say('Two hands at the bottom again. Click a gripped hold to raise that hand.');
+        paintButtons();
+        draw();
+        meta.textContent = '';
+      }
+
+      document.querySelector('[data-reset]').addEventListener('click', reset);
+
+      meta.textContent = '';
+      say('Click a hold you are gripping to raise that hand; click again on a ringed hold to land.');
+      paintButtons();
+      draw();
+
+      // Setting a canvas's width wipes it, so repaint whenever the wall resizes.
+      view.onResize(draw);
+
+      /* ---------- painting ---------- */
+      function draw() {
+        const c = DAKit.tokens();
+        const { width: w, height: h, ctx } = view;
+        ctx.clearRect(0, 0, w, h);
+
+        // faint horizontal seams so the surface reads as a wall
+        ctx.strokeStyle = c.line;
+        ctx.lineWidth = 1;
+        for (let k = 1; k < 5; k++) {
+          const y = Math.round((h / 5) * k) + 0.5;
+          ctx.beginPath();
+          ctx.moveTo(0, y);
+          ctx.lineTo(w, y);
+          ctx.stroke();
+        }
+
+        // reach ring around the anchoring hand
+        if (raised !== null && !won) {
+          const a = toPx(HOLDS[anchors[other(raised)]]);
+          const r = R * w;
+          ctx.save();
+          ctx.setLineDash([5, 5]);
+          ctx.strokeStyle = c.muted;
+          ctx.lineWidth = 1.5;
+          ctx.beginPath();
+          ctx.arc(a.x, a.y, r, 0, DAKit.TAU);
+          ctx.stroke();
+          ctx.restore();
+        }
+
+        // the climber: a line between the two anchored hands
+        const a = toPx(HOLDS[anchors[0]]);
+        const b = toPx(HOLDS[anchors[1]]);
+        ctx.save();
+        ctx.setLineDash([2, 4]);
+        ctx.strokeStyle = c.muted;
+        ctx.lineWidth = 1.5;
+        ctx.beginPath();
+        ctx.moveTo(a.x, a.y);
+        ctx.lineTo(b.x, b.y);
+        ctx.stroke();
+        ctx.restore();
+
+        // holds
+        HOLDS.forEach((p, i) => {
+          const pt = toPx(p);
+          const isHand = anchors.includes(i);
+          const reachable = raised !== null && !isHand && inReach(i);
+          const winHold = won && TOP.includes(i);
+
+          ctx.beginPath();
+          ctx.arc(pt.x, pt.y, isHand ? 7 : 5.5, 0, DAKit.TAU);
+          ctx.fillStyle = isHand ? c.gold : c.inkSoft;
+          ctx.fill();
+
+          ctx.beginPath();
+          ctx.arc(pt.x, pt.y, isHand ? 12 : 9, 0, DAKit.TAU);
+          ctx.strokeStyle = isHand ? c.goldDeep : reachable ? c.gold : c.line;
+          ctx.lineWidth = isHand || reachable ? 1.6 : 1;
+          ctx.stroke();
+
+          // the flag holds
+          if (p.top) {
+            ctx.strokeStyle = winHold ? c.gold : c.inkSoft;
+            ctx.lineWidth = 1.5;
+            ctx.beginPath();
+            ctx.moveTo(pt.x, pt.y - 15);
+            ctx.lineTo(pt.x, pt.y - 31);
+            ctx.stroke();
+            ctx.beginPath();
+            ctx.moveTo(pt.x, pt.y - 31);
+            ctx.lineTo(pt.x + 13, pt.y - 26);
+            ctx.lineTo(pt.x, pt.y - 20);
+            ctx.closePath();
+            ctx.fillStyle = winHold ? c.goldDeep : c.gold;
+            ctx.fill();
+          }
+        });
+
+        if (won) {
+          ctx.fillStyle = c.goldDeep;
+          ctx.font = `600 ${Math.round(w / 34)}px serif`;
+          ctx.textAlign = 'center';
+          ctx.fillText('SENT', w / 2, h * 0.9);
+        }
+      }
+
+      // a raised hand pulses; the sent wall flashes gold once
+      if (!DAKit.reduceMotion) {
+        DAKit.loop((dt, now) => {
+          if (raised === null && now >= flashUntil) return;
+          draw();
+          const c = DAKit.tokens();
+          const ctx = view.ctx;
+          if (raised !== null) {
+            const p = toPx(HOLDS[anchors[raised]]);
+            const t = (Math.sin(now / 150) + 1) / 2;
+            ctx.save();
+            ctx.globalAlpha = 0.35 + 0.2 * t;
+            ctx.strokeStyle = c.gold;
+            ctx.lineWidth = 2.5;
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, 15 + t * 6, 0, DAKit.TAU);
+            ctx.stroke();
+            ctx.restore();
+          }
+          if (now < flashUntil) {
+            ctx.save();
+            ctx.globalAlpha = (flashUntil - now) / 1500;
+            ctx.fillStyle = c.gold;
+            ctx.fillRect(0, 0, view.width, view.height * 0.06);
+            ctx.restore();
+          }
+        });
+      }
+
+      DAKit.onTheme(() => draw());
+      DAKit.fit();
+    </script>
+  </body>
+</html>

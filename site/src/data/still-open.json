@@ -1,80 +1,76 @@
 {
-  "updated": "2026-10-27",
+  "updated": "2026-11-01",
   "items": [
+    {
+      "id": "hack-the-feed-paris",
+      "name": "Hack the Feed (Oriane × Lovable × Brut)",
+      "type": "hackathon",
+      "url": "https://www.albertschool.com/en/events/hack-the-feed-ai-video-hackathon-paris/",
+      "deadline": "2026-11-07",
+      "deadlineEstimated": true,
+      "start": "2026-11-07",
+      "end": "2026-11-07",
+      "note": "Albert School Paris (18 rue de Paradis) · free one-day AI hackathon, 120 spots, registrations validated by the organizers on Luma · teams up to 4 or solo · €500/€300/€200 plus Oriane and Lovable credits · video-search track or the Brut editorial track on the 2027 election · no code needed",
+      "added": "2026-10-30"
+    },
+    {
+      "id": "lovable-hexa-ai-for-work",
+      "name": "Lovable Hackathon: AI for Work",
+      "type": "hackathon",
+      "url": "https://community.lovable.app/events",
+      "deadline": "2026-11-17",
+      "deadlineEstimated": true,
+      "start": "2026-11-17",
+      "end": "2026-11-17",
+      "note": "Hexa Paris · free evening build session 18:30–22:00, apéro included · squads or solo · prizes for the best three unstated, Lovable credits for all · registration via the Lovable events hub",
+      "added": "2026-10-30"
+    },
+    {
+      "id": "hackathon-europeen-uge-afit",
+      "name": "Hackathon Européen (UGE × AFIT France)",
+      "type": "hackathon",
+      "url": "https://www.univ-gustave-eiffel.fr/international/hackathon-europeen",
+      "deadline": "2026-11-09",
+      "start": "2027-03-19",
+      "end": "2027-03-23",
+      "note": "6th edition, EIVP Paris campus · mobility-of-tomorrow theme · Erasmus+ BIP: 3-ECTS certificate on passing, 3 winning teams, no cash · ESSENTIAL: only open to M1/M2 students of Université Gustave Eiffel and its schools (EIVP, ESIEE, EAVT …) · registration form closes 13:00 Paris time",
+      "added": "2026-11-01"
+    },
     {
       "id": "hackathon-quantique-defense",
       "name": "Hackathon Quantique Défense (AID × Artefact)",
       "type": "hackathon",
       "url": "https://hackathons-artefactadoptai.agorize.com/fr/challenges/hackathon-quantique-defense",
-      "deadline": "2026-10-31",
+      "deadline": "2026-12-02",
       "deadlineEstimated": true,
       "start": "2026-12-02",
       "end": "2026-12-04",
-      "note": "Grand Palais, Paris · teams 4–8 · €12,000 (4× €3,000 service challenges) · an early June announcement said registration had already closed, yet the Agorize sign-up is still live — deadline here is a check-back marker; email the AID contact to confirm before relying on it",
+      "note": "Grand Palais, Paris · teams 4–8 · €12,000 (4× €3,000 service challenges) · AID announced a registration extension on 30 Oct; the new close date is not visible on the page, so the event start is the conservative cutoff — confirm on the Agorize page before relying on it",
       "added": "2026-10-23"
+    },
+    {
+      "id": "hackathon-robotique-defense",
+      "name": "Humanoid Defense Robot Hackathon (AID × Artefact)",
+      "type": "hackathon",
+      "url": "https://hackathons-artefactadoptai.agorize.com/en/challenges/hackathon-robotique-defense1",
+      "deadline": "2026-12-02",
+      "deadlineEstimated": true,
+      "start": "2026-12-02",
+      "end": "2026-12-04",
+      "note": "Grand Palais, Paris · humanoid robots for defence, two tracks (navigation & mobility, manipulation & logistics · €3,000 each, €6,000 total) · teams 4–8 (page also says 6–8 — inconsistent) · registration open since September, selected teams announced in October — no entry close date published, event start is the cutoff",
+      "added": "2026-10-30"
     },
     {
       "id": "urmrc-2026",
       "name": "Upper Rhine Mobile Robotic Challenge (3rd)",
       "type": "competition",
-      "url": "https://www.ensisa.uha.fr",
+      "url": "https://www.uha.fr/fr/actualites-agenda-1/agenda/upper-rhine-mobile-robotic-challenge-la-robotique-sans-frontieres.html",
       "deadline": "2026-11-17",
       "deadlineEstimated": true,
       "start": "2026-11-17",
       "end": "2026-11-18",
       "note": "Parc Expo Mulhouse, inside the free-entry Euro Industries salon · student robotics competition, 3rd edition · 2024 edition drew 8 student teams · no registration route published yet — deadline here is event start as a check-back marker",
       "added": "2026-10-24"
-    },
-    {
-      "id": "rcr-workshop-2026",
-      "name": "Rock Climbing Robots Workshop 2026",
-      "type": "hackathon",
-      "url": "https://rock-climbing-robots.github.io",
-      "deadline": "2026-10-29",
-      "deadlineEstimated": true,
-      "start": "2026-10-29",
-      "end": "2026-11-01",
-      "note": "SMART Facility, University of Bordeaux · humanoid climbing-robot hackathon — perception, planning or control challenges, choose your track · students all levels, robots provided, on-site accommodation · trophies, no cash · register by email, no published deadline",
-      "added": "2026-10-22"
-    },
-    {
-      "id": "defi-aerospatial-etudiant",
-      "name": "Défi Aérospatial Étudiant (21st)",
-      "type": "competition",
-      "url": "https://www.studentaerospacechallenge.eu/",
-      "deadline": "2026-10-31",
-      "end": "2027-06-03",
-      "note": "Year-long team project · ESA/ArianeGroup/CNES/Dassault awards",
-      "added": "2026-10-20"
-    },
-    {
-      "id": "edenspark-game-jam-4",
-      "name": "EdenSpark Game Jam #4",
-      "type": "jam",
-      "url": "https://itch.io/jam/edenspark-game-jam-4",
-      "deadline": "2026-10-31",
-      "note": "$5,000 monthly pool, $250K annual programme · must build in EdenSpark · AI rules unstated — read legal.gaijin.net/edenspark-jam first",
-      "added": "2026-10-20"
-    },
-    {
-      "id": "rgdc-jam-2026",
-      "name": "RGDC Jam 2026",
-      "type": "jam",
-      "url": "https://www.reddit.com/r/gamejams/comments/1wte2ud/rgdc_jam_2026_september_30october_30_theme_locked/",
-      "deadline": "2026-10-31",
-      "note": "$750 cash for top three · online, month-long · student game-dev club",
-      "added": "2026-10-20"
-    },
-    {
-      "id": "slapjam-ai-2",
-      "name": "Slapjam #2",
-      "type": "jam",
-      "url": "https://itch.io/jam/slapjam-ai-2",
-      "deadline": "2026-10-31",
-      "start": "2026-10-29",
-      "end": "2026-10-31",
-      "note": "$1,000 cash pool · 48 h mobile HTML5 · AI required, not banned",
-      "added": "2026-10-20"
     },
     {
       "id": "micro-jam-068",
@@ -173,17 +169,6 @@
       "start": "2026-11-20",
       "end": "2026-11-22",
       "note": "Bordeaux · free, teams 4–6 · Thymio robots and mocap provided · no cash prize, still worth it for robotics · no entry deadline published",
-      "added": "2026-10-20"
-    },
-    {
-      "id": "drone-defense-hackathon",
-      "name": "Drone Defense Hackathon",
-      "type": "hackathon",
-      "url": "https://hackathons-artefactadoptai.agorize.com/en/challenges/drone-defense-hackathon",
-      "deadline": "2026-11-23",
-      "start": "2026-11-24",
-      "end": "2026-11-26",
-      "note": "Online qualifying phase, then a drone cage at the Grand Palais · teams 6–8 · no cash prize published",
       "added": "2026-10-20"
     },
     {

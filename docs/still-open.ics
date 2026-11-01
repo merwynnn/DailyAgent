@@ -6,131 +6,8 @@ METHOD:PUBLISH
 X-WR-CALNAME:DailyAgent — still open
 X-WR-CALDESC:Entry deadlines tracked in the DailyAgent "still open" list.
 BEGIN:VEVENT
-UID:rcr-workshop-2026@dailyagent
-DTSTAMP:20261027T140824Z
-DTSTART;VALUE=DATE:20261029
-DTEND;VALUE=DATE:20261030
-SUMMARY:Rock Climbing Robots Workshop 2026 — entries close
-DESCRIPTION:hackathon · no published date\, event start used as a cutoff\n
- SMART Facility\, University of Bordeaux · humanoid climbing-robot hackath
- on — perception\, planning or control challenges\, choose your track · 
- students all levels\, robots provided\, on-site accommodation · trophies\
- , no cash · register by email\, no published deadline
-URL:https://rock-climbing-robots.github.io
-TRANSP:TRANSPARENT
-STATUS:CONFIRMED
-END:VEVENT
-BEGIN:VEVENT
-UID:rcr-workshop-2026-run@dailyagent
-DTSTAMP:20261027T140824Z
-DTSTART;VALUE=DATE:20261029
-DTEND;VALUE=DATE:20261102
-SUMMARY:Rock Climbing Robots Workshop 2026 (hackathon)
-DESCRIPTION:SMART Facility\, University of Bordeaux · humanoid climbing-ro
- bot hackathon — perception\, planning or control challenges\, choose you
- r track · students all levels\, robots provided\, on-site accommodation 
- · trophies\, no cash · register by email\, no published deadline
-URL:https://rock-climbing-robots.github.io
-TRANSP:TRANSPARENT
-STATUS:CONFIRMED
-END:VEVENT
-BEGIN:VEVENT
-UID:hackathon-quantique-defense@dailyagent
-DTSTAMP:20261027T140824Z
-DTSTART;VALUE=DATE:20261031
-DTEND;VALUE=DATE:20261101
-SUMMARY:Hackathon Quantique Défense (AID × Artefact) — entries close
-DESCRIPTION:hackathon · no published date\, event start used as a cutoff\n
- Grand Palais\, Paris · teams 4–8 · €12\,000 (4× €3\,000 service c
- hallenges) · an early June announcement said registration had already clo
- sed\, yet the Agorize sign-up is still live — deadline here is a check-b
- ack marker\; email the AID contact to confirm before relying on it
-URL:https://hackathons-artefactadoptai.agorize.com/fr/challenges/hackathon-
- quantique-defense
-TRANSP:TRANSPARENT
-STATUS:CONFIRMED
-END:VEVENT
-BEGIN:VEVENT
-UID:hackathon-quantique-defense-run@dailyagent
-DTSTAMP:20261027T140824Z
-DTSTART;VALUE=DATE:20261202
-DTEND;VALUE=DATE:20261205
-SUMMARY:Hackathon Quantique Défense (AID × Artefact) (hackathon)
-DESCRIPTION:Grand Palais\, Paris · teams 4–8 · €12\,000 (4× €3\,00
- 0 service challenges) · an early June announcement said registration had 
- already closed\, yet the Agorize sign-up is still live — deadline here i
- s a check-back marker\; email the AID contact to confirm before relying on
-  it
-URL:https://hackathons-artefactadoptai.agorize.com/fr/challenges/hackathon-
- quantique-defense
-TRANSP:TRANSPARENT
-STATUS:CONFIRMED
-END:VEVENT
-BEGIN:VEVENT
-UID:defi-aerospatial-etudiant@dailyagent
-DTSTAMP:20261027T140824Z
-DTSTART;VALUE=DATE:20261031
-DTEND;VALUE=DATE:20261101
-SUMMARY:Défi Aérospatial Étudiant (21st) — entries close
-DESCRIPTION:competition\nYear-long team project · ESA/ArianeGroup/CNES/Das
- sault awards
-URL:https://www.studentaerospacechallenge.eu/
-TRANSP:TRANSPARENT
-STATUS:CONFIRMED
-END:VEVENT
-BEGIN:VEVENT
-UID:edenspark-game-jam-4@dailyagent
-DTSTAMP:20261027T140824Z
-DTSTART;VALUE=DATE:20261031
-DTEND;VALUE=DATE:20261101
-SUMMARY:EdenSpark Game Jam #4 — entries close
-DESCRIPTION:game jam\n$5\,000 monthly pool\, $250K annual programme · must
-  build in EdenSpark · AI rules unstated — read legal.gaijin.net/edenspa
- rk-jam first
-URL:https://itch.io/jam/edenspark-game-jam-4
-TRANSP:TRANSPARENT
-STATUS:CONFIRMED
-END:VEVENT
-BEGIN:VEVENT
-UID:rgdc-jam-2026@dailyagent
-DTSTAMP:20261027T140824Z
-DTSTART;VALUE=DATE:20261031
-DTEND;VALUE=DATE:20261101
-SUMMARY:RGDC Jam 2026 — entries close
-DESCRIPTION:game jam\n$750 cash for top three · online\, month-long · stu
- dent game-dev club
-URL:https://www.reddit.com/r/gamejams/comments/1wte2ud/rgdc_jam_2026_septem
- ber_30october_30_theme_locked/
-TRANSP:TRANSPARENT
-STATUS:CONFIRMED
-END:VEVENT
-BEGIN:VEVENT
-UID:slapjam-ai-2@dailyagent
-DTSTAMP:20261027T140824Z
-DTSTART;VALUE=DATE:20261031
-DTEND;VALUE=DATE:20261101
-SUMMARY:Slapjam #2 — entries close
-DESCRIPTION:game jam\n$1\,000 cash pool · 48 h mobile HTML5 · AI required
- \, not banned
-URL:https://itch.io/jam/slapjam-ai-2
-TRANSP:TRANSPARENT
-STATUS:CONFIRMED
-END:VEVENT
-BEGIN:VEVENT
-UID:slapjam-ai-2-run@dailyagent
-DTSTAMP:20261027T140824Z
-DTSTART;VALUE=DATE:20261029
-DTEND;VALUE=DATE:20261101
-SUMMARY:Slapjam #2 (game jam)
-DESCRIPTION:$1\,000 cash pool · 48 h mobile HTML5 · AI required\, not ban
- ned
-URL:https://itch.io/jam/slapjam-ai-2
-TRANSP:TRANSPARENT
-STATUS:CONFIRMED
-END:VEVENT
-BEGIN:VEVENT
 UID:micro-jam-068@dailyagent
-DTSTAMP:20261027T140824Z
+DTSTAMP:20261101T084328Z
 DTSTART;VALUE=DATE:20261102
 DTEND;VALUE=DATE:20261103
 SUMMARY:Micro Jam 068: Evolution — entries close
@@ -142,7 +19,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:micro-jam-068-run@dailyagent
-DTSTAMP:20261027T140824Z
+DTSTAMP:20261101T084328Z
 DTSTART;VALUE=DATE:20261030
 DTEND;VALUE=DATE:20261103
 SUMMARY:Micro Jam 068: Evolution (game jam)
@@ -153,7 +30,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:hackaudit-2026@dailyagent
-DTSTAMP:20261027T140824Z
+DTSTAMP:20261101T084328Z
 DTSTART;VALUE=DATE:20261102
 DTEND;VALUE=DATE:20261103
 SUMMARY:HackAudit 2026 — entries close
@@ -166,7 +43,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:habs-neuro-ai@dailyagent
-DTSTAMP:20261027T140824Z
+DTSTAMP:20261101T084328Z
 DTSTART;VALUE=DATE:20261102
 DTEND;VALUE=DATE:20261103
 SUMMARY:HABS Neuro-AI Hackathon — entries close
@@ -179,7 +56,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:habs-neuro-ai-run@dailyagent
-DTSTAMP:20261027T140824Z
+DTSTAMP:20261101T084328Z
 DTSTART;VALUE=DATE:20261102
 DTEND;VALUE=DATE:20261201
 SUMMARY:HABS Neuro-AI Hackathon (hackathon)
@@ -191,7 +68,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:make-ai-happen-kpmg@dailyagent
-DTSTAMP:20261027T140824Z
+DTSTAMP:20261101T084328Z
 DTSTART;VALUE=DATE:20261106
 DTEND;VALUE=DATE:20261107
 SUMMARY:Make AI Happen (KPMG) — entries close
@@ -202,8 +79,41 @@ TRANSP:TRANSPARENT
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
+UID:hack-the-feed-paris@dailyagent
+DTSTAMP:20261101T084328Z
+DTSTART;VALUE=DATE:20261107
+DTEND;VALUE=DATE:20261108
+SUMMARY:Hack the Feed (Oriane × Lovable × Brut) — entries close
+DESCRIPTION:hackathon · no published date\, event start used as a cutoff\n
+ Albert School Paris (18 rue de Paradis) · free one-day AI hackathon\, 120
+  spots\, registrations validated by the organizers on Luma · teams up to 
+ 4 or solo · €500/€300/€200 plus Oriane and Lovable credits · video
+ -search track or the Brut editorial track on the 2027 election · no code 
+ needed
+URL:https://www.albertschool.com/en/events/hack-the-feed-ai-video-hackathon
+ -paris/
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:hack-the-feed-paris-run@dailyagent
+DTSTAMP:20261101T084328Z
+DTSTART;VALUE=DATE:20261107
+DTEND;VALUE=DATE:20261108
+SUMMARY:Hack the Feed (Oriane × Lovable × Brut) (hackathon)
+DESCRIPTION:Albert School Paris (18 rue de Paradis) · free one-day AI hack
+ athon\, 120 spots\, registrations validated by the organizers on Luma · t
+ eams up to 4 or solo · €500/€300/€200 plus Oriane and Lovable credi
+ ts · video-search track or the Brut editorial track on the 2027 election 
+ · no code needed
+URL:https://www.albertschool.com/en/events/hack-the-feed-ai-video-hackathon
+ -paris/
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
 UID:h-company-42ai-computer-use@dailyagent
-DTSTAMP:20261027T140824Z
+DTSTAMP:20261101T084328Z
 DTSTART;VALUE=DATE:20261107
 DTEND;VALUE=DATE:20261108
 SUMMARY:H Company × 42AI Computer-Use Hackathon — entries close
@@ -216,7 +126,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:h-company-42ai-computer-use-run@dailyagent
-DTSTAMP:20261027T140824Z
+DTSTAMP:20261101T084328Z
 DTSTART;VALUE=DATE:20261107
 DTEND;VALUE=DATE:20261109
 SUMMARY:H Company × 42AI Computer-Use Hackathon (hackathon)
@@ -228,7 +138,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:thatgamejam-02@dailyagent
-DTSTAMP:20261027T140824Z
+DTSTAMP:20261101T084328Z
 DTSTART;VALUE=DATE:20261107
 DTEND;VALUE=DATE:20261108
 SUMMARY:thatgamejam #02 (thatgamecompany) — entries close
@@ -241,7 +151,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:thatgamejam-02-run@dailyagent
-DTSTAMP:20261027T140824Z
+DTSTAMP:20261101T084328Z
 DTSTART;VALUE=DATE:20261024
 DTEND;VALUE=DATE:20261108
 SUMMARY:thatgamejam #02 (thatgamecompany) (game jam)
@@ -253,8 +163,38 @@ TRANSP:TRANSPARENT
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
+UID:hackathon-europeen-uge-afit@dailyagent
+DTSTAMP:20261101T084328Z
+DTSTART;VALUE=DATE:20261109
+DTEND;VALUE=DATE:20261110
+SUMMARY:Hackathon Européen (UGE × AFIT France) — entries close
+DESCRIPTION:hackathon\n6th edition\, EIVP Paris campus · mobility-of-tomor
+ row theme · Erasmus+ BIP: 3-ECTS certificate on passing\, 3 winning teams
+ \, no cash · ESSENTIAL: only open to M1/M2 students of Université Gustav
+ e Eiffel and its schools (EIVP\, ESIEE\, EAVT …) · registration form cl
+ oses 13:00 Paris time
+URL:https://www.univ-gustave-eiffel.fr/international/hackathon-europeen
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:hackathon-europeen-uge-afit-run@dailyagent
+DTSTAMP:20261101T084328Z
+DTSTART;VALUE=DATE:20270319
+DTEND;VALUE=DATE:20270324
+SUMMARY:Hackathon Européen (UGE × AFIT France) (hackathon)
+DESCRIPTION:6th edition\, EIVP Paris campus · mobility-of-tomorrow theme 
+ · Erasmus+ BIP: 3-ECTS certificate on passing\, 3 winning teams\, no cash
+  · ESSENTIAL: only open to M1/M2 students of Université Gustave Eiffel a
+ nd its schools (EIVP\, ESIEE\, EAVT …) · registration form closes 13:00
+  Paris time
+URL:https://www.univ-gustave-eiffel.fr/international/hackathon-europeen
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
 UID:game-gauntlet-sim-jam@dailyagent
-DTSTAMP:20261027T140824Z
+DTSTAMP:20261101T084328Z
 DTSTART;VALUE=DATE:20261110
 DTEND;VALUE=DATE:20261111
 SUMMARY:Game Gauntlet — SIM Jam — entries close
@@ -266,7 +206,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:adopt-ai-for-health@dailyagent
-DTSTAMP:20261027T140824Z
+DTSTAMP:20261101T084328Z
 DTSTART;VALUE=DATE:20261113
 DTEND;VALUE=DATE:20261114
 SUMMARY:Hackathon AI for Health — entries close
@@ -280,7 +220,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:adopt-ai-for-health-run@dailyagent
-DTSTAMP:20261027T140824Z
+DTSTAMP:20261101T084328Z
 DTSTART;VALUE=DATE:20261113
 DTEND;VALUE=DATE:20261116
 SUMMARY:Hackathon AI for Health (hackathon)
@@ -293,7 +233,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:gdevelop-big-game-jam-10@dailyagent
-DTSTAMP:20261027T140824Z
+DTSTAMP:20261101T084328Z
 DTSTART;VALUE=DATE:20261115
 DTEND;VALUE=DATE:20261116
 SUMMARY:GDevelop BIG Game Jam #10 — entries close
@@ -305,7 +245,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:gdevelop-big-game-jam-10-run@dailyagent
-DTSTAMP:20261027T140824Z
+DTSTAMP:20261101T084328Z
 DTSTART;VALUE=DATE:20261106
 DTEND;VALUE=DATE:20261116
 SUMMARY:GDevelop BIG Game Jam #10 (game jam)
@@ -317,7 +257,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:zoud-gamelab@dailyagent
-DTSTAMP:20261027T140824Z
+DTSTAMP:20261101T084328Z
 DTSTART;VALUE=DATE:20261115
 DTEND;VALUE=DATE:20261116
 SUMMARY:Zoud GameLab × Global Game Jam — entries close
@@ -330,7 +270,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:zoud-gamelab-run@dailyagent
-DTSTAMP:20261027T140824Z
+DTSTAMP:20261101T084328Z
 DTSTART;VALUE=DATE:20261015
 DTEND;VALUE=DATE:20261116
 SUMMARY:Zoud GameLab × Global Game Jam (game jam)
@@ -341,8 +281,35 @@ TRANSP:TRANSPARENT
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
+UID:lovable-hexa-ai-for-work@dailyagent
+DTSTAMP:20261101T084328Z
+DTSTART;VALUE=DATE:20261117
+DTEND;VALUE=DATE:20261118
+SUMMARY:Lovable Hackathon: AI for Work — entries close
+DESCRIPTION:hackathon · no published date\, event start used as a cutoff\n
+ Hexa Paris · free evening build session 18:30–22:00\, apéro included 
+ · squads or solo · prizes for the best three unstated\, Lovable credits 
+ for all · registration via the Lovable events hub
+URL:https://community.lovable.app/events
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:lovable-hexa-ai-for-work-run@dailyagent
+DTSTAMP:20261101T084328Z
+DTSTART;VALUE=DATE:20261117
+DTEND;VALUE=DATE:20261118
+SUMMARY:Lovable Hackathon: AI for Work (hackathon)
+DESCRIPTION:Hexa Paris · free evening build session 18:30–22:00\, apéro
+  included · squads or solo · prizes for the best three unstated\, Lovabl
+ e credits for all · registration via the Lovable events hub
+URL:https://community.lovable.app/events
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
 UID:urmrc-2026@dailyagent
-DTSTAMP:20261027T140824Z
+DTSTAMP:20261101T084328Z
 DTSTART;VALUE=DATE:20261117
 DTEND;VALUE=DATE:20261118
 SUMMARY:Upper Rhine Mobile Robotic Challenge (3rd) — entries close
@@ -351,13 +318,14 @@ DESCRIPTION:competition · no published date\, event start used as a cutoff
  ent robotics competition\, 3rd edition · 2024 edition drew 8 student team
  s · no registration route published yet — deadline here is event start 
  as a check-back marker
-URL:https://www.ensisa.uha.fr
+URL:https://www.uha.fr/fr/actualites-agenda-1/agenda/upper-rhine-mobile-rob
+ otic-challenge-la-robotique-sans-frontieres.html
 TRANSP:TRANSPARENT
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:urmrc-2026-run@dailyagent
-DTSTAMP:20261027T140824Z
+DTSTAMP:20261101T084328Z
 DTSTART;VALUE=DATE:20261117
 DTEND;VALUE=DATE:20261119
 SUMMARY:Upper Rhine Mobile Robotic Challenge (3rd) (competition)
@@ -365,13 +333,14 @@ DESCRIPTION:Parc Expo Mulhouse\, inside the free-entry Euro Industries salo
  n · student robotics competition\, 3rd edition · 2024 edition drew 8 stu
  dent teams · no registration route published yet — deadline here is eve
  nt start as a check-back marker
-URL:https://www.ensisa.uha.fr
+URL:https://www.uha.fr/fr/actualites-agenda-1/agenda/upper-rhine-mobile-rob
+ otic-challenge-la-robotique-sans-frontieres.html
 TRANSP:TRANSPARENT
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:hack1robo-5@dailyagent
-DTSTAMP:20261027T140824Z
+DTSTAMP:20261101T084328Z
 DTSTART;VALUE=DATE:20261120
 DTEND;VALUE=DATE:20261121
 SUMMARY:Hack1Robo 5 (Bordeaux) — entries close
@@ -384,7 +353,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:hack1robo-5-run@dailyagent
-DTSTAMP:20261027T140824Z
+DTSTAMP:20261101T084328Z
 DTSTART;VALUE=DATE:20261120
 DTEND;VALUE=DATE:20261123
 SUMMARY:Hack1Robo 5 (Bordeaux) (hackathon)
@@ -396,34 +365,8 @@ TRANSP:TRANSPARENT
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
-UID:drone-defense-hackathon@dailyagent
-DTSTAMP:20261027T140824Z
-DTSTART;VALUE=DATE:20261123
-DTEND;VALUE=DATE:20261124
-SUMMARY:Drone Defense Hackathon — entries close
-DESCRIPTION:hackathon\nOnline qualifying phase\, then a drone cage at the G
- rand Palais · teams 6–8 · no cash prize published
-URL:https://hackathons-artefactadoptai.agorize.com/en/challenges/drone-defe
- nse-hackathon
-TRANSP:TRANSPARENT
-STATUS:CONFIRMED
-END:VEVENT
-BEGIN:VEVENT
-UID:drone-defense-hackathon-run@dailyagent
-DTSTAMP:20261027T140824Z
-DTSTART;VALUE=DATE:20261124
-DTEND;VALUE=DATE:20261127
-SUMMARY:Drone Defense Hackathon (hackathon)
-DESCRIPTION:Online qualifying phase\, then a drone cage at the Grand Palais
-  · teams 6–8 · no cash prize published
-URL:https://hackathons-artefactadoptai.agorize.com/en/challenges/drone-defe
- nse-hackathon
-TRANSP:TRANSPARENT
-STATUS:CONFIRMED
-END:VEVENT
-BEGIN:VEVENT
 UID:amiga-tools-jam-2026@dailyagent
-DTSTAMP:20261027T140824Z
+DTSTAMP:20261101T084328Z
 DTSTART;VALUE=DATE:20261126
 DTEND;VALUE=DATE:20261127
 SUMMARY:Amiga Tools Jam 2026 — entries close
@@ -435,8 +378,73 @@ TRANSP:TRANSPARENT
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
+UID:hackathon-quantique-defense@dailyagent
+DTSTAMP:20261101T084328Z
+DTSTART;VALUE=DATE:20261202
+DTEND;VALUE=DATE:20261203
+SUMMARY:Hackathon Quantique Défense (AID × Artefact) — entries close
+DESCRIPTION:hackathon · no published date\, event start used as a cutoff\n
+ Grand Palais\, Paris · teams 4–8 · €12\,000 (4× €3\,000 service c
+ hallenges) · AID announced a registration extension on 30 Oct\; the new c
+ lose date is not visible on the page\, so the event start is the conservat
+ ive cutoff — confirm on the Agorize page before relying on it
+URL:https://hackathons-artefactadoptai.agorize.com/fr/challenges/hackathon-
+ quantique-defense
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:hackathon-quantique-defense-run@dailyagent
+DTSTAMP:20261101T084328Z
+DTSTART;VALUE=DATE:20261202
+DTEND;VALUE=DATE:20261205
+SUMMARY:Hackathon Quantique Défense (AID × Artefact) (hackathon)
+DESCRIPTION:Grand Palais\, Paris · teams 4–8 · €12\,000 (4× €3\,00
+ 0 service challenges) · AID announced a registration extension on 30 Oct\
+ ; the new close date is not visible on the page\, so the event start is th
+ e conservative cutoff — confirm on the Agorize page before relying on it
+URL:https://hackathons-artefactadoptai.agorize.com/fr/challenges/hackathon-
+ quantique-defense
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:hackathon-robotique-defense@dailyagent
+DTSTAMP:20261101T084328Z
+DTSTART;VALUE=DATE:20261202
+DTEND;VALUE=DATE:20261203
+SUMMARY:Humanoid Defense Robot Hackathon (AID × Artefact) — entries clos
+ e
+DESCRIPTION:hackathon · no published date\, event start used as a cutoff\n
+ Grand Palais\, Paris · humanoid robots for defence\, two tracks (navigati
+ on & mobility\, manipulation & logistics · €3\,000 each\, €6\,000 tot
+ al) · teams 4–8 (page also says 6–8 — inconsistent) · registration
+  open since September\, selected teams announced in October — no entry c
+ lose date published\, event start is the cutoff
+URL:https://hackathons-artefactadoptai.agorize.com/en/challenges/hackathon-
+ robotique-defense1
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:hackathon-robotique-defense-run@dailyagent
+DTSTAMP:20261101T084328Z
+DTSTART;VALUE=DATE:20261202
+DTEND;VALUE=DATE:20261205
+SUMMARY:Humanoid Defense Robot Hackathon (AID × Artefact) (hackathon)
+DESCRIPTION:Grand Palais\, Paris · humanoid robots for defence\, two track
+ s (navigation & mobility\, manipulation & logistics · €3\,000 each\, 
+ €6\,000 total) · teams 4–8 (page also says 6–8 — inconsistent) ·
+  registration open since September\, selected teams announced in October 
+ — no entry close date published\, event start is the cutoff
+URL:https://hackathons-artefactadoptai.agorize.com/en/challenges/hackathon-
+ robotique-defense1
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
 UID:pixel-forge-mega-jam@dailyagent
-DTSTAMP:20261027T140824Z
+DTSTAMP:20261101T084328Z
 DTSTART;VALUE=DATE:20261208
 DTEND;VALUE=DATE:20261209
 SUMMARY:Pixel Forge MEGA JAM — entries close
@@ -449,7 +457,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:uplifting-game-jam-10@dailyagent
-DTSTAMP:20261027T140824Z
+DTSTAMP:20261101T084328Z
 DTSTART;VALUE=DATE:20261214
 DTEND;VALUE=DATE:20261215
 SUMMARY:Uplifting Game Jam — entries close
@@ -461,7 +469,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:uplifting-game-jam-10-run@dailyagent
-DTSTAMP:20261027T140824Z
+DTSTAMP:20261101T084328Z
 DTSTART;VALUE=DATE:20261201
 DTEND;VALUE=DATE:20261215
 SUMMARY:Uplifting Game Jam (game jam)
@@ -472,7 +480,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:physical-ai-amje@dailyagent
-DTSTAMP:20261027T140824Z
+DTSTAMP:20261101T084328Z
 DTSTART;VALUE=DATE:20261231
 DTEND;VALUE=DATE:20270101
 SUMMARY:Hackathon Physical AI (AMJE / Arts et Métiers) — entries close

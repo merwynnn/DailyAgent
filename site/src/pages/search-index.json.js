@@ -1,5 +1,7 @@
 import { getCollection } from 'astro:content';
 import { outlookUrl, publishedReports, reportUrl, sortOutlooks } from '../lib/site';
+import { typeMeta } from '../lib/tracker';
+import stillOpenData from '../data/still-open.json';
 
 /**
  * Full-text search index for `/search`, fetched once by the browser and scored
@@ -52,7 +54,28 @@ export async function GET(context) {
       text: stripMarkdown(entry.body),
     }));
 
-  const index = { entries: [...reports, ...outlooks] };
+  // The tracker's rows are searchable too: a query like "Thymio" should land
+  // you on the event's own sign-up page, not only inside day-old prose.
+  const today = new Date().toISOString().slice(0, 10);
+  const tracker = stillOpenData.items
+    .filter((item) => /^\d{4}-\d{2}-\d{2}$/.test(item.deadline))
+    .filter((item) => item.deadline >= today)
+    .map((item) => {
+      const meta = typeMeta(item.type);
+      const runs = item.start && item.end ? ` Runs ${item.start} to ${item.end}.` : item.start ? ` Runs from ${item.start}.` : '';
+      return {
+        kind: 'event',
+        id: item.id,
+        url: item.url,
+        title: item.name,
+        date: item.deadline,
+        tags: [item.type, 'tracker'],
+        summary: `${meta.label}, entry closes ${item.deadline}.${runs}`,
+        text: [item.note, 'entry deadline ' + item.deadline, 'still open'].join(' '),
+      };
+    });
+
+  const index = { entries: [...reports, ...outlooks, ...tracker] };
 
   return new Response(JSON.stringify(index), {
     headers: { 'Content-Type': 'application/json; charset=utf-8' },

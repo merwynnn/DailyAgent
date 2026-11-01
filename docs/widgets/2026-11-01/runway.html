@@ -1,0 +1,433 @@
+<!doctype html>
+<!-- DailyAgent widget — "The runway" (2026-11-01). The Still Open tracker as a
+     DOM time rail: one bar per enterable event, running from its known start
+     to its entry deadline, with a draggable scrubber that answers "if I stop
+     paying attention for N days, what is gone?". Snapshot anchored to
+     2026-11-01; ~ denotes deadlines the organiser never published. No canvas —
+     plain DOM so the reader's theme and font do the work. -->
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>The runway</title>
+    <link rel="stylesheet" href="../kit.css" />
+    <script src="../kit.js"></script>
+    <style>
+      body {
+        margin: 0;
+        padding: 0.9rem 1rem 1rem;
+      }
+
+      .hint {
+        margin: 0 0 0.9rem;
+        font-size: 0.8rem;
+        line-height: 1.5;
+        color: var(--ink-soft);
+      }
+
+      .rail-wrap {
+        border: 1px solid var(--line);
+        border-radius: var(--radius-sm, 4px);
+        background: var(--surface-2, transparent);
+        padding: 0.4rem 1.1rem 0.9rem;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: none;
+      }
+
+      .stack {
+        position: relative;
+        height: 112px; /* room for three stacked pin tiers */
+      }
+
+      .bars {
+        position: absolute;
+        inset: auto 0 34px 0; /* the bar strip, one line above the rail line */
+        height: 7px;
+      }
+
+      .bar {
+        position: absolute;
+        top: 0;
+        height: 7px;
+        border-radius: 3.5px;
+        opacity: 0.42;
+        min-width: 2px;
+      }
+
+      .bar--clipped::after {
+        content: '→';
+        position: absolute;
+        right: -0.9rem;
+        top: -0.45rem;
+        font-size: 0.62rem;
+        color: var(--muted);
+      }
+
+      .rline {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 34px;
+        border-top: 1px solid var(--line-strong, var(--line));
+      }
+
+      .tick {
+        position: absolute;
+        bottom: 34px;
+        height: 9px;
+        border-left: 1px solid var(--line);
+        transform: translateY(9px);
+      }
+
+      .tick-label {
+        position: absolute;
+        bottom: 8px;
+        transform: translateX(-50%);
+        font-size: 0.62rem;
+        color: var(--muted);
+        white-space: nowrap;
+      }
+
+      .monthlabel {
+        position: absolute;
+        bottom: 40px;
+        transform: translateX(0.15rem);
+        font-size: 0.62rem;
+        font-weight: 700;
+        letter-spacing: 0.14em;
+        color: var(--gold-deep);
+      }
+
+      .pin {
+        position: absolute;
+        bottom: 38px;
+        transform: translate(-50%, 0.55rem);
+        padding: 0.1rem 0.22rem;
+        background: transparent;
+        border: 1.5px solid transparent;
+        border-radius: 3px;
+        color: var(--ink);
+        font-size: 0.66rem;
+        line-height: 1;
+        cursor: pointer;
+      }
+
+      .pin--est {
+        border-style: dashed;
+      }
+
+      .pin:hover,
+      .pin:focus-visible {
+        background: var(--surface);
+        border-color: var(--gold);
+        outline: none;
+      }
+
+      .needle {
+        position: absolute;
+        bottom: 30px;
+        top: 0;
+        width: 0;
+      }
+
+      .needle::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        top: 0;
+        border-left: 2px solid var(--gold);
+      }
+
+      .needle-handle {
+        position: absolute;
+        top: -0.1rem;
+        left: -0.55rem;
+        width: 1.1rem;
+        height: 1.1rem;
+        padding: 0;
+        border-radius: 50%;
+        background: var(--gold);
+        border: 2px solid var(--gold-deep);
+        cursor: grab;
+      }
+
+      .needle-handle:focus-visible {
+        outline: 2px solid var(--gold-deep);
+        outline-offset: 1px;
+      }
+
+      .needle-handle:active {
+        cursor: grabbing;
+      }
+
+      .readout {
+        margin: 0.75rem 0 0;
+        min-height: 2.9em;
+        font-size: 0.8rem;
+        line-height: 1.45;
+        color: var(--ink-soft);
+      }
+
+      .readout strong {
+        color: var(--ink);
+      }
+
+      .next-up {
+        margin: 0.7rem 0 0;
+        padding-left: 0;
+        list-style: none;
+        font-size: 0.72rem;
+        line-height: 1.7;
+        color: var(--ink-soft);
+        column-gap: 1.6rem;
+        columns: 2;
+      }
+
+      .next-up code {
+        font-size: 0.68rem;
+      }
+
+      .legend {
+        margin: 0.55rem 0 0;
+        font-size: 0.64rem;
+        color: var(--muted);
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.35rem 1rem;
+      }
+
+      .legend span i {
+        font-style: normal;
+        color: var(--gold-deep);
+      }
+
+      .foot {
+        margin: 0.5rem 0 0;
+        font-size: 0.64rem;
+        line-height: 1.5;
+        color: var(--muted);
+      }
+    </style>
+  </head>
+  <body>
+    <p class="hint">
+      Every door still open, drawn along the next two months: the bar is the event's run
+      (dashed where a deadline was never published), the marker is when entries close. Drag
+      the needle — or click the rail — to any date, and the readout counts what that day
+      would still give you.
+    </p>
+
+    <div class="rail-wrap" id="railwrap">
+      <div class="stack" id="stack">
+        <!-- bars, ticks, pins, needle injected here -->
+      </div>
+    </div>
+
+    <p class="readout" id="readout" aria-live="polite"></p>
+
+    <p class="legend" aria-hidden="true">
+      <span><i>●</i> hackathon</span>
+      <span><i>■</i> game jam</span>
+      <span><i>▲</i> competition</span>
+      <span><i>≈</i> closes ~ (no published date)</span>
+    </p>
+
+    <ul class="next-up" id="nextup">
+      <!-- static, no-JS-safe: the three nearest deadlines, filled at build time -->
+    </ul>
+
+    <p class="foot">
+      From the tracker's snapshot of 1 Nov 2026. Bars clipped at the rail's edges carry an
+      arrow — the event runs on, only the drawing stops. Home/End or ← → (with Shift for a
+      week) move the needle; Tab walks the markers; Enter opens a door's facts below.
+    </p>
+
+    <noscript>
+      <p class="readout">
+        The scrubber needs JavaScript. Without it, the three nearest deadlines are above and
+        every row's full facts live in the list beneath this panel.
+      </p>
+    </noscript>
+
+    <script>
+      /* Seeded from site/src/data/still-open.json on 2026-11-01. */
+      const DATA = [
+        { name: 'Micro Jam 068: Evolution', kind: 'jam', due: '2026-11-02', est: false, from: '2026-10-30', to: '2026-11-02', place: '48 h online, solo or teams of 4', prize: '$300 pool', url: 'https://itch.io/jam/micro-jam-068' },
+        { name: 'HackAudit 2026', kind: 'competition', due: '2026-11-02', est: false, from: null, to: '2027-03-11', place: 'cybersecurity, phase 1 midday Paris time', prize: '€9,000 listed', url: 'https://www.hackaudit.fr/' },
+        { name: 'HABS Neuro-AI Hackathon', kind: 'hackathon', due: '2026-11-02', est: true, from: '2026-11-02', to: '2026-11-30', place: 'Orsay / Paris-Saclay, real EEG datasets', prize: 'unstated', url: 'https://hackathon.habs.ai/' },
+        { name: 'Make AI Happen (KPMG)', kind: 'competition', due: '2026-11-06', est: false, from: null, to: '2026-12-07', place: 'teams of 2–4', prize: 'gift cards', url: 'https://www.agorize.com/en/challenges/make-ai-happen' },
+        { name: 'thatgamejam #02 (thatgamecompany)', kind: 'jam', due: '2026-11-07', est: false, from: '2026-10-24', to: '2026-11-07', place: 'online, the theme is a piece of music', prize: '$10,000 pool', url: 'https://itch.io/jam/thatgamejam02' },
+        { name: 'Hack the Feed (Oriane × Lovable × Brut)', kind: 'hackathon', due: '2026-11-07', est: true, from: '2026-11-07', to: '2026-11-07', place: 'Albert School Paris, free, 120 spots', prize: '€1,000 ladder', url: 'https://www.albertschool.com/en/events/hack-the-feed-ai-video-hackathon-paris/' },
+        { name: 'H × 42AI Computer-Use Hackathon', kind: 'hackathon', due: '2026-11-07', est: true, from: '2026-11-07', to: '2026-11-08', place: 'Paris, free, teams 1–4', prize: '€10,000 cash', url: 'https://lu.ma/hz9db5u9' },
+        { name: 'Game Gauntlet — SIM Jam', kind: 'jam', due: '2026-11-10', est: false, from: null, to: null, place: 'online, Discord mandatory', prize: '$1,500', url: 'https://itch.io/jam/game-gauntlet-sim-jam' },
+        { name: 'Hackathon Européen (UGE × AFIT France)', kind: 'hackathon', due: '2026-11-09', est: false, from: '2027-03-19', to: '2027-03-23', place: 'EIVP Paris · UGE students only · mobility theme, 3-ECTS certificate', prize: 'no cash (certificate + jury)', url: 'https://www.univ-gustave-eiffel.fr/international/hackathon-europeen' },
+        { name: 'Hackathon AI for Health', kind: 'hackathon', due: '2026-11-13', est: true, from: '2026-11-13', to: '2026-11-15', place: 'Paris, three in-person days', prize: 'unstated', url: 'https://hackathons-artefactadoptai.agorize.com/en/challenges/hackathon-adopt-ai-for-health' },
+        { name: 'GDevelop BIG Game Jam #10', kind: 'jam', due: '2026-11-15', est: false, from: '2026-11-06', to: '2026-11-15', place: 'must use GDevelop', prize: 'up to $6,500', url: 'https://itch.io/jam/gdevelop-big-game-jam-10' },
+        { name: 'Zoud GameLab × Global Game Jam', kind: 'jam', due: '2026-11-15', est: false, from: '2026-10-15', to: '2026-11-15', place: 'virtual, financial-literacy theme', prize: 'up to $140,000 stated', url: 'https://itch.io/jam/zoud-gamelab' },
+        { name: 'Upper Rhine Mobile Robotic Challenge', kind: 'competition', due: '2026-11-17', est: true, from: '2026-11-17', to: '2026-11-18', place: 'Parc Expo Mulhouse, two days', prize: '—', url: 'https://www.uha.fr/fr/actualites-agenda-1/agenda/upper-rhine-mobile-robotic-challenge-la-robotique-sans-frontieres.html' },
+        { name: 'Lovable Hackathon: AI for Work', kind: 'hackathon', due: '2026-11-17', est: true, from: '2026-11-17', to: '2026-11-17', place: 'Hexa Paris, free evening build', prize: 'unstated (Lovable credits)', url: 'https://community.lovable.app/events' },
+        { name: 'Hack1Robo 5 (Bordeaux)', kind: 'hackathon', due: '2026-11-20', est: true, from: '2026-11-20', to: '2026-11-22', place: 'Thymio robots provided', prize: 'none (trophies)', url: 'https://www.hack1robo.fr/' },
+        { name: 'Amiga Tools Jam 2026', kind: 'jam', due: '2026-11-26', est: false, from: null, to: null, place: 'retro, programming-heavy', prize: 'unstated', url: 'https://itch.io/jam/amiga-tools-jam-2026' },
+        { name: 'Pixel Forge MEGA JAM', kind: 'jam', due: '2026-12-08', est: false, from: '2026-11-28', to: null, place: 'teams up to 4, AI banned', prize: '$600 + kit prizes', url: 'https://itch.io/jam/pixel-forge-mega-jam' },
+        { name: 'Hackathon Quantique Défense (AID × Artefact)', kind: 'hackathon', due: '2026-12-02', est: true, from: '2026-12-02', to: '2026-12-04', place: 'Grand Palais, teams of 4–8', prize: '€12,000', url: 'https://hackathons-artefactadoptai.agorize.com/fr/challenges/hackathon-quantique-defense' },
+        { name: 'Humanoid Defense Robot Hackathon (AID × Artefact)', kind: 'hackathon', due: '2026-12-02', est: true, from: '2026-12-02', to: '2026-12-04', place: 'Grand Palais, humanoid robots, two tracks', prize: '€6,000 (2× €3,000)', url: 'https://hackathons-artefactadoptai.agorize.com/en/challenges/hackathon-robotique-defense1' },
+        { name: 'Uplifting Game Jam', kind: 'jam', due: '2026-12-14', est: false, from: '2026-12-01', to: '2026-12-14', place: 'solo-friendly', prize: '$408 last edition', url: 'https://itch.io/jam/uplifting-game-jam-cash-prizes-10' },
+        { name: 'Hackathon Physical AI (AMJE)', kind: 'hackathon', due: '2026-12-31', est: true, from: null, to: '2027-02-04', place: 'Arts et Métiers, project-based', prize: '€15,000 total', url: 'https://amje.fr/pip' },
+      ];
+
+      /* Rail: 1 Nov 2026 -> 31 Dec 2026. 61 days, index 0..60. */
+      const START = Date.UTC(2026, 10, 1);
+      const DAYS = 61;
+      const dayIdx = (iso) => {
+        if (!iso) return null;
+        const [y, m, d] = iso.split('-').map(Number);
+        return Math.round((Date.UTC(y, m - 1, d) - START) / 86_400_000);
+      };
+      const dateAt = (i) => {
+        const dt = new Date(START + i * 86_400_000);
+        return dt.toLocaleDateString('en-GB', { weekday: 'short', day: 'numeric', month: 'short', timeZone: 'UTC' });
+      };
+
+      const MONTHS = [
+        { at: 0, label: 'NOV' },
+        { at: 30, label: 'DEC' },
+      ];
+      const pctX = (day) => (day / (DAYS - 1)) * 100;
+
+      const stack = document.getElementById('stack');
+      const GLYPH = { hackathon: '●', jam: '■', competition: '▲' };
+      const KIND_COLOR = { hackathon: 'var(--gold-deep)', jam: 'var(--ink)', competition: 'var(--muted)' };
+
+      /* Bar for the event's run, clipped to the rail; marks clipped edges. */
+      DATA.forEach((item) => {
+        const a = dayIdx(item.from), b = dayIdx(item.to);
+        if (a === null && b === null) return;
+        const left = Math.max(a ?? 0, 0); /* runs started before the rail clip to its left edge */
+        const right = Math.min(b ?? DAYS - 1, DAYS - 1);
+        const bar = document.createElement('span');
+        bar.className = 'bar';
+        if (b === null || b > DAYS - 1) bar.className += ' bar--clipped';
+        if (item.est) bar.style.borderBottom = '1px dashed ' + KIND_COLOR[item.kind];
+        bar.style.left = pctX(left) + '%';
+        bar.style.width = Math.max(pctX(right) - pctX(left), 0.8) + '%';
+        bar.style.background = KIND_COLOR[item.kind];
+        bar.title = item.name + ' — runs within the visible window';
+        stack.appendChild(bar);
+      });
+
+      /* Rail line, weekly ticks, month labels. */
+      stack.insertAdjacentHTML('beforeend', '<span class="rline"></span>');
+      for (let i = 0; i < DAYS; i += 7) {
+        stack.insertAdjacentHTML('beforeend',
+          `<span class="tick" style="left:${pctX(i).toFixed(2)}%"></span>` +
+          `<span class="tick-label" style="left:${pctX(i).toFixed(2)}%">${dateAt(i)}</span>`);
+      }
+      MONTHS.forEach((m) => {
+        stack.insertAdjacentHTML('beforeend',
+          `<span class="monthlabel" style="left:${pctX(m.at).toFixed(2)}%">${m.label}</span>`);
+      });
+
+      /* Pins: markers on the deadline, stacked in tiers when days collide.
+         Sorted by deadline first so tiers resolve left to right. */
+      const TIER_GAP = 16; /* px between tiers */
+      const ordered = [...DATA].sort((a, b) => dayIdx(a.due) - dayIdx(b.due));
+      const tierCursor = [ -99 ];
+      ordered.forEach((item) => {
+        const day = dayIdx(item.due);
+        let tier = tierCursor.findIndex((last) => day - last > 1.2);
+        if (tier === -1) { tier = tierCursor.length; tierCursor.push(day); }
+        tierCursor[tier] = day;
+        const el = document.createElement('button');
+        el.type = 'button';
+        el.className = 'pin' + (item.est ? ' pin--est' : '');
+        el.style.left = pctX(day).toFixed(2) + '%';
+        el.style.bottom = 38 + tier * TIER_GAP + 'px';
+        el.style.color = KIND_COLOR[item.kind];
+        el.textContent = GLYPH[item.kind];
+        el.setAttribute('aria-label',
+          `${item.name}: ${item.kind}, deadline ${item.est ? 'closes around' : 'closes on'} ${item.due}, ${item.prize}`);
+        el.addEventListener('click', () => { focus(item); render(); });
+        stack.appendChild(el);
+        item.el = el;
+      });
+
+      /* Needle: the scrubber. */
+      let at = 0;
+      const needle = document.createElement('span');
+      needle.className = 'needle';
+      needle.innerHTML = '<button type="button" class="needle-handle" role="slider"' +
+        ' aria-label="Scroll the runway" aria-valuemin="0" aria-valuemax="' + (DAYS - 1) + '"' +
+        ' aria-valuenow="0" aria-valuetext="' + dateAt(0) + '"></button>';
+      const handle = needle.firstChild;
+      handle.addEventListener('keydown', (e) => {
+        let n = null;
+        if (e.key === 'ArrowLeft' || e.key === 'ArrowDown') n = at - (e.shiftKey ? 7 : 1);
+        if (e.key === 'ArrowRight' || e.key === 'ArrowUp') n = at + (e.shiftKey ? 7 : 1);
+        if (e.key === 'Home') n = 0;
+        if (e.key === 'End') n = DAYS - 1;
+        if (n !== null) { e.preventDefault(); jump(n); }
+      });
+      const wrap = document.getElementById('railwrap');
+      const moveToPointer = (e) => {
+        const r = wrap.getBoundingClientRect();
+        const x = Math.min(Math.max(e.clientX - r.left - 17.6, 0), r.width - 35.2); /* padding 1.1rem */
+        jump(Math.round((x / (r.width - 35.2)) * (DAYS - 1)));
+      };
+      let dragging = false;
+      handle.addEventListener('pointerdown', (e) => {
+        dragging = true; handle.setPointerCapture(e.pointerId); e.preventDefault();
+      });
+      handle.addEventListener('pointermove', (e) => { if (dragging) moveToPointer(e); });
+      handle.addEventListener('pointerup', () => { dragging = false; });
+      wrap.addEventListener('pointerdown', (e) => {
+        if (e.target === handle) return;
+        moveToPointer(e);
+        handle.setPointerCapture(e.pointerId);
+        dragging = true;
+      });
+      wrap.addEventListener('pointermove', (e) => { if (dragging) moveToPointer(e); });
+      wrap.addEventListener('pointerup', () => { dragging = false; });
+      handle.addEventListener('touchstart', (e) => e.preventDefault(), { passive: false });
+      stack.appendChild(needle);
+
+      /* Readout. */
+      let focusItem = null;
+      let returnTo = null;
+      const readout = document.getElementById('readout');
+      function jump(n) {
+        at = Math.min(Math.max(n, 0), DAYS - 1);
+        render();
+      }
+      function render() {
+        handle.setAttribute('aria-valuenow', String(at));
+        handle.setAttribute('aria-valuetext', dateAt(at));
+        needle.style.left = pctX(at).toFixed(2) + '%';
+        const open = DATA.filter((i) => dayIdx(i.due) >= at);
+        const today = DATA.filter((i) => dayIdx(i.due) === at);
+        let html = `<strong>${dateAt(at)}</strong> — <strong>${open.length}</strong> door${open.length === 1 ? '' : 's'} still open` +
+          (today.length ? `, ${today.length} closing that day` : ', next ' + open.slice(0, 1).map((i) => `<strong>${i.name}</strong>`).join('') || '');
+        if (focusItem) {
+          html += `<br><strong>${focusItem.name}</strong> — ${focusItem.place}. ${focusItem.prize}; ` +
+            `${focusItem.est ? 'closes ~' : 'closes on'} ${dateAt(dayIdx(focusItem.due))}. ` +
+            `<a href="${focusItem.url}" target="_blank" rel="noopener noreferrer">Open the page ↗</a>`;
+          focusItem = null;
+        }
+        readout.innerHTML = html;
+      }
+      function focus(item) { focusItem = item; }
+
+      /* Static nearest-three list; stays true to the snapshot without JS. */
+      const nextup = document.getElementById('nextup');
+      DATA.sort((a, b) => dayIdx(a.due) - dayIdx(b.due)).slice(0, 3).forEach((item) => {
+        const li = document.createElement('li');
+        li.innerHTML = `<code>${item.est ? '~' : ''}${item.due}</code> — ${item.name} · ${item.prize === '—' ? 'no prize published' : item.prize}` +
+          ` — <a href="${item.url}" target="_blank" rel="noopener noreferrer">details ↗</a>`;
+        nextup.appendChild(li);
+      });
+
+      render();
+      DAKit.fit();
+    </script>
+  </body>
+</html>

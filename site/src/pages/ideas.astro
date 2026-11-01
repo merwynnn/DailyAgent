@@ -1,0 +1,115 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { ideasOf } from '../lib/ideas';
+import { formatDate, publishedReports, withBase } from '../lib/site';
+import { getCollection } from 'astro:content';
+
+// Every project idea the log has carried, newest day first.
+const all = ideasOf(publishedReports(await getCollection('reports')));
+
+const days: { date: string; ideas: typeof all }[] = [];
+for (const idea of all) {
+  const last = days[days.length - 1];
+  if (last && last.date === idea.date) last.ideas.push(idea);
+  else days.push({ date: idea.date, ideas: [idea] });
+}
+---
+
+<BaseLayout
+  title="Ideas"
+  description="Every project idea the daily log has proposed, collected from the reports and linked back to the day each was written."
+>
+  <div class="wrap">
+    <section class="page-head">
+      <p class="eyebrow">{all.length} ideas · {days.length} days</p>
+      <h1>Project ideas</h1>
+      <p class="page-head__lede">
+        Every project idea the log has written, pulled out of the reports and lined up on one
+        page — what it is, the smallest first step, and the day it was proposed. Ideas repeat,
+        sharpen and die here exactly as they did in print.
+      </p>
+    </section>
+
+    {
+      days.map((day) => (
+        <section class="ideas__day">
+          <p class="ideas__dateline">
+            <a href={withBase(`reports/${day.date}/`)}>{formatDate(day.date)}</a>
+          </p>
+          <ul class="ideas__list">
+            {day.ideas.map((idea) => (
+              <li class="ideas__idea">
+                <h2 class="ideas__name">{idea.name}</h2>
+                {idea.detail && <p class="ideas__detail">{idea.detail}</p>}
+              </li>
+            ))}
+          </ul>
+        </section>
+      ))
+    }
+
+    {all.length === 0 && (
+      <p class="ideas__empty">No ideas in the log yet — the reports will grow this page.</p>
+    )}
+  </div>
+</BaseLayout>
+
+<style>
+  .ideas__day {
+    margin-top: 2.2rem;
+    border-top: 1px solid var(--line);
+    padding-top: 1.4rem;
+  }
+
+  .ideas__dateline {
+    margin: 0 0 0.9rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .ideas__dateline a {
+    color: inherit;
+    text-decoration-color: var(--line-strong);
+  }
+
+  .ideas__dateline a:hover {
+    color: var(--ink);
+  }
+
+  .ideas__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 1.1rem;
+  }
+
+  .ideas__idea {
+    padding: 1rem 1.2rem;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-sm);
+  }
+
+  .ideas__name {
+    margin: 0;
+    font-size: 1.02rem;
+    font-weight: 600;
+    line-height: 1.35;
+  }
+
+  .ideas__detail {
+    margin: 0.45rem 0 0;
+    font-size: 0.92rem;
+    line-height: 1.6;
+    color: var(--ink-soft);
+  }
+
+  .ideas__empty {
+    margin-top: 2rem;
+    color: var(--muted);
+  }
+</style>

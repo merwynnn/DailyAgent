@@ -1,0 +1,335 @@
+<!doctype html>
+<!-- DailyAgent widget — "What still closes" (2026-10-30). The Still Open
+     tracker as an operable list: filter by kind, flip the sort, open the
+     rows. Snapshot taken on 2026-10-30; days-left are counted from that
+     date, and prize amounts are as published (currencies not converted). -->
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>What still closes</title>
+    <link rel="stylesheet" href="../kit.css" />
+    <script src="../kit.js"></script>
+    <style>
+      .controls {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.4rem;
+        align-items: center;
+        margin-top: 0.6rem;
+      }
+
+      .controls [data-role='glue'] {
+        flex: 1;
+      }
+
+      .sort {
+        display: inline-flex;
+        border: 1px solid var(--line-strong);
+        border-radius: var(--radius-pill);
+        overflow: hidden;
+      }
+
+      .chip,
+      .sort button {
+        font: inherit;
+        font-size: 0.72rem;
+        font-weight: 600;
+        letter-spacing: 0.03em;
+        color: var(--ink-soft);
+        background: var(--surface-2);
+        border: 1px solid var(--line);
+        border-radius: var(--radius-pill);
+        padding: 0.28rem 0.7rem;
+        cursor: pointer;
+      }
+
+      .sort button {
+        border: none;
+        border-radius: 0;
+      }
+
+      .sort button + button {
+        border-left: 1px solid var(--line);
+      }
+
+      .chip[aria-pressed='true'],
+      .sort button[aria-pressed='true'] {
+        color: var(--on-gold);
+        background: var(--gold);
+        border-color: var(--gold-deep);
+      }
+
+      .rows {
+        margin: 0.8rem 0 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .rows details {
+        border-bottom: 1px solid var(--line);
+      }
+
+      .rows details:first-child {
+        border-top: 1px solid var(--line);
+      }
+
+      .rows summary {
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+        padding: 0.55rem 0.3rem;
+        cursor: pointer;
+        list-style: none;
+      }
+
+      .rows summary::-webkit-details-marker {
+        display: none;
+      }
+
+      .soon {
+        box-shadow: inset 3px 0 0 var(--gold-deep);
+      }
+
+      .soon summary {
+        padding-left: 0.7rem;
+      }
+
+      .kind {
+        flex: none;
+        font-size: 0.62rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--muted);
+        min-width: 5.4rem;
+      }
+
+      .what {
+        flex: 1;
+        min-width: 0;
+        font-size: 0.88rem;
+        font-weight: 550;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      .when {
+        flex: none;
+        font-family: var(--font-mono);
+        font-size: 0.72rem;
+        color: var(--ink-soft);
+        font-variant-numeric: tabular-nums;
+      }
+
+      .when .est {
+        font-size: 0.62rem;
+        color: var(--muted);
+      }
+
+      .rows summary:hover .what {
+        color: var(--ink);
+      }
+
+      .card {
+        padding: 0.1rem 0.3rem 0.85rem;
+        font-size: 0.8rem;
+        line-height: 1.55;
+        color: var(--ink-soft);
+      }
+
+      .card .prize {
+        font-weight: 600;
+        color: var(--ink);
+      }
+
+      .card a {
+        display: inline-block;
+        margin-top: 0.35rem;
+        font-size: 0.75rem;
+        font-weight: 600;
+      }
+
+      .empty {
+        margin: 0.8rem 0 0;
+        font-size: 0.8rem;
+        color: var(--muted);
+      }
+
+      .foot {
+        margin: 0.7rem 0 0;
+        font-size: 0.68rem;
+        color: var(--muted);
+      }
+    </style>
+  </head>
+  <body>
+    <p class="eyebrow">The field, 30 October</p>
+    <p class="hint">
+      Twenty-four things are still enterable. Filter by kind, flip the sort, open a row for the
+      facts and the sign-up page.
+    </p>
+
+    <div class="controls" role="group" aria-label="Filters and sort">
+      <button class="chip" type="button" data-kind="" aria-pressed="true">All · 24</button>
+      <button class="chip" type="button" data-kind="jam" aria-pressed="false">Jams</button>
+      <button class="chip" type="button" data-kind="hackathon" aria-pressed="false">
+        Hackathons
+      </button>
+      <button class="chip" type="button" data-kind="competition" aria-pressed="false">
+        Competitions
+      </button>
+      <span data-role="glue"></span>
+      <span class="sort" role="group" aria-label="Sort order">
+        <button type="button" data-sort="deadline" aria-pressed="true">Closest first</button>
+        <button type="button" data-sort="prize" aria-pressed="false">Biggest first</button>
+      </span>
+    </div>
+
+    <ul class="rows" id="rows"></ul>
+    <p class="empty" id="empty" hidden>Nothing in this filter right now.</p>
+
+    <p class="foot">
+      Snapshot of the tracker on 30 Oct 2026 — days are counted from that date. “≈” marks a
+      deadline the organiser never published (event start used as cutoff). Prize amounts as
+      stated, currencies not converted; “—” means nothing was published.
+    </p>
+
+    <script>
+      /* Seeded from site/src/data/still-open.json on 2026-10-30. prize[ch]
+         is a display string; prizeN is the stated magnitude for sorting. */
+      const DATA = [
+        { name: 'Défi Aérospatial Étudiant', kind: 'competition', due: '2026-10-31', est: false, prize: 'awards, not cash', prizeN: 0, place: 'year-long team project', note: 'see page', url: 'https://www.studentaerospacechallenge.eu/' },
+        { name: 'EdenSpark Game Jam #4', kind: 'jam', due: '2026-10-31', est: false, prize: '$5,000 monthly pool', prizeN: 5000, place: 'online · must build in EdenSpark', note: 'unstated — read the rules first', url: 'https://itch.io/jam/edenspark-game-jam-4' },
+        { name: 'RGDC Jam 2026', kind: 'jam', due: '2026-10-31', est: false, prize: '$750 top three', prizeN: 750, place: 'online, month-long', note: 'student game-dev club', url: 'https://www.reddit.com/r/gamejams/comments/1wte2ud/rgdc_jam_2026_september_30october_30_theme_locked/' },
+        { name: 'Slapjam #2', kind: 'jam', due: '2026-10-31', est: false, prize: '$1,000 pool', prizeN: 1000, place: '48 h mobile HTML5', note: 'AI required, not banned', url: 'https://itch.io/jam/slapjam-ai-2' },
+        { name: 'Micro Jam 068: Evolution', kind: 'jam', due: '2026-11-02', est: false, prize: '$300 pool', prizeN: 300, place: '48 h · solo or teams of 4', note: 'allowed', url: 'https://itch.io/jam/micro-jam-068' },
+        { name: 'HackAudit 2026', kind: 'competition', due: '2026-11-02', est: false, prize: '€9,000 listed', prizeN: 9000, place: 'phase 1 due midday Paris time · free, teams 1–5', note: 'cybersecurity', url: 'https://www.hackaudit.fr/' },
+        { name: 'HABS Neuro-AI Hackathon', kind: 'hackathon', due: '2026-11-02', est: true, prize: 'unstated', prizeN: 0, place: 'Orsay / Paris-Saclay · real EEG datasets', note: 'rules still being finalised', url: 'https://hackathon.habs.ai/' },
+        { name: 'Make AI Happen (KPMG)', kind: 'competition', due: '2026-11-06', est: false, prize: 'gift cards', prizeN: 0, place: 'teams 2–4 · finale at KPMG Paris La Défense', note: 'see page', url: 'https://www.agorize.com/en/challenges/make-ai-happen' },
+        { name: 'H Company × 42AI Computer-Use Hackathon', kind: 'hackathon', due: '2026-11-07', est: true, prize: '€10,000 cash', prizeN: 10000, place: 'Paris · free, teams 1–4', note: 'see page', url: 'https://lu.ma/hz9db5u9' },
+        { name: 'thatgamejam #02', kind: 'jam', due: '2026-11-07', est: false, prize: '$10,000 pool', prizeN: 10000, place: 'online · theme is a piece of music', note: 'unstated — check the page', url: 'https://itch.io/jam/thatgamejam02' },
+        { name: 'Game Gauntlet — SIM Jam', kind: 'jam', due: '2026-11-10', est: false, prize: '$1,500 ($1,000/$500)', prizeN: 1500, place: 'online, worldwide', note: 'join the Discord (mandatory)', url: 'https://itch.io/jam/game-gauntlet-sim-jam' },
+        { name: 'Hackathon AI for Health', kind: 'hackathon', due: '2026-11-13', est: true, prize: 'unstated', prizeN: 0, place: 'Paris · three mandatory in-person days', note: 'winner pitches at the Grand Palais finale', url: 'https://hackathons-artefactadoptai.agorize.com/en/challenges/hackathon-adopt-ai-for-health' },
+        { name: 'GDevelop BIG Game Jam #10', kind: 'jam', due: '2026-11-15', est: false, prize: 'up to $6,500', prizeN: 6500, place: 'must use GDevelop', note: '1,000 engine credits per submission', url: 'https://itch.io/jam/gdevelop-big-game-jam-10' },
+        { name: 'Zoud GameLab × Global Game Jam', kind: 'jam', due: '2026-11-15', est: false, prize: 'up to $140,000', prizeN: 140000, place: 'virtual, 18+ · financial-literacy theme', note: 'judged partly on it', url: 'https://itch.io/jam/zoud-gamelab' },
+        { name: 'Upper Rhine Mobile Robotic Challenge', kind: 'competition', due: '2026-11-17', est: true, prize: '—', prizeN: 0, place: 'Parc Expo Mulhouse · inside the free-entry Euro Industries salon', note: 'student robotics, 3rd edition', url: 'https://www.ensisa.uha.fr' },
+        { name: 'Hack1Robo 5', kind: 'hackathon', due: '2026-11-20', est: true, prize: 'none (trophies)', prizeN: 0, place: 'Bordeaux · free, teams 4–6 · Thymio robots and mocap provided', note: 'worth it for the robotics anyway', url: 'https://www.hack1robo.fr/' },
+        { name: 'Amiga Tools Jam 2026', kind: 'jam', due: '2026-11-26', est: false, prize: 'unstated', prizeN: 0, place: 'retro, programming-heavy', note: 'community vote', url: 'https://itch.io/jam/amiga-tools-jam-2026' },
+        { name: 'Pixel Forge MEGA JAM', kind: 'jam', due: '2026-12-08', est: false, prize: '$600 ($300/$200/$100)', prizeN: 600, place: 'teams up to 4 · rest software, not cash', note: 'banned', url: 'https://itch.io/jam/pixel-forge-mega-jam' },
+        { name: 'Hackathon Quantique Défense', kind: 'hackathon', due: '2026-12-02', est: true, prize: '€12,000', prizeN: 12000, place: 'Grand Palais, Paris · teams 4–8', note: 'registration just extended; close date unpublished', url: 'https://hackathons-artefactadoptai.agorize.com/fr/challenges/hackathon-quantique-defense' },
+        { name: 'Humanoid Defense Robot Hackathon', kind: 'hackathon', due: '2026-12-02', est: true, prize: '€6,000 (2× €3,000)', prizeN: 6000, place: 'Grand Palais, Paris · humanoid robots · teams 4–8', note: 'no entry close date published', url: 'https://hackathons-artefactadoptai.agorize.com/en/challenges/hackathon-robotique-defense1' },
+        { name: 'Uplifting Game Jam', kind: 'jam', due: '2026-12-14', est: false, prize: '$408 last edition', prizeN: 408, place: 'solo-friendly', note: 'see page', url: 'https://itch.io/jam/uplifting-game-jam-cash-prizes-10' },
+        { name: 'Hackathon Physical AI', kind: 'hackathon', due: '2026-12-31', est: true, prize: '€15,000 total', prizeN: 15000, place: 'AMJE / Arts et Métiers · registration opens in December', note: 'chase the real dates when it opens', url: 'https://amje.fr/pip' },
+        { name: 'Hack the Feed (Oriane × Lovable × Brut)', kind: 'hackathon', due: '2026-11-07', est: true, prize: '€500/€300/€200 + credits', prizeN: 1000, place: 'Albert School Paris · free one-day, 120 spots · video search or the Brut editorial track', note: 'no code needed (Lovable); teams up to 4 or solo', url: 'https://www.albertschool.com/en/events/hack-the-feed-ai-video-hackathon-paris/' },
+        { name: 'Lovable Hackathon: AI for Work', kind: 'hackathon', due: '2026-11-17', est: true, prize: 'unstated (credits)', prizeN: 0, place: 'Hexa Paris · evening 18:30–22:00', note: 'prizes unstated; RSVP via the Lovable events hub', url: 'https://community.lovable.app/events' },
+      ];
+
+      const TODAY = '2026-10-30'; // the snapshot date: days-left is anchored, never drifting
+      const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+      const rowsEl = document.getElementById('rows');
+      const emptyEl = document.getElementById('empty');
+
+      const parseDay = (iso) => {
+        const [y, m, d] = iso.split('-').map(Number);
+        return Date.UTC(y, m - 1, d);
+      };
+      const ANCHOR = parseDay(TODAY); // snapshot day: days-left is anchored, never drifts
+
+      const dayDiff = (iso) => Math.round((parseDay(iso) - ANCHOR) / 86_400_000);
+      const dateLabel = (iso) => {
+        const [, m, d] = iso.split('-').map(Number);
+        return `${d} ${MONTHS[m - 1]}`;
+      };
+      const whenLabel = (item) => {
+        const n = dayDiff(item.due);
+        const rel = n === 0 ? 'closes today' : n === 1 ? 'closes tomorrow' : `in ${n} days`;
+        return `${dateLabel(item.due)} · ${rel}`;
+      };
+
+      /* Build once as native <details>/<summary>: the expand/collapse and the
+         keyboard work without any script; JS below only filters and sorts. */
+      const nodes = DATA.map((item) => {
+        const li = document.createElement('li');
+        li.dataset.kind = item.kind;
+        li.dataset.due = item.due;
+        li.dataset.prizeN = item.prizeN;
+
+        const details = document.createElement('details');
+        if (dayDiff(item.due) <= 1) details.classList.add('soon');
+
+        const summary = document.createElement('summary');
+        const kind = document.createElement('span');
+        kind.className = 'kind';
+        kind.textContent = item.kind;
+        const what = document.createElement('span');
+        what.className = 'what';
+        what.textContent = item.name;
+        const when = document.createElement('span');
+        when.className = 'when';
+        when.innerHTML = `${item.est ? '<span class="est">≈</span>' : ''}${whenLabel(item)}`;
+        summary.append(kind, what, when);
+
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.textContent = `${item.place} · `;
+        const prize = document.createElement('span');
+        prize.className = 'prize';
+        prize.textContent = item.prize;
+        card.appendChild(prize);
+        card.appendChild(document.createTextNode( ` · ${item.note}. `));
+        const link = document.createElement('a');
+        link.href = item.url;
+        link.target = '_blank';
+        link.rel = 'noopener noreferrer';
+        link.textContent = 'Open the page ↗';
+        card.appendChild(link);
+
+        details.append(summary, card);
+        li.appendChild(details);
+        rowsEl.appendChild(li);
+        return li;
+      });
+
+      function apply() {
+        const kind = document.querySelector('[data-kind][aria-pressed="true"]').dataset.kind;
+        const sort = document.querySelector('[data-sort][aria-pressed="true"]').dataset.sort;
+
+        const shown = nodes.filter((li) => !kind || li.dataset.kind === kind);
+        shown.sort((a, b) =>
+          sort === 'prize'
+            ? Number(b.dataset.prizeN) - Number(a.dataset.prizeN) || a.dataset.due.localeCompare(b.dataset.due)
+            : a.dataset.due.localeCompare(b.dataset.due),
+        );
+
+        shown.forEach((li) => rowsEl.appendChild(li));
+        nodes.forEach((li) => {
+          if (!shown.includes(li)) li.hidden = true;
+          else li.hidden = false;
+        });
+        emptyEl.hidden = shown.length > 0;
+      }
+
+      document.querySelectorAll('[data-kind]').forEach((chip) => {
+        chip.addEventListener('click', () => {
+          document.querySelectorAll('[data-kind]').forEach((el) => {
+            el.setAttribute('aria-pressed', String(el === chip));
+          });
+          apply();
+        });
+      });
+
+      document.querySelectorAll('[data-sort]').forEach((chip) => {
+        chip.addEventListener('click', () => {
+          document.querySelectorAll('[data-sort]').forEach((el) => {
+            el.setAttribute('aria-pressed', String(el === chip));
+          });
+          apply();
+        });
+      });
+
+      apply();
+    </script>
+  </body>
+</html>

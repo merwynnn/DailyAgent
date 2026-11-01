@@ -381,6 +381,8 @@
       }
 
       DAKit.onTheme(() => draw());
+      // The observer wipes the bitmap on any real resize; repaint after it.
+      view.onResize(() => draw());
       DAKit.fit();
     </script>
   </body>

@@ -1,0 +1,320 @@
+<!doctype html>
+<!-- DailyAgent widget — "Money against time" (2026-10-31). The Still Open
+     tracker as a canvas scatter: stated prize magnitude (log rail) against
+     days left, shapes per kind. Snapshot anchored to 2026-10-31; axes are
+     honest, dots without a published prize park at the "unstated" rail. -->
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Money against time</title>
+    <link rel="stylesheet" href="../kit.css" />
+    <script src="../kit.js"></script>
+    <style>
+      .legend {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.4rem;
+        margin-top: 0.55rem;
+        font-size: 0.68rem;
+        color: var(--muted);
+      }
+
+      .legend span {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.3rem;
+      }
+
+      .legend i {
+        font-style: normal;
+        color: var(--gold-deep);
+        font-weight: 700;
+      }
+
+      .plot {
+        position: relative;
+        margin-top: 0.5rem;
+        border: 1px solid var(--line);
+        border-radius: var(--radius-sm);
+        background: var(--surface-2);
+        overflow: hidden;
+      }
+
+      canvas {
+        display: block;
+        width: 100%;
+        height: 340px;
+      }
+
+      /* Real buttons stacked on the plot: keyboard navigates, Enter opens. */
+      .plot button.dot {
+        position: absolute;
+        width: 1.5rem;
+        height: 1.5rem;
+        padding: 0;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        background: transparent;
+        border: 2px dotted transparent;
+        cursor: pointer;
+      }
+
+      .plot button.dot:hover,
+      .plot button.dot:focus-visible {
+        border-color: var(--gold);
+        outline: none;
+      }
+
+      .readout {
+        margin: 0.55rem 0 0;
+        min-height: 3.4em;
+        font-size: 0.8rem;
+        line-height: 1.45;
+        color: var(--ink-soft);
+      }
+
+      .readout a {
+        font-weight: 600;
+      }
+
+      .foot {
+        margin: 0.5rem 0 0;
+        font-size: 0.68rem;
+        color: var(--muted);
+      }
+    </style>
+  </head>
+  <body>
+    <p class="eyebrow">Money against time, 31 October</p>
+    <p class="hint">
+      Everything still enterable, plotted: cash where the organiser stated it, against the days
+      you have left to decide. Tap a dot for the facts.
+    </p>
+
+    <div class="plot" id="plot">
+      <canvas id="stage"></canvas>
+      <!-- dot buttons injected here -->
+    </div>
+
+    <p class="legend" aria-hidden="true">
+      <span><i>●</i> hackathon</span>
+      <span><i>■</i> game jam</span>
+      <span><i>▲</i> competition</span>
+      <span><i>hollow</i> unknown / no cash</span>
+    </p>
+
+    <p class="readout" id="readout" aria-live="polite">Pick a dot — Tab cycles them in calendar order.</p>
+
+    <p class="foot">
+      From the tracker's snapshot of 31 Oct 2026. Y is the stated total prize, log scale,
+      currencies as printed (never converted); “—” rows park at the bottom rail. X is days left
+      from the snapshot day. “≈” marks deadlines the organiser never published.
+    </p>
+
+    <noscript><p class="readout">The scatter needs JavaScript; the day's list above carries the same facts in text.</p></noscript>
+
+    <script>
+      const DATA = [
+        { name: 'Défi Aérospatial Étudiant', kind: 'competition', due: '2026-10-31', est: false, prize: 'awards, not cash', prizeN: 0, place: 'year-long team project, ESA/ArianeGroup/CNES/Dassault awards', url: 'https://www.studentaerospacechallenge.eu/' },
+        { name: 'EdenSpark Game Jam #4', kind: 'jam', due: '2026-10-31', est: false, prize: '$5,000 monthly pool', prizeN: 5000, place: 'online, must build in EdenSpark', url: 'https://itch.io/jam/edenspark-game-jam-4' },
+        { name: 'RGDC Jam 2026', kind: 'jam', due: '2026-10-31', est: false, prize: '$750 top three', prizeN: 750, place: 'online, month-long student club jam', url: 'https://www.reddit.com/r/gamejams/comments/1wte2ud/rgdc_jam_2026_september_30october_30_theme_locked/' },
+        { name: 'Slapjam #2', kind: 'jam', due: '2026-10-31', est: false, prize: '$1,000 pool', prizeN: 1000, place: '48 h mobile HTML5, AI required', url: 'https://itch.io/jam/slapjam-ai-2' },
+        { name: 'Micro Jam 068', kind: 'jam', due: '2026-11-02', est: false, prize: '$300 pool', prizeN: 300, place: '48 h, solo or teams of 4', url: 'https://itch.io/jam/micro-jam-068' },
+        { name: 'HackAudit 2026', kind: 'competition', due: '2026-11-02', est: false, prize: '€9,000 listed', prizeN: 9000, place: 'cybersecurity, phase 1 midday Paris time', url: 'https://www.hackaudit.fr/' },
+        { name: 'HABS Neuro-AI', kind: 'hackathon', due: '2026-11-02', est: true, prize: 'unstated', prizeN: 0, place: 'Orsay/Paris-Saclay, real EEG datasets', url: 'https://hackathon.habs.ai/' },
+        { name: 'Make AI Happen', kind: 'competition', due: '2026-11-06', est: false, prize: 'gift cards', prizeN: 0, place: 'KPMG, teams 2–4', url: 'https://www.agorize.com/en/challenges/make-ai-happen' },
+        { name: 'H × 42AI Computer-Use', kind: 'hackathon', due: '2026-11-07', est: true, prize: '€10,000 cash', prizeN: 10000, place: 'Paris, free, teams 1–4', url: 'https://lu.ma/hz9db5u9' },
+        { name: 'thatgamejam #02', kind: 'jam', due: '2026-11-07', est: false, prize: '$10,000 pool', prizeN: 10000, place: 'online, theme is a piece of music', url: 'https://itch.io/jam/thatgamejam02' },
+        { name: 'Game Gauntlet — SIM Jam', kind: 'jam', due: '2026-11-10', est: false, prize: '$1,500', prizeN: 1500, place: 'online, Discord mandatory', url: 'https://itch.io/jam/game-gauntlet-sim-jam' },
+        { name: 'AI for Health', kind: 'hackathon', due: '2026-11-13', est: true, prize: 'unstated', prizeN: 0, place: 'Paris, three in-person days', url: 'https://hackathons-artefactadoptai.agorize.com/en/challenges/hackathon-adopt-ai-for-health' },
+        { name: 'GDevelop BIG Jam #10', kind: 'jam', due: '2026-11-15', est: false, prize: 'up to $6,500', prizeN: 6500, place: 'must use GDevelop', url: 'https://itch.io/jam/gdevelop-big-game-jam-10' },
+        { name: 'Zoud GameLab', kind: 'jam', due: '2026-11-15', est: false, prize: 'up to $140,000', prizeN: 140000, place: 'virtual, financial-literacy theme', url: 'https://itch.io/jam/zoud-gamelab' },
+        { name: 'Upper Rhine Robotic Challenge', kind: 'competition', due: '2026-11-17', est: true, prize: '—', prizeN: 0, place: 'Parc Expo Mulhouse', url: 'https://www.uha.fr/fr/actualites-agenda-1/agenda/upper-rhine-mobile-robotic-challenge-la-robotique-sans-frontieres.html' },
+        { name: 'Hack1Robo 5', kind: 'hackathon', due: '2026-11-20', est: true, prize: 'none (trophies)', prizeN: 0, place: 'Bordeaux, Thymio robots provided', url: 'https://www.hack1robo.fr/' },
+        { name: 'Amiga Tools Jam', kind: 'jam', due: '2026-11-26', est: false, prize: 'unstated', prizeN: 0, place: 'retro, programming-heavy', url: 'https://itch.io/jam/amiga-tools-jam-2026' },
+        { name: 'Pixel Forge MEGA JAM', kind: 'jam', due: '2026-12-08', est: false, prize: '$600', prizeN: 600, place: 'teams up to 4, AI banned', url: 'https://itch.io/jam/pixel-forge-mega-jam' },
+        { name: 'Uplifting Game Jam', kind: 'jam', due: '2026-12-14', est: false, prize: '$408 last edition', prizeN: 408, place: 'solo-friendly', url: 'https://itch.io/jam/uplifting-game-jam-cash-prizes-10' },
+        { name: 'Hackathon Physical AI', kind: 'hackathon', due: '2026-12-31', est: true, prize: '€15,000 total', prizeN: 15000, place: 'AMJE/Arts et Métiers', url: 'https://amje.fr/pip' },
+        { name: 'Hack the Feed', kind: 'hackathon', due: '2026-11-07', est: true, prize: '€1,000 ladder', prizeN: 1000, place: 'Albert School Paris, free, 120 spots', url: 'https://www.albertschool.com/en/events/hack-the-feed-ai-video-hackathon-paris/' },
+        { name: 'AI for Work (Hexa)', kind: 'hackathon', due: '2026-11-17', est: true, prize: 'unstated (credits)', prizeN: 0, place: 'Hexa Paris, evening', url: 'https://community.lovable.app/events' },
+        { name: 'Quantique Défense', kind: 'hackathon', due: '2026-12-02', est: true, prize: '€12,000', prizeN: 12000, place: 'Grand Palais, teams 4–8', url: 'https://hackathons-artefactadoptai.agorize.com/fr/challenges/hackathon-quantique-defense' },
+        { name: 'Humanoid Defense Robot', kind: 'hackathon', due: '2026-12-02', est: true, prize: '€6,000 (2 tracks)', prizeN: 6000, place: 'Grand Palais, humanoid robots', url: 'https://hackathons-artefactadoptai.agorize.com/en/challenges/hackathon-robotique-defense1' },
+      ];
+
+      const ANCHOR = Date.UTC(2026, 9, 31); // snapshot day; x never drifts
+      const days = (iso) => {
+        const [y, m, d] = iso.split('-').map(Number);
+        return Math.round((Date.UTC(y, m - 1, d) - ANCHOR) / 86_400_000);
+      };
+
+      const readout = document.getElementById('readout');
+      const view = DAKit.canvas(document.getElementById('stage'));
+
+      /* Rails: x = days left (0..65, the longest horizon in the data), y = prizeN log rail (0 parks at the bottom). */
+      const X_MAX = 65;
+      const yRail = (prizeN) => (prizeN <= 0 ? 0 : Math.log10(prizeN)); // 0..~5.15
+      const Y_TOP = 5.2;
+
+      DATA.forEach((item) => {
+        item.x = days(item.due);
+        item.y = yRail(item.prizeN);
+      });
+
+      /* Collisions: entries sharing a rail slot get a tiny zig on both axes. */
+      const seen = new Map();
+      for (const item of DATA) {
+        const key = item.x + '|' + Math.round(item.y * 20);
+        const n = seen.get(key) ?? 0;
+        seen.set(key, n + 1);
+        item.zx = n * 0.55;
+        item.zy = (n % 2 === 0 ? 1 : -1) * n * 0.06;
+      }
+
+      const pad = { l: 46, r: 12, t: 12, b: 30 };
+      const map = (item) => {
+        const w = view.width - pad.l - pad.r;
+        const h = view.height - pad.t - pad.b;
+        const u = Math.max(item.x, 0) / X_MAX;
+        const v = (item.y + item.zy) / Y_TOP;
+        return {
+          x: pad.l + u * w + item.zx * w * 0.02,
+          y: pad.t + (1 - v) * h,
+        };
+      };
+
+      /* Each dot gets a real <button> positioned over the canvas. */
+      const plotEl = document.getElementById('plot');
+      const dots = DATA.map((item, i) => {
+        const el = document.createElement('button');
+        el.type = 'button';
+        el.className = 'dot';
+        el.style.left = '0px';
+        el.style.top = '0px';
+        el.setAttribute(
+          'aria-label',
+          `${item.name}: ${item.kind}, closes ${item.est ? 'around' : 'on'} ${item.due} (in ${item.x} days), ${item.prize}`,
+        );
+        el.addEventListener('click', () => focus(i));
+        plotEl.appendChild(el);
+        return el;
+      });
+
+      const place = () => {
+        DATA.forEach((item, i) => {
+          const p = map(item);
+          dots[i].style.left = p.x.toFixed(1) + 'px';
+          dots[i].style.top = p.y.toFixed(1) + 'px';
+        });
+      };
+
+      let active = -1;
+
+      function focus(i) {
+        active = i;
+        const item = DATA[i];
+        const est = item.est ? '≈' : '';
+        readout.innerHTML =
+          `<strong>${item.name}</strong> — ${item.place}. ` +
+          `${item.prize === '—' ? 'No prize published' : item.prize}, ${est}closes ${item.due} (in ${item.x} days). ` +
+          `<a href="${item.url}" target="_blank" rel="noopener noreferrer">Open the page ↗</a>`;
+        draw();
+      }
+
+      function draw() {
+        const c = DAKit.tokens();
+        const { width: w, height: h, ctx } = view;
+        ctx.clearRect(0, 0, w, h);
+
+        // grid: vertical day rails every 7 days, horizontal prize decades
+        ctx.strokeStyle = c.line;
+        ctx.lineWidth = 1;
+        for (let d = 0; d <= X_MAX; d += 7) {
+          const x = pad.l + (d / X_MAX) * (w - pad.l - pad.r);
+          ctx.beginPath();
+          ctx.moveTo(Math.round(x) + 0.5, pad.t);
+          ctx.lineTo(Math.round(x) + 0.5, h - pad.b);
+          ctx.stroke();
+        }
+        for (let e = 0; e <= Y_TOP; e += 1) {
+          const y = pad.t + (1 - e / Y_TOP) * (h - pad.t - pad.b);
+          ctx.globalAlpha = e === 0 ? 0.9 : 0.5;
+          ctx.beginPath();
+          ctx.moveTo(pad.l, Math.round(y) + 0.5);
+          ctx.lineTo(w - pad.r, Math.round(y) + 0.5);
+          ctx.stroke();
+          ctx.globalAlpha = 1;
+        }
+
+        // axis labels
+        ctx.fillStyle = c.muted;
+        ctx.textAlign = 'center';
+        ctx.font = `10px sans-serif`;
+        ctx.fillText('days left from 31 Oct', pad.l + (w - pad.l - pad.r) / 2, h - 8);
+        ctx.textAlign = 'right';
+        for (let i = 0; i < 4; i++) {
+          const val = ['10', '10²', '10³', '10⁴'][i];
+          const y = pad.t + (1 - (i + 1) / Y_TOP) * (h - pad.t - pad.b);
+          ctx.fillText(val, pad.l - 6, y + 3);
+        }
+        ctx.save();
+        ctx.translate(12, pad.t + (h - pad.t - pad.b) / 2);
+        ctx.rotate(-Math.PI / 2);
+        ctx.textAlign = 'center';
+        ctx.fillText('stated prize (log)', 0, 0);
+        ctx.restore();
+
+        // dots
+        DATA.forEach((item, i) => {
+          const p = map(item);
+          const y = Math.min(p.y, h - pad.b);
+          const unseen = item.prizeN <= 0;
+          const isAct = i === active;
+          ctx.save();
+          ctx.fillStyle = isAct ? c.gold : unseen ? c.surface : c.ink;
+          ctx.strokeStyle = isAct ? c.goldDeep : unseen ? c.muted : c.ink;
+          ctx.lineWidth = isAct ? 2.5 : 1.4;
+          if (unseen) ctx.setLineDash([2.5, 2]);
+          ctx.beginPath();
+          if (item.kind === 'jam') {
+            ctx.rect(p.x - 4.5, y - 4.5, 9, 9);
+          } else if (item.kind === 'competition') {
+            ctx.moveTo(p.x, y - 5.5);
+            ctx.lineTo(p.x + 5.2, y + 4.2);
+            ctx.lineTo(p.x - 5.2, y + 4.2);
+            ctx.closePath();
+          } else {
+            ctx.arc(p.x, y, 5, 0, DAKit.TAU);
+          }
+          ctx.globalAlpha = unseen ? 0.85 : 1;
+          if (unseen) {
+            ctx.fillStyle = c.surface;
+            ctx.fill();
+            ctx.stroke();
+          } else {
+            ctx.fill();
+          }
+          ctx.restore();
+        });
+
+        // "closes today" marker on the left edge
+        ctx.fillStyle = c.gold;
+        ctx.beginPath();
+        ctx.arc(pad.l + 2, h - pad.b, 3.5, 0, DAKit.TAU);
+        ctx.fill();
+      }
+
+      const paint = () => {
+        place();
+        draw();
+      };
+
+      // resize: the observer wipes the bitmap; buttons re-seat, canvas repaints
+      DAKit.onTheme(paint);
+      view.onResize(paint);
+      paint();
+
+      DAKit.fit();
+    </script>
+  </body>
+</html>

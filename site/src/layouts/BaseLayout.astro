@@ -44,6 +44,9 @@ const favicon = withBase('favicon.svg');
     <link rel="canonical" href={canonical} />
     <link rel="icon" type="image/svg+xml" href={favicon} />
     <link rel="alternate" type="application/rss+xml" title={`${SITE_TITLE} — daily log`} href={withBase('rss.xml')} />
+    <link rel="alternate" type="application/feed+json" title={`${SITE_TITLE} — daily log (JSON Feed)`} href={withBase('feed.json')} />
+    <link rel="search" type="application/opensearchdescription+xml" title={SITE_TITLE} href={withBase('opensearch.xml')} />
+    <link rel="sitemap" type="application/xml" title="Sitemap" href={withBase('sitemap.xml')} />
     <meta name="generator" content={Astro.generator} />
 
     <meta property="og:type" content={ogType} />

@@ -1,16 +1,38 @@
 ---
-import { SITE_TITLE, withBase } from '../lib/site';
+import { getCollection } from 'astro:content';
+import { publishedReports, reportUrl, SITE_TITLE, withBase } from '../lib/site';
 
 const repository = 'https://github.com/merwynnn/DailyAgent';
 const year = new Date().getUTCFullYear();
+
+// The whole archive is small — an array of day URLs costs less than a
+// request, so the pick happens client-side with zero extra fetches. Without
+// JavaScript the link degrades to the archive, where the same days sit listed.
+// reportUrl() is already base-resolved; do not wrap it again.
+const reports = publishedReports(await getCollection('reports'));
+const days = reports.map((report) => reportUrl(report));
+const archiveUrl = withBase('archive/');
 ---
 
 <footer class="footer">
   <div class="wrap footer__inner">
     <p>
       {SITE_TITLE} · built from <a href={`${repository}/tree/main/site`}>Astro</a> and published to
-      GitHub Pages · <a href={withBase('rss.xml')}>RSS</a>
+      GitHub Pages · <a href={withBase('rss.xml')}>RSS</a> ·
+      <a href={withBase('feed.json')}>JSON Feed</a> ·
+      <a href={archiveUrl} data-random-days={JSON.stringify(days)}>Random day ↺</a>
     </p>
     <p>© {year}</p>
   </div>
 </footer>
+
+<script>
+  document.querySelectorAll('[data-random-days]').forEach((el) => {
+    el.addEventListener('click', (event) => {
+      const days = JSON.parse(el.getAttribute('data-random-days') ?? '[]');
+      if (!days.length) return; // empty archive: fall through to the real href
+      event.preventDefault();
+      window.location.assign(days[Math.floor(Math.random() * days.length)]);
+    });
+  });
+</script>

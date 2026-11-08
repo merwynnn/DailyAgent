@@ -6,165 +6,67 @@ METHOD:PUBLISH
 X-WR-CALNAME:DailyAgent — still open
 X-WR-CALDESC:Entry deadlines tracked in the DailyAgent "still open" list.
 BEGIN:VEVENT
-UID:micro-jam-068@dailyagent
-DTSTAMP:20261101T084328Z
-DTSTART;VALUE=DATE:20261102
-DTEND;VALUE=DATE:20261103
-SUMMARY:Micro Jam 068: Evolution — entries close
-DESCRIPTION:game jam\n$300 cash pool · 48 h · solo or teams of 4 · AI al
- lowed
-URL:https://itch.io/jam/micro-jam-068
-TRANSP:TRANSPARENT
-STATUS:CONFIRMED
-END:VEVENT
-BEGIN:VEVENT
-UID:micro-jam-068-run@dailyagent
-DTSTAMP:20261101T084328Z
-DTSTART;VALUE=DATE:20261030
-DTEND;VALUE=DATE:20261103
-SUMMARY:Micro Jam 068: Evolution (game jam)
-DESCRIPTION:$300 cash pool · 48 h · solo or teams of 4 · AI allowed
-URL:https://itch.io/jam/micro-jam-068
-TRANSP:TRANSPARENT
-STATUS:CONFIRMED
-END:VEVENT
-BEGIN:VEVENT
-UID:hackaudit-2026@dailyagent
-DTSTAMP:20261101T084328Z
-DTSTART;VALUE=DATE:20261102
-DTEND;VALUE=DATE:20261103
-SUMMARY:HackAudit 2026 — entries close
-DESCRIPTION:competition\nPhase 1 due midday Paris time · free\, teams 1–
- 5 · prizes confirmed €4\,000/€2\,500/€1\,500 + 2× €1\,000 · fin
- ale in Paris
-URL:https://www.hackaudit.fr/
-TRANSP:TRANSPARENT
-STATUS:CONFIRMED
-END:VEVENT
-BEGIN:VEVENT
-UID:habs-neuro-ai@dailyagent
-DTSTAMP:20261101T084328Z
-DTSTART;VALUE=DATE:20261102
-DTEND;VALUE=DATE:20261103
-SUMMARY:HABS Neuro-AI Hackathon — entries close
-DESCRIPTION:hackathon · no published date\, event start used as a cutoff\n
- Orsay / Paris-Saclay · real EEG datasets · form open\, rules still being
-  finalised — no entry deadline published
-URL:https://hackathon.habs.ai/
-TRANSP:TRANSPARENT
-STATUS:CONFIRMED
-END:VEVENT
-BEGIN:VEVENT
-UID:habs-neuro-ai-run@dailyagent
-DTSTAMP:20261101T084328Z
-DTSTART;VALUE=DATE:20261102
-DTEND;VALUE=DATE:20261201
-SUMMARY:HABS Neuro-AI Hackathon (hackathon)
-DESCRIPTION:Orsay / Paris-Saclay · real EEG datasets · form open\, rules 
- still being finalised — no entry deadline published
-URL:https://hackathon.habs.ai/
-TRANSP:TRANSPARENT
-STATUS:CONFIRMED
-END:VEVENT
-BEGIN:VEVENT
-UID:make-ai-happen-kpmg@dailyagent
-DTSTAMP:20261101T084328Z
-DTSTART;VALUE=DATE:20261106
-DTEND;VALUE=DATE:20261107
-SUMMARY:Make AI Happen (KPMG) — entries close
-DESCRIPTION:competition\nGift cards\, not cash · teams 2–4 · finale at 
- KPMG Paris La Défense
-URL:https://www.agorize.com/en/challenges/make-ai-happen
-TRANSP:TRANSPARENT
-STATUS:CONFIRMED
-END:VEVENT
-BEGIN:VEVENT
-UID:hack-the-feed-paris@dailyagent
-DTSTAMP:20261101T084328Z
-DTSTART;VALUE=DATE:20261107
-DTEND;VALUE=DATE:20261108
-SUMMARY:Hack the Feed (Oriane × Lovable × Brut) — entries close
-DESCRIPTION:hackathon · no published date\, event start used as a cutoff\n
- Albert School Paris (18 rue de Paradis) · free one-day AI hackathon\, 120
-  spots\, registrations validated by the organizers on Luma · teams up to 
- 4 or solo · €500/€300/€200 plus Oriane and Lovable credits · video
- -search track or the Brut editorial track on the 2027 election · no code 
- needed
-URL:https://www.albertschool.com/en/events/hack-the-feed-ai-video-hackathon
- -paris/
-TRANSP:TRANSPARENT
-STATUS:CONFIRMED
-END:VEVENT
-BEGIN:VEVENT
-UID:hack-the-feed-paris-run@dailyagent
-DTSTAMP:20261101T084328Z
-DTSTART;VALUE=DATE:20261107
-DTEND;VALUE=DATE:20261108
-SUMMARY:Hack the Feed (Oriane × Lovable × Brut) (hackathon)
-DESCRIPTION:Albert School Paris (18 rue de Paradis) · free one-day AI hack
- athon\, 120 spots\, registrations validated by the organizers on Luma · t
- eams up to 4 or solo · €500/€300/€200 plus Oriane and Lovable credi
- ts · video-search track or the Brut editorial track on the 2027 election 
- · no code needed
-URL:https://www.albertschool.com/en/events/hack-the-feed-ai-video-hackathon
- -paris/
-TRANSP:TRANSPARENT
-STATUS:CONFIRMED
-END:VEVENT
-BEGIN:VEVENT
-UID:h-company-42ai-computer-use@dailyagent
-DTSTAMP:20261101T084328Z
-DTSTART;VALUE=DATE:20261107
-DTEND;VALUE=DATE:20261108
-SUMMARY:H Company × 42AI Computer-Use Hackathon — entries close
-DESCRIPTION:hackathon · no published date\, event start used as a cutoff\n
- Paris · €10\,000 cash · free\, teams 1–4 · no application deadline 
- published
-URL:https://lu.ma/hz9db5u9
-TRANSP:TRANSPARENT
-STATUS:CONFIRMED
-END:VEVENT
-BEGIN:VEVENT
-UID:h-company-42ai-computer-use-run@dailyagent
-DTSTAMP:20261101T084328Z
-DTSTART;VALUE=DATE:20261107
+UID:european-ai-championship-paris@dailyagent
+DTSTAMP:20261108T084438Z
+DTSTART;VALUE=DATE:20261108
 DTEND;VALUE=DATE:20261109
-SUMMARY:H Company × 42AI Computer-Use Hackathon (hackathon)
-DESCRIPTION:Paris · €10\,000 cash · free\, teams 1–4 · no applicatio
- n deadline published
-URL:https://lu.ma/hz9db5u9
+SUMMARY:European AI Championship (Paris stage) — entries close
+DESCRIPTION:hackathon\n24 h overnight hacking at the AI × cybersecurity in
+ tersection · €10\,000 prize pool · for students and ML/AI engineers ·
+  organised by PoC Innovation & CISPA · English · registration closes 8 N
+ ov on Luma
+URL:https://luma.com/iwlbokns
 TRANSP:TRANSPARENT
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
-UID:thatgamejam-02@dailyagent
-DTSTAMP:20261101T084328Z
-DTSTART;VALUE=DATE:20261107
-DTEND;VALUE=DATE:20261108
-SUMMARY:thatgamejam #02 (thatgamecompany) — entries close
-DESCRIPTION:game jam\n$10\,000 cash pool ($3\,000/$2\,000/$2\,000/$2\,000 c
- ommunity/$1\,000 TapTap) · online · theme is a piece of music · AI rule
- s unstated — check the page
-URL:https://itch.io/jam/thatgamejam02
+UID:european-ai-championship-paris-run@dailyagent
+DTSTAMP:20261108T084438Z
+DTSTART;VALUE=DATE:20261120
+DTEND;VALUE=DATE:20261123
+SUMMARY:European AI Championship (Paris stage) (hackathon)
+DESCRIPTION:24 h overnight hacking at the AI × cybersecurity intersection 
+ · €10\,000 prize pool · for students and ML/AI engineers · organised 
+ by PoC Innovation & CISPA · English · registration closes 8 Nov on Luma
+URL:https://luma.com/iwlbokns
 TRANSP:TRANSPARENT
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
-UID:thatgamejam-02-run@dailyagent
-DTSTAMP:20261101T084328Z
-DTSTART;VALUE=DATE:20261024
-DTEND;VALUE=DATE:20261108
-SUMMARY:thatgamejam #02 (thatgamecompany) (game jam)
-DESCRIPTION:$10\,000 cash pool ($3\,000/$2\,000/$2\,000/$2\,000 community/$
- 1\,000 TapTap) · online · theme is a piece of music · AI rules unstated
-  — check the page
-URL:https://itch.io/jam/thatgamejam02
+UID:deloitte-google-cloud-2026@dailyagent
+DTSTAMP:20261108T084438Z
+DTSTART;VALUE=DATE:20261108
+DTEND;VALUE=DATE:20261109
+SUMMARY:Hackathon Deloitte | Google Cloud — entries close
+DESCRIPTION:hackathon\nOne-day on-site hackathon in Puteaux (Deloitte Franc
+ e premises)\, French language\, with Google Cloud experts around a real-wo
+ rld business challenge · open to M1/M2 students majoring in Data\, AI or 
+ Cloud · registration via the Deloitte careers page · deadline 8 Nov PUBL
+ ISHED on the Hub listing
+URL:https://www.deloitte.com/fr/fr/careers/deloitte-life/impact-every-day/h
+ ackathon-deloitte.html
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:deloitte-google-cloud-2026-run@dailyagent
+DTSTAMP:20261108T084438Z
+DTSTART;VALUE=DATE:20261118
+DTEND;VALUE=DATE:20261119
+SUMMARY:Hackathon Deloitte | Google Cloud (hackathon)
+DESCRIPTION:One-day on-site hackathon in Puteaux (Deloitte France premises)
+ \, French language\, with Google Cloud experts around a real-world busines
+ s challenge · open to M1/M2 students majoring in Data\, AI or Cloud · re
+ gistration via the Deloitte careers page · deadline 8 Nov PUBLISHED on th
+ e Hub listing
+URL:https://www.deloitte.com/fr/fr/careers/deloitte-life/impact-every-day/h
+ ackathon-deloitte.html
 TRANSP:TRANSPARENT
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:hackathon-europeen-uge-afit@dailyagent
-DTSTAMP:20261101T084328Z
+DTSTAMP:20261108T084438Z
 DTSTART;VALUE=DATE:20261109
 DTEND;VALUE=DATE:20261110
 SUMMARY:Hackathon Européen (UGE × AFIT France) — entries close
@@ -179,7 +81,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:hackathon-europeen-uge-afit-run@dailyagent
-DTSTAMP:20261101T084328Z
+DTSTAMP:20261108T084438Z
 DTSTART;VALUE=DATE:20270319
 DTEND;VALUE=DATE:20270324
 SUMMARY:Hackathon Européen (UGE × AFIT France) (hackathon)
@@ -193,8 +95,73 @@ TRANSP:TRANSPARENT
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
+UID:tourism-flow-isere-2026@dailyagent
+DTSTAMP:20261108T084438Z
+DTSTART;VALUE=DATE:20261109
+DTEND;VALUE=DATE:20261110
+SUMMARY:Isère Tourism-Flow Hackathon (DGE) — entries close
+DESCRIPTION:hackathon · no published date\, event start used as a cutoff\n
+ Two days in Paris\, run by the Direction générale des Entreprises & Isè
+ re Attractivité · real departmental datasets\, open-source prototypes me
+ ant to be reused across France · students among the target crowd · no pr
+ ize listed · no deadline published
+URL:https://www.entreprises.gouv.fr/la-dge/evenements/hackathon-sur-la-gest
+ ion-des-flux-touristiques-en-isere
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:tourism-flow-isere-2026-run@dailyagent
+DTSTAMP:20261108T084438Z
+DTSTART;VALUE=DATE:20261109
+DTEND;VALUE=DATE:20261111
+SUMMARY:Isère Tourism-Flow Hackathon (DGE) (hackathon)
+DESCRIPTION:Two days in Paris\, run by the Direction générale des Entrepr
+ ises & Isère Attractivité · real departmental datasets\, open-source pr
+ ototypes meant to be reused across France · students among the target cro
+ wd · no prize listed · no deadline published
+URL:https://www.entreprises.gouv.fr/la-dge/evenements/hackathon-sur-la-gest
+ ion-des-flux-touristiques-en-isere
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:ai-meta-science-2026@dailyagent
+DTSTAMP:20261108T084438Z
+DTSTART;VALUE=DATE:20261109
+DTEND;VALUE=DATE:20261110
+SUMMARY:AI for Meta Science (Institut Pascal workshop) — entries close
+DESCRIPTION:workshop\n5-day CNRS/AISSAI workshop at Institut Pascal\, Orsay
+ \, in person\, 70 places by application · embeds two half-day hackathons:
+  Mad Scientist (red-teaming agentic AI research pipelines at LHC scale) an
+ d From Literature to Benchmark · keynote speakers from CERN\, CEA\, INRAE
+  · aim mostly at scientists incl. PhD students\, judged on topic expertis
+ e — an engineering student applies with credentials in AI or engineering
+  · applications due 9 Nov\, may close earlier on capacity
+URL:https://indico.ijclab.in2p3.fr/event/11640/
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:ai-meta-science-2026-run@dailyagent
+DTSTAMP:20261108T084438Z
+DTSTART;VALUE=DATE:20261123
+DTEND;VALUE=DATE:20261128
+SUMMARY:AI for Meta Science (Institut Pascal workshop) (workshop)
+DESCRIPTION:5-day CNRS/AISSAI workshop at Institut Pascal\, Orsay\, in pers
+ on\, 70 places by application · embeds two half-day hackathons: Mad Scien
+ tist (red-teaming agentic AI research pipelines at LHC scale) and From Lit
+ erature to Benchmark · keynote speakers from CERN\, CEA\, INRAE · aim mo
+ stly at scientists incl. PhD students\, judged on topic expertise — an e
+ ngineering student applies with credentials in AI or engineering · applic
+ ations due 9 Nov\, may close earlier on capacity
+URL:https://indico.ijclab.in2p3.fr/event/11640/
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
 UID:game-gauntlet-sim-jam@dailyagent
-DTSTAMP:20261101T084328Z
+DTSTAMP:20261108T084438Z
 DTSTART;VALUE=DATE:20261110
 DTEND;VALUE=DATE:20261111
 SUMMARY:Game Gauntlet — SIM Jam — entries close
@@ -206,7 +173,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:adopt-ai-for-health@dailyagent
-DTSTAMP:20261101T084328Z
+DTSTAMP:20261108T084438Z
 DTSTART;VALUE=DATE:20261113
 DTEND;VALUE=DATE:20261114
 SUMMARY:Hackathon AI for Health — entries close
@@ -220,7 +187,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:adopt-ai-for-health-run@dailyagent
-DTSTAMP:20261101T084328Z
+DTSTAMP:20261108T084438Z
 DTSTART;VALUE=DATE:20261113
 DTEND;VALUE=DATE:20261116
 SUMMARY:Hackathon AI for Health (hackathon)
@@ -232,8 +199,151 @@ TRANSP:TRANSPARENT
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
+UID:nasa-space-apps-paris@dailyagent
+DTSTAMP:20261108T084438Z
+DTSTART;VALUE=DATE:20261114
+DTEND;VALUE=DATE:20261115
+SUMMARY:NASA Space Apps Challenge 2026 (Paris site) — entries close
+DESCRIPTION:hackathon · no published date\, event start used as a cutoff\n
+ Global 48 h space-data hackathon\, dates announced for 14–15 Nov · Pari
+ s local site\; Toulouse and Besançon run the same dates · free\, registr
+ ation already open · no cash — global recognition pipeline
+URL:https://www.spaceappschallenge.org/2026/local-events/paris/
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:nasa-space-apps-paris-run@dailyagent
+DTSTAMP:20261108T084438Z
+DTSTART;VALUE=DATE:20261114
+DTEND;VALUE=DATE:20261116
+SUMMARY:NASA Space Apps Challenge 2026 (Paris site) (hackathon)
+DESCRIPTION:Global 48 h space-data hackathon\, dates announced for 14–15 
+ Nov · Paris local site\; Toulouse and Besançon run the same dates · fre
+ e\, registration already open · no cash — global recognition pipeline
+URL:https://www.spaceappschallenge.org/2026/local-events/paris/
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:open-data-paris-2026@dailyagent
+DTSTAMP:20261108T084438Z
+DTSTART;VALUE=DATE:20261114
+DTEND;VALUE=DATE:20261115
+SUMMARY:Open Data Hackathon (swanbase × Hémicycle) — entries close
+DESCRIPTION:hackathon · no published date\, event start used as a cutoff\n
+ One-day hackathon at swanbase's Paris space: build tools on French open da
+ ta with AI\, hosted by swanbase & Hémicycle · the Hub now lists entry as
+  WAITLIST — registering late means a waitlist spot · prize details on t
+ he organiser page · free
+URL:https://luma.com/ardao19g
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:open-data-paris-2026-run@dailyagent
+DTSTAMP:20261108T084438Z
+DTSTART;VALUE=DATE:20261114
+DTEND;VALUE=DATE:20261115
+SUMMARY:Open Data Hackathon (swanbase × Hémicycle) (hackathon)
+DESCRIPTION:One-day hackathon at swanbase's Paris space: build tools on Fre
+ nch open data with AI\, hosted by swanbase & Hémicycle · the Hub now lis
+ ts entry as WAITLIST — registering late means a waitlist spot · prize d
+ etails on the organiser page · free
+URL:https://luma.com/ardao19g
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:nasa-space-apps-toulouse@dailyagent
+DTSTAMP:20261108T084438Z
+DTSTART;VALUE=DATE:20261114
+DTEND;VALUE=DATE:20261115
+SUMMARY:NASA Space Apps Challenge 2026 (Toulouse site) — entries close
+DESCRIPTION:hackathon · no published date\, event start used as a cutoff\n
+ Second edition hosted in Toulouse\, billed as Europe's aerospace capital 
+ · free\, registration open · same global rules and dates as the Paris si
+ te · no cash — global recognition pipeline
+URL:https://hackathonhub.eu/events/nasa-space-apps-challenge-toulouse-2026-
+ toulouse-2026
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:nasa-space-apps-toulouse-run@dailyagent
+DTSTAMP:20261108T084438Z
+DTSTART;VALUE=DATE:20261114
+DTEND;VALUE=DATE:20261116
+SUMMARY:NASA Space Apps Challenge 2026 (Toulouse site) (hackathon)
+DESCRIPTION:Second edition hosted in Toulouse\, billed as Europe's aerospac
+ e capital · free\, registration open · same global rules and dates as th
+ e Paris site · no cash — global recognition pipeline
+URL:https://hackathonhub.eu/events/nasa-space-apps-challenge-toulouse-2026-
+ toulouse-2026
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:space-apps-besancon-2026@dailyagent
+DTSTAMP:20261108T084438Z
+DTSTART;VALUE=DATE:20261114
+DTEND;VALUE=DATE:20261115
+SUMMARY:NASA Space Apps Challenge 2026 (Besançon site) — entries close
+DESCRIPTION:hackathon · no published date\, event start used as a cutoff\n
+ Third French site for the global 48-h NASA Space Apps weekend\, run by AST
+ RA FC · free registration\, still open locally per the Hub listing\, glob
+ al entry is by the day of the event · hybrid
+URL:https://www.spaceappschallenge.org/nasa-space-apps-2026/local-events/be
+ sancon/
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:space-apps-besancon-2026-run@dailyagent
+DTSTAMP:20261108T084438Z
+DTSTART;VALUE=DATE:20261114
+DTEND;VALUE=DATE:20261116
+SUMMARY:NASA Space Apps Challenge 2026 (Besançon site) (hackathon)
+DESCRIPTION:Third French site for the global 48-h NASA Space Apps weekend\,
+  run by ASTRA FC · free registration\, still open locally per the Hub lis
+ ting\, global entry is by the day of the event · hybrid
+URL:https://www.spaceappschallenge.org/nasa-space-apps-2026/local-events/be
+ sancon/
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:vibenight-2-ai-safety-2026@dailyagent
+DTSTAMP:20261108T084438Z
+DTSTART;VALUE=DATE:20261114
+DTEND;VALUE=DATE:20261115
+SUMMARY:VIBENIGHT #2: Hackathon AI Safety (final) — entries close
+DESCRIPTION:hackathon · no published date\, event start used as a cutoff\n
+ AI-safety hackathon in Paris\, series final\, organised by TheScorton · f
+ ree entry · day matches the Space Apps weekend · details via the franceh
+ ackathons directory\, organiser page to be opened before entering · est d
+ eadline = event day
+URL:https://francehackathons.com/en/ai-hackathons
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:vibenight-2-ai-safety-2026-run@dailyagent
+DTSTAMP:20261108T084438Z
+DTSTART;VALUE=DATE:20261114
+DTEND;VALUE=DATE:20261115
+SUMMARY:VIBENIGHT #2: Hackathon AI Safety (final) (hackathon)
+DESCRIPTION:AI-safety hackathon in Paris\, series final\, organised by TheS
+ corton · free entry · day matches the Space Apps weekend · details via 
+ the francehackathons directory\, organiser page to be opened before enteri
+ ng · est deadline = event day
+URL:https://francehackathons.com/en/ai-hackathons
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
 UID:gdevelop-big-game-jam-10@dailyagent
-DTSTAMP:20261101T084328Z
+DTSTAMP:20261108T084438Z
 DTSTART;VALUE=DATE:20261115
 DTEND;VALUE=DATE:20261116
 SUMMARY:GDevelop BIG Game Jam #10 — entries close
@@ -245,7 +355,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:gdevelop-big-game-jam-10-run@dailyagent
-DTSTAMP:20261101T084328Z
+DTSTAMP:20261108T084438Z
 DTSTART;VALUE=DATE:20261106
 DTEND;VALUE=DATE:20261116
 SUMMARY:GDevelop BIG Game Jam #10 (game jam)
@@ -257,7 +367,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:zoud-gamelab@dailyagent
-DTSTAMP:20261101T084328Z
+DTSTAMP:20261108T084438Z
 DTSTART;VALUE=DATE:20261115
 DTEND;VALUE=DATE:20261116
 SUMMARY:Zoud GameLab × Global Game Jam — entries close
@@ -270,7 +380,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:zoud-gamelab-run@dailyagent
-DTSTAMP:20261101T084328Z
+DTSTAMP:20261108T084438Z
 DTSTART;VALUE=DATE:20261015
 DTEND;VALUE=DATE:20261116
 SUMMARY:Zoud GameLab × Global Game Jam (game jam)
@@ -281,8 +391,154 @@ TRANSP:TRANSPARENT
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
+UID:epic-ai-megajam-2026@dailyagent
+DTSTAMP:20261108T084438Z
+DTSTART;VALUE=DATE:20261115
+DTEND;VALUE=DATE:20261116
+SUMMARY:2026 Epic AI MegaJam — entries close
+DESCRIPTION:game jam\n$65\,000 in cash plus development-continuation grants
+  up to $50\,000 per team · Unreal Engine or UEFN · teams of up to 4 huma
+ ns with unlimited AI agents allowed · four days\, worldwide online · jud
+ ged results stream later in December
+URL:https://itch.io/jam/2026-epic-ai-megajam
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:epic-ai-megajam-2026-run@dailyagent
+DTSTAMP:20261108T084438Z
+DTSTART;VALUE=DATE:20261112
+DTEND;VALUE=DATE:20261116
+SUMMARY:2026 Epic AI MegaJam (game jam)
+DESCRIPTION:$65\,000 in cash plus development-continuation grants up to $50
+ \,000 per team · Unreal Engine or UEFN · teams of up to 4 humans with un
+ limited AI agents allowed · four days\, worldwide online · judged result
+ s stream later in December
+URL:https://itch.io/jam/2026-epic-ai-megajam
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:pioneers-stationf-ai-2026@dailyagent
+DTSTAMP:20261108T084438Z
+DTSTART;VALUE=DATE:20261115
+DTEND;VALUE=DATE:20261116
+SUMMARY:Paris AI Hackathon @Station F (Pioneers) — entries close
+DESCRIPTION:hackathon · no published date\, event start used as a cutoff\n
+ One-day challenge at Station F\, Paris\, from 18:00 — build a fully AI-r
+ un startup with agents handling operations\, research and growth · €10\
+ ,000 prize pool including Ray-Ban Meta glasses\, AirPods and partner credi
+ ts · hosted by Pioneers AI Lab / AI Tinkerers · registration on Luma\, n
+ o close date published · est deadline = event day
+URL:https://luma.com/pou9rn2b
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:pioneers-stationf-ai-2026-run@dailyagent
+DTSTAMP:20261108T084438Z
+DTSTART;VALUE=DATE:20261115
+DTEND;VALUE=DATE:20261116
+SUMMARY:Paris AI Hackathon @Station F (Pioneers) (hackathon)
+DESCRIPTION:One-day challenge at Station F\, Paris\, from 18:00 — build a
+  fully AI-run startup with agents handling operations\, research and growt
+ h · €10\,000 prize pool including Ray-Ban Meta glasses\, AirPods and pa
+ rtner credits · hosted by Pioneers AI Lab / AI Tinkerers · registration 
+ on Luma\, no close date published · est deadline = event day
+URL:https://luma.com/pou9rn2b
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:zernio-social-gtm-2026@dailyagent
+DTSTAMP:20261108T084438Z
+DTSTART;VALUE=DATE:20261115
+DTEND;VALUE=DATE:20261116
+SUMMARY:Social GTM Agents Hackathon with Zernio — entries close
+DESCRIPTION:hackathon · no published date\, event start used as a cutoff\n
+ One-day hackathon at swanbase's Paris space: build AI agents automating go
+ -to-market workflows on Zernio's unified social API (cross-platform postin
+ g\, engagement\, ad management) · live demos\, winners get platform credi
+ ts rather than cash · English\, on-site\, developers/marketers/founders 
+ · marked "New" on the Hub\, no close date published · est deadline = eve
+ nt day
+URL:https://luma.com/wrgyhbwf
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:zernio-social-gtm-2026-run@dailyagent
+DTSTAMP:20261108T084438Z
+DTSTART;VALUE=DATE:20261115
+DTEND;VALUE=DATE:20261116
+SUMMARY:Social GTM Agents Hackathon with Zernio (hackathon)
+DESCRIPTION:One-day hackathon at swanbase's Paris space: build AI agents au
+ tomating go-to-market workflows on Zernio's unified social API (cross-plat
+ form posting\, engagement\, ad management) · live demos\, winners get pla
+ tform credits rather than cash · English\, on-site\, developers/marketers
+ /founders · marked "New" on the Hub\, no close date published · est dead
+ line = event day
+URL:https://luma.com/wrgyhbwf
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:lille-fac-sciences-hackathon-2026@dailyagent
+DTSTAMP:20261108T084438Z
+DTSTART;VALUE=DATE:20261116
+DTEND;VALUE=DATE:20261117
+SUMMARY:Hackathon Faculté des sciences (Univ. Lille) — entries close
+DESCRIPTION:hackathon · no published date\, event start used as a cutoff\n
+ Four-week interdisciplinary challenge\, 16 Nov–17 Dec\, for L3–M2 stud
+ ents of the Lille science faculty\, working on problems posed by researche
+ rs and local actors · six themes (energies\, matter\, living systems\, re
+ sponsible digital\, deep tech\, transitions) · Pépite entrepreneurship n
+ etwork involved · challenge list and candidature form on the faculty page
+  · est deadline = event start
+URL:https://sciences-technologies.univ-lille.fr/actualite/default-0f1385ebb
+ 936957715e8d550d17036a9
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:lille-fac-sciences-hackathon-2026-run@dailyagent
+DTSTAMP:20261108T084438Z
+DTSTART;VALUE=DATE:20261116
+DTEND;VALUE=DATE:20261218
+SUMMARY:Hackathon Faculté des sciences (Univ. Lille) (hackathon)
+DESCRIPTION:Four-week interdisciplinary challenge\, 16 Nov–17 Dec\, for L
+ 3–M2 students of the Lille science faculty\, working on problems posed b
+ y researchers and local actors · six themes (energies\, matter\, living s
+ ystems\, responsible digital\, deep tech\, transitions) · Pépite entrepr
+ eneurship network involved · challenge list and candidature form on the f
+ aculty page · est deadline = event start
+URL:https://sciences-technologies.univ-lille.fr/actualite/default-0f1385ebb
+ 936957715e8d550d17036a9
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:ugreen-ai-nas-2026@dailyagent
+DTSTAMP:20261108T084438Z
+DTSTART;VALUE=DATE:20261116
+DTEND;VALUE=DATE:20261117
+SUMMARY:UGREEN Hackathon 2026 (AI NAS skills) — entries close
+DESCRIPTION:hackathon\nOnline developer challenge on Devpost\, free\, no NA
+ S required to enter — eligible adults solo or in teams of up to 3 · bui
+ ld an AI Skill for UGREEN's UGOS in one of four tracks (work automation\, 
+ personal memories\, creative media\, open idea) · $46\,000 cash: $20k / $
+ 10k / $6k + two $5k Most-Creative awards · Round 1 (proposal + initial Sk
+ ill package) closes 15 Nov 23:45 PT — 16 Nov French time · ~30 finalist
+ s get remote access to an AI NAS\, Round 2 due 30 Nov\, winners announced 
+ in December · 1\,600+ participants already · online\, not in person — 
+ entered here because it is fully accessible from France
+URL:https://ugreenhackathon.devpost.com/
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
 UID:lovable-hexa-ai-for-work@dailyagent
-DTSTAMP:20261101T084328Z
+DTSTAMP:20261108T084438Z
 DTSTART;VALUE=DATE:20261117
 DTEND;VALUE=DATE:20261118
 SUMMARY:Lovable Hackathon: AI for Work — entries close
@@ -296,7 +552,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:lovable-hexa-ai-for-work-run@dailyagent
-DTSTAMP:20261101T084328Z
+DTSTAMP:20261108T084438Z
 DTSTART;VALUE=DATE:20261117
 DTEND;VALUE=DATE:20261118
 SUMMARY:Lovable Hackathon: AI for Work (hackathon)
@@ -309,7 +565,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:urmrc-2026@dailyagent
-DTSTAMP:20261101T084328Z
+DTSTAMP:20261108T084438Z
 DTSTART;VALUE=DATE:20261117
 DTEND;VALUE=DATE:20261118
 SUMMARY:Upper Rhine Mobile Robotic Challenge (3rd) — entries close
@@ -325,7 +581,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:urmrc-2026-run@dailyagent
-DTSTAMP:20261101T084328Z
+DTSTAMP:20261108T084438Z
 DTSTART;VALUE=DATE:20261117
 DTEND;VALUE=DATE:20261119
 SUMMARY:Upper Rhine Mobile Robotic Challenge (3rd) (competition)
@@ -339,34 +595,318 @@ TRANSP:TRANSPARENT
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
+UID:sorbonne-pepite-villes-2026@dailyagent
+DTSTAMP:20261108T084438Z
+DTSTART;VALUE=DATE:20261119
+DTEND;VALUE=DATE:20261120
+SUMMARY:Hackathon Pépite Sorbonne (Villes durables) — entries close
+DESCRIPTION:hackathon · no published date\, event start used as a cutoff\n
+ 36 h at the Cité de l'Innovation\, Jussieu · sustainable-city challenges
+ : ecology\, mobility\, inclusion\, health\, food\, digital sobriety · pri
+ zes €1\,200/€900/€750 · ESSENTIAL: open in priority to L3/M1 studen
+ ts of Sorbonne Université and its Alliance · interest form live\, regist
+ ration not yet open
+URL:https://www.sorbonne-universite.fr/evenements/hackathon-pepite-villes-d
+ urables-et-responsables
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:sorbonne-pepite-villes-2026-run@dailyagent
+DTSTAMP:20261108T084438Z
+DTSTART;VALUE=DATE:20261119
+DTEND;VALUE=DATE:20261121
+SUMMARY:Hackathon Pépite Sorbonne (Villes durables) (hackathon)
+DESCRIPTION:36 h at the Cité de l'Innovation\, Jussieu · sustainable-city
+  challenges: ecology\, mobility\, inclusion\, health\, food\, digital sobr
+ iety · prizes €1\,200/€900/€750 · ESSENTIAL: open in priority to L
+ 3/M1 students of Sorbonne Université and its Alliance · interest form li
+ ve\, registration not yet open
+URL:https://www.sorbonne-universite.fr/evenements/hackathon-pepite-villes-d
+ urables-et-responsables
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
 UID:hack1robo-5@dailyagent
-DTSTAMP:20261101T084328Z
+DTSTAMP:20261108T084438Z
 DTSTART;VALUE=DATE:20261120
 DTEND;VALUE=DATE:20261121
 SUMMARY:Hack1Robo 5 (Bordeaux) — entries close
 DESCRIPTION:hackathon · no published date\, event start used as a cutoff\n
- Bordeaux · free\, teams 4–6 · Thymio robots and mocap provided · no c
- ash prize\, still worth it for robotics · no entry deadline published
+ Bordeaux\, Station Marne (Univ. Bordeaux)\, with Inria Bordeaux and Mnemos
+ yne among organisers · 48 h across AI\, robotics\, cognitive science and 
+ the arts\, teams 3–5 · Thymio robots and mocap provided · free\, REGIS
+ TRATIONS OPEN NOW via pre-registration (echosciences) · no cash\, trophie
+ s · pre-event evening 19 Nov 18:00\, build 20–22 · no entry deadline p
+ ublished
 URL:https://www.hack1robo.fr/
 TRANSP:TRANSPARENT
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:hack1robo-5-run@dailyagent
-DTSTAMP:20261101T084328Z
-DTSTART;VALUE=DATE:20261120
+DTSTAMP:20261108T084438Z
+DTSTART;VALUE=DATE:20261119
 DTEND;VALUE=DATE:20261123
 SUMMARY:Hack1Robo 5 (Bordeaux) (hackathon)
-DESCRIPTION:Bordeaux · free\, teams 4–6 · Thymio robots and mocap provi
- ded · no cash prize\, still worth it for robotics · no entry deadline pu
- blished
+DESCRIPTION:Bordeaux\, Station Marne (Univ. Bordeaux)\, with Inria Bordeaux
+  and Mnemosyne among organisers · 48 h across AI\, robotics\, cognitive s
+ cience and the arts\, teams 3–5 · Thymio robots and mocap provided · f
+ ree\, REGISTRATIONS OPEN NOW via pre-registration (echosciences) · no cas
+ h\, trophies · pre-event evening 19 Nov 18:00\, build 20–22 · no entry
+  deadline published
 URL:https://www.hack1robo.fr/
 TRANSP:TRANSPARENT
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
+UID:sciencespo-ai-hackathon@dailyagent
+DTSTAMP:20261108T084438Z
+DTSTART;VALUE=DATE:20261120
+DTEND;VALUE=DATE:20261121
+SUMMARY:Sciences Po AI Hackathon (2nd edition) — entries close
+DESCRIPTION:hackathon · no published date\, event start used as a cutoff\n
+ Paris\, 27 rue Saint-Guillaume\, 20 Nov 17:00 to 21 Nov 20:30 · open to A
+ LL students of any discipline\, beginners welcome\, no coding prerequisite
+  · registration opens 3 Nov · cash and sponsor credits\, amounts unstate
+ d
+URL:https://www.sciencespo.fr/ecole-management-impact/fr/evenements/the-new
+ -sciences-po-ai-hackathon-edition/
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:sciencespo-ai-hackathon-run@dailyagent
+DTSTAMP:20261108T084438Z
+DTSTART;VALUE=DATE:20261120
+DTEND;VALUE=DATE:20261122
+SUMMARY:Sciences Po AI Hackathon (2nd edition) (hackathon)
+DESCRIPTION:Paris\, 27 rue Saint-Guillaume\, 20 Nov 17:00 to 21 Nov 20:30 
+ · open to ALL students of any discipline\, beginners welcome\, no coding 
+ prerequisite · registration opens 3 Nov · cash and sponsor credits\, amo
+ unts unstated
+URL:https://www.sciencespo.fr/ecole-management-impact/fr/evenements/the-new
+ -sciences-po-ai-hackathon-edition/
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:hackathon-across-perpignan@dailyagent
+DTSTAMP:20261108T084438Z
+DTSTART;VALUE=DATE:20261120
+DTEND;VALUE=DATE:20261121
+SUMMARY:Hackathon Across 2026 (Perpignan × Girona) — entries close
+DESCRIPTION:hackathon · no published date\, event start used as a cutoff\n
+ Water solutions for the cross-border Mediterranean region · 53 h at UPVD 
+ IN CUBE\, Perpignan × University of Girona · CANDIDATURES OPEN (UPVD Fac
+ ebook): 50 participants forming 10 cross-border teams\, students\, researc
+ hers\, professionals and citizens\, with or without a project idea · no c
+ lose date published
+URL:https://hackathonhub.eu/events/hackathon-across-2026-innovating-for-wat
+ er-in-the-cross-border-mediterranean-region-perpignan-2026
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:hackathon-across-perpignan-run@dailyagent
+DTSTAMP:20261108T084438Z
+DTSTART;VALUE=DATE:20261120
+DTEND;VALUE=DATE:20261123
+SUMMARY:Hackathon Across 2026 (Perpignan × Girona) (hackathon)
+DESCRIPTION:Water solutions for the cross-border Mediterranean region · 53
+  h at UPVD IN CUBE\, Perpignan × University of Girona · CANDIDATURES OPE
+ N (UPVD Facebook): 50 participants forming 10 cross-border teams\, student
+ s\, researchers\, professionals and citizens\, with or without a project i
+ dea · no close date published
+URL:https://hackathonhub.eu/events/hackathon-across-2026-innovating-for-wat
+ er-in-the-cross-border-mediterranean-region-perpignan-2026
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:eu-defense-tech-paris@dailyagent
+DTSTAMP:20261108T084438Z
+DTSTART;VALUE=DATE:20261120
+DTEND;VALUE=DATE:20261121
+SUMMARY:European Defense Tech Hackathon (Paris) — entries close
+DESCRIPTION:hackathon · no published date\, event start used as a cutoff\n
+ 200+ hackers from across Europe · challenges like deterring drones\, trac
+ king targets and staying connected in jammed environments · dual-use / de
+ fence tech · prizes unstated · registration open on Luma\, no deadline p
+ ublished
+URL:https://luma.com/edth-nov-2026-paris
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:eu-defense-tech-paris-run@dailyagent
+DTSTAMP:20261108T084438Z
+DTSTART;VALUE=DATE:20261120
+DTEND;VALUE=DATE:20261123
+SUMMARY:European Defense Tech Hackathon (Paris) (hackathon)
+DESCRIPTION:200+ hackers from across Europe · challenges like deterring dr
+ ones\, tracking targets and staying connected in jammed environments · du
+ al-use / defence tech · prizes unstated · registration open on Luma\, no
+  deadline published
+URL:https://luma.com/edth-nov-2026-paris
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:no-code-tech-for-good-pessac@dailyagent
+DTSTAMP:20261108T084438Z
+DTSTART;VALUE=DATE:20261120
+DTEND;VALUE=DATE:20261121
+SUMMARY:No-Code Hackathon Speedrun (Tech for Good) — entries close
+DESCRIPTION:hackathon · no published date\, event start used as a cutoff\n
+ One afternoon in Pessac (Bordeaux) · build social/env solutions on the Lo
+ vable AI no-code platform\, teams of 4 pitch to a jury · €1\,000 prize 
+ · French · for students of Bordeaux-area schools · no deadline publishe
+ d
+URL:https://hackathonhub.eu/events/hackathon-speedrun-no-code-tech-for-good
+ -pessac-2026
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:no-code-tech-for-good-pessac-run@dailyagent
+DTSTAMP:20261108T084438Z
+DTSTART;VALUE=DATE:20261120
+DTEND;VALUE=DATE:20261121
+SUMMARY:No-Code Hackathon Speedrun (Tech for Good) (hackathon)
+DESCRIPTION:One afternoon in Pessac (Bordeaux) · build social/env solution
+ s on the Lovable AI no-code platform\, teams of 4 pitch to a jury · €1\
+ ,000 prize · French · for students of Bordeaux-area schools · no deadli
+ ne published
+URL:https://hackathonhub.eu/events/hackathon-speedrun-no-code-tech-for-good
+ -pessac-2026
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:buildathon-lovable-toulouse@dailyagent
+DTSTAMP:20261108T084438Z
+DTSTART;VALUE=DATE:20261121
+DTEND;VALUE=DATE:20261122
+SUMMARY:Buildathon Lovable Toulouse (AI Builders) — entries close
+DESCRIPTION:hackathon · no published date\, event start used as a cutoff\n
+ In-person AI-buildathon in Toulouse built on the Lovable no-code platform 
+ · listed on HackathonRadar\; details thin\, no prize or schedule visible 
+ · registration route to be confirmed on the radar page · no deadline pub
+ lished
+URL:https://www.hackathonradar.com/database/hackathon/buildathon-lovable-to
+ ulouse-ai-builders-2026
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:buildathon-lovable-toulouse-run@dailyagent
+DTSTAMP:20261108T084438Z
+DTSTART;VALUE=DATE:20261121
+DTEND;VALUE=DATE:20261122
+SUMMARY:Buildathon Lovable Toulouse (AI Builders) (hackathon)
+DESCRIPTION:In-person AI-buildathon in Toulouse built on the Lovable no-cod
+ e platform · listed on HackathonRadar\; details thin\, no prize or schedu
+ le visible · registration route to be confirmed on the radar page · no d
+ eadline published
+URL:https://www.hackathonradar.com/database/hackathon/buildathon-lovable-to
+ ulouse-ai-builders-2026
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:hussar-campus-cyber-2026@dailyagent
+DTSTAMP:20261108T084438Z
+DTSTART;VALUE=DATE:20261123
+DTEND;VALUE=DATE:20261124
+SUMMARY:Hussar Academy Hackathon (Campus Cyber) — entries close
+DESCRIPTION:hackathon · no published date\, event start used as a cutoff\n
+ 48 h at Campus Cyber\, Puteaux-La Défense · themes: urban tranquility\, 
+ defence & space\, Grand Paris mobility\, city drinking water · mixed stud
+ ent/expert/company teams plus job dating · targeted at bac+4/5 students o
+ f the partner schools on site (ESILV\, IPSA\, Centrale Supélec…) · pri
+ zes unstated · no deadline published
+URL:https://www.hussaracademy.fr/hackathon-campus-cyber
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:hussar-campus-cyber-2026-run@dailyagent
+DTSTAMP:20261108T084438Z
+DTSTART;VALUE=DATE:20261123
+DTEND;VALUE=DATE:20261125
+SUMMARY:Hussar Academy Hackathon (Campus Cyber) (hackathon)
+DESCRIPTION:48 h at Campus Cyber\, Puteaux-La Défense · themes: urban tra
+ nquility\, defence & space\, Grand Paris mobility\, city drinking water ·
+  mixed student/expert/company teams plus job dating · targeted at bac+4/5
+  students of the partner schools on site (ESILV\, IPSA\, Centrale Supélec
+ …) · prizes unstated · no deadline published
+URL:https://www.hussaracademy.fr/hackathon-campus-cyber
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:game-jam-europe-24h@dailyagent
+DTSTAMP:20261108T084438Z
+DTSTART;VALUE=DATE:20261124
+DTEND;VALUE=DATE:20261125
+SUMMARY:Game Jam Europe (€200 cash\, 24 h) — entries close
+DESCRIPTION:game jam · no published date\, event start used as a cutoff\n
+ €200 cash prize · 24 hours · online\, hosted by JCI Maltepe (Turkey) b
+ ut Europe-focused · itch calendar shows the jam starting 24 Nov · end da
+ te here is the jam length\, not a published figure
+URL:https://itch.io/jam/game-jam-europe-starting
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:game-jam-europe-24h-run@dailyagent
+DTSTAMP:20261108T084438Z
+DTSTART;VALUE=DATE:20261124
+DTEND;VALUE=DATE:20261126
+SUMMARY:Game Jam Europe (€200 cash\, 24 h) (game jam)
+DESCRIPTION:€200 cash prize · 24 hours · online\, hosted by JCI Maltepe
+  (Turkey) but Europe-focused · itch calendar shows the jam starting 24 No
+ v · end date here is the jam length\, not a published figure
+URL:https://itch.io/jam/game-jam-europe-starting
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:conflits-interet-sante-bordeaux-2026@dailyagent
+DTSTAMP:20261108T084438Z
+DTSTART;VALUE=DATE:20261124
+DTEND;VALUE=DATE:20261125
+SUMMARY:Hackathon conflits d'intérêt dans la santé (Bordeaux) — entrie
+ s close
+DESCRIPTION:hackathon · no published date\, event start used as a cutoff\n
+ Data hackathon exposing conflicts of interest in health\, Bordeaux\, 24 No
+ v · listed by Le Wagon Bordeaux (a bootcamp school — verify what the da
+ y actually is before committing) · prize and schedule TBA · thin listing
+ \, est deadline = event day
+URL:https://francehackathons.com/en/ai-hackathons
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:conflits-interet-sante-bordeaux-2026-run@dailyagent
+DTSTAMP:20261108T084438Z
+DTSTART;VALUE=DATE:20261124
+DTEND;VALUE=DATE:20261125
+SUMMARY:Hackathon conflits d'intérêt dans la santé (Bordeaux) (hackathon
+ )
+DESCRIPTION:Data hackathon exposing conflicts of interest in health\, Borde
+ aux\, 24 Nov · listed by Le Wagon Bordeaux (a bootcamp school — verify 
+ what the day actually is before committing) · prize and schedule TBA · t
+ hin listing\, est deadline = event day
+URL:https://francehackathons.com/en/ai-hackathons
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
 UID:amiga-tools-jam-2026@dailyagent
-DTSTAMP:20261101T084328Z
+DTSTAMP:20261108T084438Z
 DTSTART;VALUE=DATE:20261126
 DTEND;VALUE=DATE:20261127
 SUMMARY:Amiga Tools Jam 2026 — entries close
@@ -378,8 +918,206 @@ TRANSP:TRANSPARENT
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
+UID:hickathon-2026@dailyagent
+DTSTAMP:20261108T084438Z
+DTSTART;VALUE=DATE:20261127
+DTEND;VALUE=DATE:20261128
+SUMMARY:Hi!ckathon 2026 (Hi! PARIS) — entries close
+DESCRIPTION:hackathon · no published date\, event start used as a cutoff\n
+ HEC × IP Paris AI & data-science challenge · prep-phase courses\, then a
+ n in-person weekend at IP Paris\, Palaiseau · eligibility: students of IP
+  Paris\, HEC and partner universities · career fair 3 Nov at Télécom Pa
+ ris · registration opens soon\, pre-registration live · prizes unstated
+URL:https://hi-paris.fr/event/hickathon-2026-the-hi-paris-ai-data-science-c
+ hallenge/
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:hickathon-2026-run@dailyagent
+DTSTAMP:20261108T084438Z
+DTSTART;VALUE=DATE:20261127
+DTEND;VALUE=DATE:20261201
+SUMMARY:Hi!ckathon 2026 (Hi! PARIS) (hackathon)
+DESCRIPTION:HEC × IP Paris AI & data-science challenge · prep-phase cours
+ es\, then an in-person weekend at IP Paris\, Palaiseau · eligibility: stu
+ dents of IP Paris\, HEC and partner universities · career fair 3 Nov at T
+ élécom Paris · registration opens soon\, pre-registration live · prize
+ s unstated
+URL:https://hi-paris.fr/event/hickathon-2026-the-hi-paris-ai-data-science-c
+ hallenge/
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:micro-jam-070@dailyagent
+DTSTAMP:20261108T084438Z
+DTSTART;VALUE=DATE:20261129
+DTEND;VALUE=DATE:20261130
+SUMMARY:Micro Jam 070: Circus — entries close
+DESCRIPTION:game jam\n$300+ cash across the top tiers · 48 h · bi-weekly 
+ recurring jam\, theme: Circus · solo or small teams · the next edition (
+ 071: Coffee) follows mid-December
+URL:https://itch.io/jam/micro-jam-070
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:micro-jam-070-run@dailyagent
+DTSTAMP:20261108T084438Z
+DTSTART;VALUE=DATE:20261127
+DTEND;VALUE=DATE:20261130
+SUMMARY:Micro Jam 070: Circus (game jam)
+DESCRIPTION:$300+ cash across the top tiers · 48 h · bi-weekly recurring 
+ jam\, theme: Circus · solo or small teams · the next edition (071: Coffe
+ e) follows mid-December
+URL:https://itch.io/jam/micro-jam-070
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:indie-park-jam-6@dailyagent
+DTSTAMP:20261108T084438Z
+DTSTART;VALUE=DATE:20261130
+DTEND;VALUE=DATE:20261201
+SUMMARY:Indie Park Game Jam #6 (€100) — entries close
+DESCRIPTION:game jam\nFrench Discord-community jam\, one month with weekend
+ -focused development · €100 prize · solo or teams of 4 · browser game
+ s\, AI allowed if declared · francophone-first\, English welcome
+URL:https://itch.io/jam/indie-park-game-jam-6
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:indie-park-jam-6-run@dailyagent
+DTSTAMP:20261108T084438Z
+DTSTART;VALUE=DATE:20261101
+DTEND;VALUE=DATE:20261201
+SUMMARY:Indie Park Game Jam #6 (€100) (game jam)
+DESCRIPTION:French Discord-community jam\, one month with weekend-focused d
+ evelopment · €100 prize · solo or teams of 4 · browser games\, AI all
+ owed if declared · francophone-first\, English welcome
+URL:https://itch.io/jam/indie-park-game-jam-6
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:game-off-2026@dailyagent
+DTSTAMP:20261108T084438Z
+DTSTART;VALUE=DATE:20261201
+DTEND;VALUE=DATE:20261202
+SUMMARY:GitHub Game Off 2026 — entries close
+DESCRIPTION:game jam\nGitHub's official month-long jam · theme revealed 1 
+ Nov 13:37 PT · any engine\, solo or team · submissions close 1 Dec · 20
+ 26 prize pool not yet stated
+URL:https://itch.io/jam/game-off-2026
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:game-off-2026-run@dailyagent
+DTSTAMP:20261108T084438Z
+DTSTART;VALUE=DATE:20261101
+DTEND;VALUE=DATE:20261202
+SUMMARY:GitHub Game Off 2026 (game jam)
+DESCRIPTION:GitHub's official month-long jam · theme revealed 1 Nov 13:37 
+ PT · any engine\, solo or team · submissions close 1 Dec · 2026 prize p
+ ool not yet stated
+URL:https://itch.io/jam/game-off-2026
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:nuit-de-linfo-2026@dailyagent
+DTSTAMP:20261108T084438Z
+DTSTART;VALUE=DATE:20261201
+DTEND;VALUE=DATE:20261202
+SUMMARY:Nuit de l'Info 2026 (20th edition) — entries close
+DESCRIPTION:competition · no published date\, event start used as a cutoff
+ \nNational student coding night\, 3 Dec 16:34 to 4 Dec 08:01\, 30+ campuse
+ s · prizes via the sponsored challenges published that evening · expecte
+ d team-registration close around 1 Dec per the 2025 pattern — confirm on
+  nuitdelinfo.com
+URL:https://www.nuitdelinfo.com/
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:nuit-de-linfo-2026-run@dailyagent
+DTSTAMP:20261108T084438Z
+DTSTART;VALUE=DATE:20261203
+DTEND;VALUE=DATE:20261205
+SUMMARY:Nuit de l'Info 2026 (20th edition) (competition)
+DESCRIPTION:National student coding night\, 3 Dec 16:34 to 4 Dec 08:01\, 30
+ + campuses · prizes via the sponsored challenges published that evening 
+ · expected team-registration close around 1 Dec per the 2025 pattern — 
+ confirm on nuitdelinfo.com
+URL:https://www.nuitdelinfo.com/
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:ggj-2027-france@dailyagent
+DTSTAMP:20261108T084438Z
+DTSTART;VALUE=DATE:20261201
+DTEND;VALUE=DATE:20261202
+SUMMARY:Global Game Jam 2027 (France sites) — entries close
+DESCRIPTION:game jam · no published date\, event start used as a cutoff\nJ
+ am week published 25–31 Jan\, most local sites run a 48 h window inside 
+ it (ANATEN confirmed 26–29 Jan) · no cash prizes — community jam · j
+ ammers registration expected to open ~1 Dec per the GGJ26 pattern · the 2
+ 027 French site list is still being filled\, ENJMIN/Toulon/Rennes should b
+ e watched
+URL:https://globalgamejam.org/jam-sites/2027
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:ggj-2027-france-run@dailyagent
+DTSTAMP:20261108T084438Z
+DTSTART;VALUE=DATE:20270125
+DTEND;VALUE=DATE:20270201
+SUMMARY:Global Game Jam 2027 (France sites) (game jam)
+DESCRIPTION:Jam week published 25–31 Jan\, most local sites run a 48 h wi
+ ndow inside it (ANATEN confirmed 26–29 Jan) · no cash prizes — commun
+ ity jam · jammers registration expected to open ~1 Dec per the GGJ26 patt
+ ern · the 2027 French site list is still being filled\, ENJMIN/Toulon/Ren
+ nes should be watched
+URL:https://globalgamejam.org/jam-sites/2027
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:a51-bioxai-2026@dailyagent
+DTSTAMP:20261108T084438Z
+DTSTART;VALUE=DATE:20261201
+DTEND;VALUE=DATE:20261202
+SUMMARY:A51 BioxAI Hackathon (Paris Bioweek) — entries close
+DESCRIPTION:hackathon · no published date\, event start used as a cutoff\n
+ Biotech × AI hackathon on RNA–protein problems\, part of Paris Bioweek 
+ · free entry · organiser A51 · no close date published\, est deadline =
+  event start · eligibility for non-life-sciences profiles to confirm
+URL:https://francehackathons.com/en/ai-hackathons
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:a51-bioxai-2026-run@dailyagent
+DTSTAMP:20261108T084438Z
+DTSTART;VALUE=DATE:20261201
+DTEND;VALUE=DATE:20261203
+SUMMARY:A51 BioxAI Hackathon (Paris Bioweek) (hackathon)
+DESCRIPTION:Biotech × AI hackathon on RNA–protein problems\, part of Par
+ is Bioweek · free entry · organiser A51 · no close date published\, est
+  deadline = event start · eligibility for non-life-sciences profiles to c
+ onfirm
+URL:https://francehackathons.com/en/ai-hackathons
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
 UID:hackathon-quantique-defense@dailyagent
-DTSTAMP:20261101T084328Z
+DTSTAMP:20261108T084438Z
 DTSTART;VALUE=DATE:20261202
 DTEND;VALUE=DATE:20261203
 SUMMARY:Hackathon Quantique Défense (AID × Artefact) — entries close
@@ -395,7 +1133,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:hackathon-quantique-defense-run@dailyagent
-DTSTAMP:20261101T084328Z
+DTSTAMP:20261108T084438Z
 DTSTART;VALUE=DATE:20261202
 DTEND;VALUE=DATE:20261205
 SUMMARY:Hackathon Quantique Défense (AID × Artefact) (hackathon)
@@ -410,7 +1148,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:hackathon-robotique-defense@dailyagent
-DTSTAMP:20261101T084328Z
+DTSTAMP:20261108T084438Z
 DTSTART;VALUE=DATE:20261202
 DTEND;VALUE=DATE:20261203
 SUMMARY:Humanoid Defense Robot Hackathon (AID × Artefact) — entries clos
@@ -428,7 +1166,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:hackathon-robotique-defense-run@dailyagent
-DTSTAMP:20261101T084328Z
+DTSTAMP:20261108T084438Z
 DTSTART;VALUE=DATE:20261202
 DTEND;VALUE=DATE:20261205
 SUMMARY:Humanoid Defense Robot Hackathon (AID × Artefact) (hackathon)
@@ -443,21 +1181,89 @@ TRANSP:TRANSPARENT
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
+UID:disinformation-adopai-2026@dailyagent
+DTSTAMP:20261108T084438Z
+DTSTART;VALUE=DATE:20261202
+DTEND;VALUE=DATE:20261203
+SUMMARY:Disinformation & Democratic Sovereignty Hackathon (Adopt AI) — en
+ tries close
+DESCRIPTION:hackathon · no published date\, event start used as a cutoff\n
+ Third Adopt AI defense hackathon at the Grand Palais\, Paris · 3 days fig
+ hting disinformation with AI\, "100 experts" alongside students · also re
+ layed by Sciences Po Lyon as their partner event · registration runs on A
+ gorize like the humanoid and quantum siblings\, whose inscriptions were of
+ ficially prolonged\, and no close date is published · est deadline = even
+ t start
+URL:https://hackathons-artefactadoptai.agorize.com/en/challenges/hackathon-
+ desinformation-souverainete-democratique1
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:disinformation-adopai-2026-run@dailyagent
+DTSTAMP:20261108T084438Z
+DTSTART;VALUE=DATE:20261202
+DTEND;VALUE=DATE:20261205
+SUMMARY:Disinformation & Democratic Sovereignty Hackathon (Adopt AI) (hacka
+ thon)
+DESCRIPTION:Third Adopt AI defense hackathon at the Grand Palais\, Paris ·
+  3 days fighting disinformation with AI\, "100 experts" alongside students
+  · also relayed by Sciences Po Lyon as their partner event · registratio
+ n runs on Agorize like the humanoid and quantum siblings\, whose inscripti
+ ons were officially prolonged\, and no close date is published · est dead
+ line = event start
+URL:https://hackathons-artefactadoptai.agorize.com/en/challenges/hackathon-
+ desinformation-souverainete-democratique1
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
 UID:pixel-forge-mega-jam@dailyagent
-DTSTAMP:20261101T084328Z
+DTSTAMP:20261108T084438Z
 DTSTART;VALUE=DATE:20261208
 DTEND;VALUE=DATE:20261209
 SUMMARY:Pixel Forge MEGA JAM — entries close
-DESCRIPTION:game jam\nTeams up to 4 · top three paid ($300/$200/$100)\, re
- st software · AI banned · itch metadata reads conflict on the close date
-  — confirm before entering
+DESCRIPTION:game jam\nTeams up to 4\, AI banned · itch now titles the jam 
+ "$30k Prizes + Cash" — earlier reads on the same page showed a $600 top-
+ three split\, so the pool figure is in conflict\, verify on the page · it
+ ch metadata also conflicts on the close date — confirm before entering
 URL:https://itch.io/jam/pixel-forge-mega-jam
 TRANSP:TRANSPARENT
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
+UID:wfeo-wed-hackathon-2027@dailyagent
+DTSTAMP:20261108T084438Z
+DTSTART;VALUE=DATE:20261212
+DTEND;VALUE=DATE:20261213
+SUMMARY:World Engineering Day Hackathon 2027 (WFEO) — entries close
+DESCRIPTION:competition\nGlobal online hackathon for engineering students a
+ nd under-30 engineers\, theme sustainable transport · free · €7\,000 t
+ otal (€4k/€2k/€1k) · challenges released 20 Nov\, submissions due 1
+ 2 Dec 23:59 UTC planned · teams 3–5 led by an engineering student · wi
+ nners announced 4 Mar 2027 in Rome
+URL:https://worldengineeringday.net/hackathon/
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:wfeo-wed-hackathon-2027-run@dailyagent
+DTSTAMP:20261108T084438Z
+DTSTART;VALUE=DATE:20261120
+DTEND;VALUE=DATE:20261213
+SUMMARY:World Engineering Day Hackathon 2027 (WFEO) (competition)
+DESCRIPTION:Global online hackathon for engineering students and under-30 e
+ ngineers\, theme sustainable transport · free · €7\,000 total (€4k/
+ €2k/€1k) · challenges released 20 Nov\, submissions due 12 Dec 23:59 
+ UTC planned · teams 3–5 led by an engineering student · winners announ
+ ced 4 Mar 2027 in Rome
+URL:https://worldengineeringday.net/hackathon/
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
 UID:uplifting-game-jam-10@dailyagent
-DTSTAMP:20261101T084328Z
+DTSTAMP:20261108T084438Z
 DTSTART;VALUE=DATE:20261214
 DTEND;VALUE=DATE:20261215
 SUMMARY:Uplifting Game Jam — entries close
@@ -469,7 +1275,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:uplifting-game-jam-10-run@dailyagent
-DTSTAMP:20261101T084328Z
+DTSTAMP:20261108T084438Z
 DTSTART;VALUE=DATE:20261201
 DTEND;VALUE=DATE:20261215
 SUMMARY:Uplifting Game Jam (game jam)
@@ -479,8 +1285,36 @@ TRANSP:TRANSPARENT
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
+UID:micro-jam-071@dailyagent
+DTSTAMP:20261108T084438Z
+DTSTART;VALUE=DATE:20261214
+DTEND;VALUE=DATE:20261215
+SUMMARY:Micro Jam 071: Coffee — entries close
+DESCRIPTION:game jam\nCash prizes across the top tiers (amount on the jam p
+ age — itch blocks scripted reads\, unverified here) · 48 h · theme: Co
+ ffee\, plus a surprise prerequisite revealed at the start · solo or small
+  teams\, AI tools allowed · dates confirmed on the jam page
+URL:https://itch.io/jam/micro-jam-071
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:micro-jam-071-run@dailyagent
+DTSTAMP:20261108T084438Z
+DTSTART;VALUE=DATE:20261212
+DTEND;VALUE=DATE:20261215
+SUMMARY:Micro Jam 071: Coffee (game jam)
+DESCRIPTION:Cash prizes across the top tiers (amount on the jam page — it
+ ch blocks scripted reads\, unverified here) · 48 h · theme: Coffee\, plu
+ s a surprise prerequisite revealed at the start · solo or small teams\, A
+ I tools allowed · dates confirmed on the jam page
+URL:https://itch.io/jam/micro-jam-071
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
 UID:physical-ai-amje@dailyagent
-DTSTAMP:20261101T084328Z
+DTSTAMP:20261108T084438Z
 DTSTART;VALUE=DATE:20261231
 DTEND;VALUE=DATE:20270101
 SUMMARY:Hackathon Physical AI (AMJE / Arts et Métiers) — entries close
@@ -489,6 +1323,100 @@ DESCRIPTION:hackathon · no published date\, event start used as a cutoff\n
  uary — deadline here is a check-back marker\, chase the real dates when 
  it opens · final pitches at the closing event
 URL:https://amje.fr/pip
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:ieee-ies-genai-2027@dailyagent
+DTSTAMP:20261108T084438Z
+DTSTART;VALUE=DATE:20261231
+DTEND;VALUE=DATE:20270101
+SUMMARY:IEEE IES Generative AI Challenge 2027 — entries close
+DESCRIPTION:hackathon\nMulti-stage GenAI-in-industry research challenge · 
+ proposal window 20 Oct–31 Dec 2026\, shortlists in early Jan · open to 
+ all\, IEEE membership not required · outcome is an IRAI 2027 (Colombo) pa
+ per plus 6 travel grants ($2\,000 × 3 winners\, $1\,000 × 3 runners-up)
+URL:https://ai.ieee-ies.org/
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:cdfr-2027@dailyagent
+DTSTAMP:20261108T084438Z
+DTSTART;VALUE=DATE:20261231
+DTEND;VALUE=DATE:20270101
+SUMMARY:Coupe de France de Robotique 2027 — entries close
+DESCRIPTION:competition · no published date\, event start used as a cutoff
+ \nAutonomous-robot build contest\, also Eurobot host · 2027 edition 5–8
+  May at La Roche-sur-Yon\, now confirmed on the site · 2026-cycle fees we
+ re €100/structure + €50/team + €50 Planète Sciences membership\, en
+ try via Poolzor · phased 2027 dates not posted yet — deadline here is t
+ he check-back marker from the 31 Dec form closure of the 2026 cycle
+URL:https://www.coupederobotique.fr/edition-2027/
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:cdfr-2027-run@dailyagent
+DTSTAMP:20261108T084438Z
+DTSTART;VALUE=DATE:20270505
+DTEND;VALUE=DATE:20270509
+SUMMARY:Coupe de France de Robotique 2027 (competition)
+DESCRIPTION:Autonomous-robot build contest\, also Eurobot host · 2027 edit
+ ion 5–8 May at La Roche-sur-Yon\, now confirmed on the site · 2026-cycl
+ e fees were €100/structure + €50/team + €50 Planète Sciences member
+ ship\, entry via Poolzor · phased 2027 dates not posted yet — deadline 
+ here is the check-back marker from the 31 Dec form closure of the 2026 cyc
+ le
+URL:https://www.coupederobotique.fr/edition-2027/
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:grand-challenge-ecoles-2027@dailyagent
+DTSTAMP:20261108T084438Z
+DTSTART;VALUE=DATE:20270315
+DTEND;VALUE=DATE:20270316
+SUMMARY:Grand Challenge des Écoles d'Ingénieurs (L'Usine Nouvelle) — en
+ tries close
+DESCRIPTION:competition · no published date\, event start used as a cutoff
+ \nNational project competition for engineering students and young graduate
+ s\, 7 categories (environment\, mobility\, health\, advanced tech…) · p
+ rizes €2\,500/€1\,000/€500 per the circulating call · the fresh App
+ el à candidatures is out (shared by Bordeaux INP) while the 2026-cycle si
+ te still reads closed — deadline inferred from the 2026 cycle (closed 15
+  Mar\, finale 5 Jun in Paris) · deposited dossier required\; named candid
+ ates get portraits in the magazine
+URL:https://grand-challenge-ecoles-ingenieurs.eventmaker.io/
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:hacking-health-camp-2027@dailyagent
+DTSTAMP:20261108T084438Z
+DTSTART;VALUE=DATE:20270320
+DTEND;VALUE=DATE:20270321
+SUMMARY:Hacking Health Camp 2027 (Strasbourg) — entries close
+DESCRIPTION:hackathon · no published date\, event start used as a cutoff\n
+ Three-day health-tech hackaton in Strasbourg\, annual\, clinicians + stude
+ nts + developers co-build prototypes · next edition 20–22 Mar 2027 per 
+ the Hub listing · registration not yet visibly open — deadline here is 
+ a check-back marker
+URL:https://hackinghealthcamp.org/
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:hacking-health-camp-2027-run@dailyagent
+DTSTAMP:20261108T084438Z
+DTSTART;VALUE=DATE:20270320
+DTEND;VALUE=DATE:20270323
+SUMMARY:Hacking Health Camp 2027 (Strasbourg) (hackathon)
+DESCRIPTION:Three-day health-tech hackaton in Strasbourg\, annual\, clinici
+ ans + students + developers co-build prototypes · next edition 20–22 Ma
+ r 2027 per the Hub listing · registration not yet visibly open — deadli
+ ne here is a check-back marker
+URL:https://hackinghealthcamp.org/
 TRANSP:TRANSPARENT
 STATUS:CONFIRMED
 END:VEVENT

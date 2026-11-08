@@ -139,6 +139,23 @@ delete it from this file afterwards.
 
 ---
 
+## Light mode — active since 1 Nov 2026 (until I cancel it)
+
+This section overrides everything above while it stands:
+
+- **Paused:** the daily report files, the interactive panels, the weekly
+  Outlook, the AI news item, project ideas, and the whole of job 1 (website
+  building). Do not touch `site/src/**` at all — the only exception is the
+  `still-open.json` data refresh. No report file gets written.
+- **Kept, and deeper:** the sweeps for French engineering events and cash-prize
+  game jams are done thoroughly, not in ten minutes.
+- **New scope:** French game jams count even without cash prizes — say which
+  ones pay, but don't filter them out.
+- **Output:** the tracker refresh and a summary of the finds in chat. The
+  build gate doesn't apply while only data files change.
+
+---
+
 ## How the report should look
 
 **This is yours.** The jobs above say what to find out, not what to write. There

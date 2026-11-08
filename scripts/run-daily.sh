@@ -229,12 +229,15 @@ if [[ "$agent_status" -ne 0 ]]; then
   exit 1
 fi
 
-# The report is the deliverable. If it is missing, something went wrong even
-# though the process exited cleanly.
+# The report is the deliverable in full mode only. While the brief's "Light
+# mode" is active the agent legitimately ships only the tracker refresh and no
+# report file at all — a missing report is not a failure. Hand the decision to
+# publish.sh: with an unchanged tree it stops cleanly ("nothing to publish");
+# with the tracker updated it commits and pushes, which is the point of the run.
 if [[ ! -f "$PROJECT_DIR/site/src/content/reports/$RUN_DATE.md" ]]; then
-  log "WARNING: no report was written for $RUN_DATE. Publishing anyway is pointless, so stopping."
+  log "WARNING: no report was written for $RUN_DATE."
   log "        (The agent may have decided there was nothing to do — check the log above.)"
-  exit 1
+  log "        Continuing anyway: the build may still carry tracker or data changes."
 fi
 
 log "Report written: site/src/content/reports/$RUN_DATE.md"

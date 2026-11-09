@@ -240,7 +240,11 @@ if [[ ! -f "$PROJECT_DIR/site/src/content/reports/$RUN_DATE.md" ]]; then
   log "        Continuing anyway: the build may still carry tracker or data changes."
 fi
 
-log "Report written: site/src/content/reports/$RUN_DATE.md"
+if [[ -f "$PROJECT_DIR/site/src/content/reports/$RUN_DATE.md" ]]; then
+  log "Report written: site/src/content/reports/$RUN_DATE.md"
+else
+  log "Light-mode run: no report file; publishing the data-only changes."
+fi
 
 # Building is the correctness gate: a malformed report fails here and never
 # reaches the published site.

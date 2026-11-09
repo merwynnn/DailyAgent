@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-08",
+  "updated": "2026-11-09",
   "items": [
     {
       "id": "lovable-hexa-ai-for-work",
@@ -12,17 +12,6 @@
       "end": "2026-11-17",
       "note": "Hexa Paris · free evening build session 18:30–22:00, apéro included · squads or solo · prizes for the best three unstated, Lovable credits for all · registration via the Lovable events hub",
       "added": "2026-10-30"
-    },
-    {
-      "id": "hackathon-europeen-uge-afit",
-      "name": "Hackathon Européen (UGE × AFIT France)",
-      "type": "hackathon",
-      "url": "https://www.univ-gustave-eiffel.fr/international/hackathon-europeen",
-      "deadline": "2026-11-09",
-      "start": "2027-03-19",
-      "end": "2027-03-23",
-      "note": "6th edition, EIVP Paris campus · mobility-of-tomorrow theme · Erasmus+ BIP: 3-ECTS certificate on passing, 3 winning teams, no cash · ESSENTIAL: only open to M1/M2 students of Université Gustave Eiffel and its schools (EIVP, ESIEE, EAVT …) · registration form closes 13:00 Paris time",
-      "added": "2026-11-01"
     },
     {
       "id": "hackathon-quantique-defense",
@@ -133,7 +122,7 @@
       "deadline": "2026-12-31",
       "deadlineEstimated": true,
       "end": "2027-02-04",
-      "note": "€15,000 total · registration opens in December, dossier due early January — deadline here is a check-back marker, chase the real dates when it opens · final pitches at the closing event",
+      "note": "6th Projet Impact Positif (AMJE × Arts et Métiers) · €15,000 dotation, 6 finalist teams revealed end of January, mentored by partners before pitching on Thu 4 Feb 2027, Arts et Métiers campus Paris 13e, evening: big conference \"Physical AI\" + prizes · open to students of graduate engineering schools, teams can form at registration · CALENDAR CONFIRMED: registrations open December 2026 → dossiers due early January → selection announced end of January → event 4 Feb · registrations open in December, dossiers early January — deadline here is a check-back marker, chase the real dates when it opens · 3rd place takes €500",
       "added": "2026-10-20"
     },
     {
@@ -281,17 +270,6 @@
       "start": "2026-11-12",
       "end": "2026-11-15",
       "note": "$65,000 in cash plus development-continuation grants up to $50,000 per team · Unreal Engine or UEFN · teams of up to 4 humans with unlimited AI agents allowed · four days, worldwide online · judged results stream later in December",
-      "added": "2026-11-02"
-    },
-    {
-      "id": "european-ai-championship-paris",
-      "name": "European AI Championship (Paris stage)",
-      "type": "hackathon",
-      "url": "https://luma.com/iwlbokns",
-      "deadline": "2026-11-08",
-      "start": "2026-11-20",
-      "end": "2026-11-22",
-      "note": "24 h overnight hacking at the AI × cybersecurity intersection · €10,000 prize pool · for students and ML/AI engineers · organised by PoC Innovation & CISPA · English · registration closes 8 Nov on Luma",
       "added": "2026-11-02"
     },
     {
@@ -482,17 +460,6 @@
       "added": "2026-11-05"
     },
     {
-      "id": "deloitte-google-cloud-2026",
-      "name": "Hackathon Deloitte | Google Cloud",
-      "type": "hackathon",
-      "url": "https://www.deloitte.com/fr/fr/careers/deloitte-life/impact-every-day/hackathon-deloitte.html",
-      "deadline": "2026-11-08",
-      "start": "2026-11-18",
-      "end": "2026-11-18",
-      "note": "One-day on-site hackathon in Puteaux (Deloitte France premises), French language, with Google Cloud experts around a real-world business challenge · open to M1/M2 students majoring in Data, AI or Cloud · registration via the Deloitte careers page · deadline 8 Nov PUBLISHED on the Hub listing",
-      "added": "2026-11-05"
-    },
-    {
       "id": "pioneers-stationf-ai-2026",
       "name": "Paris AI Hackathon @Station F (Pioneers)",
       "type": "hackathon",
@@ -583,6 +550,18 @@
       "deadline": "2026-11-16",
       "note": "Online developer challenge on Devpost, free, no NAS required to enter — eligible adults solo or in teams of up to 3 · build an AI Skill for UGREEN's UGOS in one of four tracks (work automation, personal memories, creative media, open idea) · $46,000 cash: $20k / $10k / $6k + two $5k Most-Creative awards · Round 1 (proposal + initial Skill package) closes 15 Nov 23:45 PT — 16 Nov French time · ~30 finalists get remote access to an AI NAS, Round 2 due 30 Nov, winners announced in December · 1,600+ participants already · online, not in person — entered here because it is fully accessible from France",
       "added": "2026-11-08"
+    },
+    {
+      "id": "biotech-hackathon-2027",
+      "name": "Biotech Hackathon 2027 (Alliance Biotech, 5th edition)",
+      "type": "hackathon",
+      "url": "https://esbs.unistra.fr/websites/esbs/documents/HACKATHON_BIOTECH/2027/Flyer_Hackathon_2027.pdf",
+      "deadline": "2027-03-18",
+      "deadlineEstimated": true,
+      "start": "2027-03-18",
+      "end": "2027-03-20",
+      "note": "5th national biotech hackathon of the Alliance Biotech engineering schools (supbiotech, ESBS… with CFA LEEM support), 18–20 March 2027 in Paris · interdisciplinary teams take industry challenges from partner companies (past subjects: continuous monoclonal antibodies, vaccine carbon balances…) · student entry route is via the organising schools; the current flyer recruits companies and mentors (€500–€2,000 sponsoring tiers), contact chloe.gallot@supbiotech.fr · deadline inferred from the event dates, no published cutoff",
+      "added": "2026-11-09"
     }
   ]
 }

@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-09",
+  "updated": "2026-11-10",
   "items": [
     {
       "id": "lovable-hexa-ai-for-work",
@@ -297,18 +297,6 @@
       "added": "2026-11-02"
     },
     {
-      "id": "tourism-flow-isere-2026",
-      "name": "Isère Tourism-Flow Hackathon (DGE)",
-      "type": "hackathon",
-      "url": "https://www.entreprises.gouv.fr/la-dge/evenements/hackathon-sur-la-gestion-des-flux-touristiques-en-isere",
-      "deadline": "2026-11-09",
-      "deadlineEstimated": true,
-      "start": "2026-11-09",
-      "end": "2026-11-10",
-      "note": "Two days in Paris, run by the Direction générale des Entreprises & Isère Attractivité · real departmental datasets, open-source prototypes meant to be reused across France · students among the target crowd · no prize listed · no deadline published",
-      "added": "2026-11-02"
-    },
-    {
       "id": "nasa-space-apps-toulouse",
       "name": "NASA Space Apps Challenge 2026 (Toulouse site)",
       "type": "hackathon",
@@ -340,7 +328,7 @@
       "deadlineEstimated": true,
       "start": "2026-11-27",
       "end": "2026-11-30",
-      "note": "HEC × IP Paris AI & data-science challenge · prep-phase courses, then an in-person weekend at IP Paris, Palaiseau · eligibility: students of IP Paris, HEC and partner universities · career fair 3 Nov at Télécom Paris · registration opens soon, pre-registration live · prizes unstated",
+      "note": "HEC × IP Paris AI & data-science challenge · prep-phase courses, then an in-person weekend at IP Paris, Palaiseau · eligibility: students of IP Paris, HEC and partner universities · career fair 3 Nov at Télécom Paris · registration opens soon, pre-registration live · prizes unstated · EVENT DATES CONFIRMED: runs 27–30 Nov 2026 at Institut Polytechnique de Paris (Palaiseau) · eligibility: students of IP Paris, HEC Paris and partner universities",
       "added": "2026-11-02"
     },
     {
@@ -413,17 +401,6 @@
       "end": "2027-03-22",
       "note": "Three-day health-tech hackaton in Strasbourg, annual, clinicians + students + developers co-build prototypes · next edition 20–22 Mar 2027 per the Hub listing · registration not yet visibly open — deadline here is a check-back marker",
       "added": "2026-11-03"
-    },
-    {
-      "id": "ai-meta-science-2026",
-      "name": "AI for Meta Science (Institut Pascal workshop)",
-      "type": "workshop",
-      "url": "https://indico.ijclab.in2p3.fr/event/11640/",
-      "deadline": "2026-11-09",
-      "start": "2026-11-23",
-      "end": "2026-11-27",
-      "note": "5-day CNRS/AISSAI workshop at Institut Pascal, Orsay, in person, 70 places by application · embeds two half-day hackathons: Mad Scientist (red-teaming agentic AI research pipelines at LHC scale) and From Literature to Benchmark · keynote speakers from CERN, CEA, INRAE · aim mostly at scientists incl. PhD students, judged on topic expertise — an engineering student applies with credentials in AI or engineering · applications due 9 Nov, may close earlier on capacity",
-      "added": "2026-11-04"
     },
     {
       "id": "grand-challenge-ecoles-2027",
@@ -562,6 +539,17 @@
       "end": "2027-03-20",
       "note": "5th national biotech hackathon of the Alliance Biotech engineering schools (supbiotech, ESBS… with CFA LEEM support), 18–20 March 2027 in Paris · interdisciplinary teams take industry challenges from partner companies (past subjects: continuous monoclonal antibodies, vaccine carbon balances…) · student entry route is via the organising schools; the current flyer recruits companies and mentors (€500–€2,000 sponsoring tiers), contact chloe.gallot@supbiotech.fr · deadline inferred from the event dates, no published cutoff",
       "added": "2026-11-09"
+    },
+    {
+      "id": "bioeco-camp-2026",
+      "name": "Bioeco Camp (Bezannes, bioeconomy)",
+      "type": "hackathon",
+      "url": "https://bioeco.camp/",
+      "deadline": "2026-11-19",
+      "start": "2026-11-20",
+      "end": "2026-11-22",
+      "note": "Hackathon entirely dedicated to the bioeconomy — sustainable agriculture and biomass-valorization challenges turned into real projects · Bezannes (near Reims), on-site, French · open to engineering students, developers, designers, agronomists and professionals · accommodation provided, teams up to 8, beginner-friendly with mentoring · deadline 19 Nov PUBLISHED on the Hub listing, free registration via bioeco.camp",
+      "added": "2026-11-10"
     }
   ]
 }

@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-10",
+  "updated": "2026-11-11",
   "items": [
     {
       "id": "lovable-hexa-ai-for-work",
@@ -10,7 +10,7 @@
       "deadlineEstimated": true,
       "start": "2026-11-17",
       "end": "2026-11-17",
-      "note": "Hexa Paris · free evening build session 18:30–22:00, apéro included · squads or solo · prizes for the best three unstated, Lovable credits for all · registration via the Lovable events hub",
+      "note": "Hexa Paris · free evening build session 18:30–22:00, apéro included · squads or solo · prizes for the best three unstated, Lovable credits for all · registration via the Lovable events hub · Hub NOW LISTS WAITLIST — late registration lands on the waitlist",
       "added": "2026-10-30"
     },
     {
@@ -48,15 +48,6 @@
       "end": "2026-11-18",
       "note": "Parc Expo Mulhouse, inside the free-entry Euro Industries salon · student robotics competition, 3rd edition · 2024 edition drew 8 student teams · no registration route published yet — deadline here is event start as a check-back marker",
       "added": "2026-10-24"
-    },
-    {
-      "id": "game-gauntlet-sim-jam",
-      "name": "Game Gauntlet — SIM Jam",
-      "type": "jam",
-      "url": "https://itch.io/jam/game-gauntlet-sim-jam",
-      "deadline": "2026-11-10",
-      "note": "$1,500 cash ($1,000/$500) · online, worldwide · joining the Discord is mandatory",
-      "added": "2026-10-20"
     },
     {
       "id": "adopt-ai-for-health",
@@ -100,7 +91,7 @@
       "url": "https://itch.io/jam/pixel-forge-mega-jam",
       "deadline": "2026-12-08",
       "start": "2026-11-28",
-      "note": "Teams up to 4, AI banned · itch now titles the jam \"$30k Prizes + Cash\" — earlier reads on the same page showed a $600 top-three split, so the pool figure is in conflict, verify on the page · itch metadata also conflicts on the close date — confirm before entering",
+      "note": "10-day jam hosted under Hack Club fiscal sponsorship · submissions 28 Nov 09:30 → 8 Dec 09:30 UTC · CASH actually $600: $300 / $200 / $100 — the \"$30k\" in the title is mostly license/perk value (Spine, Houdini, Synty, Fly.io credits…) · every valid submitter gets Houdini Indie 6-months and a bundle · prizes claimed via Discord or email · prize split is up to team lead",
       "added": "2026-10-20"
     },
     {
@@ -270,18 +261,6 @@
       "start": "2026-11-12",
       "end": "2026-11-15",
       "note": "$65,000 in cash plus development-continuation grants up to $50,000 per team · Unreal Engine or UEFN · teams of up to 4 humans with unlimited AI agents allowed · four days, worldwide online · judged results stream later in December",
-      "added": "2026-11-02"
-    },
-    {
-      "id": "eu-defense-tech-paris",
-      "name": "European Defense Tech Hackathon (Paris)",
-      "type": "hackathon",
-      "url": "https://luma.com/edth-nov-2026-paris",
-      "deadline": "2026-11-20",
-      "deadlineEstimated": true,
-      "start": "2026-11-20",
-      "end": "2026-11-22",
-      "note": "200+ hackers from across Europe · challenges like deterring drones, tracking targets and staying connected in jammed environments · dual-use / defence tech · prizes unstated · registration open on Luma, no deadline published",
       "added": "2026-11-02"
     },
     {
@@ -462,14 +441,13 @@
     },
     {
       "id": "a51-bioxai-2026",
-      "name": "A51 BioxAI Hackathon (Paris Bioweek)",
+      "name": "InterfaceHack (A51, RNA–protein binding)",
       "type": "hackathon",
-      "url": "https://francehackathons.com/en/ai-hackathons",
-      "deadline": "2026-12-01",
-      "deadlineEstimated": true,
+      "url": "https://a51tx.com/hackathon/",
+      "deadline": "2026-11-14",
       "start": "2026-12-01",
       "end": "2026-12-02",
-      "note": "Biotech × AI hackathon on RNA–protein problems, part of Paris Bioweek · free entry · organiser A51 · no close date published, est deadline = event start · eligibility for non-life-sciences profiles to confirm",
+      "note": "Biotech × AI hackathon by A51: predict RNA–protein binding, the unsolved \"interaction that programs a cell\" · event 1–2 Dec 2026 at Agoranov, Paris deep-tech incubator · teams up to 5, team matching + mentoring, experimental dataset provided, Claude/AWS/research-lab compute and AI credits · exposure to academia, startup and industry experts · DEADLINE 14 Nov PUBLISHED on the Hub detail page (earlier est of 1 Dec was wrong) · free entry per organiser · Paris Bioweek umbrella",
       "added": "2026-11-05"
     },
     {
@@ -550,6 +528,85 @@
       "end": "2026-11-22",
       "note": "Hackathon entirely dedicated to the bioeconomy — sustainable agriculture and biomass-valorization challenges turned into real projects · Bezannes (near Reims), on-site, French · open to engineering students, developers, designers, agronomists and professionals · accommodation provided, teams up to 8, beginner-friendly with mentoring · deadline 19 Nov PUBLISHED on the Hub listing, free registration via bioeco.camp",
       "added": "2026-11-10"
+    },
+    {
+      "id": "dev3pack-global-2026",
+      "name": "Dev3pack Global Hackathon (Solana)",
+      "type": "hackathon",
+      "url": "https://hack.dev3pack.xyz/",
+      "deadline": "2026-11-27",
+      "deadlineEstimated": true,
+      "start": "2026-11-27",
+      "end": "2026-11-29",
+      "note": "Global university hackathon: build decentralized apps on Solana · $10,000 cash + tech perks, high-potential teams invited to a founder accelerator · students and aspiring developers worldwide · HYBRID: fully online or in person at local build stations, Paris listed as one · no close date published, deadline = event start (est) · English",
+      "added": "2026-11-11"
+    },
+    {
+      "id": "alan-ai-health-2-2026",
+      "name": "Alan × Qovery × AWS: AI Health Hack 2",
+      "type": "hackathon",
+      "url": "https://luma.com/o1eopuwy",
+      "deadline": "2026-11-21",
+      "start": "2026-11-28",
+      "note": "One-day 12-hour hackathon in Paris: ~70 builders, designers and healthcare enthusiasts ship AI products that help people stay healthy, pitched to an expert jury · open to engineers, designers, product people and clinicians who code · registration via Luma · DEADLINE 21 Nov published on the Hub · no prize stated",
+      "added": "2026-11-11"
+    },
+    {
+      "id": "hacktelier-hetic-2027",
+      "name": "Hacktelier (HETIC, 3 days idea→project)",
+      "type": "hackathon",
+      "url": "https://luma.com/hx1aj1zt",
+      "deadline": "2027-02-16",
+      "deadlineEstimated": true,
+      "start": "2027-02-16",
+      "end": "2027-02-18",
+      "note": "Three-day French hackathon at HETIC Paris: turn an idea into a concrete AI-driven project — functional mini-app, branding, pitch before a jury · open to tech enthusiasts 16+, no published cutoff, deadline = event start (est) · French language",
+      "added": "2026-11-11"
+    },
+    {
+      "id": "avent-jam-2026",
+      "name": "La Game Jam de l'Avent 2026 (3rd edition)",
+      "type": "jam",
+      "url": "https://itch.io/jam/la-game-jam-de-lavent-2026-",
+      "deadline": "2026-11-25",
+      "start": "2026-10-31",
+      "end": "2026-11-25",
+      "note": "French community jam by Asso Fantasià — 3rd edition · theme \"ENTRE DEUX\", revealed 31 Oct · make a small game any time in the window; submissions close 25 Nov 23:59 UTC PUBLISHED · prize: a retro-gaming portable console (no cash), community vote · creations feed an Advent calendar opening 1 Dec · NO AI allowed (\"NUTR'IA B\" rule) · solo or teams, any engine, remote with Discord",
+      "added": "2026-11-11"
+    },
+    {
+      "id": "epitech-game-jam-2026",
+      "name": "Epitech Game Jam (itch)",
+      "type": "jam",
+      "url": "https://itch.io/jam/epitech-game-jam",
+      "deadline": "2026-11-29",
+      "deadlineEstimated": true,
+      "start": "2026-11-27",
+      "end": "2026-11-29",
+      "note": "48-hour jam hosted on itch by Epitech students (Yoyott29, 4rthurV), open on itch to anyone · starts 27 Nov 18:42 UTC, runs 2 days · NO PRIZE PUBLISHED on any listing checked — enter for the practice, not the purse · deadline = jam end (est)",
+      "added": "2026-11-11"
+    },
+    {
+      "id": "slapjam-3-2026",
+      "name": "Slapjam #3 (mobile-portrait + AI tools)",
+      "type": "jam",
+      "url": "https://itch.io/jam/slapjam-ai-3",
+      "deadline": "2026-11-30",
+      "start": "2026-11-28",
+      "end": "2026-11-30",
+      "note": "48-hour jam: build a mobile-portrait (720×1280) browser game USING AI tools (code, art, music, voices, 3D), ship on itch · $500 cash pool + $100 Best Post-Jam Release by Flockbay (Godot entries) · solo, teams and autonomous-AI entrants welcome · submissions close 30 Nov 15:00 UTC published · results 7 Dec",
+      "added": "2026-11-11"
+    },
+    {
+      "id": "bezi-jam-15-2026",
+      "name": "Bezi Jam 15 ($400+, Unreal angle)",
+      "type": "jam",
+      "url": "https://itch.io/jam/bezi-jam-15",
+      "deadline": "2026-12-01",
+      "start": "2026-11-27",
+      "end": "2026-12-01",
+      "note": "4-day jam celebrating Bezi's Unreal Engine integration · $400+ cash: Best in Show $150/$100/$50 (community vote → Bezi judging) plus Best Devlog and Best Fan Art tracks · theme in two halves, revealed 26 Nov on Discord / 27 Nov public · submissions close 30 Nov 23:59 PST = 1 Dec French time · Bezi Jam's last of 2026",
+      "added": "2026-11-11"
     }
   ]
 }

@@ -7,7 +7,7 @@ X-WR-CALNAME:DailyAgent — still open
 X-WR-CALDESC:Entry deadlines tracked in the DailyAgent "still open" list.
 BEGIN:VEVENT
 UID:adopt-ai-for-health@dailyagent
-DTSTAMP:20261111T100151Z
+DTSTAMP:20261112T164046Z
 DTSTART;VALUE=DATE:20261113
 DTEND;VALUE=DATE:20261114
 SUMMARY:Hackathon AI for Health — entries close
@@ -21,7 +21,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:adopt-ai-for-health-run@dailyagent
-DTSTAMP:20261111T100151Z
+DTSTAMP:20261112T164046Z
 DTSTART;VALUE=DATE:20261113
 DTEND;VALUE=DATE:20261116
 SUMMARY:Hackathon AI for Health (hackathon)
@@ -34,7 +34,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:nasa-space-apps-paris@dailyagent
-DTSTAMP:20261111T100151Z
+DTSTAMP:20261112T164046Z
 DTSTART;VALUE=DATE:20261114
 DTEND;VALUE=DATE:20261115
 SUMMARY:NASA Space Apps Challenge 2026 (Paris site) — entries close
@@ -48,7 +48,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:nasa-space-apps-paris-run@dailyagent
-DTSTAMP:20261111T100151Z
+DTSTAMP:20261112T164046Z
 DTSTART;VALUE=DATE:20261114
 DTEND;VALUE=DATE:20261116
 SUMMARY:NASA Space Apps Challenge 2026 (Paris site) (hackathon)
@@ -61,36 +61,38 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:open-data-paris-2026@dailyagent
-DTSTAMP:20261111T100151Z
+DTSTAMP:20261112T164046Z
 DTSTART;VALUE=DATE:20261114
 DTEND;VALUE=DATE:20261115
 SUMMARY:Open Data Hackathon (swanbase × Hémicycle) — entries close
 DESCRIPTION:hackathon · no published date\, event start used as a cutoff\n
  One-day hackathon at swanbase's Paris space: build tools on French open da
- ta with AI\, hosted by swanbase & Hémicycle · the Hub now lists entry as
-  WAITLIST — registering late means a waitlist spot · prize details on t
- he organiser page · free
+ ta with AI\, hosted by swanbase & Hémicycle · PRIZE €1\,000 (now shown
+  on the FranceHackathons listing) · free · Hub showed WAITLIST on 11 Nov
+  but the badge is gone from today's listing — status ambiguous\, check t
+ he Luma page before counting on a spot
 URL:https://luma.com/ardao19g
 TRANSP:TRANSPARENT
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:open-data-paris-2026-run@dailyagent
-DTSTAMP:20261111T100151Z
+DTSTAMP:20261112T164046Z
 DTSTART;VALUE=DATE:20261114
 DTEND;VALUE=DATE:20261115
 SUMMARY:Open Data Hackathon (swanbase × Hémicycle) (hackathon)
 DESCRIPTION:One-day hackathon at swanbase's Paris space: build tools on Fre
- nch open data with AI\, hosted by swanbase & Hémicycle · the Hub now lis
- ts entry as WAITLIST — registering late means a waitlist spot · prize d
- etails on the organiser page · free
+ nch open data with AI\, hosted by swanbase & Hémicycle · PRIZE €1\,000
+  (now shown on the FranceHackathons listing) · free · Hub showed WAITLIS
+ T on 11 Nov but the badge is gone from today's listing — status ambiguou
+ s\, check the Luma page before counting on a spot
 URL:https://luma.com/ardao19g
 TRANSP:TRANSPARENT
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:nasa-space-apps-toulouse@dailyagent
-DTSTAMP:20261111T100151Z
+DTSTAMP:20261112T164046Z
 DTSTART;VALUE=DATE:20261114
 DTEND;VALUE=DATE:20261115
 SUMMARY:NASA Space Apps Challenge 2026 (Toulouse site) — entries close
@@ -105,7 +107,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:nasa-space-apps-toulouse-run@dailyagent
-DTSTAMP:20261111T100151Z
+DTSTAMP:20261112T164046Z
 DTSTART;VALUE=DATE:20261114
 DTEND;VALUE=DATE:20261116
 SUMMARY:NASA Space Apps Challenge 2026 (Toulouse site) (hackathon)
@@ -119,7 +121,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:space-apps-besancon-2026@dailyagent
-DTSTAMP:20261111T100151Z
+DTSTAMP:20261112T164046Z
 DTSTART;VALUE=DATE:20261114
 DTEND;VALUE=DATE:20261115
 SUMMARY:NASA Space Apps Challenge 2026 (Besançon site) — entries close
@@ -134,7 +136,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:space-apps-besancon-2026-run@dailyagent
-DTSTAMP:20261111T100151Z
+DTSTAMP:20261112T164046Z
 DTSTART;VALUE=DATE:20261114
 DTEND;VALUE=DATE:20261116
 SUMMARY:NASA Space Apps Challenge 2026 (Besançon site) (hackathon)
@@ -148,7 +150,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:vibenight-2-ai-safety-2026@dailyagent
-DTSTAMP:20261111T100151Z
+DTSTAMP:20261112T164046Z
 DTSTART;VALUE=DATE:20261114
 DTEND;VALUE=DATE:20261115
 SUMMARY:VIBENIGHT #2: Hackathon AI Safety (final) — entries close
@@ -163,7 +165,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:vibenight-2-ai-safety-2026-run@dailyagent
-DTSTAMP:20261111T100151Z
+DTSTAMP:20261112T164046Z
 DTSTART;VALUE=DATE:20261114
 DTEND;VALUE=DATE:20261115
 SUMMARY:VIBENIGHT #2: Hackathon AI Safety (final) (hackathon)
@@ -177,7 +179,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:a51-bioxai-2026@dailyagent
-DTSTAMP:20261111T100151Z
+DTSTAMP:20261112T164046Z
 DTSTART;VALUE=DATE:20261114
 DTEND;VALUE=DATE:20261115
 SUMMARY:InterfaceHack (A51\, RNA–protein binding) — entries close
@@ -194,7 +196,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:a51-bioxai-2026-run@dailyagent
-DTSTAMP:20261111T100151Z
+DTSTAMP:20261112T164046Z
 DTSTART;VALUE=DATE:20261201
 DTEND;VALUE=DATE:20261203
 SUMMARY:InterfaceHack (A51\, RNA–protein binding) (hackathon)
@@ -211,7 +213,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:gdevelop-big-game-jam-10@dailyagent
-DTSTAMP:20261111T100151Z
+DTSTAMP:20261112T164046Z
 DTSTART;VALUE=DATE:20261115
 DTEND;VALUE=DATE:20261116
 SUMMARY:GDevelop BIG Game Jam #10 — entries close
@@ -223,7 +225,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:gdevelop-big-game-jam-10-run@dailyagent
-DTSTAMP:20261111T100151Z
+DTSTAMP:20261112T164046Z
 DTSTART;VALUE=DATE:20261106
 DTEND;VALUE=DATE:20261116
 SUMMARY:GDevelop BIG Game Jam #10 (game jam)
@@ -235,7 +237,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:zoud-gamelab@dailyagent
-DTSTAMP:20261111T100151Z
+DTSTAMP:20261112T164046Z
 DTSTART;VALUE=DATE:20261115
 DTEND;VALUE=DATE:20261116
 SUMMARY:Zoud GameLab × Global Game Jam — entries close
@@ -248,7 +250,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:zoud-gamelab-run@dailyagent
-DTSTAMP:20261111T100151Z
+DTSTAMP:20261112T164046Z
 DTSTART;VALUE=DATE:20261015
 DTEND;VALUE=DATE:20261116
 SUMMARY:Zoud GameLab × Global Game Jam (game jam)
@@ -260,7 +262,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:epic-ai-megajam-2026@dailyagent
-DTSTAMP:20261111T100151Z
+DTSTAMP:20261112T164046Z
 DTSTART;VALUE=DATE:20261115
 DTEND;VALUE=DATE:20261116
 SUMMARY:2026 Epic AI MegaJam — entries close
@@ -274,7 +276,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:epic-ai-megajam-2026-run@dailyagent
-DTSTAMP:20261111T100151Z
+DTSTAMP:20261112T164046Z
 DTSTART;VALUE=DATE:20261112
 DTEND;VALUE=DATE:20261116
 SUMMARY:2026 Epic AI MegaJam (game jam)
@@ -288,7 +290,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:pioneers-stationf-ai-2026@dailyagent
-DTSTAMP:20261111T100151Z
+DTSTAMP:20261112T164046Z
 DTSTART;VALUE=DATE:20261115
 DTEND;VALUE=DATE:20261116
 SUMMARY:Paris AI Hackathon @Station F (Pioneers) — entries close
@@ -304,7 +306,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:pioneers-stationf-ai-2026-run@dailyagent
-DTSTAMP:20261111T100151Z
+DTSTAMP:20261112T164046Z
 DTSTART;VALUE=DATE:20261115
 DTEND;VALUE=DATE:20261116
 SUMMARY:Paris AI Hackathon @Station F (Pioneers) (hackathon)
@@ -319,7 +321,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:zernio-social-gtm-2026@dailyagent
-DTSTAMP:20261111T100151Z
+DTSTAMP:20261112T164046Z
 DTSTART;VALUE=DATE:20261115
 DTEND;VALUE=DATE:20261116
 SUMMARY:Social GTM Agents Hackathon with Zernio — entries close
@@ -336,7 +338,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:zernio-social-gtm-2026-run@dailyagent
-DTSTAMP:20261111T100151Z
+DTSTAMP:20261112T164046Z
 DTSTART;VALUE=DATE:20261115
 DTEND;VALUE=DATE:20261116
 SUMMARY:Social GTM Agents Hackathon with Zernio (hackathon)
@@ -352,7 +354,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:lille-fac-sciences-hackathon-2026@dailyagent
-DTSTAMP:20261111T100151Z
+DTSTAMP:20261112T164046Z
 DTSTART;VALUE=DATE:20261116
 DTEND;VALUE=DATE:20261117
 SUMMARY:Hackathon Faculté des sciences (Univ. Lille) — entries close
@@ -370,7 +372,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:lille-fac-sciences-hackathon-2026-run@dailyagent
-DTSTAMP:20261111T100151Z
+DTSTAMP:20261112T164046Z
 DTSTART;VALUE=DATE:20261116
 DTEND;VALUE=DATE:20261218
 SUMMARY:Hackathon Faculté des sciences (Univ. Lille) (hackathon)
@@ -387,7 +389,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:ugreen-ai-nas-2026@dailyagent
-DTSTAMP:20261111T100151Z
+DTSTAMP:20261112T164046Z
 DTSTART;VALUE=DATE:20261116
 DTEND;VALUE=DATE:20261117
 SUMMARY:UGREEN Hackathon 2026 (AI NAS skills) — entries close
@@ -406,7 +408,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:lovable-hexa-ai-for-work@dailyagent
-DTSTAMP:20261111T100151Z
+DTSTAMP:20261112T164046Z
 DTSTART;VALUE=DATE:20261117
 DTEND;VALUE=DATE:20261118
 SUMMARY:Lovable Hackathon: AI for Work — entries close
@@ -421,7 +423,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:lovable-hexa-ai-for-work-run@dailyagent
-DTSTAMP:20261111T100151Z
+DTSTAMP:20261112T164046Z
 DTSTART;VALUE=DATE:20261117
 DTEND;VALUE=DATE:20261118
 SUMMARY:Lovable Hackathon: AI for Work (hackathon)
@@ -435,7 +437,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:urmrc-2026@dailyagent
-DTSTAMP:20261111T100151Z
+DTSTAMP:20261112T164046Z
 DTSTART;VALUE=DATE:20261117
 DTEND;VALUE=DATE:20261118
 SUMMARY:Upper Rhine Mobile Robotic Challenge (3rd) — entries close
@@ -451,7 +453,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:urmrc-2026-run@dailyagent
-DTSTAMP:20261111T100151Z
+DTSTAMP:20261112T164046Z
 DTSTART;VALUE=DATE:20261117
 DTEND;VALUE=DATE:20261119
 SUMMARY:Upper Rhine Mobile Robotic Challenge (3rd) (competition)
@@ -466,7 +468,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:sorbonne-pepite-villes-2026@dailyagent
-DTSTAMP:20261111T100151Z
+DTSTAMP:20261112T164046Z
 DTSTART;VALUE=DATE:20261119
 DTEND;VALUE=DATE:20261120
 SUMMARY:Hackathon Pépite Sorbonne (Villes durables) — entries close
@@ -483,7 +485,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:sorbonne-pepite-villes-2026-run@dailyagent
-DTSTAMP:20261111T100151Z
+DTSTAMP:20261112T164046Z
 DTSTART;VALUE=DATE:20261119
 DTEND;VALUE=DATE:20261121
 SUMMARY:Hackathon Pépite Sorbonne (Villes durables) (hackathon)
@@ -499,7 +501,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:bioeco-camp-2026@dailyagent
-DTSTAMP:20261111T100151Z
+DTSTAMP:20261112T164046Z
 DTSTART;VALUE=DATE:20261119
 DTEND;VALUE=DATE:20261120
 SUMMARY:Bioeco Camp (Bezannes\, bioeconomy) — entries close
@@ -516,7 +518,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:bioeco-camp-2026-run@dailyagent
-DTSTAMP:20261111T100151Z
+DTSTAMP:20261112T164046Z
 DTSTART;VALUE=DATE:20261120
 DTEND;VALUE=DATE:20261123
 SUMMARY:Bioeco Camp (Bezannes\, bioeconomy) (hackathon)
@@ -532,7 +534,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:hack1robo-5@dailyagent
-DTSTAMP:20261111T100151Z
+DTSTAMP:20261112T164046Z
 DTSTART;VALUE=DATE:20261120
 DTEND;VALUE=DATE:20261121
 SUMMARY:Hack1Robo 5 (Bordeaux) — entries close
@@ -549,7 +551,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:hack1robo-5-run@dailyagent
-DTSTAMP:20261111T100151Z
+DTSTAMP:20261112T164046Z
 DTSTART;VALUE=DATE:20261119
 DTEND;VALUE=DATE:20261123
 SUMMARY:Hack1Robo 5 (Bordeaux) (hackathon)
@@ -565,7 +567,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:sciencespo-ai-hackathon@dailyagent
-DTSTAMP:20261111T100151Z
+DTSTAMP:20261112T164046Z
 DTSTART;VALUE=DATE:20261120
 DTEND;VALUE=DATE:20261121
 SUMMARY:Sciences Po AI Hackathon (2nd edition) — entries close
@@ -581,7 +583,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:sciencespo-ai-hackathon-run@dailyagent
-DTSTAMP:20261111T100151Z
+DTSTAMP:20261112T164046Z
 DTSTART;VALUE=DATE:20261120
 DTEND;VALUE=DATE:20261122
 SUMMARY:Sciences Po AI Hackathon (2nd edition) (hackathon)
@@ -596,7 +598,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:hackathon-across-perpignan@dailyagent
-DTSTAMP:20261111T100151Z
+DTSTAMP:20261112T164046Z
 DTSTART;VALUE=DATE:20261120
 DTEND;VALUE=DATE:20261121
 SUMMARY:Hackathon Across 2026 (Perpignan × Girona) — entries close
@@ -613,7 +615,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:hackathon-across-perpignan-run@dailyagent
-DTSTAMP:20261111T100151Z
+DTSTAMP:20261112T164046Z
 DTSTART;VALUE=DATE:20261120
 DTEND;VALUE=DATE:20261123
 SUMMARY:Hackathon Across 2026 (Perpignan × Girona) (hackathon)
@@ -629,7 +631,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:no-code-tech-for-good-pessac@dailyagent
-DTSTAMP:20261111T100151Z
+DTSTAMP:20261112T164046Z
 DTSTART;VALUE=DATE:20261120
 DTEND;VALUE=DATE:20261121
 SUMMARY:No-Code Hackathon Speedrun (Tech for Good) — entries close
@@ -645,7 +647,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:no-code-tech-for-good-pessac-run@dailyagent
-DTSTAMP:20261111T100151Z
+DTSTAMP:20261112T164046Z
 DTSTART;VALUE=DATE:20261120
 DTEND;VALUE=DATE:20261121
 SUMMARY:No-Code Hackathon Speedrun (Tech for Good) (hackathon)
@@ -660,7 +662,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:buildathon-lovable-toulouse@dailyagent
-DTSTAMP:20261111T100151Z
+DTSTAMP:20261112T164046Z
 DTSTART;VALUE=DATE:20261121
 DTEND;VALUE=DATE:20261122
 SUMMARY:Buildathon Lovable Toulouse (AI Builders) — entries close
@@ -676,7 +678,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:buildathon-lovable-toulouse-run@dailyagent
-DTSTAMP:20261111T100151Z
+DTSTAMP:20261112T164046Z
 DTSTART;VALUE=DATE:20261121
 DTEND;VALUE=DATE:20261122
 SUMMARY:Buildathon Lovable Toulouse (AI Builders) (hackathon)
@@ -691,7 +693,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:alan-ai-health-2-2026@dailyagent
-DTSTAMP:20261111T100151Z
+DTSTAMP:20261112T164046Z
 DTSTART;VALUE=DATE:20261121
 DTEND;VALUE=DATE:20261122
 SUMMARY:Alan × Qovery × AWS: AI Health Hack 2 — entries close
@@ -706,7 +708,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:hussar-campus-cyber-2026@dailyagent
-DTSTAMP:20261111T100151Z
+DTSTAMP:20261112T164046Z
 DTSTART;VALUE=DATE:20261123
 DTEND;VALUE=DATE:20261124
 SUMMARY:Hussar Academy Hackathon (Campus Cyber) — entries close
@@ -722,7 +724,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:hussar-campus-cyber-2026-run@dailyagent
-DTSTAMP:20261111T100151Z
+DTSTAMP:20261112T164046Z
 DTSTART;VALUE=DATE:20261123
 DTEND;VALUE=DATE:20261125
 SUMMARY:Hussar Academy Hackathon (Campus Cyber) (hackathon)
@@ -737,7 +739,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:game-jam-europe-24h@dailyagent
-DTSTAMP:20261111T100151Z
+DTSTAMP:20261112T164046Z
 DTSTART;VALUE=DATE:20261124
 DTEND;VALUE=DATE:20261125
 SUMMARY:Game Jam Europe (€200 cash\, 24 h) — entries close
@@ -751,7 +753,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:game-jam-europe-24h-run@dailyagent
-DTSTAMP:20261111T100151Z
+DTSTAMP:20261112T164046Z
 DTSTART;VALUE=DATE:20261124
 DTEND;VALUE=DATE:20261126
 SUMMARY:Game Jam Europe (€200 cash\, 24 h) (game jam)
@@ -764,7 +766,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:conflits-interet-sante-bordeaux-2026@dailyagent
-DTSTAMP:20261111T100151Z
+DTSTAMP:20261112T164046Z
 DTSTART;VALUE=DATE:20261124
 DTEND;VALUE=DATE:20261125
 SUMMARY:Hackathon conflits d'intérêt dans la santé (Bordeaux) — entrie
@@ -780,7 +782,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:conflits-interet-sante-bordeaux-2026-run@dailyagent
-DTSTAMP:20261111T100151Z
+DTSTAMP:20261112T164046Z
 DTSTART;VALUE=DATE:20261124
 DTEND;VALUE=DATE:20261125
 SUMMARY:Hackathon conflits d'intérêt dans la santé (Bordeaux) (hackathon
@@ -795,7 +797,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:avent-jam-2026@dailyagent
-DTSTAMP:20261111T100151Z
+DTSTAMP:20261112T164046Z
 DTSTART;VALUE=DATE:20261125
 DTEND;VALUE=DATE:20261126
 SUMMARY:La Game Jam de l'Avent 2026 (3rd edition) — entries close
@@ -811,7 +813,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:avent-jam-2026-run@dailyagent
-DTSTAMP:20261111T100151Z
+DTSTAMP:20261112T164046Z
 DTSTART;VALUE=DATE:20261031
 DTEND;VALUE=DATE:20261126
 SUMMARY:La Game Jam de l'Avent 2026 (3rd edition) (game jam)
@@ -827,7 +829,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:amiga-tools-jam-2026@dailyagent
-DTSTAMP:20261111T100151Z
+DTSTAMP:20261112T164046Z
 DTSTART;VALUE=DATE:20261126
 DTEND;VALUE=DATE:20261127
 SUMMARY:Amiga Tools Jam 2026 — entries close
@@ -840,7 +842,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:hickathon-2026@dailyagent
-DTSTAMP:20261111T100151Z
+DTSTAMP:20261112T164046Z
 DTSTART;VALUE=DATE:20261127
 DTEND;VALUE=DATE:20261128
 SUMMARY:Hi!ckathon 2026 (Hi! PARIS) — entries close
@@ -859,7 +861,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:hickathon-2026-run@dailyagent
-DTSTAMP:20261111T100151Z
+DTSTAMP:20261112T164046Z
 DTSTART;VALUE=DATE:20261127
 DTEND;VALUE=DATE:20261201
 SUMMARY:Hi!ckathon 2026 (Hi! PARIS) (hackathon)
@@ -877,7 +879,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:dev3pack-global-2026@dailyagent
-DTSTAMP:20261111T100151Z
+DTSTAMP:20261112T164046Z
 DTSTART;VALUE=DATE:20261127
 DTEND;VALUE=DATE:20261128
 SUMMARY:Dev3pack Global Hackathon (Solana) — entries close
@@ -893,7 +895,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:dev3pack-global-2026-run@dailyagent
-DTSTAMP:20261111T100151Z
+DTSTAMP:20261112T164046Z
 DTSTART;VALUE=DATE:20261127
 DTEND;VALUE=DATE:20261130
 SUMMARY:Dev3pack Global Hackathon (Solana) (hackathon)
@@ -907,8 +909,25 @@ TRANSP:TRANSPARENT
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
+UID:kaspa-ai-epita-2026@dailyagent
+DTSTAMP:20261112T164046Z
+DTSTART;VALUE=DATE:20261128
+DTEND;VALUE=DATE:20261129
+SUMMARY:Build AI on KASPA (GDG EPITA × GDG ESIEA) — entries close
+DESCRIPTION:hackathon · no published date\, event start used as a cutoff\n
+ One-day hackathon\, Saturday 28 Nov 9:00–18:00\, at EPITA (14-16 rue Vol
+ taire\, Le Kremlin-Bicêtre) · theme Finance × AI: build a project combi
+ ning AI and the Kaspa blockchain\, applied to finance · organised by GDG 
+ EPITA & GDG ESIEA with the support of Kaspa and Google · over €1\,000 c
+ ash prizes · free · registration open on Luma ("request to join") · no 
+ close date published\, deadline = event start (est)
+URL:https://luma.com/8dl5fglx
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
 UID:micro-jam-070@dailyagent
-DTSTAMP:20261111T100151Z
+DTSTAMP:20261112T164046Z
 DTSTART;VALUE=DATE:20261129
 DTEND;VALUE=DATE:20261130
 SUMMARY:Micro Jam 070: Circus — entries close
@@ -921,7 +940,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:micro-jam-070-run@dailyagent
-DTSTAMP:20261111T100151Z
+DTSTAMP:20261112T164046Z
 DTSTART;VALUE=DATE:20261127
 DTEND;VALUE=DATE:20261130
 SUMMARY:Micro Jam 070: Circus (game jam)
@@ -934,7 +953,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:epitech-game-jam-2026@dailyagent
-DTSTAMP:20261111T100151Z
+DTSTAMP:20261112T164046Z
 DTSTART;VALUE=DATE:20261129
 DTEND;VALUE=DATE:20261130
 SUMMARY:Epitech Game Jam (itch) — entries close
@@ -949,7 +968,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:epitech-game-jam-2026-run@dailyagent
-DTSTAMP:20261111T100151Z
+DTSTAMP:20261112T164046Z
 DTSTART;VALUE=DATE:20261127
 DTEND;VALUE=DATE:20261130
 SUMMARY:Epitech Game Jam (itch) (game jam)
@@ -962,8 +981,22 @@ TRANSP:TRANSPARENT
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
+UID:ps1-aesthetic-jam-2026@dailyagent
+DTSTAMP:20261112T164046Z
+DTSTART;VALUE=DATE:20261129
+DTEND;VALUE=DATE:20261130
+SUMMARY:PS1 Aesthetic Game Jam ($1k\, Bashtv) — entries close
+DESCRIPTION:game jam\nMake a game with the PlayStation-1 look (low-poly\, w
+ obble\, CRT) · $1\,000 cash: $500 / $300 / $200\, paid via Tremendous · 
+ submissions close 28 Nov 11:59 PM PT = 29 Nov French time\, published · p
+ ublic voting 29 Nov onward · open on itch to all
+URL:https://itch.io/jam/ps1-aesthetic-game-jam-bashtv
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
 UID:indie-park-jam-6@dailyagent
-DTSTAMP:20261111T100151Z
+DTSTAMP:20261112T164046Z
 DTSTART;VALUE=DATE:20261130
 DTEND;VALUE=DATE:20261201
 SUMMARY:Indie Park Game Jam #6 (€100) — entries close
@@ -976,7 +1009,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:indie-park-jam-6-run@dailyagent
-DTSTAMP:20261111T100151Z
+DTSTAMP:20261112T164046Z
 DTSTART;VALUE=DATE:20261101
 DTEND;VALUE=DATE:20261201
 SUMMARY:Indie Park Game Jam #6 (€100) (game jam)
@@ -989,7 +1022,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:slapjam-3-2026@dailyagent
-DTSTAMP:20261111T100151Z
+DTSTAMP:20261112T164046Z
 DTSTART;VALUE=DATE:20261130
 DTEND;VALUE=DATE:20261201
 SUMMARY:Slapjam #3 (mobile-portrait + AI tools) — entries close
@@ -1004,7 +1037,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:slapjam-3-2026-run@dailyagent
-DTSTAMP:20261111T100151Z
+DTSTAMP:20261112T164046Z
 DTSTART;VALUE=DATE:20261128
 DTEND;VALUE=DATE:20261201
 SUMMARY:Slapjam #3 (mobile-portrait + AI tools) (game jam)
@@ -1019,7 +1052,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:game-off-2026@dailyagent
-DTSTAMP:20261111T100151Z
+DTSTAMP:20261112T164046Z
 DTSTART;VALUE=DATE:20261201
 DTEND;VALUE=DATE:20261202
 SUMMARY:GitHub Game Off 2026 — entries close
@@ -1032,7 +1065,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:game-off-2026-run@dailyagent
-DTSTAMP:20261111T100151Z
+DTSTAMP:20261112T164046Z
 DTSTART;VALUE=DATE:20261101
 DTEND;VALUE=DATE:20261202
 SUMMARY:GitHub Game Off 2026 (game jam)
@@ -1045,7 +1078,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:nuit-de-linfo-2026@dailyagent
-DTSTAMP:20261111T100151Z
+DTSTAMP:20261112T164046Z
 DTSTART;VALUE=DATE:20261201
 DTEND;VALUE=DATE:20261202
 SUMMARY:Nuit de l'Info 2026 (20th edition) — entries close
@@ -1060,7 +1093,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:nuit-de-linfo-2026-run@dailyagent
-DTSTAMP:20261111T100151Z
+DTSTAMP:20261112T164046Z
 DTSTART;VALUE=DATE:20261203
 DTEND;VALUE=DATE:20261205
 SUMMARY:Nuit de l'Info 2026 (20th edition) (competition)
@@ -1074,7 +1107,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:ggj-2027-france@dailyagent
-DTSTAMP:20261111T100151Z
+DTSTAMP:20261112T164046Z
 DTSTART;VALUE=DATE:20261201
 DTEND;VALUE=DATE:20261202
 SUMMARY:Global Game Jam 2027 (France sites) — entries close
@@ -1090,7 +1123,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:ggj-2027-france-run@dailyagent
-DTSTAMP:20261111T100151Z
+DTSTAMP:20261112T164046Z
 DTSTART;VALUE=DATE:20270125
 DTEND;VALUE=DATE:20270201
 SUMMARY:Global Game Jam 2027 (France sites) (game jam)
@@ -1105,7 +1138,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:bezi-jam-15-2026@dailyagent
-DTSTAMP:20261111T100151Z
+DTSTAMP:20261112T164046Z
 DTSTART;VALUE=DATE:20261201
 DTEND;VALUE=DATE:20261202
 SUMMARY:Bezi Jam 15 ($400+\, Unreal angle) — entries close
@@ -1120,7 +1153,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:bezi-jam-15-2026-run@dailyagent
-DTSTAMP:20261111T100151Z
+DTSTAMP:20261112T164046Z
 DTSTART;VALUE=DATE:20261127
 DTEND;VALUE=DATE:20261202
 SUMMARY:Bezi Jam 15 ($400+\, Unreal angle) (game jam)
@@ -1135,7 +1168,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:hackathon-quantique-defense@dailyagent
-DTSTAMP:20261111T100151Z
+DTSTAMP:20261112T164046Z
 DTSTART;VALUE=DATE:20261202
 DTEND;VALUE=DATE:20261203
 SUMMARY:Hackathon Quantique Défense (AID × Artefact) — entries close
@@ -1151,7 +1184,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:hackathon-quantique-defense-run@dailyagent
-DTSTAMP:20261111T100151Z
+DTSTAMP:20261112T164046Z
 DTSTART;VALUE=DATE:20261202
 DTEND;VALUE=DATE:20261205
 SUMMARY:Hackathon Quantique Défense (AID × Artefact) (hackathon)
@@ -1166,17 +1199,22 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:hackathon-robotique-defense@dailyagent
-DTSTAMP:20261111T100151Z
+DTSTAMP:20261112T164046Z
 DTSTART;VALUE=DATE:20261202
 DTEND;VALUE=DATE:20261203
 SUMMARY:Humanoid Defense Robot Hackathon (AID × Artefact) — entries clos
  e
 DESCRIPTION:hackathon · no published date\, event start used as a cutoff\n
- Grand Palais\, Paris · humanoid robots for defence\, two tracks (navigati
- on & mobility\, manipulation & logistics · €3\,000 each\, €6\,000 tot
- al) · teams 4–8 (page also says 6–8 — inconsistent) · registration
-  open since September\, selected teams announced in October — no entry c
- lose date published\, event start is the cutoff
+ Grand Palais\, Paris\, 2–4 Dec\, on the Adopt AI stage with the Defence 
+ Innovation Agency (Ministère des Armées) · two tracks: Navigation & Mob
+ ility in Hostile Terrain (SLAM\, perception) and Precision Handling & Logi
+ stics (manipulation\, sorting\, robotic logistics) · ~100 participants\, 
+ teams of 6–8\, 6 challenges · calendar per Agorize: sign-up since Septe
+ mber → selected teams announced October → November pre-event technical
+  coaching on the simulation software (best code earns a test on a real rob
+ ot) · Agorize STILL SAYS registration open\, but the October selection st
+ ep makes that doubtful — apply fast if interested · est deadline = even
+ t start
 URL:https://hackathons-artefactadoptai.agorize.com/en/challenges/hackathon-
  robotique-defense1
 TRANSP:TRANSPARENT
@@ -1184,15 +1222,20 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:hackathon-robotique-defense-run@dailyagent
-DTSTAMP:20261111T100151Z
+DTSTAMP:20261112T164046Z
 DTSTART;VALUE=DATE:20261202
 DTEND;VALUE=DATE:20261205
 SUMMARY:Humanoid Defense Robot Hackathon (AID × Artefact) (hackathon)
-DESCRIPTION:Grand Palais\, Paris · humanoid robots for defence\, two track
- s (navigation & mobility\, manipulation & logistics · €3\,000 each\, 
- €6\,000 total) · teams 4–8 (page also says 6–8 — inconsistent) ·
-  registration open since September\, selected teams announced in October 
- — no entry close date published\, event start is the cutoff
+DESCRIPTION:Grand Palais\, Paris\, 2–4 Dec\, on the Adopt AI stage with t
+ he Defence Innovation Agency (Ministère des Armées) · two tracks: Navig
+ ation & Mobility in Hostile Terrain (SLAM\, perception) and Precision Hand
+ ling & Logistics (manipulation\, sorting\, robotic logistics) · ~100 part
+ icipants\, teams of 6–8\, 6 challenges · calendar per Agorize: sign-up 
+ since September → selected teams announced October → November pre-even
+ t technical coaching on the simulation software (best code earns a test on
+  a real robot) · Agorize STILL SAYS registration open\, but the October s
+ election step makes that doubtful — apply fast if interested · est dead
+ line = event start
 URL:https://hackathons-artefactadoptai.agorize.com/en/challenges/hackathon-
  robotique-defense1
 TRANSP:TRANSPARENT
@@ -1200,7 +1243,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:disinformation-adopai-2026@dailyagent
-DTSTAMP:20261111T100151Z
+DTSTAMP:20261112T164046Z
 DTSTART;VALUE=DATE:20261202
 DTEND;VALUE=DATE:20261203
 SUMMARY:Disinformation & Democratic Sovereignty Hackathon (Adopt AI) — en
@@ -1219,7 +1262,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:disinformation-adopai-2026-run@dailyagent
-DTSTAMP:20261111T100151Z
+DTSTAMP:20261112T164046Z
 DTSTART;VALUE=DATE:20261202
 DTEND;VALUE=DATE:20261205
 SUMMARY:Disinformation & Democratic Sovereignty Hackathon (Adopt AI) (hacka
@@ -1236,8 +1279,44 @@ TRANSP:TRANSPARENT
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
+UID:ia-sante-toulouse-2026@dailyagent
+DTSTAMP:20261112T164046Z
+DTSTART;VALUE=DATE:20261203
+DTEND;VALUE=DATE:20261204
+SUMMARY:Hackathon IA en Santé (La Mêlée × TSN) — entries close
+DESCRIPTION:hackathon\nHealth-AI hackathon at Clinique Pasteur\, Toulouse\,
+  co-organised by La Mêlée and the Toulouse Santé Numérique consortium 
+ (CHU Toulouse\, Clinique Pasteur/Clinavenir\, ASEI)\, under France 2030 ·
+  two real challenges set by health professionals · open to tech professio
+ nals\, engineering and AI students\, researchers\, clinicians · teams for
+ med on site from individual sign-ups · prizes incl. Grand Prix du Jury an
+ d Prix Coup de Cœur (no cash amount stated) · free · registration limit
+  PUBLISHED: 3 Dec · French
+URL:https://lamelee.com/evenement/hackathon-ia-en-sante/
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:ia-sante-toulouse-2026-run@dailyagent
+DTSTAMP:20261112T164046Z
+DTSTART;VALUE=DATE:20261203
+DTEND;VALUE=DATE:20261205
+SUMMARY:Hackathon IA en Santé (La Mêlée × TSN) (hackathon)
+DESCRIPTION:Health-AI hackathon at Clinique Pasteur\, Toulouse\, co-organis
+ ed by La Mêlée and the Toulouse Santé Numérique consortium (CHU Toulou
+ se\, Clinique Pasteur/Clinavenir\, ASEI)\, under France 2030 · two real c
+ hallenges set by health professionals · open to tech professionals\, engi
+ neering and AI students\, researchers\, clinicians · teams formed on site
+  from individual sign-ups · prizes incl. Grand Prix du Jury and Prix Coup
+  de Cœur (no cash amount stated) · free · registration limit PUBLISHED:
+  3 Dec · French
+URL:https://lamelee.com/evenement/hackathon-ia-en-sante/
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
 UID:pixel-forge-mega-jam@dailyagent
-DTSTAMP:20261111T100151Z
+DTSTAMP:20261112T164046Z
 DTSTART;VALUE=DATE:20261208
 DTEND;VALUE=DATE:20261209
 SUMMARY:Pixel Forge MEGA JAM — entries close
@@ -1253,7 +1332,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:wfeo-wed-hackathon-2027@dailyagent
-DTSTAMP:20261111T100151Z
+DTSTAMP:20261112T164046Z
 DTSTART;VALUE=DATE:20261212
 DTEND;VALUE=DATE:20261213
 SUMMARY:World Engineering Day Hackathon 2027 (WFEO) — entries close
@@ -1268,7 +1347,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:wfeo-wed-hackathon-2027-run@dailyagent
-DTSTAMP:20261111T100151Z
+DTSTAMP:20261112T164046Z
 DTSTART;VALUE=DATE:20261120
 DTEND;VALUE=DATE:20261213
 SUMMARY:World Engineering Day Hackathon 2027 (WFEO) (competition)
@@ -1283,7 +1362,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:uplifting-game-jam-10@dailyagent
-DTSTAMP:20261111T100151Z
+DTSTAMP:20261112T164046Z
 DTSTART;VALUE=DATE:20261214
 DTEND;VALUE=DATE:20261215
 SUMMARY:Uplifting Game Jam — entries close
@@ -1295,7 +1374,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:uplifting-game-jam-10-run@dailyagent
-DTSTAMP:20261111T100151Z
+DTSTAMP:20261112T164046Z
 DTSTART;VALUE=DATE:20261201
 DTEND;VALUE=DATE:20261215
 SUMMARY:Uplifting Game Jam (game jam)
@@ -1306,7 +1385,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:micro-jam-071@dailyagent
-DTSTAMP:20261111T100151Z
+DTSTAMP:20261112T164046Z
 DTSTART;VALUE=DATE:20261214
 DTEND;VALUE=DATE:20261215
 SUMMARY:Micro Jam 071: Coffee — entries close
@@ -1320,7 +1399,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:micro-jam-071-run@dailyagent
-DTSTAMP:20261111T100151Z
+DTSTAMP:20261112T164046Z
 DTSTART;VALUE=DATE:20261212
 DTEND;VALUE=DATE:20261215
 SUMMARY:Micro Jam 071: Coffee (game jam)
@@ -1334,7 +1413,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:physical-ai-amje@dailyagent
-DTSTAMP:20261111T100151Z
+DTSTAMP:20261112T164046Z
 DTSTART;VALUE=DATE:20261231
 DTEND;VALUE=DATE:20270101
 SUMMARY:Hackathon Physical AI (AMJE / Arts et Métiers) — entries close
@@ -1354,7 +1433,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:ieee-ies-genai-2027@dailyagent
-DTSTAMP:20261111T100151Z
+DTSTAMP:20261112T164046Z
 DTSTART;VALUE=DATE:20261231
 DTEND;VALUE=DATE:20270101
 SUMMARY:IEEE IES Generative AI Challenge 2027 — entries close
@@ -1368,7 +1447,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:cdfr-2027@dailyagent
-DTSTAMP:20261111T100151Z
+DTSTAMP:20261112T164046Z
 DTSTART;VALUE=DATE:20261231
 DTEND;VALUE=DATE:20270101
 SUMMARY:Coupe de France de Robotique 2027 — entries close
@@ -1384,7 +1463,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:cdfr-2027-run@dailyagent
-DTSTAMP:20261111T100151Z
+DTSTAMP:20261112T164046Z
 DTSTART;VALUE=DATE:20270505
 DTEND;VALUE=DATE:20270509
 SUMMARY:Coupe de France de Robotique 2027 (competition)
@@ -1400,7 +1479,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:hacktelier-hetic-2027@dailyagent
-DTSTAMP:20261111T100151Z
+DTSTAMP:20261112T164046Z
 DTSTART;VALUE=DATE:20270216
 DTEND;VALUE=DATE:20270217
 SUMMARY:Hacktelier (HETIC\, 3 days idea→project) — entries close
@@ -1415,7 +1494,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:hacktelier-hetic-2027-run@dailyagent
-DTSTAMP:20261111T100151Z
+DTSTAMP:20261112T164046Z
 DTSTART;VALUE=DATE:20270216
 DTEND;VALUE=DATE:20270219
 SUMMARY:Hacktelier (HETIC\, 3 days idea→project) (hackathon)
@@ -1429,7 +1508,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:grand-challenge-ecoles-2027@dailyagent
-DTSTAMP:20261111T100151Z
+DTSTAMP:20261112T164046Z
 DTSTART;VALUE=DATE:20270315
 DTEND;VALUE=DATE:20270316
 SUMMARY:Grand Challenge des Écoles d'Ingénieurs (L'Usine Nouvelle) — en
@@ -1448,7 +1527,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:biotech-hackathon-2027@dailyagent
-DTSTAMP:20261111T100151Z
+DTSTAMP:20261112T164046Z
 DTSTART;VALUE=DATE:20270318
 DTEND;VALUE=DATE:20270319
 SUMMARY:Biotech Hackathon 2027 (Alliance Biotech\, 5th edition) — entries
@@ -1469,7 +1548,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:biotech-hackathon-2027-run@dailyagent
-DTSTAMP:20261111T100151Z
+DTSTAMP:20261112T164046Z
 DTSTART;VALUE=DATE:20270318
 DTEND;VALUE=DATE:20270321
 SUMMARY:Biotech Hackathon 2027 (Alliance Biotech\, 5th edition) (hackathon)
@@ -1488,7 +1567,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:hacking-health-camp-2027@dailyagent
-DTSTAMP:20261111T100151Z
+DTSTAMP:20261112T164046Z
 DTSTART;VALUE=DATE:20270320
 DTEND;VALUE=DATE:20270321
 SUMMARY:Hacking Health Camp 2027 (Strasbourg) — entries close
@@ -1503,7 +1582,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:hacking-health-camp-2027-run@dailyagent
-DTSTAMP:20261111T100151Z
+DTSTAMP:20261112T164046Z
 DTSTART;VALUE=DATE:20270320
 DTEND;VALUE=DATE:20270323
 SUMMARY:Hacking Health Camp 2027 (Strasbourg) (hackathon)

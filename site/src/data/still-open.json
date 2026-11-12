@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-11",
+  "updated": "2026-11-12",
   "items": [
     {
       "id": "lovable-hexa-ai-for-work",
@@ -34,7 +34,7 @@
       "deadlineEstimated": true,
       "start": "2026-12-02",
       "end": "2026-12-04",
-      "note": "Grand Palais, Paris · humanoid robots for defence, two tracks (navigation & mobility, manipulation & logistics · €3,000 each, €6,000 total) · teams 4–8 (page also says 6–8 — inconsistent) · registration open since September, selected teams announced in October — no entry close date published, event start is the cutoff",
+      "note": "Grand Palais, Paris, 2–4 Dec, on the Adopt AI stage with the Defence Innovation Agency (Ministère des Armées) · two tracks: Navigation & Mobility in Hostile Terrain (SLAM, perception) and Precision Handling & Logistics (manipulation, sorting, robotic logistics) · ~100 participants, teams of 6–8, 6 challenges · calendar per Agorize: sign-up since September → selected teams announced October → November pre-event technical coaching on the simulation software (best code earns a test on a real robot) · Agorize STILL SAYS registration open, but the October selection step makes that doubtful — apply fast if interested · est deadline = event start",
       "added": "2026-10-30"
     },
     {
@@ -272,7 +272,7 @@
       "deadlineEstimated": true,
       "start": "2026-11-14",
       "end": "2026-11-14",
-      "note": "One-day hackathon at swanbase's Paris space: build tools on French open data with AI, hosted by swanbase & Hémicycle · the Hub now lists entry as WAITLIST — registering late means a waitlist spot · prize details on the organiser page · free",
+      "note": "One-day hackathon at swanbase's Paris space: build tools on French open data with AI, hosted by swanbase & Hémicycle · PRIZE €1,000 (now shown on the FranceHackathons listing) · free · Hub showed WAITLIST on 11 Nov but the badge is gone from today's listing — status ambiguous, check the Luma page before counting on a spot",
       "added": "2026-11-02"
     },
     {
@@ -607,6 +607,37 @@
       "end": "2026-12-01",
       "note": "4-day jam celebrating Bezi's Unreal Engine integration · $400+ cash: Best in Show $150/$100/$50 (community vote → Bezi judging) plus Best Devlog and Best Fan Art tracks · theme in two halves, revealed 26 Nov on Discord / 27 Nov public · submissions close 30 Nov 23:59 PST = 1 Dec French time · Bezi Jam's last of 2026",
       "added": "2026-11-11"
+    },
+    {
+      "id": "ia-sante-toulouse-2026",
+      "name": "Hackathon IA en Santé (La Mêlée × TSN)",
+      "type": "hackathon",
+      "url": "https://lamelee.com/evenement/hackathon-ia-en-sante/",
+      "deadline": "2026-12-03",
+      "start": "2026-12-03",
+      "end": "2026-12-04",
+      "note": "Health-AI hackathon at Clinique Pasteur, Toulouse, co-organised by La Mêlée and the Toulouse Santé Numérique consortium (CHU Toulouse, Clinique Pasteur/Clinavenir, ASEI), under France 2030 · two real challenges set by health professionals · open to tech professionals, engineering and AI students, researchers, clinicians · teams formed on site from individual sign-ups · prizes incl. Grand Prix du Jury and Prix Coup de Cœur (no cash amount stated) · free · registration limit PUBLISHED: 3 Dec · French",
+      "added": "2026-11-12"
+    },
+    {
+      "id": "kaspa-ai-epita-2026",
+      "name": "Build AI on KASPA (GDG EPITA × GDG ESIEA)",
+      "type": "hackathon",
+      "url": "https://luma.com/8dl5fglx",
+      "deadline": "2026-11-28",
+      "deadlineEstimated": true,
+      "start": "2026-11-28",
+      "note": "One-day hackathon, Saturday 28 Nov 9:00–18:00, at EPITA (14-16 rue Voltaire, Le Kremlin-Bicêtre) · theme Finance × AI: build a project combining AI and the Kaspa blockchain, applied to finance · organised by GDG EPITA & GDG ESIEA with the support of Kaspa and Google · over €1,000 cash prizes · free · registration open on Luma (\"request to join\") · no close date published, deadline = event start (est)",
+      "added": "2026-11-12"
+    },
+    {
+      "id": "ps1-aesthetic-jam-2026",
+      "name": "PS1 Aesthetic Game Jam ($1k, Bashtv)",
+      "type": "jam",
+      "url": "https://itch.io/jam/ps1-aesthetic-game-jam-bashtv",
+      "deadline": "2026-11-29",
+      "note": "Make a game with the PlayStation-1 look (low-poly, wobble, CRT) · $1,000 cash: $500 / $300 / $200, paid via Tremendous · submissions close 28 Nov 11:59 PM PT = 29 Nov French time, published · public voting 29 Nov onward · open on itch to all",
+      "added": "2026-11-12"
     }
   ]
 }

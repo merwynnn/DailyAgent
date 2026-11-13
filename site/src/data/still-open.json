@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-12",
+  "updated": "2026-11-13",
   "items": [
     {
       "id": "lovable-hexa-ai-for-work",
@@ -12,18 +12,6 @@
       "end": "2026-11-17",
       "note": "Hexa Paris · free evening build session 18:30–22:00, apéro included · squads or solo · prizes for the best three unstated, Lovable credits for all · registration via the Lovable events hub · Hub NOW LISTS WAITLIST — late registration lands on the waitlist",
       "added": "2026-10-30"
-    },
-    {
-      "id": "hackathon-quantique-defense",
-      "name": "Hackathon Quantique Défense (AID × Artefact)",
-      "type": "hackathon",
-      "url": "https://hackathons-artefactadoptai.agorize.com/fr/challenges/hackathon-quantique-defense",
-      "deadline": "2026-12-02",
-      "deadlineEstimated": true,
-      "start": "2026-12-02",
-      "end": "2026-12-04",
-      "note": "Grand Palais, Paris · teams 4–8 · €12,000 (4× €3,000 service challenges) · AID announced a registration extension on 30 Oct; the new close date is not visible on the page, so the event start is the conservative cutoff — confirm on the Agorize page before relying on it",
-      "added": "2026-10-23"
     },
     {
       "id": "hackathon-robotique-defense",
@@ -400,7 +388,7 @@
       "deadlineEstimated": true,
       "start": "2026-12-02",
       "end": "2026-12-04",
-      "note": "Third Adopt AI defense hackathon at the Grand Palais, Paris · 3 days fighting disinformation with AI, \"100 experts\" alongside students · also relayed by Sciences Po Lyon as their partner event · registration runs on Agorize like the humanoid and quantum siblings, whose inscriptions were officially prolonged, and no close date is published · est deadline = event start",
+      "note": "Grand Palais Paris, 2–4 Dec, on the Adopt AI stage (Artefact / Présidence de la République) · 3-day student AI hackathon: build tools that detect and counter disinformation and influence campaigns · PRIZE €12,000 total — 4 challenges × €3,000 · registration on Agorize, still open · est deadline = event start · relays: Sciences Po Lyon partner",
       "added": "2026-11-05"
     },
     {

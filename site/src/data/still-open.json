@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-14",
+  "updated": "2026-11-15",
   "items": [
     {
       "id": "lovable-hexa-ai-for-work",
@@ -136,18 +136,6 @@
       "added": "2026-11-01"
     },
     {
-      "id": "nasa-space-apps-paris",
-      "name": "NASA Space Apps Challenge 2026 (Paris site)",
-      "type": "hackathon",
-      "url": "https://www.spaceappschallenge.org/2026/local-events/paris/",
-      "deadline": "2026-11-14",
-      "deadlineEstimated": true,
-      "start": "2026-11-14",
-      "end": "2026-11-15",
-      "note": "Global 48 h space-data hackathon, dates announced for 14–15 Nov · Paris local site; Toulouse and Besançon run the same dates · free, registration already open · no cash — global recognition pipeline",
-      "added": "2026-11-01"
-    },
-    {
       "id": "sciencespo-ai-hackathon",
       "name": "Sciences Po AI Hackathon (2nd edition)",
       "type": "hackathon",
@@ -236,30 +224,6 @@
       "start": "2026-11-12",
       "end": "2026-11-15",
       "note": "$65,000 in cash plus development-continuation grants up to $50,000 per team · Unreal Engine or UEFN · teams of up to 4 humans with unlimited AI agents allowed · four days, worldwide online · judged results stream later in December",
-      "added": "2026-11-02"
-    },
-    {
-      "id": "open-data-paris-2026",
-      "name": "Open Data Hackathon (swanbase × Hémicycle)",
-      "type": "hackathon",
-      "url": "https://luma.com/ardao19g",
-      "deadline": "2026-11-14",
-      "deadlineEstimated": true,
-      "start": "2026-11-14",
-      "end": "2026-11-14",
-      "note": "One-day hackathon at swanbase's Paris space: build tools on French open data with AI, hosted by swanbase & Hémicycle · PRIZE €1,000 (now shown on the FranceHackathons listing) · free · Hub showed WAITLIST on 11 Nov but the badge is gone from today's listing — status ambiguous, check the Luma page before counting on a spot",
-      "added": "2026-11-02"
-    },
-    {
-      "id": "nasa-space-apps-toulouse",
-      "name": "NASA Space Apps Challenge 2026 (Toulouse site)",
-      "type": "hackathon",
-      "url": "https://hackathonhub.eu/events/nasa-space-apps-challenge-toulouse-2026-toulouse-2026",
-      "deadline": "2026-11-14",
-      "deadlineEstimated": true,
-      "start": "2026-11-14",
-      "end": "2026-11-15",
-      "note": "Second edition hosted in Toulouse, billed as Europe's aerospace capital · free, registration open · same global rules and dates as the Paris site · no cash — global recognition pipeline",
       "added": "2026-11-02"
     },
     {
@@ -379,18 +343,6 @@
       "added": "2026-11-05"
     },
     {
-      "id": "space-apps-besancon-2026",
-      "name": "NASA Space Apps Challenge 2026 (Besançon site)",
-      "type": "hackathon",
-      "url": "https://www.spaceappschallenge.org/nasa-space-apps-2026/local-events/besancon/",
-      "deadline": "2026-11-14",
-      "deadlineEstimated": true,
-      "start": "2026-11-14",
-      "end": "2026-11-15",
-      "note": "Third French site for the global 48-h NASA Space Apps weekend, run by ASTRA FC · free registration, still open locally per the Hub listing, global entry is by the day of the event · hybrid",
-      "added": "2026-11-05"
-    },
-    {
       "id": "pioneers-stationf-ai-2026",
       "name": "Paris AI Hackathon @Station F (Pioneers)",
       "type": "hackathon",
@@ -400,29 +352,6 @@
       "start": "2026-11-15",
       "end": "2026-11-15",
       "note": "One-day challenge at Station F, Paris, from 18:00 — build a fully AI-run startup with agents handling operations, research and growth · €10,000 prize pool including Ray-Ban Meta glasses, AirPods and partner credits · hosted by Pioneers AI Lab / AI Tinkerers · registration on Luma, no close date published · est deadline = event day",
-      "added": "2026-11-05"
-    },
-    {
-      "id": "vibenight-2-ai-safety-2026",
-      "name": "VIBENIGHT #2: Hackathon AI Safety (final)",
-      "type": "hackathon",
-      "url": "https://francehackathons.com/en/ai-hackathons",
-      "deadline": "2026-11-14",
-      "deadlineEstimated": true,
-      "start": "2026-11-14",
-      "end": "2026-11-14",
-      "note": "AI-safety hackathon in Paris, series final, organised by TheScorton · free entry · day matches the Space Apps weekend · details via the francehackathons directory, organiser page to be opened before entering · est deadline = event day",
-      "added": "2026-11-05"
-    },
-    {
-      "id": "a51-bioxai-2026",
-      "name": "InterfaceHack (A51, RNA–protein binding)",
-      "type": "hackathon",
-      "url": "https://a51tx.com/hackathon/",
-      "deadline": "2026-11-14",
-      "start": "2026-12-01",
-      "end": "2026-12-02",
-      "note": "Biotech × AI hackathon by A51: predict RNA–protein binding, the unsolved \"interaction that programs a cell\" · event 1–2 Dec 2026 at Agoranov, Paris deep-tech incubator · teams up to 5, team matching + mentoring, experimental dataset provided, Claude/AWS/research-lab compute and AI credits · exposure to academia, startup and industry experts · DEADLINE 14 Nov PUBLISHED on the Hub detail page (earlier est of 1 Dec was wrong) · free entry per organiser · Paris Bioweek umbrella",
       "added": "2026-11-05"
     },
     {

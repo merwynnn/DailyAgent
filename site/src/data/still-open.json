@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-15",
+  "updated": "2026-11-16",
   "items": [
     {
       "id": "lovable-hexa-ai-for-work",
@@ -36,17 +36,6 @@
       "end": "2026-11-18",
       "note": "Parc Expo Mulhouse, inside the free-entry Euro Industries salon · student robotics competition, 3rd edition · 2024 edition drew 8 student teams · no registration route published yet — deadline here is event start as a check-back marker",
       "added": "2026-10-24"
-    },
-    {
-      "id": "gdevelop-big-game-jam-10",
-      "name": "GDevelop BIG Game Jam #10",
-      "type": "jam",
-      "url": "https://itch.io/jam/gdevelop-big-game-jam-10",
-      "deadline": "2026-11-15",
-      "start": "2026-11-06",
-      "end": "2026-11-15",
-      "note": "Must use GDevelop · prizes up to $6,500, cash split unconfirmed · 1,000 engine credits per submission",
-      "added": "2026-10-20"
     },
     {
       "id": "hack1robo-5",
@@ -91,17 +80,6 @@
       "end": "2027-02-04",
       "note": "6th Projet Impact Positif (AMJE × Arts et Métiers) · €15,000 dotation, 6 finalist teams revealed end of January, mentored by partners before pitching on Thu 4 Feb 2027, Arts et Métiers campus Paris 13e, evening: big conference \"Physical AI\" + prizes · open to students of graduate engineering schools, teams can form at registration · CALENDAR CONFIRMED: registrations open December 2026 → dossiers due early January → selection announced end of January → event 4 Feb · registrations open in December, dossiers early January — deadline here is a check-back marker, chase the real dates when it opens · 3rd place takes €500",
       "added": "2026-10-20"
-    },
-    {
-      "id": "zoud-gamelab",
-      "name": "Zoud GameLab × Global Game Jam",
-      "type": "jam",
-      "url": "https://itch.io/jam/zoud-gamelab",
-      "deadline": "2026-11-15",
-      "start": "2026-10-15",
-      "end": "2026-11-15",
-      "note": "Up to $140K in prizes and development funding, split unstated · virtual, 18+ · financial-literacy theme, judged partly on it",
-      "added": "2026-10-21"
     },
     {
       "id": "amiga-tools-jam-2026",
@@ -214,17 +192,6 @@
       "end": "2027-01-31",
       "note": "Jam week published 25–31 Jan, most local sites run a 48 h window inside it (ANATEN confirmed 26–29 Jan) · no cash prizes — community jam · jammers registration expected to open ~1 Dec per the GGJ26 pattern · the 2027 French site list is still being filled, ENJMIN/Toulon/Rennes should be watched",
       "added": "2026-11-01"
-    },
-    {
-      "id": "epic-ai-megajam-2026",
-      "name": "2026 Epic AI MegaJam",
-      "type": "jam",
-      "url": "https://itch.io/jam/2026-epic-ai-megajam",
-      "deadline": "2026-11-15",
-      "start": "2026-11-12",
-      "end": "2026-11-15",
-      "note": "$65,000 in cash plus development-continuation grants up to $50,000 per team · Unreal Engine or UEFN · teams of up to 4 humans with unlimited AI agents allowed · four days, worldwide online · judged results stream later in December",
-      "added": "2026-11-02"
     },
     {
       "id": "indie-park-jam-6",
@@ -343,18 +310,6 @@
       "added": "2026-11-05"
     },
     {
-      "id": "pioneers-stationf-ai-2026",
-      "name": "Paris AI Hackathon @Station F (Pioneers)",
-      "type": "hackathon",
-      "url": "https://luma.com/pou9rn2b",
-      "deadline": "2026-11-15",
-      "deadlineEstimated": true,
-      "start": "2026-11-15",
-      "end": "2026-11-15",
-      "note": "One-day challenge at Station F, Paris, from 18:00 — build a fully AI-run startup with agents handling operations, research and growth · €10,000 prize pool including Ray-Ban Meta glasses, AirPods and partner credits · hosted by Pioneers AI Lab / AI Tinkerers · registration on Luma, no close date published · est deadline = event day",
-      "added": "2026-11-05"
-    },
-    {
       "id": "lille-fac-sciences-hackathon-2026",
       "name": "Hackathon Faculté des sciences (Univ. Lille)",
       "type": "hackathon",
@@ -377,18 +332,6 @@
       "end": "2026-11-24",
       "note": "Data hackathon exposing conflicts of interest in health, Bordeaux, 24 Nov · listed by Le Wagon Bordeaux (a bootcamp school — verify what the day actually is before committing) · prize and schedule TBA · thin listing, est deadline = event day",
       "added": "2026-11-05"
-    },
-    {
-      "id": "zernio-social-gtm-2026",
-      "name": "Social GTM Agents Hackathon with Zernio",
-      "type": "hackathon",
-      "url": "https://luma.com/wrgyhbwf",
-      "deadline": "2026-11-15",
-      "deadlineEstimated": true,
-      "start": "2026-11-15",
-      "end": "2026-11-15",
-      "note": "One-day hackathon at swanbase's Paris space: build AI agents automating go-to-market workflows on Zernio's unified social API (cross-platform posting, engagement, ad management) · live demos, winners get platform credits rather than cash · English, on-site, developers/marketers/founders · marked \"New\" on the Hub, no close date published · est deadline = event day",
-      "added": "2026-11-06"
     },
     {
       "id": "micro-jam-071",
@@ -562,7 +505,7 @@
       "url": "https://makeitagri.org/reglement/",
       "deadline": "2027-01-05",
       "start": "2026-09-15",
-      "note": "National student competition by Fondation Avril, Académie d'Agriculture de France and AgroParisTech: bring digital, robotics, automation or IT innovation to sustainable agriculture and food (\"du champ à l'assiette\") · open to ALL post-bac students of any school, teams of 2–6 inter- or intra-school, professor/mentor optional · dossier download from 15 Sept 2026, submission DEADLINE 5 Jan 2027 published · jury shortlists 10 teams mid-January, final jury 15–30 June 2027 · start-up creation encouraged",
+      "note": "National student competition by Fondation Avril, Académie d'Agriculture de France and AgroParisTech (9th season): bring digital, robotics, automation or IT innovation to sustainable agriculture and food (\"du champ à l'assiette\") · open to ALL post-bac students of any school, teams of 2–6 inter- or intra-school, professor/mentor optional · dossier download from 15 Sept 2026, submission DEADLINE 5 Jan 2027 published · PRIZES per règlement: 1st ≈ €4,000, 2nd €3,000, 3rd €2,000 · jury shortlists 10 teams mid-January, FINALE 17 June 2027 (AgroParisTech news, 13 Nov) · start-up creation encouraged",
       "added": "2026-11-14"
     },
     {
@@ -586,6 +529,39 @@
       "end": "2027-01-18",
       "note": "Anniversary jam of French indie TTRPG publisher Angeldust (10 years): write a ONE-PAGE tabletop RPG, theme revealed at the start · submissions 19 Nov 08:00 UTC → 18 Jan 2027 23:00 UTC · NO cash prize — the publishers read and give feedback on every entry, and may offer to co-publish a gem · NO AI allowed · French, bilingual rules",
       "added": "2026-11-14"
+    },
+    {
+      "id": "godot-baguette-jam-2026",
+      "name": "Godot Baguette Game Jam (1st edition)",
+      "type": "jam",
+      "url": "https://itch.io/jam/godot-baguette-game-jam",
+      "deadline": "2026-12-18",
+      "start": "2026-12-04",
+      "end": "2026-12-18",
+      "note": "First-edition French Godot-community jam: Godot ONLY, WEB builds only (judged), two weeks · 4 Dec 20:00 → 18 Dec 20:00 Paris time, results 20 Dec · no cash — winner picks a Steam key (€5–15), an asset/music pack or 1 month of Discord Nitro · NO generative AI · beginners welcome, judged with skill-level consideration · solo or teams · French",
+      "added": "2026-11-16"
+    },
+    {
+      "id": "ecosci-jam-etis-2026",
+      "name": "EcoSci Game Jam 2026 (ETIS, Paris)",
+      "type": "jam",
+      "url": "https://itch.io/jam/etis-ecosci26",
+      "deadline": "2026-12-13",
+      "start": "2026-12-11",
+      "end": "2026-12-13",
+      "note": "48 h jam making games (video OR tabletop) that explain ecological dynamics — rebound & induced effects, \"accumuler jusqu'à la rupture\" · runs WITH researchers of the ETIS lab (CNRS × CYU × ENSEA) · 11–13 Dec at Académie du Climat, Paris 4e, ON SITE with remote submissions accepted · open to all levels, teams formed on site · no cash published (prize ceremony 13 Dec 18:00) · registration via the link on the itch page · French",
+      "added": "2026-11-16"
+    },
+    {
+      "id": "confiture-gnafron-2026",
+      "name": "Confiture de Jeux GNafron (tabletop/LARP)",
+      "type": "jam",
+      "url": "https://itch.io/jam/confiture-jeux-gnafron-1312",
+      "deadline": "2027-02-12",
+      "start": "2026-12-13",
+      "end": "2027-02-12",
+      "note": "First-edition French-language tabletop jam (TTRPG, GN/LARP, murder party, board game — anything playable from a PDF) by GNafron, a Rhône-alpine live-RPG association · theme \"Résister c'est créer, créer c'est résister\" · 13 Dec 13:12 → 12 Feb 13:12 Paris time · NO prize (\"c'est pour la gloire\") · teams up to 3, French required, CC BY-NC-SA licence · jury ranking + participants' coup de cœur",
+      "added": "2026-11-16"
     }
   ]
 }

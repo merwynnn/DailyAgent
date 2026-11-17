@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-16",
+  "updated": "2026-11-17",
   "items": [
     {
       "id": "lovable-hexa-ai-for-work",
@@ -22,7 +22,7 @@
       "deadlineEstimated": true,
       "start": "2026-12-02",
       "end": "2026-12-04",
-      "note": "Grand Palais, Paris, 2–4 Dec, on the Adopt AI stage with the Defence Innovation Agency (Ministère des Armées) · two tracks: Navigation & Mobility in Hostile Terrain (SLAM, perception) and Precision Handling & Logistics (manipulation, sorting, robotic logistics) · ~100 participants, teams of 6–8, 6 challenges · calendar per Agorize: sign-up since September → selected teams announced October → November pre-event technical coaching on the simulation software (best code earns a test on a real robot) · Agorize STILL SAYS registration open, but the October selection step makes that doubtful — apply fast if interested · est deadline = event start",
+      "note": "Grand Palais, Paris, 2–4 Dec, on the Adopt AI stage with the Defence Innovation Agency (Ministère des Armées) · two tracks: Navigation & Mobility in Hostile Terrain (SLAM, perception) and Precision Handling & Logistics (manipulation, sorting, robotic logistics) · ~100 participants, teams of 6–8 · Agorize STILL SAYS registration open, but the sibling Drone Defense Hackathon on the same programme ran its call 15 Sept–15 Oct with the shortlist announced 24 Oct — programme-wide, selection happened in October; apply only if a route actually remains · est deadline = event start",
       "added": "2026-10-30"
     },
     {
@@ -111,18 +111,6 @@
       "start": "2026-11-01",
       "end": "2026-12-01",
       "note": "GitHub's official month-long jam · theme revealed 1 Nov 13:37 PT · any engine, solo or team · submissions close 1 Dec · 2026 prize pool not yet stated",
-      "added": "2026-11-01"
-    },
-    {
-      "id": "sciencespo-ai-hackathon",
-      "name": "Sciences Po AI Hackathon (2nd edition)",
-      "type": "hackathon",
-      "url": "https://www.sciencespo.fr/ecole-management-impact/fr/evenements/the-new-sciences-po-ai-hackathon-edition/",
-      "deadline": "2026-11-20",
-      "deadlineEstimated": true,
-      "start": "2026-11-20",
-      "end": "2026-11-21",
-      "note": "Paris, 27 rue Saint-Guillaume, 20 Nov 17:00 to 21 Nov 20:30 · open to ALL students of any discipline, beginners welcome, no coding prerequisite · registration opens 3 Nov · cash and sponsor credits, amounts unstated",
       "added": "2026-11-01"
     },
     {
@@ -310,18 +298,6 @@
       "added": "2026-11-05"
     },
     {
-      "id": "lille-fac-sciences-hackathon-2026",
-      "name": "Hackathon Faculté des sciences (Univ. Lille)",
-      "type": "hackathon",
-      "url": "https://sciences-technologies.univ-lille.fr/actualite/default-0f1385ebb936957715e8d550d17036a9",
-      "deadline": "2026-11-16",
-      "deadlineEstimated": true,
-      "start": "2026-11-16",
-      "end": "2026-12-17",
-      "note": "Four-week interdisciplinary challenge, 16 Nov–17 Dec, for L3–M2 students of the Lille science faculty, working on problems posed by researchers and local actors · six themes (energies, matter, living systems, responsible digital, deep tech, transitions) · Pépite entrepreneurship network involved · challenge list and candidature form on the faculty page · est deadline = event start",
-      "added": "2026-11-05"
-    },
-    {
       "id": "conflits-interet-sante-bordeaux-2026",
       "name": "Hackathon conflits d'intérêt dans la santé (Bordeaux)",
       "type": "hackathon",
@@ -343,15 +319,6 @@
       "end": "2026-12-14",
       "note": "Cash prizes across the top tiers (amount on the jam page — itch blocks scripted reads, unverified here) · 48 h · theme: Coffee, plus a surprise prerequisite revealed at the start · solo or small teams, AI tools allowed · dates confirmed on the jam page",
       "added": "2026-11-06"
-    },
-    {
-      "id": "ugreen-ai-nas-2026",
-      "name": "UGREEN Hackathon 2026 (AI NAS skills)",
-      "type": "hackathon",
-      "url": "https://ugreenhackathon.devpost.com/",
-      "deadline": "2026-11-16",
-      "note": "Online developer challenge on Devpost, free, no NAS required to enter — eligible adults solo or in teams of up to 3 · build an AI Skill for UGREEN's UGOS in one of four tracks (work automation, personal memories, creative media, open idea) · $46,000 cash: $20k / $10k / $6k + two $5k Most-Creative awards · Round 1 (proposal + initial Skill package) closes 15 Nov 23:45 PT — 16 Nov French time · ~30 finalists get remote access to an AI NAS, Round 2 due 30 Nov, winners announced in December · 1,600+ participants already · online, not in person — entered here because it is fully accessible from France",
-      "added": "2026-11-08"
     },
     {
       "id": "biotech-hackathon-2027",
